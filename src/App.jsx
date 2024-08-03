@@ -1,25 +1,27 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
+import MainPage from "./pages/MainPage";
+import ProjectDetails from "./pages/ProjectDetails";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
-function App() {
+const App = () => {
   return (
     <>
-      <div className="container p-4 bg-light-secondary dark:bg-dark-secondary">
+      <div className="container px-8 bg-light-secondary dark:bg-dark-secondary">
         <Header />
+        <div className="divider" />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/ProjectDetails/:id" element={<ProjectDetails />} />
+        </Routes>
+        <div className="divider" />
+        <Footer />
       </div>
-
-      {/* <Hero /> */}
-      {/* <Projects /> */}
-      {/* <Contact /> */}
-      {/* <Footer /> */}
     </>
   );
-}
+};
 
 export default App;

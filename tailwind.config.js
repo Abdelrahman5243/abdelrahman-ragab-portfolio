@@ -29,6 +29,9 @@ export default {
       container: {
         center: "true",
       },
+      screens: {
+        xs: "480px",
+      },
     },
   },
   plugins: [],

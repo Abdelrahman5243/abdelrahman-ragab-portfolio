@@ -1,5 +1,5 @@
 .header_btn {
-  @apply w-10 h-10 border border-yellow-700 rounded-full bg-light-bgHeader dark:bg-dark-bgHeader;
+  @apply w-10 h-10 border border-light-border dark:border-dark-border rounded-full bg-light-bgHeader dark:bg-dark-bgHeader;
 }
 @keyframes mymove {
   0% {

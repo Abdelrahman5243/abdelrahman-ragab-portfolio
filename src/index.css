@@ -15,4 +15,10 @@
   .centered {
     @apply flex justify-center items-center;
   }
+  .divider {
+    @apply bg-light-border dark:bg-dark-border;
+    height: 1px;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
 }

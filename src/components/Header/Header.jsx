@@ -32,18 +32,21 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center">
+    <header className="flex justify-between items-center py-4">
       <button
         onClick={() => setShowModal(true)}
         className="centered header_btn md:hidden"
       >
         <AiOutlineMenu />
       </button>
-
-      <nav className="bg-light-bgHeader dark:bg-dark-bgHeader p-4 px-6 rounded-full hidden md:flex">
+      {/* bg-light-bgHeader dark:bg-dark-bgHeader */}
+      <nav
+        className=" p-4 px-6 border border-light-border dark:border-dark-border
+      rounded-full hidden md:flex ml-56"
+      >
         <ul className="flex gap-4">
           {NAV_ITEMS.map((item) => (
-            <li key={item.label}>
+            <li key={item.label} className="hover:text-dark-blue">
               <a href={item.href}>{item.label}</a>
             </li>
           ))}
@@ -60,7 +63,6 @@ const Header = () => {
           {theme === "dark" ? <MdDarkMode /> : <MdLightMode />}
         </button>
       </div>
-
       {showModal && (
         <Modal
           ITEMS={NAV_ITEMS}
