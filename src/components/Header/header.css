@@ -1,0 +1,18 @@
+.header_btn {
+  @apply w-10 h-10 border border-yellow-700 rounded-full bg-light-bgHeader dark:bg-dark-bgHeader;
+}
+@keyframes mymove {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal-animation {
+  animation: mymove 0.77s 1;
+}

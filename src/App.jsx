@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -10,11 +10,14 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
-      <Projects />
-      <Contact />
-      <Footer />
+      <div className="container p-4 bg-light-secondary dark:bg-dark-secondary">
+        <Header />
+      </div>
+
+      {/* <Hero /> */}
+      {/* <Projects /> */}
+      {/* <Contact /> */}
+      {/* <Footer /> */}
     </>
   );
 }

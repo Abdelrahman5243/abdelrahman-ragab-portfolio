@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  body {
+    @apply bg-light-primary text-black;
+  }
+  body.dark {
+    @apply bg-dark-primary text-white;
+  }
+  .container {
+    @apply border border-light-border dark:border-dark-border mx-auto bg-light-secondary dark:bg-dark-secondary px-4;
+  }
+  .centered {
+    @apply flex justify-center items-center;
+  }
+}
