@@ -22,7 +22,7 @@ const Contact = () => {
       <div className="flex justify-between">
         <form
           onSubmit={handleSubmit}
-          className="w-1/2 flex flex-col gap-4 mb-6 text-light-subtitle dark:text-dark-subtitle"
+          className="w-full md:w-1/2 flex flex-col gap-4 mb-6 text-light-subtitle dark:text-dark-subtitle"
         >
           <label htmlFor="email">Email Address:</label>
           <input
