@@ -6,19 +6,24 @@ import MainPage from "./pages/MainPage";
 import ProjectDetails from "./pages/ProjectDetails";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-
+import Contact from "./components/Contact/Contact";
 const App = () => {
   return (
     <>
-      <div className="container px-8 bg-light-secondary dark:bg-dark-secondary">
-        <Header />
-        <div className="divider" />
+      <div className="container px-8 bg-light-secondary dark:bg-dark-secondary min-h-screen flex flex-col justify-between">
+        <div>
+          <Header />
+          <div className="divider" />
+        </div>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/ProjectDetails/:id" element={<ProjectDetails />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/project-details/:id" element={<ProjectDetails />} />
         </Routes>
-        <div className="divider" />
-        <Footer />
+        <div>
+          <div className="divider" />
+          <Footer />
+        </div>
       </div>
     </>
   );
