@@ -76,10 +76,10 @@ const Contact = () => {
         </form>
 
         <div className="w-1/2 animation hidden lg:block">
-          {/* <Lottie
+          <Lottie
             className="contact-animation h-[355px]"
             animationData={contactAnimation}
-          /> */}
+          />
         </div>
       </div>
     </section>

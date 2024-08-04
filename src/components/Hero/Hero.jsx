@@ -3,8 +3,9 @@ import devAnimation from "../../assets/animation/dev.json";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { AiFillLinkedin, AiOutlineCodepen, AiFillGithub } from "react-icons/ai";
-import { MdMail } from "react-icons/md";
-
+import { BiLogoGmail } from "react-icons/bi";
+import { HiDownload } from "react-icons/hi";
+import cv from "../../assets/cv.pdf";
 // Define a constant object for dynamic content
 const HERO_CONTENT = {
   title: "Software designer, founder, and amateur astronaut.",
@@ -34,7 +35,7 @@ const HERO_CONTENT = {
     {
       href: "mailto:example@example.com",
       icon: (
-        <MdMail className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
+        <BiLogoGmail className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
       ),
     },
   ],
@@ -54,11 +55,18 @@ const Hero = () => {
         >
           {HERO_CONTENT.title}
         </motion.h1>
-
         <p className="text-sm leading-6 mb-8 dark:text-dark-subtitle text-light-subtitle">
           {HERO_CONTENT.description}
         </p>
-
+        <a
+          href={cv}
+          download={"abdelrahman ragab (Cv).pdf"}
+          className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle 
+        dark:text-dark-subtitle rounded flex gap-4 items-center"
+        >
+          Download Cv
+          <HiDownload />
+        </a>
         <div className="flex text-lg gap-6 dark:text-dark-subtitle text-light-subtitle">
           {HERO_CONTENT.socialLinks.map((link, index) => (
             <a
@@ -74,13 +82,13 @@ const Hero = () => {
       </div>
 
       <div className="right-section w-full hidden lg:block">
-        {/* <Lottie
+         <Lottie
           lottieRef={lottieRef}
           onLoadedImages={() => {
             lottieRef.current.setSpeed(0.5);
           }}
           animationData={devAnimation}
-        /> */}
+        /> 
       </div>
     </section>
   );

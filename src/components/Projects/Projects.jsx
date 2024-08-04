@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { myProjects, categories } from "./myProjects";
 import ProjectCard from "./ProjectCard";
-
+import "./projects.css"
 const Projects = () => {
   const [currentActive, setCurrentActive] = useState("All Projects");
 
@@ -19,14 +19,14 @@ const Projects = () => {
 
   return (
     <section
-      className="mx-auto my-8 flex flex-col gap-8 md:flex-row justify-between
+      className="w-full mx-auto my-8 flex gap-8 flex-col md:flex-row justify-between
      bg-light-secondary dark:bg-dark-secondary items-start "
     >
-      <div className="buttons flex flex-wrap justify-center md:flex-col gap-4">
+      <div className="flex flex-wrap justify-center md:flex-col gap-4">
         {Allcategories.map((category, index) => (
           <button
             key={index}
-            className={`py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle 
+            className={`filter-btn py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle 
               rounded  ${
                 currentActive === category
                   ? "border border-dark-blue"
