@@ -10,7 +10,7 @@ import Header from "./components/Header/Header";
 const App = () => {
   return (
     <>
-      <div className="container px-8 bg-light-secondary dark:bg-dark-secondary min-h-screen">
+      <div className="container px-8 bg-light-secondary dark:bg-dark-secondary min-h-screen flex flex-col justify-between">
         <Header />
         <div className="divider" />
         <Routes>
