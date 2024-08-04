@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { MdOutlineClose } from "react-icons/md";
 
 const Modal = ({ ITEMS, closeModal, showModal }) => {
@@ -20,14 +21,16 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
 
   return (
     <div
-      className="fixed inset-0 z-10 bg-dark-secondary bg-opacity-70 backdrop-blur-sm"
+      className={`fixed inset-0 z-10 bg-dark-secondary bg-opacity-70 backdrop-blur-sm ${
+        showModal ? "block" : "hidden"
+      }`}
       role="dialog"
       aria-labelledby="modal-title"
       aria-hidden={!showModal}
     >
       <div
         ref={modalRef}
-        className="model w-[60%] relative bg-light-secondary dark:bg-dark-secondary modal-animation w-1/3 mx-auto mt-8 rounded-lg p-4"
+        className="model max-w-[90%] w-[330px] relative bg-light-secondary dark:bg-dark-secondary modal-animation w-1/3 mx-auto mt-8 rounded-lg p-4"
       >
         <button
           onClick={closeModal}
@@ -39,13 +42,13 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
         <ul>
           {ITEMS.map((item) => (
             <li key={item.label} className="py-2">
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 className="text-sm text-light-title dark:text-dark-title"
                 onClick={closeModal}
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

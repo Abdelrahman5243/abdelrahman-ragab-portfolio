@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { MdLightMode, MdDarkMode, MdOutlineTranslate } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai";
-import Modal from "./Modal"; // Import the Modal component
+import Modal from "./Modal";
 import "./header.css";
 
 const NAV_ITEMS = [
-  { label: "About", href: "#" },
-  { label: "Projects", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Header = () => {
@@ -39,7 +40,7 @@ const Header = () => {
       >
         <AiOutlineMenu />
       </button>
-      {/* bg-light-bgHeader dark:bg-dark-bgHeader */}
+
       <nav
         className=" p-4 px-6 border border-light-border dark:border-dark-border
       rounded-full hidden md:flex ml-56"
@@ -47,7 +48,7 @@ const Header = () => {
         <ul className="flex gap-4">
           {NAV_ITEMS.map((item) => (
             <li key={item.label} className="hover:text-dark-blue">
-              <a href={item.href}>{item.label}</a>
+              <Link to={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>

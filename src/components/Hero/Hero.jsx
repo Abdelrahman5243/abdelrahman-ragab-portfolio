@@ -6,13 +6,12 @@ import { AiFillLinkedin, AiOutlineCodepen, AiFillGithub } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 import { HiDownload } from "react-icons/hi";
 import cv from "../../assets/cv.pdf";
-// Define a constant object for dynamic content
+
 const HERO_CONTENT = {
   title: "Software designer, founder, and amateur astronaut.",
-  description: `I’m Ali Hassan, a software designer and entrepreneur based in New York
-  City. I’m the founder and CEO of Planetaria, where we develop
-  technologies that empower regular people to explore space on their own
-  terms.`,
+  description: `I’m Ali Hassan, a software designer and entrepreneur based in New York City. 
+  I’m the founder and CEO of Planetaria, where we develop technologies that empower regular 
+  people to explore space on their own terms.`,
   socialLinks: [
     {
       href: "https://www.linkedin.com",
@@ -61,8 +60,7 @@ const Hero = () => {
         <a
           href={cv}
           download={"abdelrahman ragab (Cv).pdf"}
-          className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle 
-        dark:text-dark-subtitle rounded flex gap-4 items-center"
+          className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center"
         >
           Download Cv
           <HiDownload />
@@ -82,13 +80,13 @@ const Hero = () => {
       </div>
 
       <div className="right-section w-full hidden lg:block">
-         <Lottie
+        <Lottie
           lottieRef={lottieRef}
           onLoadedImages={() => {
             lottieRef.current.setSpeed(0.5);
           }}
           animationData={devAnimation}
-        /> 
+        />
       </div>
     </section>
   );
