@@ -11,7 +11,9 @@ const Contact = () => {
     <section className="contact-us my-8">
       <div className="flex gap-4 items-center mb-4 text-3xl">
         <MdMail className="text-light-title dark:text-dark-subtitle" />
-        <h1 className="text-light-title dark:text-dark-title">Contact Us</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl text-light-title dark:text-dark-title">
+          Contact Us
+        </h1>
       </div>
 
       <p className="text-light-subtitle dark:text-dark-subtitle mb-8 leading-6">
@@ -76,10 +78,10 @@ const Contact = () => {
         </form>
 
         <div className="w-1/2 hidden lg:block">
-          <Lottie
+          {/* <Lottie
             className="contact-animation h-[355px]"
             animationData={contactAnimation}
-          />
+          /> */}
         </div>
       </div>
     </section>

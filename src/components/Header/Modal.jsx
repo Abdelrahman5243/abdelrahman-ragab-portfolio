@@ -21,8 +21,8 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-10 bg-dark-secondary bg-opacity-70 backdrop-blur-sm ${
-        showModal ? "block" : "hidden"
+      className={`fixed inset-0 z-40 bg-dark-secondary bg-opacity-70 backdrop-blur items-start justify-center ${
+        showModal ? "flex" : "hidden"
       }`}
       role="dialog"
       aria-labelledby="modal-title"
@@ -30,23 +30,23 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
     >
       <div
         ref={modalRef}
-        className="model max-w-[90%] w-[330px] relative bg-light-secondary dark:bg-dark-secondary modal-animation w-1/3 mx-auto mt-8 rounded-lg p-4"
+        className="model max-w-[90%] w-[330px] relative bg-light-secondary dark:bg-dark-bgHeader modal-animation
+         mt-10 rounded-lg p-8 flex flex-col gap-4 text-light-subtitle dark:text-dark-subtitle"
       >
-        <button
-          onClick={closeModal}
-          className="absolute top-4 right-4 text-base"
-          aria-label="Close modal"
-        >
-          <MdOutlineClose />
-        </button>
-        <ul>
+        <div className="flex justify-between items-center">
+          <h1 className="text-xl">Navigation</h1>
+          <button
+            onClick={closeModal}
+            aria-label="Close modal"
+          >
+            <MdOutlineClose />
+          </button>
+        </div>
+
+        <ul className="divide-y divide-opacity-10 dark:divide-dark-border capitalize">
           {ITEMS.map((item) => (
-            <li key={item.label} className="py-2">
-              <Link
-                to={item.href}
-                className="text-sm text-light-title dark:text-dark-title"
-                onClick={closeModal}
-              >
+            <li key={item.label} className="py-3 hover:text-dark-blue">
+              <Link to={item.href} className="text-sm" onClick={closeModal}>
                 {item.label}
               </Link>
             </li>

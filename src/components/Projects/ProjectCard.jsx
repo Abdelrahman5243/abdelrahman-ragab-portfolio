@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
         className="w-full object-cover"
       />
       <div className="content p-4">
-        <h1 className="text-3xl capitalize my-2 text-light-title dark:text-dark-title">
+        <h1 className="text-2xl sm:text-3xl capitalize my-2 text-light-title dark:text-dark-title">
           {project.projectTitle}
         </h1>
         <p className="text-light-subtitle dark:text-dark-subtitle">

@@ -50,11 +50,11 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
-          className="text-4xl leading-tight mb-6 dark:text-dark-title text-light-title"
+          className="text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 dark:text-dark-title text-light-title"
         >
           {HERO_CONTENT.title}
         </motion.h1>
-        <p className="text-sm leading-6 mb-8 dark:text-dark-subtitle text-light-subtitle">
+        <p className="text-base sm:text-lg md:text-xl leading-6 mb-8 dark:text-dark-subtitle text-light-subtitle">
           {HERO_CONTENT.description}
         </p>
         <a
@@ -80,13 +80,13 @@ const Hero = () => {
       </div>
 
       <div className="right-section w-full hidden lg:block">
-        <Lottie
+        {/* <Lottie
           lottieRef={lottieRef}
           onLoadedImages={() => {
             lottieRef.current.setSpeed(0.5);
           }}
           animationData={devAnimation}
-        />
+        /> */}
       </div>
     </section>
   );
