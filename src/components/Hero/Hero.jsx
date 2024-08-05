@@ -79,7 +79,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="right-section w-full hidden lg:block">
+      <div className="right-section w-full hidden md:flex">
          <Lottie
           lottieRef={lottieRef}
           onLoadedImages={() => {
