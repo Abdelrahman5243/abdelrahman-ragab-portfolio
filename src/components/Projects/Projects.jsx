@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { myProjects, categories } from "./myProjects";
 import ProjectCard from "./ProjectCard";
 import "./projects.css";
@@ -38,9 +39,18 @@ const Projects = () => {
       </div>
 
       <div className="flex flex-wrap gap-8 justify-center w-full md:w-3/4">
-        {filteredProjects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+        <AnimatePresence>
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ transform: "scale(0.4)" }}
+              animate={{ transform: "scale(1)" }}
+              transition={{ type: "spring", damping: 8, stiffness: 50 }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   );

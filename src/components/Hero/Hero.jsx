@@ -1,10 +1,10 @@
-import Lottie from "lottie-react";
-import devAnimation from "../../assets/animation/dev.json";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { AiFillLinkedin, AiOutlineCodepen, AiFillGithub } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 import { HiDownload } from "react-icons/hi";
+import Lottie from "lottie-react";
+import devAnimation from "../../assets/animation/dev.json";
 import cv from "../../assets/cv.pdf";
 
 const HERO_CONTENT = {
@@ -44,49 +44,59 @@ const Hero = () => {
   const lottieRef = useRef();
 
   return (
-    <section className="hero flex my-8 items-center">
-      <div className="left-section flex-grow">
+    <section className="hero flex my-8 items-center flex-col-reverse md:flex-row">
+      <div className="left-section w-full md:w-1/2">
         <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           className="text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 dark:text-dark-title text-light-title"
         >
           {HERO_CONTENT.title}
         </motion.h1>
-        <p className="text-base sm:text-lg md:text-xl leading-6 mb-8 dark:text-dark-subtitle text-light-subtitle">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-base sm:text-lg md:text-xl leading-6 mb-8 dark:text-dark-subtitle text-light-subtitle"
+        >
           {HERO_CONTENT.description}
-        </p>
-        <a
+        </motion.p>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
           href={cv}
-          download={"abdelrahman ragab (Cv).pdf"}
+          download={"Ali_Hassan_Cv.pdf"}
           className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center"
         >
-          Download Cv
+          Download CV
           <HiDownload />
-        </a>
+        </motion.a>
         <div className="flex text-lg gap-6 dark:text-dark-subtitle text-light-subtitle">
           {HERO_CONTENT.socialLinks.map((link, index) => (
-            <a
+            <motion.a
               key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:scale-110 transform transition-transform duration-200"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.1 * index }}
             >
               {link.icon}
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>
 
-      <div className="right-section w-full hidden lg:block">
-        {/* <Lottie
+      <div className="right-section w-full md:w-1/2">
+        <Lottie
           lottieRef={lottieRef}
-          onLoadedImages={() => {
-            lottieRef.current.setSpeed(0.5);
-          }}
+          onComplete={() => lottieRef.current.setSpeed(0.5)}
           animationData={devAnimation}
-        /> */}
+        />
       </div>
     </section>
   );

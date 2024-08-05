@@ -6,9 +6,7 @@ import MainPage from "./pages/MainPage";
 import ProjectDetails from "./pages/ProjectDetails";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Contact from "./components/Contact/Contact";
-import About from "./pages/About";
-
+import NotFound from "./pages/NotFound";
 const App = () => {
   // const [showScrollButton, setShowScrollButton] = useState(false);
 
@@ -36,9 +34,8 @@ const App = () => {
         </div>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/project-details/:id" element={<ProjectDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <div>
           <div className="divider" />

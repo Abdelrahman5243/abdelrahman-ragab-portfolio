@@ -37,12 +37,11 @@ const Contact = () => {
         {contactData.description}
       </p>
 
-      <div className="flex justify-between">
+      <div className="flex my-8 items-center flex-col-reverse md:flex-row">
         <form
           onSubmit={handleSubmit}
           className="w-full md:w-1/2 flex flex-col gap-4 mb-6 text-light-subtitle dark:text-dark-subtitle"
         >
-
           <label htmlFor="email">{contactData.form[0].label}</label>
           <input
             type="email"
@@ -94,11 +93,11 @@ const Contact = () => {
           )}
         </form>
 
-        <div className="w-1/2 hidden md:block">
-          {/* <Lottie
+        <div className="w-full md:w-1/2">
+          <Lottie
             className="contact-animation h-[355px]"
             animationData={contactAnimation}
-          /> */}
+          />
         </div>
       </div>
     </section>

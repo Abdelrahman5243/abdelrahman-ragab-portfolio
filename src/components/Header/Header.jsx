@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { MdLightMode, MdDarkMode, MdOutlineTranslate } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai";
 import Modal from "./Modal";
 import "./header.css";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "#about" },
+  { label: "projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Header = () => {
@@ -48,7 +47,7 @@ const Header = () => {
         <ul className="flex gap-4">
           {NAV_ITEMS.map((item) => (
             <li key={item.label} className="hover:text-dark-blue">
-              <Link to={item.href}>{item.label}</Link>
+              <a href={item.href}>{item.label}</a>
             </li>
           ))}
         </ul>
