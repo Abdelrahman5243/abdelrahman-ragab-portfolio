@@ -80,13 +80,13 @@ const Hero = () => {
       </div>
 
       <div className="right-section w-full hidden lg:block">
-        {/* <Lottie
+         <Lottie
           lottieRef={lottieRef}
           onLoadedImages={() => {
             lottieRef.current.setSpeed(0.5);
           }}
           animationData={devAnimation}
-        /> */}
+        /> 
       </div>
     </section>
   );
