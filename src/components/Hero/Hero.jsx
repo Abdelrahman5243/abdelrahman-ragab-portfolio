@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <section className="hero flex my-8 items-center">
-      <div className="left-section flex-grow">
+      <div className="left-section">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
