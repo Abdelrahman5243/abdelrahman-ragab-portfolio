@@ -21,8 +21,12 @@
     width: calc(100% + 4rem);
     margin-left: -2rem;
   }
+  body.arabic .divider {
+    margin-left: 0;
+    margin-right: -2rem;
+  }
 }
 
-body.arabic{
+body.arabic {
   direction: rtl;
 }

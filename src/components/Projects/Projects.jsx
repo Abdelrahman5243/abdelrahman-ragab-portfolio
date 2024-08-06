@@ -86,6 +86,7 @@ const Projects = () => {
               initial={{ transform: "scale(0.4)" }}
               animate={{ transform: "scale(1)" }}
               transition={{ type: "spring", damping: 8, stiffness: 50 }}
+              className="card w-[300px] bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between"
             >
               <ProjectCard project={project} />
             </motion.div>
