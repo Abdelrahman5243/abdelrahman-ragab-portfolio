@@ -3,7 +3,7 @@ import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 
 const ProjectCard = ({ project }) => {
   return (
-    <>
+    <div className="card w-full bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between">
       <img
         src={project.imgPath}
         alt={project.projectTitle}
@@ -16,14 +16,22 @@ const ProjectCard = ({ project }) => {
         {project.description}
       </p>
       <div className="icons flex gap-4 m-4 text-xl mt-4 text-light-subtitle dark:text-dark-subtitle items-center">
-        <a href="#" className="hover:text-dark-iconHover">
+        <a
+          href="#" 
+          className="hover:text-dark-iconHover"
+          aria-label={`View the project at ${project.projectTitle}`}
+        >
           <AiOutlineLink />
         </a>
-        <a href="#" className="hover:text-dark-iconHover">
+        <a
+          href="#"
+          className="hover:text-dark-iconHover"
+          aria-label={`View the project's code on GitHub`}
+        >
           <AiFillGithub />
         </a>
       </div>
-    </>
+    </div>
   );
 };
 

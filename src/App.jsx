@@ -39,10 +39,10 @@ const App = () => {
         <div className="divider"></div>
         <Footer />
         <a
-          className={`bg-light-blue rounded-full w-10 h-10 flex justify-center items-center
+          className={`text-dark-title bg-light-blue rounded-full w-10 h-10 flex justify-center items-center
             fixed bottom-10 right-10 transition-opacity duration-1000 ${
-            showScrollButton ? "opacity-100" : "opacity-0"
-          }`}
+              showScrollButton ? "opacity-100" : "opacity-0"
+            }`}
           href="#top"
         >
           <SlArrowUp />

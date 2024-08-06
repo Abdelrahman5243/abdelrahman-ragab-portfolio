@@ -13,7 +13,10 @@ const Contact = () => {
   return (
     <section id="contact" className="my-8">
       <div className="flex gap-4 items-center mb-4 text-3xl">
-        <MdMail className="text-light-title dark:text-dark-subtitle" />
+        <MdMail
+          className="text-light-title dark:text-dark-subtitle"
+          aria-hidden="true"
+        />
         <h1 className="text-2xl sm:text-3xl md:text-4xl text-light-title dark:text-dark-title">
           {t("contact.title")}
         </h1>
@@ -27,6 +30,7 @@ const Contact = () => {
         <form
           onSubmit={handleSubmit}
           className="w-full md:w-1/2 flex flex-col gap-4 mb-6 text-light-subtitle dark:text-dark-subtitle"
+          aria-labelledby="contact-form"
         >
           <label htmlFor="email">{t("contact.form.emailLabel")}</label>
           <input
@@ -40,6 +44,7 @@ const Contact = () => {
                        focus:outline-none bg-dark-title dark:bg-light-title
                        rounded-md transition-colors duration-300
                        focus:border-teal-500 hover:border-teal-500"
+            aria-required="true"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
 
@@ -54,6 +59,7 @@ const Contact = () => {
                        focus:outline-none bg-dark-title dark:bg-light-title
                        rounded-md transition-colors duration-300
                        focus:border-teal-500 hover:border-teal-500 resize-none"
+            aria-required="true"
           ></textarea>
           <ValidationError
             prefix="Message"
@@ -83,6 +89,7 @@ const Contact = () => {
           <Lottie
             className="contact-animation h-[355px]"
             animationData={contactAnimation}
+            aria-label="contact animation"
           />
         </div>
       </div>

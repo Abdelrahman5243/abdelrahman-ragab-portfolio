@@ -15,12 +15,12 @@ const Projects = () => {
       projects: [
         {
           projectTitle: projectTitles.reactProject,
-          imgPath: "./images/1.jpg",
+          imgPath: "./images/1.webp",
           description: descriptions.reactProject,
         },
         {
           projectTitle: projectTitles.reactCssProject,
-          imgPath: "./images/1.jpg",
+          imgPath: "./images/1.webp",
           description: descriptions.reactCssProject,
         },
       ],
@@ -30,7 +30,7 @@ const Projects = () => {
       projects: [
         {
           projectTitle: projectTitles.cssProject,
-          imgPath: "./images/1.jpg",
+          imgPath: "./images/1.webp",
           description: descriptions.cssProject,
         },
       ],
@@ -40,7 +40,7 @@ const Projects = () => {
       projects: [
         {
           projectTitle: projectTitles.jsProject,
-          imgPath: "./images/1.jpg",
+          imgPath: "./images/1.webp",
           description: descriptions.jsProject,
         },
       ],
@@ -61,8 +61,19 @@ const Projects = () => {
         [];
 
   return (
-    <section id="projects" className="w-full mx-auto my-8 flex flex-col md:flex-row gap-8 justify-between bg-light-secondary dark:bg-dark-secondary items-start">
-      <div className="flex flex-wrap justify-center md:flex-col gap-4">
+    <section
+      id="projects"
+      className="w-full mx-auto my-8 flex flex-col md:flex-row gap-8 justify-between bg-light-secondary dark:bg-dark-secondary items-start"
+      aria-labelledby="projects-title"
+    >
+      <h2 id="projects-title" className="sr-only">
+        Projects
+      </h2>
+      <div
+        className="flex flex-wrap justify-center md:flex-col gap-4"
+        role="tablist"
+        aria-label="Project categories"
+      >
         {allCategories.map((category, index) => (
           <button
             key={index}
@@ -72,13 +83,19 @@ const Projects = () => {
                 : "border border-light-border dark:border-dark-border"
             }`}
             onClick={() => handleClick(category)}
+            role="tab"
+            aria-selected={currentActive === category}
           >
             {category}
           </button>
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-8 justify-center w-full md:w-3/4">
+      <div
+        className="flex flex-wrap gap-8 justify-center w-full md:w-3/4"
+        role="tabpanel"
+        aria-labelledby="projects-title"
+      >
         <AnimatePresence>
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -87,8 +104,15 @@ const Projects = () => {
               animate={{ transform: "scale(1)" }}
               transition={{ type: "spring", damping: 8, stiffness: 50 }}
               className="card w-[300px] bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between"
+              aria-labelledby={`project-${index}-title`}
+              aria-describedby={`project-${index}-description`}
             >
-              <ProjectCard project={project} />
+              <ProjectCard
+                project={{
+                  ...project,
+                  imgAlt: `Image for ${project.projectTitle}`,
+                }}
+              />
             </motion.div>
           ))}
         </AnimatePresence>

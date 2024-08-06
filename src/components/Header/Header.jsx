@@ -48,42 +48,57 @@ const Header = () => {
   };
 
   return (
-      <header className="flex justify-between items-center py-4">
-        <button
-          onClick={() => setShowModal(true)}
-          className="centered header_btn md:hidden"
-        >
-          <AiOutlineMenu />
-        </button>
+    <header className="flex justify-between items-center py-4">
+      <button
+        onClick={() => setShowModal(true)}
+        className="centered header_btn md:hidden"
+        aria-label="Open menu"
+      >
+        <AiOutlineMenu />
+      </button>
 
-        <nav
-          className="p-4 px-6 border border-light-border dark:border-dark-border
-        rounded-full hidden md:flex ml-56"
+      <nav
+        className="p-4 px-6 border border-light-border dark:border-dark-border rounded-full hidden md:flex ml-56"
+        aria-label="Main navigation"
+      >
+        <ul className="flex gap-4">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.label} className="hover:text-dark-blue">
+              <a href={item.href} aria-label={item.label}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className="flex gap-4">
+        <button
+          onClick={toggleLanguage}
+          className="centered header_btn"
+          aria-label={`Switch to ${
+            currentLang === "en" ? "Arabic" : "English"
+          }`}
         >
-          <ul className="flex gap-4">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.label} className="hover:text-dark-blue">
-                <a href={item.href}>{item.label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="flex gap-4">
-          <button onClick={toggleLanguage} className="centered header_btn">
-            <MdOutlineTranslate />
-          </button>
-          <button onClick={toggleTheme} className="centered header_btn">
-            {theme === "dark" ? <MdDarkMode /> : <MdLightMode />}
-          </button>
-        </div>
-        {showModal && (
-          <Modal
-            ITEMS={NAV_ITEMS}
-            closeModal={closeModal}
-            showModal={showModal}
-          />
-        )}
-      </header>
+          <MdOutlineTranslate />
+        </button>
+        <button
+          onClick={toggleTheme}
+          className="centered header_btn"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          {theme === "dark" ? <MdDarkMode /> : <MdLightMode />}
+        </button>
+      </div>
+
+      {showModal && (
+        <Modal
+          ITEMS={NAV_ITEMS}
+          closeModal={closeModal}
+          showModal={showModal}
+        />
+      )}
+    </header>
   );
 };
 
