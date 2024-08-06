@@ -3,8 +3,8 @@ import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="card w-full bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between">
-      <img
+<>
+     <img
         src={project.imgPath}
         alt={project.projectTitle}
         className="w-full h-[200px] object-cover"
@@ -31,7 +31,7 @@ const ProjectCard = ({ project }) => {
           <AiFillGithub />
         </a>
       </div>
-    </div>
+      </> 
   );
 };
 

@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import useProjectTranslations from "./useProjectTranslations"; // Import the custom hook
 import "./projects.css";
+import project from "../../assets/1.webp";
 
 const Projects = () => {
   const [currentActive, setCurrentActive] = useState("All Projects");
@@ -15,12 +16,12 @@ const Projects = () => {
       projects: [
         {
           projectTitle: projectTitles.reactProject,
-          imgPath: "./images/1.webp",
+          imgPath: project,
           description: descriptions.reactProject,
         },
         {
           projectTitle: projectTitles.reactCssProject,
-          imgPath: "./images/1.webp",
+          imgPath: project,
           description: descriptions.reactCssProject,
         },
       ],
@@ -30,7 +31,7 @@ const Projects = () => {
       projects: [
         {
           projectTitle: projectTitles.cssProject,
-          imgPath: "./images/1.webp",
+          imgPath: project,
           description: descriptions.cssProject,
         },
       ],
@@ -40,7 +41,7 @@ const Projects = () => {
       projects: [
         {
           projectTitle: projectTitles.jsProject,
-          imgPath: "./images/1.webp",
+          imgPath: project,
           description: descriptions.jsProject,
         },
       ],
