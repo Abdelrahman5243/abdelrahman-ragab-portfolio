@@ -45,7 +45,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero flex my-8 items-center flex-col-reverse md:flex-row">
+    <section id="about" className="flex my-8 items-center flex-col-reverse md:flex-row">
       <div className="left-section w-full md:w-1/2">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { MdLightMode, MdDarkMode, MdOutlineTranslate } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai";
 import Modal from "./Modal";
@@ -17,8 +16,8 @@ const Header = () => {
   );
 
   const NAV_ITEMS = [
-    { label: t("navigation.Projects"), href: "#Projects" },
-    { label: t("navigation.about"), href: "#Projects" },
+    { label: t("navigation.Projects"), href: "#projects" },
+    { label: t("navigation.about"), href: "#about" },
     { label: t("navigation.contact"), href: "#contact" },
   ];
 
@@ -49,42 +48,42 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center py-4">
-      <button
-        onClick={() => setShowModal(true)}
-        className="centered header_btn md:hidden"
-      >
-        <AiOutlineMenu />
-      </button>
+      <header className="flex justify-between items-center py-4">
+        <button
+          onClick={() => setShowModal(true)}
+          className="centered header_btn md:hidden"
+        >
+          <AiOutlineMenu />
+        </button>
 
-      <nav
-        className="p-4 px-6 border border-light-border dark:border-dark-border
+        <nav
+          className="p-4 px-6 border border-light-border dark:border-dark-border
         rounded-full hidden md:flex ml-56"
-      >
-        <ul className="flex gap-4">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.label} className="hover:text-dark-blue">
-              <Link to={item.href}>{item.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="flex gap-4">
-        <button onClick={toggleLanguage} className="centered header_btn">
-          <MdOutlineTranslate />
-        </button>
-        <button onClick={toggleTheme} className="centered header_btn">
-          {theme === "dark" ? <MdDarkMode /> : <MdLightMode />}
-        </button>
-      </div>
-      {showModal && (
-        <Modal
-          ITEMS={NAV_ITEMS}
-          closeModal={closeModal}
-          showModal={showModal}
-        />
-      )}
-    </header>
+        >
+          <ul className="flex gap-4">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.label} className="hover:text-dark-blue">
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="flex gap-4">
+          <button onClick={toggleLanguage} className="centered header_btn">
+            <MdOutlineTranslate />
+          </button>
+          <button onClick={toggleTheme} className="centered header_btn">
+            {theme === "dark" ? <MdDarkMode /> : <MdLightMode />}
+          </button>
+        </div>
+        {showModal && (
+          <Modal
+            ITEMS={NAV_ITEMS}
+            closeModal={closeModal}
+            showModal={showModal}
+          />
+        )}
+      </header>
   );
 };
 

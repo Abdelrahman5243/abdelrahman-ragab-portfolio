@@ -1,53 +1,53 @@
 // App.js
 import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import MainPage from "./pages/MainPage";
-import ProjectDetails from "./pages/ProjectDetails";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import NotFound from "./pages/NotFound";
+import Hero from "./components/Hero/Hero";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
+import { SlArrowUp } from "react-icons/sl";
+
 const App = () => {
-  // const [showScrollButton, setShowScrollButton] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setShowScrollButton(window.scrollY > 300);
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollButton(window.scrollY > 300);
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <div
-        id="up"
-        className="container px-8 bg-light-secondary dark:bg-dark-secondary min-h-screen flex flex-col justify-between"
+        id="top"
+        className="relative container px-8 bg-light-secondary dark:bg-dark-secondary min-h-screen flex flex-col justify-between"
       >
-        <div>
-          <Header />
-          <div className="divider" />
-        </div>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/project-details/:id" element={<ProjectDetails />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <div>
-          <div className="divider" />
-          <Footer />
-        </div>
+        <Header />
+        <div className="divider"></div>
+        <Hero />
+        <div className="divider"></div>
+        <Projects />
+        <div className="divider"></div>
+        <Contact />
+        <div className="divider"></div>
+        <Footer />
+        <a
+          className={`bg-light-blue rounded-full w-10 h-10 flex justify-center items-center
+            fixed bottom-10 right-10 transition-opacity duration-1000 ${
+            showScrollButton ? "opacity-100" : "opacity-0"
+          }`}
+          href="#top"
+        >
+          <SlArrowUp />
+        </a>
       </div>
-      {/* <a
-        style={{ opacity: showScrollButton ? 1 : 0, transition: "1s" }}
-        href="#up"
-      >
-        up
-      </a> */}
     </>
   );
 };

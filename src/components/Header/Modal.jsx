@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { MdOutlineClose } from "react-icons/md";
 
 const Modal = ({ ITEMS, closeModal, showModal }) => {
@@ -46,9 +45,9 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
         <ul className="divide-y divide-opacity-10 dark:divide-dark-border capitalize">
           {ITEMS.map((item) => (
             <li key={item.label} className="py-3 hover:text-dark-blue">
-              <Link to={item.href} className="text-sm" onClick={closeModal}>
+              <a href={item.href} className="text-sm" onClick={closeModal}>
                 {item.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

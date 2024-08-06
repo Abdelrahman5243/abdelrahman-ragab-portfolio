@@ -11,7 +11,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("xqazqwbr");
 
   return (
-    <section className="contact-us my-8">
+    <section id="contact" className="my-8">
       <div className="flex gap-4 items-center mb-4 text-3xl">
         <MdMail className="text-light-title dark:text-dark-subtitle" />
         <h1 className="text-2xl sm:text-3xl md:text-4xl text-light-title dark:text-dark-title">

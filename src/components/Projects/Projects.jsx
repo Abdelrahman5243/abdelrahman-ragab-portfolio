@@ -61,7 +61,7 @@ const Projects = () => {
         [];
 
   return (
-    <section className="w-full mx-auto my-8 flex flex-col md:flex-row gap-8 justify-between bg-light-secondary dark:bg-dark-secondary items-start">
+    <section id="projects" className="w-full mx-auto my-8 flex flex-col md:flex-row gap-8 justify-between bg-light-secondary dark:bg-dark-secondary items-start">
       <div className="flex flex-wrap justify-center md:flex-col gap-4">
         {allCategories.map((category, index) => (
           <button

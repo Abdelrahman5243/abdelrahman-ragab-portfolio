@@ -5,8 +5,8 @@ const Footer = () => {
   const { t } = useTranslation();
 
   const NAV_ITEMS = [
-    { label: t("navigation.Projects"), href: "#Projects" },
-    { label: t("navigation.about"), href: "#Projects" },
+    { label: t("navigation.Projects"), href: "#projects" },
+    { label: t("navigation.about"), href: "#about" },
     { label: t("navigation.contact"), href: "#contact" },
   ];
 
