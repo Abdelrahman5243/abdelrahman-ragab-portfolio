@@ -51,7 +51,7 @@ const Hero = () => {
   return (
     <section
       id="about"
-      className="flex my-8 items-center flex-col-reverse md:flex-row"
+      className="flex my-8 items-center flex-col-reverse md:flex-row py-8"
       aria-labelledby="hero-title"
     >
       <div className="left-section w-full md:w-1/2">
@@ -68,7 +68,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-base sm:text-lg md:text-xl leading-6 mb-8 dark:text-dark-subtitle text-light-subtitle"
+          className="text-base sm:text-lg md:text-xl mb-8 dark:text-dark-subtitle text-light-subtitle"
+          style={{ lineHeight: 2 }}
         >
           {HERO_CONTENT.description}
         </motion.p>
