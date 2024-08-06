@@ -1,6 +1,5 @@
 import React from "react";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-import { MdArrowRightAlt } from "react-icons/md";
 
 const ProjectCard = ({ project }) => {
   return (
@@ -26,9 +25,7 @@ const ProjectCard = ({ project }) => {
               <AiFillGithub />
             </a>
           </div>
-          <span className="text-dark-blue flex items-center gap-2">
-            More <MdArrowRightAlt className="mt-2" />
-          </span>
+          <span className="text-dark-blue flex items-center gap-2">More</span>
         </div>
       </div>
     </div>
