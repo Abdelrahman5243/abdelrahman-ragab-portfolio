@@ -1,17 +1,57 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { myProjects, categories } from "./myProjects";
 import ProjectCard from "./ProjectCard";
+import useProjectTranslations from "./useProjectTranslations"; // Import the custom hook
 import "./projects.css";
 
 const Projects = () => {
   const [currentActive, setCurrentActive] = useState("All Projects");
+  const { categories, projectTitles, descriptions } = useProjectTranslations();
+
+  // Define the projects data with translations
+  const myProjects = [
+    {
+      category: categories.reactjs,
+      projects: [
+        {
+          projectTitle: projectTitles.reactProject,
+          imgPath: "./images/1.jpg",
+          description: descriptions.reactProject,
+        },
+        {
+          projectTitle: projectTitles.reactCssProject,
+          imgPath: "./images/1.jpg",
+          description: descriptions.reactCssProject,
+        },
+      ],
+    },
+    {
+      category: categories.htmlCss,
+      projects: [
+        {
+          projectTitle: projectTitles.cssProject,
+          imgPath: "./images/1.jpg",
+          description: descriptions.cssProject,
+        },
+      ],
+    },
+    {
+      category: categories.javascript,
+      projects: [
+        {
+          projectTitle: projectTitles.jsProject,
+          imgPath: "./images/1.jpg",
+          description: descriptions.jsProject,
+        },
+      ],
+    },
+  ];
 
   const handleClick = (category) => {
     setCurrentActive(category);
   };
 
-  const allCategories = ["All Projects", ...categories];
+  const allCategories = ["All Projects", ...Object.values(categories)];
 
   // Get the projects to display based on the selected category
   const filteredProjects =

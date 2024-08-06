@@ -6,12 +6,6 @@ import Modal from "./Modal";
 import "./header.css";
 import { useTranslation } from "react-i18next";
 
-const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const [theme, setTheme] = useState(
@@ -21,6 +15,12 @@ const Header = () => {
   const [currentLang, setCurrentLang] = useState(
     localStorage.getItem("language") || "en"
   );
+
+  const NAV_ITEMS = [
+    { label: t("navigation.Projects"), href: "#Projects" },
+    { label: t("navigation.about"), href: "#Projects" },
+    { label: t("navigation.contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     document.body.classList.toggle("light", theme === "light");
@@ -58,13 +58,13 @@ const Header = () => {
       </button>
 
       <nav
-        className=" p-4 px-6 border border-light-border dark:border-dark-border
+        className="p-4 px-6 border border-light-border dark:border-dark-border
         rounded-full hidden md:flex ml-56"
       >
         <ul className="flex gap-4">
           {NAV_ITEMS.map((item) => (
             <li key={item.label} className="hover:text-dark-blue">
-              <Link to={item.href}>{t(item.label)}</Link>
+              <Link to={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>

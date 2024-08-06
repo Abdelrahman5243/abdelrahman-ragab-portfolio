@@ -1,1 +1,44 @@
-{}
+{
+  "navigation": {
+    "Projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Software designer, founder, and amateur astronaut.",
+    "description": "I’m Ali Hassan, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+    "btn": "تحميل السيرة الذاتية"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Contact us for more information and get notified when we publish something new.",
+    "successMessage": "Your message has been sent successfully 👌",
+    "form": {
+      "emailLabel": "Email Address:",
+      "emailPlaceholder": "Your email",
+      "messageLabel": "Your Message:",
+      "messagePlaceholder": "Your message"
+    },
+    "submitButton": "Submit"
+  },
+  "projects": {
+    "categories": {
+      "reactjs": "ReactJS",
+      "htmlCss": "HTML & CSS",
+      "javascript": "JavaScript"
+    },
+    "projectTitles": {
+      "reactProject": "React Project",
+      "reactCssProject": "React & CSS Project",
+      "cssProject": "CSS Project",
+      "jsProject": "JavaScript Project"
+    },
+    "descriptions": {
+      "reactProject": "A React-based project demonstrating basic functionalities.",
+      "reactCssProject": "A project combining React with CSS for styling.",
+      "cssProject": "A pure CSS project showcasing design skills.",
+      "jsProject": "A JavaScript project highlighting core features."
+    }
+  },
+  "copyright": "© 2023 Spencer Sharp. All rights reserved."
+}

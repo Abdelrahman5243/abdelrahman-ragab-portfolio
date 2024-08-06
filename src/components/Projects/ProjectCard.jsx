@@ -25,7 +25,7 @@ const ProjectCard = ({ project }) => {
               <AiFillGithub />
             </a>
           </div>
-          <span className="text-dark-blue flex items-center gap-2">More</span>
+          {/* <span className="text-dark-blue flex items-center gap-2">More</span> */}
         </div>
       </div>
     </div>
