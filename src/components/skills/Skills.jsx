@@ -20,8 +20,8 @@ const Skills = () => {
 
   return (
     <div>
-      <div className="skills my-8 w-full">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl leading-tight mb-14 dark:text-dark-title text-light-title">
+      <div id="skills" className="my-8 w-full">
+        <h1 className="title">
           {t("skillsTitle")}
         </h1>
         <div className="flex flex-wrap gap-4 pl-5 dark:text-dark-subtitle text-light-subtitle">

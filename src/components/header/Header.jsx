@@ -4,6 +4,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Modal from "./Modal";
 import "./header.css";
 import { useTranslation } from "react-i18next";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -16,9 +17,10 @@ const Header = () => {
   );
 
   const NAV_ITEMS = [
-    { label: t("navigation.Projects"), href: "#projects" },
-    { label: t("navigation.about"), href: "#about" },
-    { label: t("navigation.contact"), href: "#contact" },
+    { label: t("navigation.skills"), href: `/#skills` },
+    { label: t("navigation.projects"), href: "/#projects" },
+    { label: t("navigation.about"), href: "/#about" },
+    { label: t("navigation.contact"), href: "/#contact" },
   ];
 
   useEffect(() => {
@@ -56,6 +58,13 @@ const Header = () => {
       >
         <AiOutlineMenu />
       </button>
+      {showModal && (
+        <Modal
+          ITEMS={NAV_ITEMS}
+          closeModal={closeModal}
+          showModal={showModal}
+        />
+      )}
 
       <nav
         className="p-4 px-6 border border-light-border dark:border-dark-border rounded-full hidden md:flex ml-56"
@@ -64,14 +73,16 @@ const Header = () => {
         <ul className="flex gap-4">
           {NAV_ITEMS.map((item) => (
             <li key={item.label} className="hover:text-dark-blue">
-              <a href={item.href} aria-label={item.label}>
+              <HashLink
+                to={ item.href }
+                aria-label={item.label}
+              >
                 {item.label}
-              </a>
+              </HashLink>
             </li>
           ))}
         </ul>
       </nav>
-
       <div className="flex gap-4">
         <button
           onClick={toggleLanguage}
@@ -90,14 +101,6 @@ const Header = () => {
           {theme === "dark" ? <MdDarkMode /> : <MdLightMode />}
         </button>
       </div>
-
-      {showModal && (
-        <Modal
-          ITEMS={NAV_ITEMS}
-          closeModal={closeModal}
-          showModal={showModal}
-        />
-      )}
     </header>
   );
 };

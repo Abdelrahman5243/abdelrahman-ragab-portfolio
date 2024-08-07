@@ -1,67 +1,53 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import useProjectTranslations from "./useProjectTranslations"; // Import the custom hook
 import "./projects.css";
-import project from "../../assets/1.webp";
 import { useTranslation } from "react-i18next";
+
+// Import images
+import project1 from "/images/1.jpg";
+import project2 from "/images/2.jpg";
 
 const Projects = () => {
   const [currentActive, setCurrentActive] = useState("All Projects");
-  const { categories, projectTitles, descriptions } = useProjectTranslations();
   const { t } = useTranslation("main");
 
-  // Define the projects data with translations
-  const myProjects = [
-    {
-      category: categories.reactjs,
-      projects: [
-        {
-          projectTitle: projectTitles.reactProject,
-          imgPath: project,
-          description: descriptions.reactProject,
-        },
-        {
-          projectTitle: projectTitles.reactCssProject,
-          imgPath: project,
-          description: descriptions.reactCssProject,
-        },
-      ],
-    },
-    {
-      category: categories.htmlCss,
-      projects: [
-        {
-          projectTitle: projectTitles.cssProject,
-          imgPath: project,
-          description: descriptions.cssProject,
-        },
-      ],
-    },
-    {
-      category: categories.javascript,
-      projects: [
-        {
-          projectTitle: projectTitles.jsProject,
-          imgPath: project,
-          description: descriptions.jsProject,
-        },
-      ],
-    },
-  ];
+  // Define project images mapped by ID
+  const projectImages = {
+    1: project1,
+    2: project2,
+    3: project1,
+    4: project1,
+  };
+
+  // Fetch projects data with translations
+  const projectsData = t("projects", { returnObjects: true });
+  console.log(projectsData);
+  // Map the projects data
+  const myProjects = Object.keys(projectsData).map((id) => ({
+    id,
+    categories: projectsData[id].categories,
+    title: projectsData[id].title,
+    description: projectsData[id].description,
+    imgPath: projectImages[id],
+  }));
+  console.log(myProjects);
 
   const handleClick = (category) => {
     setCurrentActive(category);
   };
 
-  const allCategories = ["All Projects", ...Object.values(categories)];
+  // Get unique categories
+  const allCategories = [
+    "All Projects",
+    ...new Set(myProjects.map((project) => project.categories)),
+  ];
 
   // Get the projects to display based on the selected category
   const filteredProjects =
     currentActive === "All Projects"
-      ? myProjects.flatMap((cat) => cat.projects)
-      : myProjects.find((cat) => cat.category === currentActive)?.projects ||
-        [];
+      ? myProjects
+      : myProjects.filter((project) => project.categories === currentActive);
 
   return (
     <section
@@ -69,11 +55,8 @@ const Projects = () => {
       className="w-full mx-auto my-8 bg-light-secondary dark:bg-dark-secondary"
       aria-labelledby="projects-title"
     >
-      <h1
-        id="projects-title"
-        className="text-2xl sm:text-3xl md:text-4xl leading-tight mb-14 dark:text-dark-title text-light-title"
-      >
-        {t("navigation.Projects")}
+      <h1 id="projects-title" className="title leading-tight mb-14">
+        {t("navigation.projects")}
       </h1>
       <div className="flex flex-col md:flex-row gap-8 justify-between items-start">
         <div
@@ -106,18 +89,19 @@ const Projects = () => {
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
               <motion.div
-                key={index}
+                key={project.id}
                 initial={{ transform: "scale(0.4)" }}
                 animate={{ transform: "scale(1)" }}
                 transition={{ type: "spring", damping: 8, stiffness: 50 }}
                 className="card w-[300px] bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between"
-                aria-labelledby={`project-${index}-title`}
-                aria-describedby={`project-${index}-description`}
+                aria-labelledby={`project-${project.id}-title`}
+                aria-describedby={`project-${project.id}-description`}
               >
                 <ProjectCard
+                  id={project.id}
                   project={{
                     ...project,
-                    imgAlt: `Image for ${project.projectTitle}`,
+                    imgAlt: `Image for ${project.title}`,
                   }}
                 />
               </motion.div>

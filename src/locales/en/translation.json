@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "home": "Home",
-    "Projects": "Projects",
+    "skills": "Skills",
+    "projects": "Projects",
     "about": "About",
     "contact": "Contact"
   },
@@ -12,34 +12,37 @@
   },
   "skillsTitle": "Skills",
   "contact": {
-    "title": "Contact Us",
-    "description": "Contact us for more information and get notified when we publish something new.",
-    "successMessage": "Your message has been sent successfully 👌",
+    "title": "Get in Touch",
+    "description": "Reach out to me for more details and stay updated with my latest projects.",
+    "successMessage": "Thank you! Your message has been sent successfully. 👌",
     "form": {
       "emailLabel": "Email Address:",
-      "emailPlaceholder": "Your email",
-      "messageLabel": "Your Message:",
-      "messagePlaceholder": "Your message"
+      "emailPlaceholder": "Enter your email",
+      "messageLabel": "Message:",
+      "messagePlaceholder": "Type your message here"
     },
-    "submitButton": "Submit"
+    "submitButton": "Send"
   },
   "projects": {
-    "categories": {
-      "reactjs": "ReactJS",
-      "htmlCss": "HTML & CSS",
-      "javascript": "JavaScript"
+    "1": {
+      "categories": "ReactJS",
+      "title": "Project 1",
+      "description": "Description of Project 1"
     },
-    "projectTitles": {
-      "reactProject": "React Project",
-      "reactCssProject": "React & CSS Project",
-      "cssProject": "CSS Project",
-      "jsProject": "JavaScript Project"
+    "2": {
+      "categories": "HTML & CSS",
+      "title": "Project 2",
+      "description": "Description of Project 2"
     },
-    "descriptions": {
-      "reactProject": "A React-based project demonstrating basic functionalities.",
-      "reactCssProject": "A project combining React with CSS for styling.",
-      "cssProject": "A pure CSS project showcasing design skills.",
-      "jsProject": "A JavaScript project highlighting core features."
+    "3": {
+      "categories": "JavaScript",
+      "title": "Project 3",
+      "description": "Description of Project 3"
+    },
+    "4": {
+      "categories": "ReactJS",
+      "title": "Project 4",
+      "description": "Description of Project 4"
     }
   },
   "copyright": "© 2024. All rights reserved."

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Lottie from "lottie-react";
 import contactAnimation from "../../assets/animation/contact.json";
-import Spinner from "../Spinner/Spinner";
+import Spinner from "../spinner/Spinner";
 import { MdMail } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 
@@ -17,14 +17,11 @@ const Contact = () => {
           className="text-light-title dark:text-dark-subtitle"
           aria-hidden="true"
         />
-        <h1 className="text-2xl sm:text-3xl md:text-4xl text-light-title dark:text-dark-title">
-          {t("contact.title")}
-        </h1>
+
+        <h1 className="title mb-0">{t("contact.title")}</h1>
       </div>
 
-      <p className="text-light-subtitle dark:text-dark-subtitle mb-8 leading-6">
-        {t("contact.description")}
-      </p>
+      <p className="description mb-8 leading-6">{t("contact.description")}</p>
 
       <div className="flex my-8 items-center flex-col-reverse md:flex-row">
         <form
