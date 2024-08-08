@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { MdOutlineClose } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Modal = ({ ITEMS, closeModal, showModal }) => {
   const modalRef = useRef(null);
@@ -44,13 +44,9 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
         <ul className="divide-y divide-opacity-10 dark:divide-dark-border capitalize">
           {ITEMS.map((item) => (
             <li key={item.label} className="py-3 hover:text-dark-blue">
-              <NavLink
-                to={item.href}
-                className="text-sm"
-                onClick={closeModal}
-              >
+              <HashLink to={item.href} className="text-sm" onClick={closeModal}>
                 {item.label}
-              </NavLink>
+              </HashLink>
             </li>
           ))}
         </ul>

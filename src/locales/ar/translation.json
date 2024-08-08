@@ -1,8 +1,8 @@
 {
   "navigation": {
+    "about": "من أنا",
     "skills": "المهارات",
     "projects": "المشروعات",
-    "about": "من أنا",
     "contact": "اتصل بي"
   },
   "hero": {
@@ -27,22 +27,65 @@
     "1": {
       "categories": "ReactJS",
       "title": "مشروع 1",
-      "description": "وصف المشروع 1"
+      "description": "وصف المشروع 1",
+      "details": "details",
+      "repo": "details",
+      "live": "details",
+      "technologies": ["JavaScript", "React", "Redux Toolkit"]
     },
     "2": {
       "categories": "HTML & CSS",
       "title": "مشروع 2",
-      "description": "وصف المشروع 2"
+      "description": "وصف المشروع 2",
+      "details": "details",
+      "repo": "details",
+      "live": "details",
+      "technologies": ["JavaScript", "React", "Redux Toolkit"]
     },
     "3": {
       "categories": "JavaScript",
       "title": "مشروع 3",
-      "description": "وصف المشروع 3"
+      "description": "وصف المشروع 3",
+      "details": "details",
+      "repo": "details",
+      "live": "details",
+      "technologies": ["JavaScript", "React", "Redux Toolkit"]
     },
     "4": {
       "categories": "ReactJS",
       "title": "مشروع 4",
-      "description": "وصف المشروع 4"
+      "description": "وصف المشروع 4",
+      "details": "details",
+      "repo": "details",
+      "live": "details",
+      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+    },
+    "5": {
+      "categories": "ReactJS",
+      "title": "مشروع 4",
+      "description": "وصف المشروع 4",
+      "details": "details",
+      "repo": "details",
+      "live": "details",
+      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+    },
+    "6": {
+      "categories": "ReactJS",
+      "title": "مشروع 4",
+      "description": "وصف المشروع 4",
+      "details": "details",
+      "repo": "details",
+      "live": "details",
+      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+    },
+    "7": {
+      "categories": "ReactJS",
+      "title": "مشروع 4",
+      "description": "وصف المشروع 4",
+      "details": "details",
+      "repo": "details",
+      "live": "details",
+      "technologies": ["JavaScript", "React", "Redux Toolkit"]
     }
   },
   "copyright": "© 2024. جميع الحقوق محفوظة."

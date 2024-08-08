@@ -17,9 +17,9 @@ const Header = () => {
   );
 
   const NAV_ITEMS = [
+    { label: t("navigation.about"), href: "/#about" },
     { label: t("navigation.skills"), href: `/#skills` },
     { label: t("navigation.projects"), href: "/#projects" },
-    { label: t("navigation.about"), href: "/#about" },
     { label: t("navigation.contact"), href: "/#contact" },
   ];
 
@@ -73,10 +73,7 @@ const Header = () => {
         <ul className="flex gap-4">
           {NAV_ITEMS.map((item) => (
             <li key={item.label} className="hover:text-dark-blue">
-              <HashLink
-                to={ item.href }
-                aria-label={item.label}
-              >
+              <HashLink to={item.href} aria-label={item.label}>
                 {item.label}
               </HashLink>
             </li>

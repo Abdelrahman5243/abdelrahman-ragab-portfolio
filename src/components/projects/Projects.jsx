@@ -4,34 +4,22 @@ import ProjectCard from "./ProjectCard";
 import "./projects.css";
 import { useTranslation } from "react-i18next";
 
-// Import images
-import project1 from "/images/1.jpg";
-import project2 from "/images/2.jpg";
-
 const Projects = () => {
   const [currentActive, setCurrentActive] = useState("All Projects");
   const { t } = useTranslation("main");
 
-  // Define project images mapped by ID
-  const projectImages = {
-    1: project1,
-    2: project2,
-    3: project1,
-    4: project1,
-  };
-
   // Fetch projects data with translations
   const projectsData = t("projects", { returnObjects: true });
-  console.log(projectsData);
+
   // Map the projects data
   const myProjects = Object.keys(projectsData).map((id) => ({
     id,
     categories: projectsData[id].categories,
     title: projectsData[id].title,
     description: projectsData[id].description,
-    imgPath: projectImages[id],
+    repo: projectsData[id].repo,
+    live: projectsData[id].live,
   }));
-  console.log(myProjects);
 
   const handleClick = (category) => {
     setCurrentActive(category);
@@ -101,7 +89,6 @@ const Projects = () => {
                   id={project.id}
                   project={{
                     ...project,
-                    imgAlt: `Image for ${project.title}`,
                   }}
                 />
               </motion.div>
