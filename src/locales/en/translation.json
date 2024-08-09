@@ -1,46 +1,119 @@
 {
   "navigation": {
-    "home": "Home",
-    "Projects": "Projects",
     "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
     "contact": "Contact"
   },
   "hero": {
     "title": "Front End Developer",
     "description": "I am Abdelrahman Ragab Abdelbaky, a software developer specializing in front-end web development. I graduated from the Faculty of Engineering at Zagazig University in 2024. I focus on delivering innovative and engaging solutions that enhance user experience. I am committed to developing cutting-edge projects that achieve excellence and keep up with the latest trends in technology.",
-    "btn": "Download CV"
+    "downloadCV": "Download CV",
+    "showCV": "Preview CV"
   },
   "skillsTitle": "Skills",
   "contact": {
-    "title": "Contact Us",
-    "description": "Contact us for more information and get notified when we publish something new.",
-    "successMessage": "Your message has been sent successfully 👌",
+    "title": "Get in Touch",
+    "description": "Reach out to me for more details and stay updated with my latest projects.",
+    "successMessage": "Thank you! Your message has been sent successfully. 👌",
     "form": {
       "emailLabel": "Email Address:",
-      "emailPlaceholder": "Your email",
-      "messageLabel": "Your Message:",
-      "messagePlaceholder": "Your message"
+      "emailPlaceholder": "Enter your email",
+      "messageLabel": "Message:",
+      "messagePlaceholder": "Type your message here"
     },
-    "submitButton": "Submit"
+    "submitButton": "Send"
   },
   "projects": {
-    "categories": {
-      "reactjs": "ReactJS",
-      "htmlCss": "HTML & CSS",
-      "javascript": "JavaScript"
+    "1": {
+      "categories": "ReactJS",
+      "title": "Website Builder",
+      "description": "A comprehensive website builder showcasing advanced web development techniques.",
+      "details": "This project provides a powerful platform for creating and customizing websites. It includes various features for building and managing website sections, templates, and content, demonstrating a deep understanding of web development principles and techniques. The application supports switching between Arabic and English, enhancing accessibility and user experience for a diverse audience. This project represents the culmination of skills acquired during studies.",
+      "imagePath": "/images/1.webp",
+      "repo": "https://github.com/abdelrahmanrgab/GraduationProject",
+      "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Redux Persist",
+        "Axios",
+        "i18next",
+        "React Router",
+        "Swiper",
+        "AOS"
+      ]
     },
-    "projectTitles": {
-      "reactProject": "React Project",
-      "reactCssProject": "React & CSS Project",
-      "cssProject": "CSS Project",
-      "jsProject": "JavaScript Project"
+    "2": {
+      "categories": "ReactJS",
+      "title": "Restaurant Market",
+      "description": "An e-commerce website for a restaurant and market, featuring product listings and cart functionality.",
+      "details": "This project is an e-commerce platform that combines restaurant and market functionalities. It allows users to browse products, add them to the cart, and view their selections. The design focuses on ease of use and a clean interface.",
+      "imagePath": "/images/2.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant--Market",
+      "live": "https://restaurant-e-commerce.vercel.app",
+      "technologies": ["JavaScript", "React", "Tailwind CSS", "React Slick"]
     },
-    "descriptions": {
-      "reactProject": "A React-based project demonstrating basic functionalities.",
-      "reactCssProject": "A project combining React with CSS for styling.",
-      "cssProject": "A pure CSS project showcasing design skills.",
-      "jsProject": "A JavaScript project highlighting core features."
+    "3": {
+      "categories": "ReactJS",
+      "title": "My portfolio",
+      "description": "A personal portfolio website showcasing Abdelrahman Ragab's work and projects.",
+      "details": "This portfolio website highlights personal projects, skills, and experiences. It includes sections for showcasing projects, a resume, contact information, and more. It is designed to effectively present Abdelrahman Ragab's professional profile.",
+      "imagePath": "/images/3.webp",
+      "repo": "https://github.com/abdelrahmanrgab/abdelrahman-ragab-portfolio",
+      "live": "https://abdelrahman-ragab-portfolio.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Formspree",
+        "Framer Motion",
+        "i18next",
+        "Lottie"
+      ]
+    },
+    "4": {
+      "categories": "ReactJS",
+      "title": "Quran App",
+      "description": "A React application to display Quranic verses with audio playback features.",
+      "details": "This project provides a comprehensive interface for displaying Quranic verses and listening to audio recitations. It includes features for navigating between surahs and verses, along with audio playback for each verse.",
+      "imagePath": "/images/4.webp",
+      "repo": "https://github.com/abdelrahmanrgab/quran-app",
+      "live": "https://quran-audio-app.vercel.app/",
+      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
+    },
+    "5": {
+      "categories": "ReactJS",
+      "title": "Restaurant Landing Page",
+      "description": "A landing page for a restaurant built using React with excellent responsiveness.",
+      "details": "This project showcases a modern restaurant landing page with great responsive design.",
+      "imagePath": "/images/5.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant-Landing-Page",
+      "live": "https://myapp2-kappa.vercel.app/",
+      "technologies": ["JavaScript", "React", "CSS"]
+    },
+    "6": {
+      "categories": "HTML & CSS & JS",
+      "title": "Game Hub Website",
+      "description": "A website designed as a hub for a variety of games, featuring a user-friendly interface for discovering games.",
+      "details": "This project provides a central platform for gamers to discover and explore games. It includes features such as game lists and interactive elements to enhance the user experience.",
+      "imagePath": "/images/6.webp",
+      "repo": "https://github.com/abdelrahmanrgab/game-hub-website",
+      "live": "https://abdelrahmanrgab.github.io/game-hub-website/",
+      "technologies": ["JavaScript", "CSS"]
+    },
+    "7": {
+      "categories": "HTML & CSS & JS",
+      "title": "Web Developer Showcase",
+      "description": "A showcase website designed to highlight web development skills and projects.",
+      "details": "This project serves as a portfolio website to showcase various web development projects, skills, and technologies used. It aims to provide a comprehensive view of web development expertise through engaging and interactive content.",
+      "imagePath": "/images/7.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Web-Developer-Showcase",
+      "live": "https://abdelrahmanrgab.github.io/Web-Developer-Showcase",
+      "technologies": ["HTML", "CSS"]
     }
   },
+  "technologiesTitle": "Technologies Used",
   "copyright": "© 2024. All rights reserved."
 }

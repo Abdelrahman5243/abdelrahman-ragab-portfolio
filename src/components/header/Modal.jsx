@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { MdOutlineClose } from "react-icons/md";
+import { HashLink } from "react-router-hash-link";
 
 const Modal = ({ ITEMS, closeModal, showModal }) => {
   const modalRef = useRef(null);
@@ -32,22 +33,20 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
         className="model max-w-[90%] w-[330px] relative bg-light-secondary dark:bg-dark-bgHeader modal-animation
          mt-10 rounded-lg p-8 flex flex-col gap-4 text-light-subtitle dark:text-dark-subtitle"
       >
-        <div className="flex justify-between items-center">
-          <h1 className="text-xl">Navigation</h1>
-          <button
-            onClick={closeModal}
-            aria-label="Close modal"
-          >
-            <MdOutlineClose />
-          </button>
-        </div>
+        <button
+          className="self-end"
+          onClick={closeModal}
+          aria-label="Close modal"
+        >
+          <MdOutlineClose />
+        </button>
 
         <ul className="divide-y divide-opacity-10 dark:divide-dark-border capitalize">
           {ITEMS.map((item) => (
             <li key={item.label} className="py-3 hover:text-dark-blue">
-              <a href={item.href} className="text-sm" onClick={closeModal}>
+              <HashLink to={item.href} className="text-sm" onClick={closeModal}>
                 {item.label}
-              </a>
+              </HashLink>
             </li>
           ))}
         </ul>

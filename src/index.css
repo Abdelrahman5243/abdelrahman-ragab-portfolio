@@ -21,6 +21,12 @@
     width: calc(100% + 4rem);
     margin-left: -2rem;
   }
+  .title {
+    @apply text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 dark:text-dark-title text-light-title;
+  }
+  .description {
+    @apply text-base sm:text-lg md:text-xl mb-8 dark:text-dark-subtitle text-light-subtitle;
+  }
   body.arabic .divider {
     margin-left: 0;
     margin-right: -2rem;
