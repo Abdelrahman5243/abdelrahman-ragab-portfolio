@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import Lottie from "lottie-react";
+import devAnimation from "../../assets/animation/dev.json";
 import { AiFillLinkedin, AiOutlineCodepen, AiFillGithub } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
 import { HiDownload } from "react-icons/hi";
-import Lottie from "lottie-react";
-import devAnimation from "../../assets/animation/dev.json";
-import cv from "../../assets/cv.pdf";
-import { useTranslation } from "react-i18next";
+import { IoOpenOutline } from "react-icons/io5";
+import cv from "../../assets/Abdelrahman-Ragab-Abdelbaky-CV.pdf";
 
 const Hero = () => {
   const { t } = useTranslation("main");
@@ -15,35 +16,37 @@ const Hero = () => {
   const HERO_CONTENT = {
     title: t("hero.title"),
     description: t("hero.description"),
-    btn: t("hero.btn"),
+    downloadCV: t("hero.downloadCV"),
+    showCV: t("hero.showCV"),
+    cvUrl: "https://flowcv.com/resume/gsawfcbwff",
     socialLinks: [
       {
-        href: "https://www.linkedin.com",
+        href: "abdelrahman.ragab.abdelbaky@gmail.com",
+        icon: (
+          <BiLogoGmail className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
+        ),
+        ariaLabel: "Send an email",
+      },
+      {
+        href: "https://linkedin.com/in/abdelrahman-ragab-9443b8264",
         icon: (
           <AiFillLinkedin className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
         ),
         ariaLabel: "LinkedIn profile",
       },
       {
-        href: "https://codepen.io",
-        icon: (
-          <AiOutlineCodepen className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
-        ),
-        ariaLabel: "CodePen profile",
-      },
-      {
-        href: "https://github.com",
+        href: "https://github.com/abdelrahmanrgab",
         icon: (
           <AiFillGithub className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
         ),
         ariaLabel: "GitHub profile",
       },
       {
-        href: "mailto:example@example.com",
+        href: "https://codepen.io/Abdelrahman-Ragab",
         icon: (
-          <BiLogoGmail className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
+          <AiOutlineCodepen className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
         ),
-        ariaLabel: "Send an email",
+        ariaLabel: "CodePen profile",
       },
     ],
   };
@@ -73,18 +76,33 @@ const Hero = () => {
         >
           {HERO_CONTENT.description}
         </motion.p>
-        <motion.a
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          href={cv}
-          download="Ali_Hassan_Cv.pdf"
-          className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center"
-          aria-label="Download CV"
-        >
-          {HERO_CONTENT.btn}
-          <HiDownload />
-        </motion.a>
+        <div className="flex flex-wrap gap-4 items-center">
+          <motion.a
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            href={cv}
+            download="Abdelrahman-Ragab-Abdelbaky-CV.pdf"
+            className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center"
+            aria-label="Download CV"
+          >
+            {HERO_CONTENT.downloadCV}
+            <HiDownload />
+          </motion.a>
+
+          <motion.a
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            href={HERO_CONTENT.cvUrl}
+            target="_blank"
+            className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center"
+            aria-label="Preview CV"
+          >
+            {HERO_CONTENT.showCV}
+            <IoOpenOutline />
+          </motion.a>
+        </div>
         <div className="flex text-lg gap-6 dark:text-dark-subtitle text-light-subtitle">
           {HERO_CONTENT.socialLinks.map((link, index) => (
             <motion.a
