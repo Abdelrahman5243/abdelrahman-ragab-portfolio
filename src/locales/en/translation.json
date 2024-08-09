@@ -29,7 +29,7 @@
       "title": "Website Builder",
       "description": "A comprehensive website builder showcasing advanced web development techniques.",
       "details": "This project provides a powerful platform for creating and customizing websites. It includes various features for building and managing website sections, templates, and content, demonstrating a deep understanding of web development principles and techniques. The application supports switching between Arabic and English, enhancing accessibility and user experience for a diverse audience. This project represents the culmination of skills acquired during studies.",
-      "imagePath":"/images/1.webp",
+      "imagePath": "/images/1.webp",
       "repo": "https://github.com/abdelrahmanrgab/GraduationProject",
       "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
       "technologies": [
@@ -113,5 +113,6 @@
       "technologies": ["HTML", "CSS"]
     }
   },
+  "technologiesTitle": "Technologies Used",
   "copyright": "© 2024. All rights reserved."
 }

@@ -36,17 +36,17 @@ const ProjectDetails = () => {
           />
           <h1 className="title  mb-0">{projectData.title}</h1>
         </div>
-        <p className="description ml-10">{projectData.details}</p>
+        <p className="description mx-9">{projectData.details}</p>
         <div className="flex gap-4 items-center my-8 text-3xl">
           <PiDotsSixVerticalThin
             className="text-light-subtitle dark:text-dark-subtitle"
             aria-hidden="true"
           />
           <h1 className="text-xl sm:text-2xl md:text-3xl lead dark:text-dark-title text-light-title">
-            technologies used
+            {t("technologiesTitle")}
           </h1>
         </div>
-        <div className="flex flex-wrap gap-4 pl-8 mb-10 dark:text-dark-subtitle text-light-subtitle">
+        <div className="flex flex-wrap gap-4 px-8 mb-10 dark:text-dark-subtitle text-light-subtitle">
           {projectData.technologies.map((technology, index) => (
             <span
               key={index}
