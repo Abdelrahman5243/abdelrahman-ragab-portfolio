@@ -21,7 +21,7 @@ const Hero = () => {
     cvUrl: "https://flowcv.com/resume/gsawfcbwff",
     socialLinks: [
       {
-        href: "abdelrahman.ragab.abdelbaky@gmail.com",
+        href: "mailto:abdelrahman.ragab.abdelbaky@gmail.com",
         icon: (
           <BiLogoGmail className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer" />
         ),
