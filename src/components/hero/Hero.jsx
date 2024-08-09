@@ -76,14 +76,14 @@ const Hero = () => {
         >
           {HERO_CONTENT.description}
         </motion.p>
-        <div className="flex flex-wrap gap-4 items-center">
+        <div className="flex flex-wrap gap-4 mb-8">
           <motion.a
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
             href={cv}
             download="Abdelrahman-Ragab-Abdelbaky-CV.pdf"
-            className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center"
+            className="w-48 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
             aria-label="Download CV"
           >
             {HERO_CONTENT.downloadCV}
@@ -96,7 +96,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 1 }}
             href={HERO_CONTENT.cvUrl}
             target="_blank"
-            className="max-w-max mb-8 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center"
+            className="w-48 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
             aria-label="Preview CV"
           >
             {HERO_CONTENT.showCV}
