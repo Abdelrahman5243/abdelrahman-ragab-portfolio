@@ -3,22 +3,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import "./projects.css";
 import { useTranslation } from "react-i18next";
+import { LiaProjectDiagramSolid } from "react-icons/lia";
 
 const Projects = () => {
   const [currentActive, setCurrentActive] = useState("All Projects");
   const { t } = useTranslation("main");
 
-  // Fetch projects data with translations
   const projectsData = t("projects", { returnObjects: true });
 
-  // Map the projects data
   const myProjects = Object.keys(projectsData).map((id) => ({
     id,
-    categories: projectsData[id].categories,
-    title: projectsData[id].title,
-    description: projectsData[id].description,
-    repo: projectsData[id].repo,
-    live: projectsData[id].live,
+    ...projectsData[id],
   }));
 
   const handleClick = (category) => {
@@ -43,9 +38,16 @@ const Projects = () => {
       className="w-full mx-auto my-8 bg-light-secondary dark:bg-dark-secondary"
       aria-labelledby="projects-title"
     >
-      <h1 id="projects-title" className="title leading-tight mb-14">
-        {t("navigation.projects")}
-      </h1>
+      <div className="flex gap-4 items-center text-3xl mb-14">
+        <LiaProjectDiagramSolid
+          className="text-light-subtitle dark:text-dark-subtitle"
+          aria-hidden="true"
+        />
+        <h1 id="projects-title" className="title leading-tight mb-0">
+          {t("navigation.projects")}
+        </h1>
+      </div>
+
       <div className="flex flex-col md:flex-row gap-8 justify-between items-start">
         <div
           className="flex flex-wrap justify-center md:flex-col gap-4"

@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { HiOutlineRocketLaunch } from "react-icons/hi2";
 
 const mySkills = [
   "JavaScript",
@@ -21,9 +22,13 @@ const Skills = () => {
   return (
     <div>
       <div id="skills" className="my-8 w-full">
-        <h1 className="title">
-          {t("skillsTitle")}
-        </h1>
+        <div className="flex gap-4 items-center mb-8 text-3xl">
+          <HiOutlineRocketLaunch
+            className="text-light-subtitle dark:text-dark-subtitle"
+            aria-hidden="true"
+          />
+          <h1 className="title  mb-0">{t("skillsTitle")}</h1>
+        </div>
         <div className="flex flex-wrap gap-4 pl-5 dark:text-dark-subtitle text-light-subtitle">
           {mySkills.map((skill, index) => (
             <span

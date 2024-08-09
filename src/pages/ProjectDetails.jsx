@@ -2,18 +2,14 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { LuArrowLeft } from "react-icons/lu";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { PiDotsSixVerticalThin } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
 
 const ProjectDetails = () => {
   const { id } = useParams();
   const { i18n, t } = useTranslation("main");
-
   const language = i18n.language;
-
   const projectData = t(`projects.${id}`, { returnObjects: true });
-  console.log(projectData);
-  // Construct the image path based on the id
-  const imagePath = `/images/project (${id}).webp`;
 
   return (
     <>
@@ -26,16 +22,31 @@ const ProjectDetails = () => {
           Home
         </Link>
         <div className="overflow-hidden max-h-[650px]">
-          <img src={imagePath} alt="design" className="mx-auto mb-16 w-full" />
+          <img
+            src={projectData.imagePath}
+            alt="design"
+            className="mx-auto mb-16 w-full"
+          />
         </div>
 
-        <h1 className="title my-4 mt-8">{projectData.title}</h1>
-        <p className="description">{projectData.details}</p>
-
-        <h3 className="text-xl sm:text-2xl md:text-3xl leading-tight mb-6 dark:text-dark-title text-light-title">
-          technologies used
-        </h3>
-        <div className="flex flex-wrap gap-4 pl-5 mb-10 dark:text-dark-subtitle text-light-subtitle">
+        <div className="flex gap-4 items-center my-8 text-3xl">
+          <PiDotsSixVerticalThin
+            className="text-light-subtitle dark:text-dark-subtitle"
+            aria-hidden="true"
+          />
+          <h1 className="title  mb-0">{projectData.title}</h1>
+        </div>
+        <p className="description ml-10">{projectData.details}</p>
+        <div className="flex gap-4 items-center my-8 text-3xl">
+          <PiDotsSixVerticalThin
+            className="text-light-subtitle dark:text-dark-subtitle"
+            aria-hidden="true"
+          />
+          <h1 className="text-xl sm:text-2xl md:text-3xl lead dark:text-dark-title text-light-title">
+            technologies used
+          </h1>
+        </div>
+        <div className="flex flex-wrap gap-4 pl-8 mb-10 dark:text-dark-subtitle text-light-subtitle">
           {projectData.technologies.map((technology, index) => (
             <span
               key={index}

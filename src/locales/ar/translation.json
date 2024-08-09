@@ -26,66 +26,91 @@
   "projects": {
     "1": {
       "categories": "ReactJS",
-      "title": "مشروع 1",
-      "description": "وصف المشروع 1",
-      "details": "details",
-      "repo": "details",
-      "live": "details",
-      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+      "title": "منشئ المواقع",
+      "description": "أداة شاملة لإنشاء المواقع تعرض تقنيات تطوير الويب المتقدمة.",
+      "details": "يقدم هذا المشروع منصة قوية لإنشاء وتخصيص المواقع. يتضمن ميزات متنوعة لبناء وإدارة أقسام الموقع، والقوالب، والمحتوى، مما يوضح فهمًا عميقًا لمبادئ وتقنيات تطوير الويب. يدعم التطبيق التبديل بين اللغتين العربية والإنجليزية، مما يعزز الوصول وتجربة المستخدم لجمهور متنوع. يمثل هذا المشروع تتويجًا للمهارات التي تم اكتسابها خلال الدراسات.",
+      "imagePath": "/images/1.webp",
+      "repo": "https://github.com/abdelrahmanrgab/GraduationProject",
+      "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Redux Persist",
+        "Axios",
+        "i18next",
+        "React Router",
+        "Swiper",
+        "AOS"
+      ]
     },
     "2": {
-      "categories": "HTML & CSS",
-      "title": "مشروع 2",
-      "description": "وصف المشروع 2",
-      "details": "details",
-      "repo": "details",
-      "live": "details",
-      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+      "categories": "ReactJS",
+      "title": "سوق المطعم",
+      "description": "موقع تجارة إلكترونية لمطعم وسوق، يتميز بقوائم المنتجات ووظيفة عربة التسوق.",
+      "details": "يعد هذا المشروع منصة تجارة إلكترونية تجمع بين وظائف المطاعم والأسواق. يتيح للمستخدمين تصفح المنتجات، وإضافتها إلى عربة التسوق، وعرض اختياراتهم. يركز التصميم على سهولة الاستخدام وواجهة نظيفة.",
+      "imagePath": "/images/2.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant--Market",
+      "live": "https://restaurant-e-commerce.vercel.app",
+      "technologies": ["JavaScript", "React", "Tailwind CSS", "React Slick"]
     },
     "3": {
-      "categories": "JavaScript",
-      "title": "مشروع 3",
-      "description": "وصف المشروع 3",
-      "details": "details",
-      "repo": "details",
-      "live": "details",
-      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+      "categories": "ReactJS",
+      "title": "معرض اعمالي",
+      "description": "موقع محفظة شخصية يعرض أعمال ومشاريع عبد الرحمن رجب.",
+      "details": "يبرز هذا الموقع الشخصي المشاريع والمهارات والخبرات الشخصية. يتضمن أقسامًا لعرض المشاريع، والسيرة الذاتية، ومعلومات الاتصال، والمزيد. تم تصميمه لعرض الملف الشخصي المهني لعبد الرحمن رجب بفعالية.",
+      "imagePath": "/images/3.webp",
+      "repo": "https://github.com/abdelrahmanrgab/abdelrahman-ragab-portfolio",
+      "live": "https://abdelrahman-ragab-portfolio.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Formspree",
+        "Framer Motion",
+        "i18next",
+        "Lottie"
+      ]
     },
     "4": {
       "categories": "ReactJS",
-      "title": "مشروع 4",
-      "description": "وصف المشروع 4",
-      "details": "details",
-      "repo": "details",
-      "live": "details",
-      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+      "title": "تطبيق القرآن",
+      "description": "تطبيق React لعرض الآيات القرآنية مع ميزات تشغيل الصوت.",
+      "details": "يوفر هذا المشروع واجهة شاملة لعرض الآيات القرآنية والاستماع إلى تلاوات صوتية. يتضمن ميزات للتنقل بين السور والآيات، إلى جانب تشغيل الصوت لكل آية.",
+      "imagePath": "/images/4.webp",
+      "repo": "https://github.com/abdelrahmanrgab/quran-app",
+      "live": "https://quran-audio-app.vercel.app/",
+      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
     },
     "5": {
       "categories": "ReactJS",
-      "title": "مشروع 4",
-      "description": "وصف المشروع 4",
-      "details": "details",
-      "repo": "details",
-      "live": "details",
-      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+      "title": "صفحة هبوط للمطعم",
+      "description": "صفحة هبوط لمطعم مبنية باستخدام React مع استجابة ممتازة.",
+      "details": "يبرز هذا المشروع صفحة هبوط حديثة للمطعم مع تصميم استجابة ممتازة.",
+      "imagePath": "/images/5.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant-Landing-Page",
+      "live": "https://myapp2-kappa.vercel.app/",
+      "technologies": ["JavaScript", "React", "CSS"]
     },
     "6": {
-      "categories": "ReactJS",
-      "title": "مشروع 4",
-      "description": "وصف المشروع 4",
-      "details": "details",
-      "repo": "details",
-      "live": "details",
-      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+      "categories": "HTML & CSS & JS",
+      "title": "موقع مركز الألعاب",
+      "description": "موقع مصمم ليكون مركزًا لمجموعة متنوعة من الألعاب، يتميز بواجهة مستخدم سهلة لاكتشاف الألعاب.",
+      "details": "يوفر هذا المشروع منصة مركزية للاعبين لاكتشاف واستكشاف الألعاب. يتضمن ميزات مثل قوائم الألعاب والعناصر التفاعلية لتعزيز تجربة المستخدم.",
+      "imagePath": "/images/6.webp",
+      "repo": "https://github.com/abdelrahmanrgab/game-hub-website",
+      "live": "https://abdelrahmanrgab.github.io/game-hub-website/",
+      "technologies": ["JavaScript", "CSS"]
     },
     "7": {
-      "categories": "ReactJS",
-      "title": "مشروع 4",
-      "description": "وصف المشروع 4",
-      "details": "details",
-      "repo": "details",
-      "live": "details",
-      "technologies": ["JavaScript", "React", "Redux Toolkit"]
+      "categories": "HTML & CSS & JS",
+      "title": "عرض مطوري الويب",
+      "description": "موقع عرض مصمم لتسليط الضوء على مهارات ومشاريع تطوير الويب.",
+      "details": "يعمل هذا المشروع كموقع محفظة لعرض مشاريع تطوير الويب المختلفة والمهارات والتقنيات المستخدمة. يهدف إلى تقديم رؤية شاملة لخبرة تطوير الويب من خلال محتوى تفاعلي وجذاب.",
+      "imagePath": "/images/7.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Web-Developer-Showcase",
+      "live": "https://abdelrahmanrgab.github.io/Web-Developer-Showcase",
+      "technologies": ["HTML", "CSS"]
     }
   },
   "copyright": "© 2024. جميع الحقوق محفوظة."

@@ -26,70 +26,10 @@
   "projects": {
     "1": {
       "categories": "ReactJS",
-      "title": "Restaurant Landing Page",
-      "description": "A responsive restaurant landing page built with React.",
-      "details": "This project showcases a landing page for a restaurant with modern design and responsive features.",
-      "repo": "https://github.com/abdelrahmanrgab/-Restaurant-Landing-Page",
-      "live": "https://restaurant-landing-page.vercel.app/",
-      "technologies": ["JavaScript", "React", "Bootstrap"]
-    },
-    "2": {
-      "categories": "ReactJS",
-      "title": "Quran App",
-      "description": "A React application for displaying Quranic verses with audio playback and translation features.",
-      "details": "This project provides a comprehensive interface for viewing Quranic verses, listening to audio recitations, and reading translations. It includes features for navigating through surahs and ayahs, as well as playing audio for each verse.",
-      "repo": "https://github.com/abdelrahmanrgab/quran-app",
-      "live": "https://quran-app.vercel.app/",
-      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
-    },
-    "3": {
-      "categories": "ReactJS",
-      "title": "Restaurant Market",
-      "description": "An e-commerce website for a restaurant and market, featuring product listings and cart functionalities.",
-      "details": "This project is an e-commerce platform that combines restaurant and market functionalities. It allows users to browse products, add them to a cart, and view their selections. The design focuses on usability and a clean interface.",
-      "repo": "https://github.com/abdelrahmanrgab/Restaurant--Market",
-      "live": "https://restaurant-market.vercel.app/",
-      "technologies": ["JavaScript", "React", "Tailwind CSS"]
-    },
-    "4": {
-      "categories": "Html & css & js",
-      "title": "Game Hub Website",
-      "description": "A website designed as a hub for various games, featuring a user-friendly interface for discovering and playing games.",
-      "details": "This project provides a centralized platform for gamers to discover, explore, and play different games. It includes features like game listings, search functionality, and interactive elements to enhance user experience.",
-      "repo": "https://github.com/abdelrahmanrgab/game-hub-website",
-      "live": "https://abdelrahmanrgab.github.io/game-hub-website/",
-      "technologies": ["JavaScript", "CSS"]
-    },
-    "5": {
-      "categories": "ReactJS",
-      "title": "My Portfolio",
-      "description": "A personal portfolio website showcasing the work and projects of Abdelrahman Ragab.",
-      "details": "This portfolio website highlights personal projects, skills, and experiences. It includes sections for project showcases, a biography, contact information, and more, all designed to present Abdelrahman Ragab's professional profile effectively.",
-      "repo": "https://github.com/abdelrahmanrgab/abdelrahman-ragab-portfolio",
-      "live": "https://abdelrahman-ragab-portfolio.vercel.app/",
-      "technologies": [
-        "React",
-        "Tailwind CSS",
-        "Formspree",
-        "Framer Motion",
-        "i18next",
-        "Lottie"
-      ]
-    },
-    "6": {
-      "categories": "Html & css & js",
-      "title": "Web Developer Showcase",
-      "description": "A showcase website designed to highlight web development skills and projects.",
-      "details": "This project serves as a portfolio website to display various web development projects, skills, and technologies used. It aims to present a comprehensive view of web development expertise through interactive and engaging content.",
-      "repo": "https://github.com/abdelrahmanrgab/Web-Developer-Showcase",
-      "live": "https://abdelrahmanrgab.github.io/Web-Developer-Showcase",
-      "technologies": ["Html", "CSS"]
-    },
-    "7": {
-      "categories": "ReactJS",
       "title": "Website Builder",
-      "description": "A comprehensive website builder application developed as a graduation project, showcasing advanced web development techniques and functionalities.",
-      "details": "This project provides a robust platform for building and customizing websites. It includes various features for creating and managing website sections, templates, and content, demonstrating a deep understanding of web development principles and technologies. The application supports switching between Arabic and English languages using 'i18next', enhancing accessibility and user experience for a diverse audience. It represents the culmination of skills acquired during academic studies.",
+      "description": "A comprehensive website builder showcasing advanced web development techniques.",
+      "details": "This project provides a powerful platform for creating and customizing websites. It includes various features for building and managing website sections, templates, and content, demonstrating a deep understanding of web development principles and techniques. The application supports switching between Arabic and English, enhancing accessibility and user experience for a diverse audience. This project represents the culmination of skills acquired during studies.",
+      "imagePath":"/images/1.webp",
       "repo": "https://github.com/abdelrahmanrgab/GraduationProject",
       "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
       "technologies": [
@@ -104,6 +44,73 @@
         "Swiper",
         "AOS"
       ]
+    },
+    "2": {
+      "categories": "ReactJS",
+      "title": "Restaurant Market",
+      "description": "An e-commerce website for a restaurant and market, featuring product listings and cart functionality.",
+      "details": "This project is an e-commerce platform that combines restaurant and market functionalities. It allows users to browse products, add them to the cart, and view their selections. The design focuses on ease of use and a clean interface.",
+      "imagePath": "/images/2.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant--Market",
+      "live": "https://restaurant-e-commerce.vercel.app",
+      "technologies": ["JavaScript", "React", "Tailwind CSS", "React Slick"]
+    },
+    "3": {
+      "categories": "ReactJS",
+      "title": "My portfolio",
+      "description": "A personal portfolio website showcasing Abdelrahman Ragab's work and projects.",
+      "details": "This portfolio website highlights personal projects, skills, and experiences. It includes sections for showcasing projects, a resume, contact information, and more. It is designed to effectively present Abdelrahman Ragab's professional profile.",
+      "imagePath": "/images/3.webp",
+      "repo": "https://github.com/abdelrahmanrgab/abdelrahman-ragab-portfolio",
+      "live": "https://abdelrahman-ragab-portfolio.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Formspree",
+        "Framer Motion",
+        "i18next",
+        "Lottie"
+      ]
+    },
+    "4": {
+      "categories": "ReactJS",
+      "title": "Quran App",
+      "description": "A React application to display Quranic verses with audio playback features.",
+      "details": "This project provides a comprehensive interface for displaying Quranic verses and listening to audio recitations. It includes features for navigating between surahs and verses, along with audio playback for each verse.",
+      "imagePath": "/images/4.webp",
+      "repo": "https://github.com/abdelrahmanrgab/quran-app",
+      "live": "https://quran-audio-app.vercel.app/",
+      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
+    },
+    "5": {
+      "categories": "ReactJS",
+      "title": "Restaurant Landing Page",
+      "description": "A landing page for a restaurant built using React with excellent responsiveness.",
+      "details": "This project showcases a modern restaurant landing page with great responsive design.",
+      "imagePath": "/images/5.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant-Landing-Page",
+      "live": "https://myapp2-kappa.vercel.app/",
+      "technologies": ["JavaScript", "React", "CSS"]
+    },
+    "6": {
+      "categories": "HTML & CSS & JS",
+      "title": "Game Hub Website",
+      "description": "A website designed as a hub for a variety of games, featuring a user-friendly interface for discovering games.",
+      "details": "This project provides a central platform for gamers to discover and explore games. It includes features such as game lists and interactive elements to enhance the user experience.",
+      "imagePath": "/images/6.webp",
+      "repo": "https://github.com/abdelrahmanrgab/game-hub-website",
+      "live": "https://abdelrahmanrgab.github.io/game-hub-website/",
+      "technologies": ["JavaScript", "CSS"]
+    },
+    "7": {
+      "categories": "HTML & CSS & JS",
+      "title": "Web Developer Showcase",
+      "description": "A showcase website designed to highlight web development skills and projects.",
+      "details": "This project serves as a portfolio website to showcase various web development projects, skills, and technologies used. It aims to provide a comprehensive view of web development expertise through engaging and interactive content.",
+      "imagePath": "/images/7.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Web-Developer-Showcase",
+      "live": "https://abdelrahmanrgab.github.io/Web-Developer-Showcase",
+      "technologies": ["HTML", "CSS"]
     }
   },
   "copyright": "© 2024. All rights reserved."

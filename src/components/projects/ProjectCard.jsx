@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
+
 import { LuArrowLeft } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -7,12 +8,11 @@ import { useTranslation } from "react-i18next";
 const ProjectCard = ({ project, id }) => {
   const { i18n } = useTranslation("main");
   const language = i18n.language;
-  const imagePath = `/images/project (${id}).webp`;
 
   return (
     <>
       <img
-        src={imagePath}
+        src={project.imagePath}
         alt="project"
         className="w-full h-[200px] object-cover"
       />
