@@ -87,6 +87,7 @@ const Contact = () => {
             className="contact-animation h-[355px]"
             animationData={contactAnimation}
             aria-label="contact animation"
+            role="img"
           />
         </div>
       </div>

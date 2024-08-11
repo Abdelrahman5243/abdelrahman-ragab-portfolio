@@ -57,7 +57,7 @@ const Hero = () => {
       className="flex my-8 items-center flex-col-reverse md:flex-row py-8"
       aria-labelledby="hero-title"
     >
-      <div className="left-section w-full md:w-1/2">
+      <div className="left-section w-full md:w-1/2 relative">
         <motion.h1
           id="hero-title"
           initial={{ opacity: 0, y: -20 }}
@@ -76,14 +76,14 @@ const Hero = () => {
         >
           {HERO_CONTENT.description}
         </motion.p>
-        <div className="flex flex-wrap gap-4 mb-8">
+        <div className="flex flex-wrap gap-4 mb-8 max-w-max">
           <motion.a
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
             href={cv}
             download="Abdelrahman-Ragab-Abdelbaky-CV.pdf"
-            className="w-48 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
+            className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
             aria-label="Download CV"
           >
             {HERO_CONTENT.downloadCV}
@@ -96,7 +96,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 1 }}
             href={HERO_CONTENT.cvUrl}
             target="_blank"
-            className="w-48 py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
+            className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
             aria-label="Preview CV"
           >
             {HERO_CONTENT.showCV}
@@ -122,13 +122,16 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="right-section w-full md:w-1/2">
-        <Lottie
-          lottieRef={lottieRef}
-          onComplete={() => lottieRef.current.setSpeed(0.5)}
-          animationData={devAnimation}
-          aria-label="Developer animation"
-        />
+      <div className="right-section w-full md:w-1/2 relative">
+        <div className="animation-container w-full h-80 flex items-center justify-center">
+          <Lottie
+            lottieRef={lottieRef}
+            onComplete={() => lottieRef.current.setSpeed(0.5)}
+            animationData={devAnimation}
+            role="img"
+            aria-label="Developer animation"
+          />
+        </div>
       </div>
     </section>
   );

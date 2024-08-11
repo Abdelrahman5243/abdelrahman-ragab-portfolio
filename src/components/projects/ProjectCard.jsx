@@ -42,6 +42,7 @@ const ProjectCard = ({ project, id }) => {
         <Link
           className="text-light-blue flex items-center gap-2"
           to={`project-details/${id}`}
+          aria-label={`View details for project ${id}`}
         >
           more
           <LuArrowLeft
