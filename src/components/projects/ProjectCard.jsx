@@ -11,11 +11,13 @@ const ProjectCard = ({ project, id }) => {
 
   return (
     <>
-      <img
-        src={project.imagePath}
-        alt="project"
-        className="w-full h-[200px] object-cover"
-      />
+      <div className="w-full h-[200px] overflow-hidden">
+        <img
+          src={project.imagePath}
+          alt="project"
+          className="object-cover h-full hover:scale-105 transition origin-top hover:brightness-75"
+        />
+      </div>
       <h1 className="text-2xl sm:text-3xl capitalize m-4 text-light-title dark:text-dark-title">
         {project.title}
       </h1>

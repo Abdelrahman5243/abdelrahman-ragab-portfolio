@@ -1,33 +1,60 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Lottie from "lottie-react";
 import contactAnimation from "../../assets/animation/contact.json";
 import Spinner from "../spinner/Spinner";
 import { MdMail } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import { motion, useInView } from "framer-motion";
 
 const Contact = () => {
   const { t } = useTranslation("main");
   const [state, handleSubmit] = useForm("xqazqwbr");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="contact" className="my-8">
+    <section id="contact" className="my-8" ref={ref}>
       <div className="flex gap-4 items-center mb-4 text-3xl">
-        <MdMail
-          className="text-light-title dark:text-dark-subtitle"
-          aria-hidden="true"
-        />
-
-        <h1 className="title mb-0">{t("contact.title")}</h1>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={
+            isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+          }
+          transition={{ duration: 0.6 }}
+        >
+          <MdMail
+            className="text-light-title dark:text-dark-subtitle"
+            aria-hidden="true"
+          />
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.6 }}
+          className="title mb-0"
+        >
+          {t("contact.title")}
+        </motion.h1>
       </div>
 
-      <p className="description mb-8 leading-6">{t("contact.description")}</p>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
+        className="description mb-8 leading-6"
+      >
+        {t("contact.description")}
+      </motion.p>
 
       <div className="flex my-8 items-center flex-col-reverse md:flex-row">
-        <form
+        <motion.form
           onSubmit={handleSubmit}
           className="w-full md:w-1/2 flex flex-col gap-4 mb-6 text-light-subtitle dark:text-dark-subtitle"
           aria-labelledby="contact-form"
+          initial={{ opacity: 0, x: -80 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
+          transition={{ duration: 0.6 }}
         >
           <label htmlFor="email">{t("contact.form.emailLabel")}</label>
           <input
@@ -78,18 +105,30 @@ const Contact = () => {
           </button>
 
           {state.succeeded && (
-            <p className="text-xl mt-6">{t("contact.successMessage")}</p>
+            <motion.p
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="text-xl mt-6"
+            >
+              {t("contact.successMessage")}
+            </motion.p>
           )}
-        </form>
+        </motion.form>
 
-        <div className="w-full md:w-1/2">
+        <motion.div
+          className="w-full md:w-1/2"
+          initial={{ opacity: 0, x: 80 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
+          transition={{ duration: 0.6 }}
+        >
           <Lottie
             className="contact-animation h-[355px]"
             animationData={contactAnimation}
             aria-label="contact animation"
             role="img"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
