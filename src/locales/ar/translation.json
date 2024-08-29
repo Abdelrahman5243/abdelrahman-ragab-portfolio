@@ -6,8 +6,8 @@
     "contact": "اتصل بي"
   },
   "hero": {
-    "title": "مطوّر واجهات المستخدم",
-    "description": "أنا عبد الرحمن راغب عبد الباقي، مطور واجهات أمامية (React.js) متميز، حاصل على بكالوريوس في علوم الحاسوب وتكنولوجيا المعلومات من جامعة الزقازيق (2024). أعمل على تطوير حلول مبتكرة لتعزيز تجربة المستخدم وأبقى على اطلاع بأحدث اتجاهات التكنولوجيا.",
+    "title": "عبدالرحمن رجب عبدالباقي",
+    "description": "مطور واجهات أمامية، خريج كلية الهندسة بجامعة الزقازيق. أعمل على تصميم وتطوير مواقع وتطبيقات ويب تركز على سهولة الاستخدام والاستجابة لمختلف الأجهزة، باستخدام أحدث التقنيات مثل Tailwind CSS وReact وJavaScript. أستطيع تقديم تجارب مستخدم متميزة وحل المشكلات البرمجية بفعالية من خلال تطبيق حلول تقنية متقدمة.",
     "downloadCV": "تحميل السيرة الذاتية",
     "showCV": "عرض السيرة الذاتية"
   },
@@ -30,7 +30,7 @@
       "title": "منشئ المواقع",
       "description": "أداة شاملة لإنشاء المواقع تعرض تقنيات تطوير الويب المتقدمة.",
       "details": "يقدم هذا المشروع منصة قوية لإنشاء وتخصيص المواقع. يتضمن ميزات متنوعة لبناء وإدارة أقسام الموقع، والقوالب، والمحتوى، مما يوضح فهمًا عميقًا لمبادئ وتقنيات تطوير الويب. يدعم التطبيق التبديل بين اللغتين العربية والإنجليزية، مما يعزز الوصول وتجربة المستخدم لجمهور متنوع. يمثل هذا المشروع تتويجًا للمهارات التي تم اكتسابها خلال الدراسات.",
-      "imagePath": "/images/1.webp",
+      "imagePath": "/images/11.webp",
       "repo": "https://github.com/abdelrahmanrgab/GraduationProject",
       "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
       "technologies": [
@@ -51,7 +51,7 @@
       "title": "سوق المطعم",
       "description": "موقع تجارة إلكترونية لمطعم وسوق، يتميز بقوائم المنتجات ووظيفة عربة التسوق.",
       "details": "يعد هذا المشروع منصة تجارة إلكترونية تجمع بين وظائف المطاعم والأسواق. يتيح للمستخدمين تصفح المنتجات، وإضافتها إلى عربة التسوق، وعرض اختياراتهم. يركز التصميم على سهولة الاستخدام وواجهة نظيفة.",
-      "imagePath": "/images/2.webp",
+      "imagePath": "/images/21.webp",
       "repo": "https://github.com/abdelrahmanrgab/Restaurant--Market",
       "live": "https://restaurant-e-commerce.vercel.app",
       "technologies": ["JavaScript", "React", "Tailwind CSS", "React Slick"]
@@ -61,7 +61,7 @@
       "title": "معرض اعمالي",
       "description": "موقع محفظة شخصية يعرض أعمال ومشاريع عبد الرحمن رجب.",
       "details": "يبرز هذا الموقع الشخصي المشاريع والمهارات والخبرات الشخصية. يتضمن أقسامًا لعرض المشاريع، والسيرة الذاتية، ومعلومات الاتصال، والمزيد. تم تصميمه لعرض الملف الشخصي المهني لعبد الرحمن رجب بفعالية.",
-      "imagePath": "/images/3.webp",
+      "imagePath": "/images/31.webp",
       "repo": "https://github.com/abdelrahmanrgab/abdelrahman-ragab-portfolio",
       "live": "https://abdelrahman-ragab-portfolio.vercel.app/",
       "technologies": [
@@ -78,7 +78,7 @@
       "title": "تطبيق القرآن",
       "description": "تطبيق React لعرض الآيات القرآنية مع ميزات تشغيل الصوت.",
       "details": "يوفر هذا المشروع واجهة شاملة لعرض الآيات القرآنية والاستماع إلى تلاوات صوتية. يتضمن ميزات للتنقل بين السور والآيات، إلى جانب تشغيل الصوت لكل آية.",
-      "imagePath": "/images/4.webp",
+      "imagePath": "/images/41.webp",
       "repo": "https://github.com/abdelrahmanrgab/quran-app",
       "live": "https://quran-audio-app.vercel.app/",
       "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
@@ -88,7 +88,7 @@
       "title": "صفحة هبوط للمطعم",
       "description": "صفحة هبوط لمطعم مبنية باستخدام React مع استجابة ممتازة.",
       "details": "يبرز هذا المشروع صفحة هبوط حديثة للمطعم مع تصميم استجابة ممتازة.",
-      "imagePath": "/images/5.webp",
+      "imagePath": "/images/51.webp",
       "repo": "https://github.com/abdelrahmanrgab/Restaurant-Landing-Page",
       "live": "https://myapp2-kappa.vercel.app/",
       "technologies": ["JavaScript", "React", "CSS"]
@@ -98,7 +98,7 @@
       "title": "موقع مركز الألعاب",
       "description": "موقع مصمم ليكون مركزًا لمجموعة متنوعة من الألعاب، يتميز بواجهة مستخدم سهلة لاكتشاف الألعاب.",
       "details": "يوفر هذا المشروع منصة مركزية للاعبين لاكتشاف واستكشاف الألعاب. يتضمن ميزات مثل قوائم الألعاب والعناصر التفاعلية لتعزيز تجربة المستخدم.",
-      "imagePath": "/images/6.webp",
+      "imagePath": "/images/61.webp",
       "repo": "https://github.com/abdelrahmanrgab/game-hub-website",
       "live": "https://abdelrahmanrgab.github.io/game-hub-website/",
       "technologies": ["JavaScript", "CSS"]
@@ -108,7 +108,7 @@
       "title": "عرض مطوري الويب",
       "description": "موقع عرض مصمم لتسليط الضوء على مهارات ومشاريع تطوير الويب.",
       "details": "يعمل هذا المشروع كموقع محفظة لعرض مشاريع تطوير الويب المختلفة والمهارات والتقنيات المستخدمة. يهدف إلى تقديم رؤية شاملة لخبرة تطوير الويب من خلال محتوى تفاعلي وجذاب.",
-      "imagePath": "/images/7.webp",
+      "imagePath": "/images/71.webp",
       "repo": "https://github.com/abdelrahmanrgab/Web-Developer-Showcase",
       "live": "https://abdelrahmanrgab.github.io/Web-Developer-Showcase",
       "technologies": ["HTML", "CSS"]
