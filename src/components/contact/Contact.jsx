@@ -29,8 +29,8 @@ const Contact = () => {
           />
         </motion.div>
         <motion.h1
-          initial={{ opacity: 0, x: -50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
           transition={{ duration: 0.6 }}
           className="title mb-0"
         >
@@ -52,8 +52,8 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className="w-full md:w-1/2 flex flex-col gap-4 mb-6 text-light-subtitle dark:text-dark-subtitle"
           aria-labelledby="contact-form"
-          initial={{ opacity: 0, x: -80 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
+          initial={{ opacity: 0, y: -80 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }}
           transition={{ duration: 0.6 }}
         >
           <label htmlFor="email">{t("contact.form.emailLabel")}</label>
@@ -118,8 +118,8 @@ const Contact = () => {
 
         <motion.div
           className="w-full md:w-1/2"
-          initial={{ opacity: 0, x: 80 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
+          initial={{ opacity: 0, y: 80 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
           transition={{ duration: 0.6 }}
         >
           <Lottie
