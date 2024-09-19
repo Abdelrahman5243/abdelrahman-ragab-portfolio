@@ -16,7 +16,16 @@ const mySkills = [
   "Version Control (Git)",
   "GitHub",
   "Framer Motion",
+  "RESTful API",
+  "Shadcn UI",
+  "Axios",
+  "React Router",
+  "Vite",
+  "Figma",
+  "Chart.js",
+  "TypeScript",
 ];
+
 
 const Skills = () => {
   const { t } = useTranslation("main");
