@@ -1,6 +1,4 @@
-import React from "react";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-
 import { LuArrowLeft } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -12,11 +10,16 @@ const ProjectCard = ({ project, id }) => {
   return (
     <>
       <div className="w-full h-[200px] overflow-hidden">
-        <img
-          src={project.imagePath}
-          alt="project"
-          className="object-cover h-full hover:scale-105 transition origin-top hover:brightness-75"
-        />
+        <Link
+          to={`project-details/${id}`}
+          aria-label={`View details for project ${id}`}
+        >
+          <img
+            src={project.imagePath}
+            alt="project"
+            className="object-cover h-full hover:scale-105 transition origin-top hover:brightness-75"
+          />
+        </Link>
       </div>
       <h1 className="text-2xl sm:text-3xl capitalize m-4 text-light-title dark:text-dark-title">
         {project.title}

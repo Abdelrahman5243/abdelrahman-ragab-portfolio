@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { motion, useInView } from "framer-motion";
@@ -24,8 +24,13 @@ const mySkills = [
   "Figma",
   "Chart.js",
   "TypeScript",
+  "Problem-Solving",
+  "Time Management",
+  "Responsive Design",
+  "Communication",
+  "Agile Methodologies",
+  "Collaboration",
 ];
-
 
 const Skills = () => {
   const { t } = useTranslation("main");
@@ -34,7 +39,7 @@ const Skills = () => {
 
   return (
     <div>
-      <div id="skills" ref={ref} className="my-8 w-full">
+      <div id="skills" ref={ref} className="my-12 w-full">
         <div className="flex gap-4 items-center mb-8 text-3xl">
           <HiOutlineRocketLaunch
             className="text-light-subtitle dark:text-dark-subtitle"

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { LuArrowLeft } from "react-icons/lu";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
