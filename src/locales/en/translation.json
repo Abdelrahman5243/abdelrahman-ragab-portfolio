@@ -1,0 +1,147 @@
+{
+  "navigation": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Abdelrahman Ragab Abdelbaky",
+    "description": "Innovative and results-driven front-end web developer with a degree in Engineering from Zagazig University. Proven expertise in designing and implementing responsive, user-friendly websites and applications using modern technologies including Tailwind CSS, React, and JavaScript. Adept at creating seamless user experiences and solving complex problems through effective code solutions.",
+    "downloadCV": "Download CV",
+    "showCV": "Preview CV"
+  },
+  "skillsTitle": "Skills",
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Reach out to me for more details and stay updated with my latest projects.",
+    "successMessage": "Thank you! Your message has been sent successfully. 👌",
+    "form": {
+      "emailLabel": "Email Address:",
+      "emailPlaceholder": "Enter your email",
+      "messageLabel": "Message:",
+      "messagePlaceholder": "Type your message here"
+    },
+    "submitButton": "Send"
+  },
+  "projects": {
+    "1": {
+      "categories": "ReactJS",
+      "title": "Website Builder",
+      "description": "A comprehensive website builder showcasing advanced web development techniques.",
+      "details": "This project provides a powerful platform for creating and customizing websites. It includes various features for building and managing website sections, templates, and content, demonstrating a deep understanding of web development principles and techniques. The application supports switching between Arabic and English, enhancing accessibility and user experience for a diverse audience. Users can customize styles using a user-friendly interface, preview their changes in real-time, and generate content using AI. Additionally, the application allows users to arrange and choose between various sections, ensuring a flexible and tailored web design experience. This project represents the culmination of skills acquired during studies, incorporating responsive design practices and best coding standards.",
+      "imagePath": "/images/11.webp",
+      "repo": "https://github.com/abdelrahmanrgab/GraduationProject",
+      "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Redux Persist",
+        "Axios",
+        "i18next",
+        "React Router",
+        "Swiper",
+        "AOS"
+      ]
+    },
+    "2": {
+      "categories": "ReactJS",
+      "title": "Restaurant Market",
+      "description": "An e-commerce website for a restaurant and market, featuring product listings and cart functionality.",
+      "details": "This project combines the functionalities of both a restaurant and market into a single e-commerce platform. Users can effortlessly browse products, add items to their cart, and complete orders with ease. The platform features a clean, intuitive design, ensuring an enhanced user experience. It includes key sections such as CTA to encourage user interaction, a dedicated features section highlighting the unique aspects of the platform, and a testimonials section showcasing customer feedback. These elements work together to provide a professional and engaging user experience.",
+      "imagePath": "/images/21.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant--Market",
+      "live": "https://restaurant-e-commerce.vercel.app",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "React Slick",
+        "useContext",
+        "React Router DOM"
+      ]
+    },
+    "3": {
+      "categories": "ReactJS",
+      "title": "My portfolio",
+      "description": "A personal portfolio website showcasing Abdelrahman Ragab's work and projects.",
+      "details": "This portfolio website highlights personal projects, skills, and experiences. It includes sections for showcasing projects, a resume, contact information, and more. It is designed to effectively present Abdelrahman Ragab's professional profile.",
+      "imagePath": "/images/31.webp",
+      "repo": "https://github.com/abdelrahmanrgab/abdelrahman-ragab-portfolio",
+      "live": "https://abdelrahman-ragab-portfolio.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Formspree",
+        "Framer Motion",
+        "i18next",
+        "Lottie",
+        "React Router DOM"
+      ]
+    },
+    "4": {
+      "categories": "ReactJS",
+      "title": "Product CRUD Dashboard",
+      "description": "A CRUD management system for products with analysis features.",
+      "details": "This project enables users to efficiently manage products by providing functionalities for adding, editing, and deleting product information. It includes a detailed analysis page that offers insights and visual representations of key product metrics. Utilizing Redux Toolkit for state management ensures a seamless user experience. SweetAlert enhances interactions with confirmation prompts and notifications, contributing to a polished interface. The application is optimized for performance, ensuring quick response times and an intuitive design that boosts productivity.",
+      "imagePath": "/images/41.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Product-CRUD-Dashboard",
+      "live": "https://product-dashboard-eight.vercel.app/",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "CSS",
+        "Recharts",
+        "Axios",
+        "SweetAlert",
+        "React Router DOM"
+      ]
+    },
+    "5": {
+      "categories": "ReactJS",
+      "title": "Quran App",
+      "description": "A React application to display Quranic verses with audio playback features.",
+      "details": "This project offers a comprehensive interface for reading and listening to Quranic verses. It includes key features such as verse-by-verse audio playback, navigation between surahs and ayahs, and an auto-play functionality that continues audio playback as the user navigates to the next verse. The app effectively manages state using Redux Toolkit to track the current surah, ayah, and playback progress, ensuring a smooth and responsive user experience. Additionally, the project includes dark mode support for comfortable reading and persistent state, which saves the user's progress across sessions using local storage. Performance optimization is also a priority, managing audio files and verse data efficiently while maintaining quick response times.",
+      "imagePath": "/images/51.webp",
+      "repo": "https://github.com/abdelrahmanrgab/quran-app",
+      "live": "https://quran-audio-app.vercel.app/",
+      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
+    },
+    "6": {
+      "categories": "ReactJS",
+      "title": "Restaurant Landing Page",
+      "description": "A visually appealing and highly responsive restaurant landing page.",
+      "details": "This project highlights a sleek and professional landing page for a restaurant, built with a focus on responsive design and smooth user experience across all devices. Key features include prominent call-to-action sections, high-quality visuals, and seamless navigation. The page is designed to capture visitor interest and drive conversions through clear messaging and engaging layouts. Developed using React for dynamic content updates, ensuring scalability and performance optimization.",
+      "imagePath": "/images/61.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Restaurant-Landing-Page",
+      "live": "https://myapp2-kappa.vercel.app/",
+      "technologies": ["JavaScript", "React", "CSS"]
+    },
+    "7": {
+      "categories": "HTML & CSS & JS",
+      "title": "Game Hub Website",
+      "description": "A dynamic platform built as a central hub for discovering and exploring a wide variety of games.",
+      "details": "This project is a comprehensive gaming platform designed to help users discover and explore new games. It features an interactive and engaging interface with organized game lists and search functionalities, offering a seamless user experience. The design focuses on creating an intuitive browsing experience with responsive layouts, ensuring compatibility across multiple devices. Built using HTML, CSS, and JavaScript, the platform incorporates interactive elements to enhance the user journey.",
+      "imagePath": "/images/71.webp",
+      "repo": "https://github.com/abdelrahmanrgab/game-hub-website",
+      "live": "https://abdelrahmanrgab.github.io/game-hub-website/",
+      "technologies": ["HTML", "JavaScript", "CSS"]
+    },
+    "8": {
+      "categories": "HTML & CSS & JS",
+      "title": "Web Developer Showcase",
+      "description": "A professional portfolio website created to showcase web development skills, technologies.",
+      "details": "This portfolio website serves as a professional showcase for various web development projects, skills, and expertise. It presents a comprehensive view of web development proficiency through a well-structured layout and interactive sections. The project focuses on clean design, and responsive features to engage visitors while presenting projects in a visually appealing format. ",
+      "imagePath": "/images/81.webp",
+      "repo": "https://github.com/abdelrahmanrgab/Web-Developer-Showcase",
+      "live": "https://abdelrahmanrgab.github.io/Web-Developer-Showcase",
+      "technologies": ["HTML", "CSS"]
+    }
+  },
+  "technologiesTitle": "Technologies Used",
+  "copyright": "© 2024. All rights reserved."
+}
