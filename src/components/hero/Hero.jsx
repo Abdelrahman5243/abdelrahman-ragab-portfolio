@@ -41,7 +41,7 @@ const Hero = () => {
         ariaLabel: "LinkedIn profile",
       },
       {
-        href: "https://github.com/abdelrahmanrgab",
+        href: "https://github.com/Abdelrahman5243",
         icon: (
           <AiFillGithub
             size={35}
