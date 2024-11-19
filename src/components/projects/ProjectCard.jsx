@@ -15,7 +15,7 @@ const ProjectCard = ({ project, id }) => {
           aria-label={`View details for project ${id}`}
         >
           <img
-            src={project.imagePath}
+            src={project.image_url}
             alt="project"
             className="object-cover h-full hover:scale-105 transition origin-top hover:brightness-75"
           />

@@ -1,26 +1,27 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
-import enMain from "./locales/en/translation.json";
-import arMain from "./locales/ar/translation.json";
+import HttpApi from "i18next-http-backend"; 
 
 const savedLanguage = localStorage.getItem("language") || "en";
-i18n.use(initReactI18next).init({
-  resources: {
-    en: {
-      main: enMain,
+
+i18n
+  .use(HttpApi) 
+  .use(initReactI18next)
+  .init({
+    backend: {
+      loadPath: "https://web-production-9f2f4.up.railway.app/{{lng}}",
     },
-    ar: {
-      main: arMain,
+    lng: savedLanguage,
+    fallbackLng: "en",
+    ns: ["main"],
+    defaultNS: "main",
+    interpolation: {
+      escapeValue: false,
     },
-  },
-  lng: savedLanguage, // default language
-  fallbackLng: "en",
-  ns: ["main"],
-  defaultNS: "main",
-  interpolation: {
-    escapeValue: false, // react already safes from xss
-  },
-});
+    load: "languageOnly",
+    react: {
+      useSuspense: true,
+    },
+  });
 
 export default i18n;

@@ -4,11 +4,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./slider.css";
-import designsImage from "./designs";
 
-const Slider = ({ projectId, language }) => {
-  const projectImages = designsImage[projectId] || [];
-
+const Slider = ({ project, language }) => {
+  const projectImages = project.screens_url || [];
   return (
     <Swiper
       key={language}

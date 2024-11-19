@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router";
 import "./App.css";
@@ -8,9 +7,11 @@ import MainPage from "./pages/MainPage";
 import NotFound from "./pages/NotFound";
 import ProjectDetails from "./pages/ProjectDetails";
 import { SlArrowUp } from "react-icons/sl";
+import { useTranslationMode } from './hooks/useTranslationMode';
 
 const App = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const { isLoading } = useTranslationMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,14 @@ const App = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="h-screen w-full flex items-center justify-center bg-light-secondary dark:bg-dark-secondary">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-light-blue"></div>
+      </div>
+    );
+  }
 
   return (
     <>

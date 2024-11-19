@@ -5,9 +5,7 @@ import Lottie from "lottie-react";
 import devAnimation from "../../assets/animation/dev.json";
 import { AiFillLinkedin, AiOutlineCodepen, AiFillGithub } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
-import { HiDownload } from "react-icons/hi";
 import { IoOpenOutline } from "react-icons/io5";
-import cv from "../../assets/Abdelrahman-Ragab-Abdelbaky.pdf";
 
 const Hero = () => {
   const { t } = useTranslation("main");
@@ -16,7 +14,6 @@ const Hero = () => {
   const HERO_CONTENT = {
     title: t("hero.title"),
     description: t("hero.description"),
-    downloadCV: t("hero.downloadCV"),
     showCV: t("hero.showCV"),
     cvUrl: "https://flowcv.com/resume/gsawfcbwff",
     socialLinks: [
@@ -90,19 +87,6 @@ const Hero = () => {
             {HERO_CONTENT.description}
           </motion.p>
           <div className="flex flex-wrap gap-4 mb-8 max-w-max">
-            <motion.a
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-              href={cv}
-              download="Abdelrahman-Ragab-Abdelbaky-CV.pdf"
-              className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
-              aria-label="Download CV"
-            >
-              {HERO_CONTENT.downloadCV}
-              <HiDownload />
-            </motion.a>
-
             <motion.a
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

@@ -20,7 +20,7 @@ const ProjectDetails = () => {
         Home
       </Link>
 
-      <Slider projectId={id} language={i18n.language} />
+      <Slider project={projectData} language={i18n.language} />
 
       <div className="flex gap-4 items-center my-8 text-3xl mt-16">
         <PiDotsSixVerticalThin
@@ -49,23 +49,35 @@ const ProjectDetails = () => {
           </span>
         ))}
       </div>
-      <ul className="pl-5">
-        <li className="mb-4">
+      <ul className="flex flex-wrap gap-4 px-8">
+        <li>
           <a
             href={projectData.live}
-            className="text-light-blue flex items-center gap-4"
+            className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader 
+              text-light-subtitle dark:text-dark-subtitle rounded 
+              flex items-center gap-4 border border-light-border 
+              dark:border-dark-border hover:border-dark-blue 
+              transition-all duration-300 hover:scale-95"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Go to live demo
-            <FaExternalLinkAlt className="mr-2 text-light-blue" />
+            <FaExternalLinkAlt className="text-light-blue" />
           </a>
         </li>
         <li>
           <a
-            className="text-light-blue flex items-center gap-4"
             href={projectData.repo}
+            className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader 
+              text-light-subtitle dark:text-dark-subtitle rounded 
+              flex items-center gap-4 border border-light-border 
+              dark:border-dark-border hover:border-dark-blue 
+              transition-all duration-300 hover:scale-95"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Go to Code
-            <FaGithub className="mr-2 text-light-blue" />
+            <FaGithub className="text-light-blue" />
           </a>
         </li>
       </ul>
