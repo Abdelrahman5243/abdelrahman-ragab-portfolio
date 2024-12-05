@@ -2,3 +2,8 @@
 .swiper-button-next::after {
   font-size: 25px !important;
 }
+.swiper-slide{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

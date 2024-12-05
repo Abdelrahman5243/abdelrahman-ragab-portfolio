@@ -1,3 +1,12 @@
-.filter-btn{
+.filter-btn {
     min-width: 141px;
+}
+
+.card {
+    width: 100%;
+    min-width:380px;
+}
+
+.card img {
+    width: 100%;
 }

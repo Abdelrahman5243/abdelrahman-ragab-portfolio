@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import "./projects.css";
@@ -6,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { LiaProjectDiagramSolid } from "react-icons/lia";
 
 const Projects = () => {
-  const [currentActive, setCurrentActive] = useState("All Projects");
+  // const [currentActive, setCurrentActive] = useState("All Projects");
   const { t } = useTranslation("main");
 
   const projectsData = t("projects", { returnObjects: true });
@@ -16,21 +15,21 @@ const Projects = () => {
     ...projectsData[id],
   }));
 
-  const handleClick = (category) => {
-    setCurrentActive(category);
-  };
+  // const handleClick = (category) => {
+  //   setCurrentActive(category);
+  // };
 
-  // Get unique categories
-  const allCategories = [
-    "All Projects",
-    ...new Set(myProjects.map((project) => project.categories)),
-  ];
+  // // Get unique categories
+  // const allCategories = [
+  //   "All Projects",
+  //   ...new Set(myProjects.map((project) => project.categories)),
+  // ];
 
   // Get the projects to display based on the selected category
-  const filteredProjects =
-    currentActive === "All Projects"
-      ? myProjects
-      : myProjects.filter((project) => project.categories === currentActive);
+  // const filteredProjects =
+  //   currentActive === "All Projects"
+  //     ? myProjects
+  //     : myProjects.filter((project) => project.categories === currentActive);
 
   return (
     <section
@@ -48,7 +47,7 @@ const Projects = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 justify-between items-start">
+      {/* <div className="flex flex-col md:flex-row gap-8 justify-between items-start">
         <div
           className="flex flex-wrap justify-center md:flex-col gap-4"
           role="tablist"
@@ -70,33 +69,33 @@ const Projects = () => {
             </button>
           ))}
         </div>
+      </div> */}
 
-        <div
-          className="flex flex-wrap gap-8 justify-center w-full md:w-3/4"
-          role="tabpanel"
-          aria-labelledby="projects-title"
-        >
-          <AnimatePresence>
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ transform: "scale(0.4)" }}
-                animate={{ transform: "scale(1)" }}
-                transition={{ type: "spring", damping: 8, stiffness: 50 }}
-                className="card w-[300px] bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between"
-                aria-labelledby={`project-${project.id}-title`}
-                aria-describedby={`project-${project.id}-description`}
-              >
-                <ProjectCard
-                  id={project.id}
-                  project={{
-                    ...project,
-                  }}
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
+      <div
+        className="flex flex-wrap gap-8 justify-center w-full"
+        role="tabpanel"
+        aria-labelledby="projects-title"
+      >
+        <AnimatePresence>
+          {myProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              initial={{ transform: "scale(0.4)" }}
+              animate={{ transform: "scale(1)" }}
+              transition={{ type: "spring", damping: 8, stiffness: 50 }}
+              className="card w-[300px] bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between"
+              aria-labelledby={`project-${project.id}-title`}
+              aria-describedby={`project-${project.id}-description`}
+            >
+              <ProjectCard
+                id={project.id}
+                project={{
+                  ...project,
+                }}
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   );
