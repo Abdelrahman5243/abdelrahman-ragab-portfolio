@@ -1,5 +1,4 @@
-import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-import { LuArrowLeft } from "react-icons/lu";
+import { Github, ExternalLink, ArrowLeft } from "lucide-react"; 
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -17,7 +16,7 @@ const ProjectCard = ({ project, id }) => {
           <img
             src={project.image_url}
             alt="project"
-            className="object-cover h-full hover:scale-105 transition origin-top hover:brightness-75"
+            className="object-cover w-full hover:scale-105 transition origin-top hover:brightness-75"
           />
         </Link>
       </div>
@@ -34,14 +33,14 @@ const ProjectCard = ({ project, id }) => {
             className="hover:text-dark-iconHover"
             aria-label={`View the project at ${project.title}`}
           >
-            <AiOutlineLink />
+            <ExternalLink />
           </a>
           <a
             href={project.repo}
             className="hover:text-dark-iconHover"
             aria-label={`View the project's code on GitHub`}
           >
-            <AiFillGithub />
+            <Github />
           </a>
         </div>
         <Link
@@ -50,7 +49,7 @@ const ProjectCard = ({ project, id }) => {
           aria-label={`View details for project ${id}`}
         >
           more
-          <LuArrowLeft
+          <ArrowLeft
             size={"20px"}
             className={`mt-1 ${language === "ar" ? "" : "rotate-180"}`}
           />

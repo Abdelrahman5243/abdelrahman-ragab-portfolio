@@ -3,10 +3,10 @@ import { useForm, ValidationError } from "@formspree/react";
 import Lottie from "lottie-react";
 import contactAnimation from "../../assets/animation/contact.json";
 import Spinner from "../spinner/Spinner";
-import { MdMail } from "react-icons/md";
+import { Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
-
+import "./contact.css"
 const Contact = () => {
   const { t } = useTranslation("main");
   const [state, handleSubmit] = useForm("xqazqwbr");
@@ -23,8 +23,8 @@ const Contact = () => {
           }
           transition={{ duration: 0.6 }}
         >
-          <MdMail
-            className="text-light-title dark:text-dark-subtitle"
+          <Mail
+            className="section-title"
             aria-hidden="true"
           />
         </motion.div>
@@ -50,7 +50,7 @@ const Contact = () => {
       <div className="flex my-8 items-center flex-col-reverse md:flex-row">
         <motion.form
           onSubmit={handleSubmit}
-          className="w-full md:w-1/2 flex flex-col gap-4 mb-6 text-light-subtitle dark:text-dark-subtitle"
+          className="w-full md:w-1/2 flex flex-col gap-4 mb-6 modal-text"
           aria-labelledby="contact-form"
           initial={{ opacity: 0, y: -80 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }}
@@ -64,10 +64,7 @@ const Contact = () => {
             required
             autoComplete="off"
             placeholder={t("contact.form.emailPlaceholder")}
-            className="border border-light-border dark:border-dark-border p-2
-                       focus:outline-none bg-dark-title dark:bg-light-title
-                       rounded-md transition-colors duration-300
-                       focus:border-teal-500 hover:border-teal-500"
+            className="form-input"
             aria-required="true"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -79,10 +76,7 @@ const Contact = () => {
             required
             rows="6"
             placeholder={t("contact.form.messagePlaceholder")}
-            className="border border-light-border dark:border-dark-border p-2
-                       focus:outline-none bg-dark-title dark:bg-light-title
-                       rounded-md transition-colors duration-300
-                       focus:border-teal-500 hover:border-teal-500 resize-none"
+            className="form-input resize-none"
             aria-required="true"
           ></textarea>
           <ValidationError
@@ -94,9 +88,7 @@ const Contact = () => {
           <button
             type="submit"
             disabled={state.submitting}
-            className="relative max-w-max bg-light-title border-none
-                       py-2 px-8 my-4 text-lg rounded-md flex items-center gap-4
-                       transition-transform duration-300 hover:scale-95 text-dark-title"
+            className="form-button"
           >
             {state.submitting && (
               <Spinner className="absolute left-3 top-1/2 transform -translate-y-1/2" />

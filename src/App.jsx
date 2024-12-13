@@ -5,6 +5,7 @@ import MainPage from "./pages/MainPage";
 import NotFound from "./pages/NotFound";
 import ProjectDetails from "./pages/ProjectDetails";
 import RootLayout from "./RootLayout";
+
 const App = () => {
   return (
     <>

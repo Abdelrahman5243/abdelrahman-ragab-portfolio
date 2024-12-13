@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { MdLightMode, MdDarkMode, MdOutlineTranslate } from "react-icons/md";
-import { AiOutlineMenu } from "react-icons/ai";
+import React, { useState } from "react";
+import { SunDim, Moon, Languages , Menu } from "lucide-react";
 import Modal from "./Modal";
 import "./header.css";
 import { useThemeMode } from '../../hooks/useThemeMode';
@@ -30,7 +29,7 @@ const Header = () => {
         className="centered header_btn md:hidden"
         aria-label="Open menu"
       >
-        <AiOutlineMenu />
+        <Menu />
       </button>
       {showModal && (
         <Modal
@@ -62,14 +61,14 @@ const Header = () => {
             currentLang === "en" ? "Arabic" : "English"
           }`}
         >
-          <MdOutlineTranslate />
+          <Languages  />
         </button>
         <button
           onClick={toggleTheme}
           className="centered header_btn"
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
-          {theme === "dark" ? <MdDarkMode /> : <MdLightMode />}
+          {theme === "dark" ? <Moon /> : <SunDim />}
         </button>
       </div>
     </header>

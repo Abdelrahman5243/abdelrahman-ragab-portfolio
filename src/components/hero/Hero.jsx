@@ -3,69 +3,15 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
 import devAnimation from "../../assets/animation/dev.json";
-import { AiFillLinkedin, AiOutlineCodepen, AiFillGithub } from "react-icons/ai";
-import { BiLogoGmail } from "react-icons/bi";
-import { IoOpenOutline } from "react-icons/io5";
+import { HERO_CONTENT } from "./heroContent.js";
+import { ExternalLink } from "lucide-react";
 
 const Hero = () => {
   const { t } = useTranslation("main");
   const lottieRef = useRef();
 
-  const HERO_CONTENT = {
-    title: t("hero.title"),
-    description: t("hero.description"),
-    showCV: t("hero.showCV"),
-    cvUrl: "https://flowcv.com/resume/gsawfcbwff",
-    socialLinks: [
-      {
-        href: "mailto:abdelrahman.ragab.abdelbaky@gmail.com",
-        icon: (
-          <BiLogoGmail
-            size={35}
-            className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer"
-          />
-        ),
-        ariaLabel: "Send an email",
-      },
-      {
-        href: "https://linkedin.com/in/abdelrahman-ragab-9443b8264",
-        icon: (
-          <AiFillLinkedin
-            size={35}
-            className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer"
-          />
-        ),
-        ariaLabel: "LinkedIn profile",
-      },
-      {
-        href: "https://github.com/Abdelrahman5243",
-        icon: (
-          <AiFillGithub
-            size={35}
-            className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer"
-          />
-        ),
-        ariaLabel: "GitHub profile",
-      },
-      {
-        href: "https://codepen.io/Abdelrahman-Ragab",
-        icon: (
-          <AiOutlineCodepen
-            size={35}
-            className="hover:text-dark-iconHover transition-all duration-300 cursor-pointer"
-          />
-        ),
-        ariaLabel: "CodePen profile",
-      },
-    ],
-  };
-
   return (
-    <section
-      id="about"
-      aria-labelledby="hero-title"
-      className="flex flex-col items-center"
-    >
+    <section id="about" aria-labelledby="hero-title" className="flex flex-col items-center">
       <div className="flex mt-8 items-center flex-col-reverse md:flex-row py-8">
         <div className="left-section w-full md:w-1/2 relative">
           <motion.h1
@@ -75,7 +21,7 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="title"
           >
-            {HERO_CONTENT.title}
+            {t(HERO_CONTENT.titleKey)}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -84,7 +30,7 @@ const Hero = () => {
             className="description"
             style={{ lineHeight: 2 }}
           >
-            {HERO_CONTENT.description}
+            {t(HERO_CONTENT.descriptionKey)}
           </motion.p>
           <div className="flex flex-wrap gap-4 mb-8 max-w-max">
             <motion.a
@@ -96,8 +42,8 @@ const Hero = () => {
               className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
               aria-label="Preview CV"
             >
-              {HERO_CONTENT.showCV}
-              <IoOpenOutline />
+              {t(HERO_CONTENT.showCVKey)}
+              <ExternalLink />
             </motion.a>
           </div>
         </div>
@@ -127,7 +73,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.1 * index }}
             aria-label={link.ariaLabel}
           >
-            {link.icon}
+            {<link.icon />}
           </motion.a>
         ))}
       </div>

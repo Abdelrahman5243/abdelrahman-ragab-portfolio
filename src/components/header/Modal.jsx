@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { MdOutlineClose } from "react-icons/md";
+import { X } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 
 const Modal = ({ ITEMS, closeModal, showModal }) => {
@@ -38,7 +38,7 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
           onClick={closeModal}
           aria-label="Close modal"
         >
-          <MdOutlineClose />
+          <X />
         </button>
 
         <ul className="divide-y divide-opacity-10 dark:divide-dark-border capitalize">

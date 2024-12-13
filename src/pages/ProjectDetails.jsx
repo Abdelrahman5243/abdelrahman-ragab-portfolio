@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Link, useParams } from "react-router-dom";
-import { LuArrowLeft } from "react-icons/lu";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { PiDotsSixVerticalThin } from "react-icons/pi";
+import { ArrowLeft,ExternalLink, GithubIcon } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 import { useTranslation } from "react-i18next";
 const Slider = lazy(() => import("../components/slider/Slider"));
 
@@ -14,8 +13,8 @@ const ProjectDetails = () => {
   return (
     <div className="my-8">
       <Link to="/" className="header_btn centered mb-8 w-28 p-4 gap-4">
-        <LuArrowLeft
-          size={"20px"}
+        <ArrowLeft
+          size={20}
           className={`${i18n.language === "ar" ? "rotate-180" : ""}`}
         />
         Home
@@ -31,7 +30,7 @@ const ProjectDetails = () => {
       </Suspense>
 
       <div className="flex gap-4 items-center my-8 text-3xl mt-16">
-        <PiDotsSixVerticalThin
+        <MoreVertical
           className="text-light-subtitle dark:text-dark-subtitle"
           aria-hidden="true"
         />
@@ -39,7 +38,7 @@ const ProjectDetails = () => {
       </div>
       <p className="description mx-9 leading-10">{projectData.details}</p>
       <div className="flex gap-4 items-center my-8 text-3xl">
-        <PiDotsSixVerticalThin
+        <MoreVertical
           className="text-light-subtitle dark:text-dark-subtitle"
           aria-hidden="true"
         />
@@ -66,7 +65,7 @@ const ProjectDetails = () => {
             rel="noopener noreferrer"
           >
             Go to live demo
-            <FaExternalLinkAlt className="text-light-blue" />
+            <ExternalLink className="text-light-blue" />
           </a>
         </li>
         <li>
@@ -77,7 +76,7 @@ const ProjectDetails = () => {
             rel="noopener noreferrer"
           >
             Go to Code
-            <FaGithub className="text-light-blue" />
+            <GithubIcon className="text-light-blue" />
           </a>
         </li>
       </ul>

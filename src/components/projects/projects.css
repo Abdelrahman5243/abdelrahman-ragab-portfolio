@@ -3,8 +3,9 @@
 }
 
 .card {
-    width: 100%;
-    min-width:360px;
+    width: 330px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .card img {

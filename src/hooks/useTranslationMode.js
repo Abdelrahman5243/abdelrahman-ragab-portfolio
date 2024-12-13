@@ -3,10 +3,8 @@ import { useTranslation } from "react-i18next";
 
 export const useTranslationMode = () => {
   const { i18n, t } = useTranslation();
-  const [currentLang, setCurrentLang] = useState(
-    localStorage.getItem("language") || "en"
-  );
-  const [isLoading, setIsLoading] = useState(true);
+  const [currentLang, setCurrentLang] = useState(localStorage.getItem("language") || "en");
+  const [isLoading, setIsLoading] = useState(false); 
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,7 +18,8 @@ export const useTranslationMode = () => {
     const newLang = currentLang === "en" ? "ar" : "en";
     localStorage.setItem("language", newLang);
     setCurrentLang(newLang);
+    setIsLoading(true); 
   };
 
   return { currentLang, toggleLanguage, t, isLoading };
-}; 
+};
