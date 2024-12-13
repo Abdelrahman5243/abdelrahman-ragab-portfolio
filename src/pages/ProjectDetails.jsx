@@ -1,9 +1,10 @@
+import React, { Suspense, lazy } from "react";
 import { Link, useParams } from "react-router-dom";
 import { LuArrowLeft } from "react-icons/lu";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { PiDotsSixVerticalThin } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
-import Slider from "../components/slider/Slider";
+const Slider = lazy(() => import("../components/slider/Slider"));
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -19,8 +20,15 @@ const ProjectDetails = () => {
         />
         Home
       </Link>
-
-      <Slider project={projectData} language={i18n.language} />
+      <Suspense
+        fallback={
+          <div className="w-screen h-screen flex justify-center items-center">
+            <div className="loader"></div>
+          </div>
+        }
+      >
+        <Slider project={projectData} language={i18n.language} />
+      </Suspense>
 
       <div className="flex gap-4 items-center my-8 text-3xl mt-16">
         <PiDotsSixVerticalThin
@@ -53,11 +61,7 @@ const ProjectDetails = () => {
         <li>
           <a
             href={projectData.live}
-            className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader 
-              text-light-subtitle dark:text-dark-subtitle rounded 
-              flex items-center gap-4 border border-light-border 
-              dark:border-dark-border hover:border-dark-blue 
-              transition-all duration-300 hover:scale-95"
+            className="project_btn"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,11 +72,7 @@ const ProjectDetails = () => {
         <li>
           <a
             href={projectData.repo}
-            className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader 
-              text-light-subtitle dark:text-dark-subtitle rounded 
-              flex items-center gap-4 border border-light-border 
-              dark:border-dark-border hover:border-dark-blue 
-              transition-all duration-300 hover:scale-95"
+            className="project_btn"
             target="_blank"
             rel="noopener noreferrer"
           >

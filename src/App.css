@@ -1,3 +1,45 @@
 html {
   scroll-behavior: smooth;
 }
+
+.loader {
+  width: fit-content;
+  font-size: 40px;
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px #000;
+  background: conic-gradient(from -135deg at 100% 50%, #000 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, #000 0) text no-repeat;
+  animation: l6 2s linear infinite;
+}
+.dark .loader{
+  -webkit-text-stroke: 1px #fff;
+  background: conic-gradient(from -135deg at 100% 50%, #fff 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, #fff 0) text no-repeat;
+}
+
+.loader:before {
+  content: "Loading";
+}
+
+@keyframes l6 {
+  0% {
+    background-size: 0 200%;
+    background-position: 0 0, 100% 0
+  }
+
+  50% {
+    background-size: calc(60% + .5lh) 200%;
+    background-position: 0 0, 100% 0
+  }
+
+  50.01% {
+    background-size: calc(60% + .5lh) 200%;
+    background-position: 0 100%, 100% 100%
+  }
+
+  100% {
+    background-size: 0 200%;
+    background-position: 0 100%, 100% 100%
+  }
+}

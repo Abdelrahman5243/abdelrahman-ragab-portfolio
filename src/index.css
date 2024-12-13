@@ -6,30 +6,41 @@
   body {
     @apply bg-light-primary text-black;
   }
+
   body.dark {
     @apply bg-dark-primary text-white;
   }
+
   .container {
     @apply border border-light-border dark:border-dark-border mx-auto bg-light-secondary dark:bg-dark-secondary px-4;
   }
+
   .centered {
     @apply flex justify-center items-center;
   }
+
   .divider {
     @apply bg-light-border dark:bg-dark-border;
     height: 1px;
     width: calc(100% + 4rem);
     margin-left: -2rem;
   }
+
   .title {
     @apply text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 dark:text-dark-title text-light-title;
   }
+
   .description {
     @apply text-base sm:text-lg md:text-xl mb-8 dark:text-dark-subtitle text-light-subtitle;
   }
+
   body.arabic .divider {
     margin-left: 0;
     margin-right: -2rem;
+  }
+
+  .project_btn {
+    @apply py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex items-center gap-4 border border-light-border dark:border-dark-border hover:border-dark-blue transition-all duration-300 hover:scale-95
   }
 }
 
