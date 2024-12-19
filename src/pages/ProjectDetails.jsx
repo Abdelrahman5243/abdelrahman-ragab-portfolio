@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy,useLayoutEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft,ExternalLink, GithubIcon } from "lucide-react";
 import { MoreVertical } from "lucide-react";
@@ -9,6 +9,10 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const { i18n, t } = useTranslation("main");
   const projectData = t(`projects.${id}`, { returnObjects: true });
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
   return (
     <div className="my-8">
