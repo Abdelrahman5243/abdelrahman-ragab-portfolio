@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SunDim, Moon, Languages , Menu } from "lucide-react";
+import { SunDim, CloudMoon, Languages , Menu } from "lucide-react";
 import Modal from "./Modal";
 import "./header.css";
 import { useThemeMode } from '../../hooks/useThemeMode';
@@ -40,7 +40,7 @@ const Header = () => {
       )}
 
       <nav
-        className="p-4 px-6 border border-light-border dark:border-dark-border rounded-full hidden md:flex ml-56"
+        className="p-4 px-6 border border-light-border dark:border-dark-border rounded-full hidden md:flex"
         aria-label="Main navigation"
       >
         <ul className="flex gap-4">
@@ -68,7 +68,7 @@ const Header = () => {
           className="centered header_btn"
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
-          {theme === "dark" ? <Moon /> : <SunDim />}
+          {theme === "dark" ? <CloudMoon /> : <SunDim />}
         </button>
       </div>
     </header>

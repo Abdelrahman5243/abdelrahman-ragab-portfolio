@@ -6,28 +6,28 @@ export default {
     extend: {
       colors: {
         dark: {
-          primary: "#000",
-          secondary: "rgb(24, 24, 27)",
-          border: "rgba(63, 63, 70, 0.4)",
-          title: "rgb(244, 244, 245)",
-          subtitle: "rgb(161, 161, 170)",
-          bgHeader: "rgb(39, 39, 42)",
-          blue: "rgb(93, 188, 252)",
-          iconHover: "#d4d4d8",
+          primary: "#09090B", // Near-black for modern dark mode
+          secondary: "#1C1C1F", // Rich dark surface like Framer
+          border: "rgba(63, 63, 70, 0.3)", // Subtle modern border
+          title: "#FAFAFA", // Crisp white text
+          subtitle: "#A0A0AB", // Modern muted text
+          bgHeader: "#18181B", // Distinct dark header
+          blue: "#3B82F6", // Modern blue like Framer
+          iconHover: "#E2E2E2", // Clean hover state
         },
         light: {
-          primary: "rgb(250, 250, 250)",
-          secondary: "rgb(255, 255, 255)",
-          border: "rgba(202, 202, 202, 0.518)",
-          title: "rgb(39, 39, 42)",
-          subtitle: "rgb(82, 82, 91)",
-          bgHeader: "rgb(247, 247, 247)",
-          blue: "rgb(0, 149, 246)",
-          iconHover: "#333",
+          primary: "#FAFAFA", // Clean white background
+          secondary: "#FFFFFF", // Pure white surface
+          border: "rgba(228, 228, 231, 0.7)", // Subtle light border
+          title: "#09090B", // Near-black text
+          subtitle: "#71717A", // Modern gray text
+          bgHeader: "#F8F8F8", // Subtle header background
+          blue: "#2563EB", // Vibrant blue for light mode
+          iconHover: "#27272A", // Dark hover state
         },
       },
       container: {
-        center: "true",
+        center: true,
       },
       screens: {
         xs: "480px",

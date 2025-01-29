@@ -2,6 +2,11 @@ html {
   scroll-behavior: smooth;
 }
 
+nav{
+  min-width: 371px;
+  margin-left:12px;
+}
+
 .loader {
   width: fit-content;
   font-size: 40px;
