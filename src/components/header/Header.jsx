@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { SunDim, CloudMoon, Languages , Menu } from "lucide-react";
+import { SunDim, CloudMoon, Languages, Menu } from "lucide-react";
 import Modal from "./Modal";
 import "./header.css";
-import { useThemeMode } from '../../hooks/useThemeMode';
-import { useTranslationMode } from '../../hooks/useTranslationMode';
+import { useThemeMode } from "../../hooks/useThemeMode";
+import { useTranslationMode } from "../../hooks/useTranslationMode";
 import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
@@ -45,7 +45,7 @@ const Header = () => {
       >
         <ul className="flex gap-4">
           {NAV_ITEMS.map((item) => (
-            <li key={item.label} className="hover:text-dark-blue">
+            <li key={item.label} className="hover:text-dark-subtitle">
               <HashLink to={item.href} aria-label={item.label}>
                 {item.label}
               </HashLink>
@@ -61,7 +61,7 @@ const Header = () => {
             currentLang === "en" ? "Arabic" : "English"
           }`}
         >
-          <Languages  />
+          <Languages />
         </button>
         <button
           onClick={toggleTheme}

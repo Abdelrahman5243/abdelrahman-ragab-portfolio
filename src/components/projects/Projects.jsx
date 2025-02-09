@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import "./projects.css";
 import { useTranslation } from "react-i18next";
-import { Workflow } from 'lucide-react';
+import { Workflow } from "lucide-react";
 
 const Projects = () => {
   const { t } = useTranslation("main");
@@ -31,17 +31,32 @@ const Projects = () => {
       </div>
 
       <div
-        className="flex flex-wrap gap-8 justify-center w-full"
+        className="flex flex-wrap gap-6 justify-center w-full"
         role="tabpanel"
         aria-labelledby="projects-title"
       >
-        <AnimatePresence>
-          {myProjects.map((project) => (
+        <AnimatePresence mode="wait">
+          {myProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ transform: "scale(0.4)" }}
-              animate={{ transform: "scale(1)" }}
-              transition={{ type: "spring", damping: 8, stiffness: 50 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  delay: index * 0.1, // Stagger effect
+                },
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+                transition: { duration: 0.3 },
+              }}
+              whileHover={{
+                scale: 1.05,
+                transition: { type: "spring", stiffness: 300 },
+              }}
               className="card bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between"
               aria-labelledby={`project-${project.id}-title`}
               aria-describedby={`project-${project.id}-description`}

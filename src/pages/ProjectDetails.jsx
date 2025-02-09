@@ -1,8 +1,9 @@
-import React, { Suspense, lazy,useLayoutEffect } from "react";
+import React, { Suspense, lazy, useLayoutEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft,ExternalLink, GithubIcon } from "lucide-react";
+import { ArrowLeft, ExternalLink, GithubIcon } from "lucide-react";
 import { MoreVertical } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 const Slider = lazy(() => import("../components/slider/Slider"));
 
 const ProjectDetails = () => {
@@ -11,18 +12,30 @@ const ProjectDetails = () => {
   const projectData = t(`projects.${id}`, { returnObjects: true });
 
   useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   return (
-    <div className="my-8">
-      <Link to="/" className="header_btn centered mb-8 w-28 p-4 gap-4">
-        <ArrowLeft
-          size={20}
-          className={`${i18n.language === "ar" ? "rotate-180" : ""}`}
-        />
-        Home
-      </Link>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="my-8"
+    >
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        <Link to="/" className="header_btn centered mb-8 w-28 p-4 gap-4">
+          <ArrowLeft
+            size={20}
+            className={`${i18n.language === "ar" ? "rotate-180" : ""}`}
+          />
+          Home
+        </Link>
+      </motion.div>
+
       <Suspense
         fallback={
           <div className="w-screen h-screen flex justify-center items-center">
@@ -30,37 +43,74 @@ const ProjectDetails = () => {
           </div>
         }
       >
-        <Slider project={projectData} language={i18n.language} />
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.7,
+            delay: 0.3,
+            ease: "easeOut",
+          }}
+        >
+          <Slider project={projectData} language={i18n.language} />
+        </motion.div>
       </Suspense>
 
-      <div className="flex gap-4 items-center my-8 text-3xl mt-16">
-        <MoreVertical
-          className="text-light-subtitle dark:text-dark-subtitle"
-          aria-hidden="true"
-        />
-        <h1 className="title mb-0">{projectData.title}</h1>
-      </div>
-      <p className="description mx-9 leading-10">{projectData.details}</p>
-      <div className="flex gap-4 items-center my-8 text-3xl">
-        <MoreVertical
-          className="text-light-subtitle dark:text-dark-subtitle"
-          aria-hidden="true"
-        />
-        <h1 className="text-xl sm:text-2xl md:text-3xl lead dark:text-dark-title text-light-title">
-          {t("technologiesTitle")}
-        </h1>
-      </div>
-      <div className="flex flex-wrap gap-4 px-8 mb-10 dark:text-dark-subtitle text-light-subtitle">
-        {projectData.technologies.map((technology) => (
-          <span
-            key={technology}
-            className="mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border"
-          >
-            {technology}
-          </span>
-        ))}
-      </div>
-      <ul className="flex flex-wrap gap-4 px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex gap-4 items-center my-8 text-3xl mt-16">
+          <MoreVertical
+            className="text-light-subtitle dark:text-dark-subtitle"
+            aria-hidden="true"
+          />
+          <h1 className="title mb-0">{projectData.title}</h1>
+        </div>
+        <p className="description mx-9 leading-10">{projectData.details}</p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex gap-4 items-center my-8 text-3xl">
+          <MoreVertical
+            className="text-light-subtitle dark:text-dark-subtitle"
+            aria-hidden="true"
+          />
+          <h1 className="text-xl sm:text-2xl md:text-3xl lead dark:text-dark-title text-light-title">
+            {t("technologiesTitle")}
+          </h1>
+        </div>
+        <div className="flex flex-wrap gap-4 px-8 mb-10 dark:text-dark-subtitle text-light-subtitle">
+          {projectData.technologies.map((technology, index) => (
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              key={technology}
+              className="mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border"
+            >
+              {technology}
+            </motion.span>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.ul
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-wrap gap-4 px-8"
+      >
         <li>
           <a
             href={projectData.live}
@@ -83,8 +133,8 @@ const ProjectDetails = () => {
             <GithubIcon className="text-light-blue" />
           </a>
         </li>
-      </ul>
-    </div>
+      </motion.ul>
+    </motion.div>
   );
 };
 

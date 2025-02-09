@@ -10,45 +10,78 @@ const Hero = () => {
   const { t } = useTranslation("main");
   const lottieRef = useRef();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section id="about" aria-labelledby="hero-title" className="flex flex-col items-center">
+    <motion.section
+      id="about"
+      aria-labelledby="hero-title"
+      className="flex flex-col items-center"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="flex mt-8 items-center flex-col-reverse md:flex-row py-8">
-        <div className="left-section w-full md:w-1/2 relative">
-          <motion.h1
-            id="hero-title"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="title"
-          >
+        <motion.div
+          className="left-section w-full md:w-1/2 relative"
+          variants={itemVariants}
+        >
+          <motion.h1 id="hero-title" className="title" variants={itemVariants}>
             {t(HERO_CONTENT.titleKey)}
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
             className="description"
             style={{ lineHeight: 2 }}
+            variants={itemVariants}
           >
             {t(HERO_CONTENT.descriptionKey)}
           </motion.p>
-          <div className="flex flex-wrap gap-4 mb-8 max-w-max">
+          <motion.div
+            className="flex flex-wrap gap-4 mb-8 max-w-max"
+            variants={itemVariants}
+          >
             <motion.a
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
               href={HERO_CONTENT.cvUrl}
               target="_blank"
               className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
               aria-label="Preview CV"
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "var(--hover-bg)",
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               {t(HERO_CONTENT.showCVKey)}
               <ExternalLink />
             </motion.a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="right-section w-full md:w-1/2 relative">
+        <motion.div
+          className="right-section w-full md:w-1/2 relative"
+          variants={itemVariants}
+        >
           <div className="animation-container w-full h-80 flex items-center justify-center">
             <Lottie
               lottieRef={lottieRef}
@@ -58,9 +91,12 @@ const Hero = () => {
               aria-label="Developer animation"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="flex text-lg gap-6 dark:text-dark-subtitle text-light-subtitle mb-8">
+      <motion.div
+        className="flex text-lg gap-6 dark:text-dark-subtitle text-light-subtitle mb-8"
+        variants={containerVariants}
+      >
         {HERO_CONTENT.socialLinks.map((link, index) => (
           <motion.a
             key={index}
@@ -68,16 +104,22 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transform transition-transform duration-200"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.1 * index }}
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.2,
+              rotate: [0, -10, 10, -10, 0],
+              transition: {
+                duration: 0.5,
+                ease: "easeInOut",
+              },
+            }}
             aria-label={link.ariaLabel}
           >
             {<link.icon />}
           </motion.a>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
