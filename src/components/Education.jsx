@@ -99,23 +99,34 @@ const Education = () => {
             className="text-xl font-semibold text-light-title dark:text-dark-title mb-2"
             variants={listItemVariants}
           >
-            Faculty of Engineering, Zagazig University
+            Faculty of Engineering,
+            <span className="text-blue-600 dark:text-blue-400">
+              Zagazig University
+            </span>
           </motion.h3>
           <motion.p
             className="text-lg text-light-subtitle dark:text-dark-subtitle mb-4"
             variants={listItemVariants}
           >
-            Bachelor of Science in Computer Science
+            Bachelor of Science in
+            <span className="text-blue-600 dark:text-blue-400">
+              Computer Science
+            </span>
           </motion.p>
           <motion.div
             className="space-y-2 text-light-subtitle dark:text-dark-subtitle"
             variants={containerVariants}
           >
-            <motion.p variants={listItemVariants}>• Grade: Very Good</motion.p>
             <motion.p variants={listItemVariants}>
-              • Duration: 2019 - 2023
+              • Grade:
+              <span className="text-green-600 dark:text-green-400 font-medium">
+                Very Good
+              </span>
             </motion.p>
             <motion.p variants={listItemVariants}>
+              • Duration: 2019 - 2024
+            </motion.p>
+            <motion.p variants={listItemVariants} className="font-medium">
               • Relevant Coursework:
             </motion.p>
             <motion.ul className="list-disc pl-8 space-y-1">
@@ -131,16 +142,23 @@ const Education = () => {
                   key={index}
                   variants={listItemVariants}
                   custom={index}
+                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
                   {course}
                 </motion.li>
               ))}
             </motion.ul>
-            <motion.p className="mt-4" variants={listItemVariants}>
-              • Graduation Project: Website Builder Platform
+            <motion.p className="mt-4 font-medium" variants={listItemVariants}>
+              • Graduation Project:
+              <span className="text-blue-600 dark:text-blue-400">
+                Website Builder Platform
+              </span>
             </motion.p>
             <motion.p className="pl-8 text-sm" variants={listItemVariants}>
-              Grade: Excellent
+              Grade:
+              <span className="text-green-600 dark:text-green-400 font-medium">
+                Excellent
+              </span>
             </motion.p>
             <motion.p
               className="pl-8 mt-2 leading-relaxed"
@@ -148,7 +166,11 @@ const Education = () => {
             >
               Developed a comprehensive website builder platform that enables
               users to create and customize websites with ease. The platform
-              features a bilingual interface (Arabic/English) and includes:
+              features a
+              <span className="text-blue-600 dark:text-blue-400">
+                bilingual interface (Arabic/English)
+              </span>
+              and includes:
             </motion.p>
             <motion.ul className="list-disc pl-12 space-y-2 mt-2">
               {[
@@ -163,13 +185,14 @@ const Education = () => {
                   key={index}
                   variants={listItemVariants}
                   custom={index}
+                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
                   {feature}
                 </motion.li>
               ))}
             </motion.ul>
             <motion.p
-              className="pl-8 mt-2 italic text-sm"
+              className="pl-8 mt-2 italic text-sm font-medium text-blue-600/80 dark:text-blue-400/80"
               variants={listItemVariants}
             >
               This project demonstrated proficiency in modern web development
