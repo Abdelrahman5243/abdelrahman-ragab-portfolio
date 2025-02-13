@@ -64,16 +64,16 @@ const Hero = () => {
             <motion.a
               href={HERO_CONTENT.cvUrl}
               target="_blank"
-              className="py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex gap-4 items-center justify-between"
+              className="relative py-2 px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-4 items-center justify-between"
               aria-label="Preview CV"
               whileHover={{
                 scale: 1.05,
-                backgroundColor: "var(--hover-bg)",
               }}
               whileTap={{ scale: 0.95 }}
             >
-              {t(HERO_CONTENT.showCVKey)}
+              <span>{t(HERO_CONTENT.showCVKey)}</span>
               <ExternalLink />
+              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-dark-bgHeader dark:via-light-blue to-transparent" />
             </motion.a>
           </motion.div>
         </motion.div>

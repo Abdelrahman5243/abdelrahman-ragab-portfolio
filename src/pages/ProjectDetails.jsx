@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useLayoutEffect } from "react";
+import { Suspense, lazy, useLayoutEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ExternalLink, GithubIcon } from "lucide-react";
 import { MoreVertical } from "lucide-react";
@@ -111,28 +111,40 @@ const ProjectDetails = () => {
         transition={{ duration: 0.5 }}
         className="flex flex-wrap gap-4 px-8"
       >
-        <li>
+        <motion.li
+          whileHover={{
+            scale: 1.05,
+          }}
+          whileTap={{ scale: 0.95 }}
+        >
           <a
             href={projectData.live}
-            className="project_btn"
+            className="relative py-2 px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-4 items-center justify-between"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Go to live demo
-            <ExternalLink className="text-light-blue" />
+            <span>Go to live demo</span>
+            <ExternalLink />
+            <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-orange-300 to-transparent" />
           </a>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li
+          whileHover={{
+            scale: 1.05,
+          }}
+          whileTap={{ scale: 0.95 }}
+        >
           <a
             href={projectData.repo}
-            className="project_btn"
+            className="relative py-2 px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-4 items-center justify-between"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Go to Code
-            <GithubIcon className="text-light-blue" />
+            <span>Go to Code</span>
+            <GithubIcon />
+            <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-red-300 to-transparent" />
           </a>
-        </li>
+        </motion.li>
       </motion.ul>
     </motion.div>
   );
