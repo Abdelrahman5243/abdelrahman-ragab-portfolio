@@ -74,7 +74,7 @@ const Education = () => {
 
       <motion.div className="my-8" variants={cardVariants}>
         <motion.div
-          className="p-6 rounded-lg shadow-lg bg-light-bgHeader dark:bg-dark-bgHeader"
+          className="p-6 rounded-lg bg-light-bgHeader dark:bg-dark-bgHeader"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
         >
