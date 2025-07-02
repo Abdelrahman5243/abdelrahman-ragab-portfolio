@@ -16,7 +16,10 @@ const ProjectCard = ({ project, id }) => {
           <img
             src={project.image_url}
             alt="project"
+            width={1280}
+            height={720}
             className="object-cover w-full hover:scale-105 transition origin-top hover:brightness-75"
+            loading="lazy"
           />
         </Link>
       </div>
@@ -44,11 +47,11 @@ const ProjectCard = ({ project, id }) => {
           </a>
         </div>
         <Link
-          className="text-light-blue flex items-center gap-2"
+          className="text-blue-600 dark:text-blue-400 flex items-center gap-2"
           to={`project-details/${id}`}
           aria-label={`View details for project ${id}`}
         >
-          more
+          View details
           <ArrowLeft
             size={"20px"}
             className={`mt-1 ${language === "ar" ? "" : "rotate-180"}`}

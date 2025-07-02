@@ -40,6 +40,8 @@ const Slider = ({ project, language }) => {
             <img
               src={img}
               alt={`design ${index}`}
+              width={1280}
+              height={720}
               className="w-full h-auto"
               onLoad={() => handleImageLoad(index)}
               style={{ visibility: loading[index] ? 'hidden' : 'visible' }}

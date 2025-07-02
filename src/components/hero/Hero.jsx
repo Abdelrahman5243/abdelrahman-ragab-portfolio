@@ -1,14 +1,22 @@
-import { useRef } from "react";
+import React,{ useRef, useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import Lottie from "lottie-react";
-import devAnimation from "../../assets/animation/dev.json";
 import { HERO_CONTENT } from "./heroContent.js";
 import { ExternalLink } from "lucide-react";
+
+const Lottie = React.lazy(() => import("lottie-react"));
 
 const Hero = () => {
   const { t } = useTranslation("main");
   const lottieRef = useRef();
+  const [animationData, setAnimationData] = useState(null);
+
+  // Lazy load the animation JSON
+  useEffect(() => {
+    import("../../assets/animation/dev.json").then((mod) =>
+      setAnimationData(mod.default || mod)
+    );
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,13 +58,12 @@ const Hero = () => {
           <motion.h1 id="hero-title" className="title" variants={itemVariants}>
             {t(HERO_CONTENT.titleKey)}
           </motion.h1>
-          <motion.p
-            className="description"
-            style={{ lineHeight: 2 }}
-            variants={itemVariants}
-          >
+
+          {/* LCP: Not animated */}
+          <p className="description" style={{ lineHeight: 2 }}>
             {t(HERO_CONTENT.descriptionKey)}
-          </motion.p>
+          </p>
+
           <motion.div
             className="flex flex-wrap gap-4 mb-8 max-w-max"
             variants={itemVariants}
@@ -66,9 +73,7 @@ const Hero = () => {
               target="_blank"
               className="relative py-2 px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-4 items-center justify-between"
               aria-label="Preview CV"
-              whileHover={{
-                scale: 1.05,
-              }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <span>{t(HERO_CONTENT.showCVKey)}</span>
@@ -83,16 +88,21 @@ const Hero = () => {
           variants={itemVariants}
         >
           <div className="animation-container w-full h-80 flex items-center justify-center">
-            <Lottie
-              lottieRef={lottieRef}
-              onComplete={() => lottieRef.current.setSpeed(0.5)}
-              animationData={devAnimation}
-              role="img"
-              aria-label="Developer animation"
-            />
+            <Suspense fallback={<div className="text-sm text-gray-500">Loading animation…</div>}>
+              {animationData && (
+                <Lottie
+                  lottieRef={lottieRef}
+                  onComplete={() => lottieRef.current?.setSpeed(0.5)}
+                  animationData={animationData}
+                  role="img"
+                  aria-label="Developer animation"
+                />
+              )}
+            </Suspense>
           </div>
         </motion.div>
       </div>
+
       <motion.div
         className="flex text-lg gap-6 dark:text-dark-subtitle text-light-subtitle mb-8"
         variants={containerVariants}

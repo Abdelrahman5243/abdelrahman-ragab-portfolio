@@ -88,20 +88,24 @@ const ProjectDetails = () => {
             {t("technologiesTitle")}
           </h1>
         </div>
-        <div className="flex flex-wrap gap-4 px-8 mb-10 dark:text-dark-subtitle text-light-subtitle">
+        <ul
+          role="list"
+          className="flex flex-wrap gap-4 px-8 mb-10 dark:text-dark-subtitle text-light-subtitle"
+        >
           {projectData.technologies.map((technology, index) => (
-            <motion.span
+            <motion.li
+              key={technology}
+              role="listitem"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              key={technology}
-              className="mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border"
+              className="mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border list-none"
             >
               {technology}
-            </motion.span>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </motion.div>
 
       <motion.ul

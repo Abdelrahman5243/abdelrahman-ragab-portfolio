@@ -55,6 +55,7 @@ const RootLayout = () => {
             showScrollButton ? "opacity-100" : "opacity-0"
           }`}
         href="#top"
+        aria-label="Scroll to top"
       >
         <ChevronUp />
       </a>
