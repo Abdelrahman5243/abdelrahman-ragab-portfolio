@@ -4,7 +4,7 @@ import { ArrowLeft, ExternalLink, GithubIcon } from "lucide-react";
 import { MoreVertical } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-const Slider = lazy(() => import("../components/slider/Slider"));
+import Slider from "../components/slider/Slider"
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -36,13 +36,6 @@ const ProjectDetails = () => {
         </Link>
       </motion.div>
 
-      <Suspense
-        fallback={
-          <div className="w-screen h-screen flex justify-center items-center">
-            <div className="loader"></div>
-          </div>
-        }
-      >
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -53,9 +46,8 @@ const ProjectDetails = () => {
             ease: "easeOut",
           }}
         >
-          <Slider project={projectData} language={i18n.language} />
+          <Slinpmder project={projectData} language={i18n.language} />
         </motion.div>
-      </Suspense>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -5,16 +5,28 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./slider.css";
+import SkeletonLoader from "../spinner/SkeletonLoader";
+
+const placeholderImg = "https://placehold.co/600x400/png";
 
 const Slider = ({ project, language }) => {
   const projectImages = project.screens_url || [];
+  const [images, setImages] = useState(projectImages);
   const [loading, setLoading] = useState(new Array(projectImages.length).fill(true));
 
   const handleImageLoad = (index) => {
     setLoading((prev) => {
-      const updatedLoading = [...prev];
-      updatedLoading[index] = false;
-      return updatedLoading;
+      const updated = [...prev];
+      updated[index] = false;
+      return updated;
+    });
+  };
+
+  const handleImageError = (index) => {
+    setImages((prev) => {
+      const updated = [...prev];
+      updated[index] = placeholderImg;
+      return updated;
     });
   };
 
@@ -27,24 +39,26 @@ const Slider = ({ project, language }) => {
       autoplay={{ delay: 3000 }}
       navigation
       pagination={{ clickable: true }}
-      className="max-h-[500px] overflow-hidden"
+      className="max-h-[500px] overflow-hidden rounded-lg"
     >
-      {projectImages.map((img, index) => (
+      {images.map((img, index) => (
         <SwiperSlide key={index} className="mx-auto w-full">
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full min-h-[400px] flex justify-center items-center">
             {loading[index] && (
-              <div className="w-screen h-screen flex justify-center items-center">
-                <div className="loader"></div>
+              <div className="absolute inset-0 z-10">
+                <SkeletonLoader />
               </div>
             )}
             <img
               src={img}
-              alt={`design ${index}`}
+              alt={`Design ${index + 1}`}
               width={1280}
               height={720}
-              className="w-full h-auto"
+              className={`w-full h-auto transition-opacity duration-300 rounded-lg ${
+                loading[index] ? "opacity-0" : "opacity-100"
+              }`}
               onLoad={() => handleImageLoad(index)}
-              style={{ visibility: loading[index] ? 'hidden' : 'visible' }}
+              onError={() => handleImageError(index)}
             />
           </div>
         </SwiperSlide>

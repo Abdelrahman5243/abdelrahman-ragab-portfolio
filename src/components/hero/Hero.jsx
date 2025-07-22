@@ -52,20 +52,19 @@ const Hero = () => {
     >
       <div className="flex mt-8 items-center flex-col-reverse md:flex-row py-8">
         <motion.div
-          className="left-section w-full md:w-1/2 relative"
+          className="left-section w-full text-center relative"
           variants={itemVariants}
         >
           <motion.h1 id="hero-title" className="title" variants={itemVariants}>
             {t(HERO_CONTENT.titleKey)}
           </motion.h1>
 
-          {/* LCP: Not animated */}
           <p className="description" style={{ lineHeight: 2 }}>
             {t(HERO_CONTENT.descriptionKey)}
           </p>
 
           <motion.div
-            className="flex flex-wrap gap-4 mb-8 max-w-max"
+            className="flex m-auto gap-4 mb-8 max-w-max"
             variants={itemVariants}
           >
             <motion.a
@@ -83,7 +82,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="right-section w-full md:w-1/2 relative"
           variants={itemVariants}
         >
@@ -100,7 +99,7 @@ const Hero = () => {
               )}
             </Suspense>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <motion.div

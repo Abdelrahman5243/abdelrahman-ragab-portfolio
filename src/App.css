@@ -48,3 +48,11 @@ nav{
     background-position: 0 100%, 100% 100%
   }
 }
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: black !important;
+}
+
+.swiper-button-prev, .swiper-button-next{
+  color: #000000 !important; 
+}

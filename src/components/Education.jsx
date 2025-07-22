@@ -1,24 +1,10 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const Education = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" });
   const { t } = useTranslation("main"); 
   const education = t("education", { returnObjects: true });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
 
   const headerVariants = {
     hidden: { opacity: 0, y: -30 },
@@ -49,13 +35,9 @@ const Education = () => {
   };
 
   return (
-    <motion.section
+    <section
       id="education"
-      className="my-12 px-4 md:px-8"
-      ref={ref}
-      variants={containerVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      className="my-12 w-full"
     >
       <motion.div
         className="flex gap-4 items-center mb-6 text-3xl"
@@ -73,10 +55,8 @@ const Education = () => {
       </motion.div>
 
       <motion.div className="my-8" variants={cardVariants}>
-        <motion.div
+        <div
           className="p-6 rounded-lg bg-light-bgHeader dark:bg-dark-bgHeader"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
         >
           <motion.h3
             className="text-xl font-semibold text-light-title dark:text-dark-title mb-2"
@@ -151,9 +131,9 @@ const Education = () => {
               {education.items[0]?.projectNote}
             </motion.p>
           </motion.div>
-        </motion.div>
+        </div>
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 
