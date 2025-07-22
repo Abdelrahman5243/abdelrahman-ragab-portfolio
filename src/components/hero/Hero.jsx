@@ -1,22 +1,22 @@
-import React,{ useRef, useState, useEffect, Suspense } from "react";
+// import React,{ useRef, useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { HERO_CONTENT } from "./heroContent.js";
 import { ExternalLink } from "lucide-react";
 
-const Lottie = React.lazy(() => import("lottie-react"));
+// const Lottie = React.lazy(() => import("lottie-react"));
 
 const Hero = () => {
   const { t } = useTranslation("main");
-  const lottieRef = useRef();
-  const [animationData, setAnimationData] = useState(null);
+  // const lottieRef = useRef();
+  // const [animationData, setAnimationData] = useState(null);
 
-  // Lazy load the animation JSON
-  useEffect(() => {
-    import("../../assets/animation/dev.json").then((mod) =>
-      setAnimationData(mod.default || mod)
-    );
-  }, []);
+  // // Lazy load the animation JSON
+  // useEffect(() => {
+  //   import("../../assets/animation/dev.json").then((mod) =>
+  //     setAnimationData(mod.default || mod)
+  //   );
+  // }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
