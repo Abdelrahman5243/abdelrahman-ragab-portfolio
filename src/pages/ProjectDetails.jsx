@@ -46,7 +46,7 @@ const ProjectDetails = () => {
             ease: "easeOut",
           }}
         >
-          <Slinpmder project={projectData} language={i18n.language} />
+          <Slider project={projectData} language={i18n.language} />
         </motion.div>
 
       <motion.div

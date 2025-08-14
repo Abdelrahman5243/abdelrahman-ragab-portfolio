@@ -45,7 +45,7 @@ const Hero = () => {
     <motion.section
       id="about"
       aria-labelledby="hero-title"
-      className="flex flex-col items-center min-h-screen px-4"
+      className="flex flex-col items-center px-4"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

@@ -56,3 +56,7 @@ nav{
 .swiper-button-prev, .swiper-button-next{
   color: #000000 !important; 
 }
+
+.swiper.swiper-initialized.swiper-horizontal{
+  direction: ltr;
+}
