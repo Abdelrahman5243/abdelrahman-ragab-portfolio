@@ -45,7 +45,7 @@ const Hero = () => {
     <motion.section
       id="about"
       aria-labelledby="hero-title"
-      className="flex flex-col items-center"
+      className="flex flex-col items-center min-h-screen px-4"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -55,7 +55,7 @@ const Hero = () => {
           className="left-section w-full text-center relative"
           variants={itemVariants}
         >
-          <motion.h1 id="hero-title" className="title" variants={itemVariants}>
+          <motion.h1 id="hero-title" className="title text-balance" variants={itemVariants}>
             {t(HERO_CONTENT.titleKey)}
           </motion.h1>
 

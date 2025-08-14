@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: "https://portfolio-express-production-f354.up.railway.app/{{lng}}",
+      loadPath: "https://portfolio-express-production-4013.up.railway.app/{{lng}}",
     },
     lng: savedLanguage,
     fallbackLng: "en",
