@@ -1,22 +1,41 @@
-import React from "react";
 import { Route, Routes } from "react-router";
+import { Suspense, useState, useEffect } from "react";
 import "./App.css";
 import MainPage from "./pages/MainPage";
 import NotFound from "./pages/NotFound";
 import ProjectDetails from "./pages/ProjectDetails";
 import RootLayout from "./RootLayout";
+import i18n from "./i18n";
+
+const Loader = () => (
+  <div className="w-screen h-screen flex justify-center items-center">
+    <div className="loader"></div>
+  </div>
+);
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (i18n.isInitialized) {
+      setLoading(false);
+    } else {
+      i18n.on("initialized", () => setLoading(false));
+    }
+  }, []);
+
+  if (loading) return <Loader />;
+
   return (
-    <>
-        <Routes>
-        <Route element={<RootLayout/>}>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route element={<RootLayout />}>
           <Route index element={<MainPage />} />
           <Route path="/project-details/:id" element={<ProjectDetails />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        </Routes>
-    </>
+      </Routes>
+    </Suspense>
   );
 };
 

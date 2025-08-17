@@ -32,15 +32,17 @@ const Slider = ({ project, language }) => {
 
   return (
     <Swiper
-      key={language}
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
-      autoplay={{ delay: 3000 }}
-      navigation
-      pagination={{ clickable: true }}
-      className="max-h-[500px] overflow-hidden rounded-lg"
-    >
+  key={language}
+  dir={language === "ar" ? "rtl" : "ltr"}
+  modules={[Navigation, Pagination, Autoplay]}
+  spaceBetween={50}
+  slidesPerView={1}
+  autoplay={{ delay: 3000 }}
+  navigation
+  pagination={{ clickable: true }}
+  className="max-h-[500px] overflow-hidden rounded-lg"
+>
+
       {images.map((img, index) => (
         <SwiperSlide key={index} className="mx-auto w-full">
           <div className="relative w-full h-full min-h-[400px] flex justify-center items-center">

@@ -57,6 +57,6 @@ nav{
   color: #000000 !important; 
 }
 
-.swiper.swiper-initialized.swiper-horizontal{
-  direction: ltr;
+.swiper-slide.swiper-slide-active.mx-auto.w-full{
+  margin-left: 0 !important;
 }
