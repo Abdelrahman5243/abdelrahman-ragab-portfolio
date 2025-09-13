@@ -20,7 +20,7 @@ const Projects = () => {
       className="w-full mx-auto my-8 bg-light-secondary dark:bg-dark-secondary"
       aria-labelledby="projects-title"
     >
-      <div className="flex gap-4 items-center text-3xl mb-14">
+      <div className="flex gap-4 items-center text-2xl sm:text-3xl md:text-4xl mb-14">
         <Workflow
           className="text-light-subtitle dark:text-dark-subtitle"
           aria-hidden="true"
@@ -31,7 +31,7 @@ const Projects = () => {
       </div>
 
       <div
-        className="flex flex-wrap gap-6 justify-center w-full"
+        className="flex flex-wrap gap-6 justify-center"
         role="tabpanel"
         aria-labelledby="projects-title"
       >
@@ -45,7 +45,7 @@ const Projects = () => {
                 y: 0,
                 transition: {
                   duration: 0.5,
-                  delay: index * 0.1, // Stagger effect
+                  delay: index * 0.1, // stagger
                 },
               }}
               exit={{
@@ -54,19 +54,22 @@ const Projects = () => {
                 transition: { duration: 0.3 },
               }}
               whileHover={{
-                scale: 1.05,
+                scale: 1.03,
                 transition: { type: "spring", stiffness: 300 },
               }}
-              className="card bg-light-bgHeader dark:bg-dark-bgHeader flex flex-col justify-between"
+              className="
+                flex-grow
+                basis-full 
+                sm:basis-[47%] 
+                lg:basis-[31%]
+                bg-light-bgHeader dark:bg-dark-bgHeader 
+                flex flex-col justify-between
+                rounded-lg shadow-sm
+              "
               aria-labelledby={`project-${project.id}-title`}
               aria-describedby={`project-${project.id}-description`}
             >
-              <ProjectCard
-                id={project.id}
-                project={{
-                  ...project,
-                }}
-              />
+              <ProjectCard id={project.id} project={{ ...project }} />
             </motion.div>
           ))}
         </AnimatePresence>
