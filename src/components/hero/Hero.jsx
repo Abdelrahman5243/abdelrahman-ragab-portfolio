@@ -44,7 +44,7 @@ const Hero = () => {
             "
             variants={itemVariants}
           >
-            {t("hero.jobTitle", "Full-Stack Developer")}
+            {t("hero.jobTitle", "Front-End Developer")}
           </motion.h2>
 
           <p
