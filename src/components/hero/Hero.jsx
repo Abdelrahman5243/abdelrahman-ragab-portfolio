@@ -1,45 +1,13 @@
-// import React,{ useRef, useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { HERO_CONTENT } from "./heroContent.js";
-import { ExternalLink } from "lucide-react";
-
-// const Lottie = React.lazy(() => import("lottie-react"));
+import { ExternalLink, Download } from "lucide-react";
+import { containerVariants, itemVariants, downloadVariants } from "../../animations/variants";
 
 const Hero = () => {
   const { t } = useTranslation("main");
-  // const lottieRef = useRef();
-  // const [animationData, setAnimationData] = useState(null);
 
-  // // Lazy load the animation JSON
-  // useEffect(() => {
-  //   import("../../assets/animation/dev.json").then((mod) =>
-  //     setAnimationData(mod.default || mod)
-  //   );
-  // }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
+  const cvUrl = "/cv/Abdelrahman-Ragab-Frontend-CV.pdf";
 
   return (
     <motion.section
@@ -55,55 +23,98 @@ const Hero = () => {
           className="left-section w-full text-center relative"
           variants={itemVariants}
         >
-          <motion.h1 id="hero-title" className="title text-balance" variants={itemVariants}>
+          <motion.h1
+            id="hero-title"
+            className="
+              text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+              font-bold leading-tight 
+              text-light-title dark:text-dark-title
+            "
+            variants={itemVariants}
+          >
             {t(HERO_CONTENT.titleKey)}
           </motion.h1>
 
-          <p className="description" style={{ lineHeight: 2 }}>
+          <motion.h2
+            className="
+              mt-2
+              text-base sm:text-lg md:text-xl lg:text-2xl
+              font-medium tracking-wide
+              text-green-600 dark:text-green-400 
+            "
+            variants={itemVariants}
+          >
+            {t("hero.jobTitle", "Full-Stack Developer")}
+          </motion.h2>
+
+          <p
+            className="
+              mt-4
+              text-sm sm:text-base md:text-lg lg:text-xl
+              text-light-subtitle dark:text-dark-subtitle
+              max-w-2xl mx-auto
+            "
+            style={{ lineHeight: 1.8 }}
+          >
             {t(HERO_CONTENT.descriptionKey)}
           </p>
 
           <motion.div
-            className="flex m-auto gap-4 mb-8 max-w-max"
+            className="flex m-auto gap-4 mb-8 max-w-max mt-6 flex-wrap justify-center"
             variants={itemVariants}
           >
             <motion.a
               href={HERO_CONTENT.cvUrl}
               target="_blank"
-              className="relative py-2 px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-4 items-center justify-between"
+              rel="noopener noreferrer"
+              className="
+                relative py-2 px-6 
+                backdrop-blur-sm 
+                border border-dark-bgHeader/10 dark:border-light-bgHeader/10 
+                bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 
+                text-sm sm:text-base md:text-lg 
+                text-light-subtitle dark:text-dark-subtitle 
+                rounded-full flex gap-2 items-center justify-center
+              "
               aria-label="Preview CV"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
+              <ExternalLink size={18} />
               <span>{t(HERO_CONTENT.showCVKey)}</span>
-              <ExternalLink />
-              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-dark-bgHeader dark:via-light-blue to-transparent" />
+            </motion.a>
+
+            <motion.a
+              href={cvUrl}
+              download="Abdelrahman-Ragab-Frontend-CV.pdf"
+              className="
+                relative py-2 px-6 
+                backdrop-blur-sm 
+                border border-dark-bgHeader/10 dark:border-light-bgHeader/10 
+                bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 
+                text-sm sm:text-base md:text-lg 
+                text-light-subtitle dark:text-dark-subtitle 
+                rounded-full flex gap-2 items-center justify-center
+              "
+              aria-label="Download CV"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.div variants={downloadVariants} animate="animate">
+                <Download size={18} />
+              </motion.div>
+              <span>{t("hero.downloadCV", "Download CV")}</span>
             </motion.a>
           </motion.div>
         </motion.div>
-
-        {/* <motion.div
-          className="right-section w-full md:w-1/2 relative"
-          variants={itemVariants}
-        >
-          <div className="animation-container w-full h-80 flex items-center justify-center">
-            <Suspense fallback={<div className="text-sm text-gray-500">Loading animation…</div>}>
-              {animationData && (
-                <Lottie
-                  lottieRef={lottieRef}
-                  onComplete={() => lottieRef.current?.setSpeed(0.5)}
-                  animationData={animationData}
-                  role="img"
-                  aria-label="Developer animation"
-                />
-              )}
-            </Suspense>
-          </div>
-        </motion.div> */}
       </div>
 
       <motion.div
-        className="flex text-lg gap-6 dark:text-dark-subtitle text-light-subtitle mb-8"
+        className="
+          flex gap-6 mb-8 
+          text-lg sm:text-xl md:text-2xl 
+          dark:text-dark-subtitle text-light-subtitle
+        "
         variants={containerVariants}
       >
         {HERO_CONTENT.socialLinks.map((link, index) => (
@@ -117,14 +128,11 @@ const Hero = () => {
             whileHover={{
               scale: 1.2,
               rotate: [0, -10, 10, -10, 0],
-              transition: {
-                duration: 0.5,
-                ease: "easeInOut",
-              },
+              transition: { duration: 0.5, ease: "easeInOut" },
             }}
             aria-label={link.ariaLabel}
           >
-            {<link.icon />}
+            <link.icon size="1em" />
           </motion.a>
         ))}
       </motion.div>

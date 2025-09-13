@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
 import { mySkills } from "./skillsData.js";
 import { RocketIcon } from "lucide-react";
+import { skillItemVariants } from "../../animations/variants"; 
 
 const Skills = () => {
   const { t } = useTranslation("main");
@@ -25,17 +26,15 @@ const Skills = () => {
           {t("skillsTitle")}
         </h1>
       </div>
+
       <div className="flex flex-wrap gap-4 pl-5 dark:text-dark-subtitle text-light-subtitle">
         {mySkills.map((skill, index) => (
           <motion.span
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{
-              delay: index * 0.08,
-              duration: 0.4,
-              ease: "easeOut",
-            }}
+            custom={index}
+            variants={skillItemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
             className="mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border
               hover:bg-light-border/10 dark:hover:bg-dark-border/10 
               transition-colors duration-200 cursor-default"

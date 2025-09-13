@@ -9,58 +9,81 @@ const ProjectCard = ({ project, id }) => {
   const language = i18n.language;
 
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <>
-      <div className="w-full h-[200px] overflow-hidden relative rounded-md">
+      <div className="w-full h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden relative rounded-md">
         <Link
           to={`project-details/${id}`}
           aria-label={`View details for project ${id}`}
         >
-          {!imageLoaded && (
-            <div className="absolute inset-0 w-full h-full">
+          {(!imageLoaded || imageError) && (
+            <div className="absolute inset-0 z-10">
               <SkeletonLoader />
             </div>
           )}
 
-          <img
-            src={project.image_url}
-            alt="project"
-            width={1280}
-            height={720}
-            className={`object-cover w-full h-[200px] transition duration-500 origin-top ${imageLoaded ? "opacity-100 hover:scale-105 hover:brightness-75" : "opacity-0"
-              }`}
-            loading="lazy"
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageLoaded(true)}
-
-          />
+          {!imageError && (
+            <img
+              src={`${project.image_url}`} 
+              alt="project"
+              width={1280}
+              height={720}
+              className="object-cover w-full h-full"
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageError(true)}
+            />
+          )}
         </Link>
       </div>
 
-      <h1 className="text-2xl sm:text-3xl capitalize m-4 text-light-title dark:text-dark-title">
+      <h1
+        id={`project-${id}-title`}
+        className="
+          text-base sm:text-lg md:text-xl lg:text-2xl 
+          capitalize m-4 
+          text-light-title dark:text-dark-title
+        "
+      >
         {project.title}
       </h1>
 
-      <p className="mx-4 my-2 text-light-subtitle dark:text-dark-subtitle flex-1">
+      <p
+        id={`project-${id}-description`}
+        className="
+          mx-4 my-2 
+          text-xs sm:text-sm md:text-base lg:text-lg 
+          text-light-subtitle dark:text-dark-subtitle flex-1
+        "
+      >
         {project.description}
       </p>
 
-      <div className="flex justify-between items-center m-4 text-xl mt-4 text-light-subtitle dark:text-dark-subtitle">
+      <div
+        className="
+          flex justify-between items-center 
+          m-4 
+          text-xs sm:text-sm md:text-base lg:text-lg 
+          mt-4 
+          text-light-subtitle dark:text-dark-subtitle
+        "
+      >
         <div className="icons flex gap-4">
           <a
             href={project.live}
             className="hover:text-dark-iconHover"
             aria-label={`View the project at ${project.title}`}
           >
-            <ExternalLink />
+            <ExternalLink size={18} />
           </a>
           <a
             href={project.repo}
             className="hover:text-dark-iconHover"
-            aria-label={`View the project's code on GitHub`}
+            aria-label="View the project's code on GitHub"
           >
-            <Github />
+            <Github size={18} />
           </a>
         </div>
         <Link
@@ -68,9 +91,9 @@ const ProjectCard = ({ project, id }) => {
           to={`project-details/${id}`}
           aria-label={`View details for project ${id}`}
         >
-          View details
+          <span className="text-xs sm:text-sm md:text-base">View details</span>
           <ArrowLeft
-            size={"20px"}
+            size={18}
             className={`mt-1 ${language === "ar" ? "" : "rotate-180"}`}
           />
         </Link>

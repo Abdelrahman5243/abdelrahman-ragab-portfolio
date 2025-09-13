@@ -1,15 +1,18 @@
-import React, {
-  useRef,
-  useEffect,
-  useState,
-  Suspense,
-} from "react";
+import React, { useRef, useEffect, useState, Suspense } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Spinner from "../spinner/Spinner";
 import { Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
-import "./contact.css"
+import {
+  contactIconVariants,
+  contactTitleVariants,
+  contactDescriptionVariants,
+  contactFormVariants,
+  contactAnimationVariants,
+  contactSuccessVariants,
+} from "../../animations/variants"; 
+import "./contact.css";
 
 const Lottie = React.lazy(() => import("lottie-react"));
 
@@ -22,7 +25,6 @@ const Contact = () => {
   const [animationData, setAnimationData] = useState(null);
 
   useEffect(() => {
-    // Load animation JSON only when in view
     if (isInView && !animationData) {
       import("../../assets/animation/contact.json").then((mod) =>
         setAnimationData(mod.default || mod)
@@ -34,17 +36,17 @@ const Contact = () => {
     <section id="contact" className="my-8" ref={ref}>
       <div className="flex gap-4 items-center mb-4 text-3xl">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6 }}
+          variants={contactIconVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
           <Mail className="section-title" aria-hidden="true" />
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          variants={contactTitleVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
           className="title mb-0"
         >
           {t("contact.title")}
@@ -52,9 +54,9 @@ const Contact = () => {
       </div>
 
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        variants={contactDescriptionVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
         className="description mb-8 leading-6"
       >
         {t("contact.description")}
@@ -65,9 +67,9 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className="w-full md:w-1/2 flex flex-col gap-4 mb-6 modal-text"
           aria-labelledby="contact-form"
-          initial={{ opacity: 0, y: -80 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          variants={contactFormVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
           <label htmlFor="email">{t("contact.form.emailLabel")}</label>
           <input
@@ -111,9 +113,9 @@ const Contact = () => {
 
           {state.succeeded && (
             <motion.p
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              variants={contactSuccessVariants}
+              initial="hidden"
+              animate="visible"
               className="text-xl mt-6"
             >
               {t("contact.successMessage")}
@@ -123,9 +125,9 @@ const Contact = () => {
 
         <motion.div
           className="w-full md:w-1/2"
-          initial={{ opacity: 0, y: 80 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          variants={contactAnimationVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
           <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
             {animationData && (

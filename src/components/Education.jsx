@@ -3,7 +3,7 @@ import { GraduationCap } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const Education = () => {
-  const { t } = useTranslation("main"); 
+  const { t } = useTranslation("main");
   const education = t("education", { returnObjects: true });
 
   const headerVariants = {
@@ -35,12 +35,9 @@ const Education = () => {
   };
 
   return (
-    <section
-      id="education"
-      className="my-12 w-full"
-    >
+    <section id="education" className="my-12 w-full">
       <motion.div
-        className="flex gap-4 items-center mb-6 text-3xl"
+        className="flex gap-3 items-center mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl"
         variants={headerVariants}
       >
         <motion.div
@@ -49,83 +46,128 @@ const Education = () => {
             transition: { duration: 0.5 },
           }}
         >
-          <GraduationCap className="section-title text-blue-600 dark:text-blue-400" aria-hidden="true" />
+          <GraduationCap
+            className="text-blue-600 dark:text-blue-400"
+            aria-hidden="true"
+            size={32}
+          />
         </motion.div>
-        <h1 className="title text-light-title dark:text-dark-title mb-0">{education.title}</h1>
+        <h1 className="font-bold text-light-title dark:text-dark-title mb-0">
+          {education.title}
+        </h1>
       </motion.div>
 
       <motion.div className="my-8" variants={cardVariants}>
-        <div
-          className="p-6 rounded-lg bg-light-bgHeader dark:bg-dark-bgHeader"
-        >
+        <div className="p-4 sm:p-6 rounded-lg bg-light-bgHeader dark:bg-dark-bgHeader">
           <motion.h3
-            className="text-xl font-semibold text-light-title dark:text-dark-title mb-2"
+            className="
+              text-base sm:text-lg md:text-xl lg:text-2xl
+              font-semibold text-light-title dark:text-dark-title mb-2
+            "
             variants={listItemVariants}
           >
             {education.items[0]?.university}
           </motion.h3>
+
           <motion.p
-            className="text-lg text-light-subtitle dark:text-dark-subtitle mb-4"
+            className="text-sm sm:text-base md:text-lg text-light-subtitle dark:text-dark-subtitle mb-4"
             variants={listItemVariants}
           >
-           Bachelor of Science in Computer Science
+            Bachelor of Science in Computer Science
           </motion.p>
 
           <motion.div className="space-y-2 text-light-subtitle dark:text-dark-subtitle">
-            <motion.p variants={listItemVariants}>
-              • {education.grade}: 
+            <motion.p
+              className="text-xs sm:text-sm md:text-base"
+              variants={listItemVariants}
+            >
+              • {education.grade}:{" "}
               <span className="text-green-600 dark:text-green-400 font-medium">
                 {education.items[0]?.grade}
               </span>
             </motion.p>
-            <motion.p variants={listItemVariants}>
+
+            <motion.p
+              className="text-xs sm:text-sm md:text-base"
+              variants={listItemVariants}
+            >
               {education.items[0]?.duration}
             </motion.p>
-            <motion.p variants={listItemVariants} className="font-medium">
+
+            <motion.p
+              className="font-medium text-sm sm:text-base md:text-lg"
+              variants={listItemVariants}
+            >
               • {education.relevantCoursework}:
             </motion.p>
-            <motion.ul className="list-disc pl-8 space-y-1">
+
+            <motion.ul className="list-disc pl-6 sm:pl-8 space-y-1">
               {education.items[0]?.relevantCoursework.map((course, index) => (
                 <motion.li
                   key={index}
                   variants={listItemVariants}
                   custom={index}
-                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  className="
+                    text-xs sm:text-sm md:text-base
+                    hover:text-blue-600 dark:hover:text-blue-400 
+                    transition-colors duration-200
+                  "
                 >
                   {course}
                 </motion.li>
               ))}
             </motion.ul>
 
-            <motion.p className="mt-4 font-medium" variants={listItemVariants}>
-              • {education.graduationProject}:
+            <motion.p
+              className="mt-4 font-medium text-sm sm:text-base md:text-lg"
+              variants={listItemVariants}
+            >
+              • {education.graduationProject}:{" "}
               <span className="text-blue-600 dark:text-blue-400">
                 {education.items[0]?.projectTitle}
               </span>
             </motion.p>
-            <motion.p className="pl-8 text-sm" variants={listItemVariants}>
-              • {education.grade}:
+
+            <motion.p
+              className="pl-4 text-xs sm:text-sm md:text-base"
+              variants={listItemVariants}
+            >
+              • {education.grade}:{" "}
               <span className="text-green-600 dark:text-green-400 font-medium">
                 {education.items[0]?.projectGrade}
               </span>
             </motion.p>
-            <motion.p className="pl-8 mt-2 leading-relaxed" variants={listItemVariants}>
+
+            <motion.p
+              className="pl-4 mt-2 leading-relaxed text-xs sm:text-sm md:text-base"
+              variants={listItemVariants}
+            >
               {education.items[0]?.projectDescription}
             </motion.p>
-            <motion.ul className="list-disc pl-12 space-y-2 mt-2">
+
+            <motion.ul className="list-disc pl-6 sm:pl-10 space-y-2 mt-2">
               {education.items[0]?.projectFeatures.map((feature, index) => (
                 <motion.li
                   key={index}
                   variants={listItemVariants}
                   custom={index}
-                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  className="
+                    text-xs sm:text-sm md:text-base
+                    hover:text-blue-600 dark:hover:text-blue-400 
+                    transition-colors duration-200
+                  "
                 >
                   {feature}
                 </motion.li>
               ))}
             </motion.ul>
+
             <motion.p
-              className="pl-8 mt-2 italic text-sm font-medium text-blue-600/80 dark:text-blue-400/80"
+              className="
+                pl-4 mt-2 italic 
+                text-xs sm:text-sm md:text-base 
+                font-medium text-blue-600/80 dark:text-blue-400/80
+              "
               variants={listItemVariants}
             >
               {education.items[0]?.projectNote}

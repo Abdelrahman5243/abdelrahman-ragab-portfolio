@@ -7,7 +7,7 @@ const SkeletonLoader = () => {
       aria-labelledby={`loading-aria-${uniqueId}`}
       viewBox="0 0 340 84"
       preserveAspectRatio="none"
-      className="w-full h-full"
+      className="w-full h-[500px]"
     >
       <title id={`loading-aria-${uniqueId}`}>Loading...</title>
       <rect
