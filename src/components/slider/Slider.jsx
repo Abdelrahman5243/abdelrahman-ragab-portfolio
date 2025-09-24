@@ -48,7 +48,7 @@ const Slider = ({ project, language }) => {
     >
       {images.map((img, index) => (
         <SwiperSlide key={index} className="mx-auto w-full">
-          <div className="relative w-full h-full min-h-[400px] flex justify-center items-center">
+          <div className="relative w-full h-full md:min-h-[400px] flex justify-center items-center">
             {(loading[index] || error[index]) && (
               <div className="z-10 flex justify-center items-center bg-gray-100">
                 <SkeletonLoader />
