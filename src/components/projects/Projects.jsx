@@ -54,6 +54,7 @@ const Projects = () => {
                 bg-light-bgHeader dark:bg-dark-bgHeader 
                 flex flex-col justify-between
                 rounded-lg shadow-sm
+                max-w-[50%]
               "
               aria-labelledby={`project-${project.id}-title`}
               aria-describedby={`project-${project.id}-description`}
