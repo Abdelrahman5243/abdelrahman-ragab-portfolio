@@ -31,27 +31,27 @@ export const downloadVariants = {
 };
 
 
-// project card animation
-export const projectCardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (index = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      delay: index * 0.1, // stagger by index
-    },
-  }),
-  exit: {
-    opacity: 0,
-    y: -20,
-    transition: { duration: 0.3 },
-  },
-  hover: {
-    scale: 1.03,
-    transition: { type: "spring", stiffness: 300 },
-  },
-};
+// // project card animation
+// export const projectCardVariants = {
+//   hidden: { opacity: 0, y: 20 },
+//   visible: (index = 0) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.5,
+//       delay: index * 0.1, // stagger by index
+//     },
+//   }),
+//   exit: {
+//     opacity: 0,
+//     y: -20,
+//     transition: { duration: 0.3 },
+//   },
+//   hover: {
+//     scale: 1.03,
+//     transition: { type: "spring", stiffness: 300 },
+//   },
+// };
 
 // skill item animation
 export const skillItemVariants = {
