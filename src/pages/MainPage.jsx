@@ -4,6 +4,7 @@ import Projects from "../components/projects/Projects";
 import Contact from "../components/contact/Contact";
 import Skills from "../components/skills/Skills";
 import Education from "../components/Education";
+import ArticleSection from "../components/Article/ArticleSection";
 
 function MainPage() {
   useLayoutEffect(() => {
@@ -19,6 +20,8 @@ function MainPage() {
       <Education />
       <div className="divider"></div>
       <Projects />
+      <div className="divider"></div>
+      <ArticleSection showAll={false} />
       <div className="divider"></div>
       <Contact />
     </>

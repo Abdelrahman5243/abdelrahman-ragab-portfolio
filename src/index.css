@@ -101,3 +101,25 @@ body.arabic {
 section {
   scroll-margin-top: 3rem;
 }
+
+.prose {
+  max-width: 100%;
+}
+
+.prose pre {
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.prose code {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  text-decoration: none;
+}
+
+.hljs {
+    background: transparent;
+}

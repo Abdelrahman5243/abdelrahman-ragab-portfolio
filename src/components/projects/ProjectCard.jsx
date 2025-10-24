@@ -48,7 +48,7 @@ const ProjectCard = ({ project, id }) => {
         {project.description}
       </p>
 
-      <div className="flex justify-between items-center m-4 text-xs sm:text-sm md:text-base lg:text-lg mt-4 text-light-subtitle dark:text-dark-subtitle">
+      <div className="flex justify-center items-center flex-wrap gap-10 m-4 text-xs sm:text-sm md:text-base lg:text-lg mt-4 text-light-subtitle dark:text-dark-subtitle">
         <div className="flex gap-4 items-center">
           <a
             href={project.live}
