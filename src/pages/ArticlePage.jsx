@@ -58,14 +58,14 @@ export default function ArticlePage() {
   const { title, markdown, tags, cover } = article || {};
 
   return (
-    <div className="relative px-4 py-10 grid grid-cols-1 lg:grid-cols-[calc(100%-392px)_330px] gap-8 justify-between max-w-full mx-auto transition-all duration-500 ease-in-out">
+    <div className="relative py-10 grid grid-cols-1 lg:grid-cols-[calc(100%-420px)_400px] gap-8 justify-between max-w-full mx-auto transition-all duration-500 ease-in-out">
       <aside className="lg:block sticky lg:top-10 self-start transition-all duration-500 ease-in-out lg:order-3 order-0">
         <div className="overflow-hidden transition-all duration-500">
           <Sidebar headings={headings} />
         </div>
       </aside>
 
-      <section className="prose dark:prose-invert transition-all duration-500 lg:order-2 order-1">
+      <section className="prose break-words dark:prose-invert transition-all duration-500 lg:order-2 order-1">
         {cover && (
           <div className="w-full overflow-hidden rounded-md mb-8">
             <img
@@ -77,6 +77,7 @@ export default function ArticlePage() {
         )}
         <ArticleHeader title={title} />
         {tags && <TagsList tags={tags} />}
+        <div className="divider mt-10"></div>
         <MarkdownRenderer markdown={markdown} />
       </section>
     </div>

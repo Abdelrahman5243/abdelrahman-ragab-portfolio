@@ -11,7 +11,7 @@ export default function TagsList({ tags }) {
                              hover:bg-light-border/20 dark:hover:bg-dark-border/20 
                              transition-all duration-150"
         >
-          {tag}
+          #{tag}
         </span>
       ))}
     </div>

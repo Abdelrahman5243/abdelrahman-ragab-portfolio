@@ -1,0 +1,215 @@
+.sidebar-container {
+  @apply sticky top-6;
+}
+
+.sidebar-content {
+  @apply bg-light-secondary dark:bg-dark-secondary border border-light-border dark:border-dark-border rounded-2xl overflow-hidden;
+}
+
+.sidebar-header {
+  @apply px-4 sm:px-6 py-3 sm:py-4 border-b border-light-border dark:border-dark-border bg-gradient-to-r from-light-blue/5 to-transparent dark:from-dark-blue/5;
+}
+
+.sidebar-title {
+  @apply text-xs sm:text-sm font-semibold text-light-title dark:text-dark-title flex items-center gap-2;
+}
+
+.sidebar-icon {
+  @apply w-3.5 sm:w-4 h-3.5 sm:h-4 text-light-blue dark:text-dark-blue;
+}
+
+.sidebar-nav {
+  @apply overflow-y-auto max-h-96;
+}
+
+.sidebar-list {
+  @apply space-y-1 p-3 sm:p-4;
+}
+
+.sidebar-item {
+  @apply relative flex items-center transition-all duration-200 ease-in-out;
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 flex-1 min-w-0;
+}
+
+.sidebar-text {
+  @apply flex-1 min-w-0 break-words;
+}
+
+.sidebar-indicator {
+  @apply text-light-blue dark:text-dark-blue fill-current animate-pulse;
+}
+
+.sidebar-footer {
+  @apply px-4 sm:px-6 py-2 sm:py-3 border-t border-light-border dark:border-dark-border bg-light-primary/50 dark:bg-dark-primary/50;
+}
+
+.sidebar-footer-content {
+  @apply flex items-center justify-between text-xs text-light-subtitle dark:text-dark-subtitle;
+}
+
+.sidebar-footer-text {
+  @apply font-medium;
+}
+
+.sidebar-footer-indicator {
+  @apply flex items-center gap-1;
+}
+
+.sidebar-footer-dot {
+  @apply w-1.5 sm:w-2 h-1.5 sm:h-2 bg-light-blue dark:bg-dark-blue rounded-full animate-pulse;
+}
+
+.level-1-container {
+  @apply ml-0 pl-3 sm:pl-4 pr-3 sm:pr-4 py-2 sm:py-3 mb-1 sm:mb-2 min-w-0;
+}
+
+.level-1-text {
+  @apply text-sm sm:text-base font-bold break-words;
+}
+
+.level-1-icon {
+  @apply w-3.5 sm:w-4 h-3.5 sm:h-4;
+}
+
+.level-1-border {
+  @apply border-l-4 border-light-blue dark:border-dark-blue;
+}
+
+.level-1-bg {
+  @apply bg-light-blue/5 dark:bg-dark-blue/5;
+}
+
+.level-1-indicator {
+  @apply w-2.5 sm:w-3 h-2.5 sm:h-3;
+}
+
+.level-2-container {
+  @apply ml-2 sm:ml-4 pl-3 sm:pl-4 pr-3 sm:pr-4 py-2 sm:py-2.5 mb-1 min-w-0;
+}
+
+.level-2-text {
+  @apply text-xs sm:text-sm font-semibold break-words;
+}
+
+.level-2-icon {
+  @apply w-3 sm:w-3.5 h-3 sm:h-3.5;
+}
+
+.level-2-border {
+  @apply border-l-2 border-light-border dark:border-dark-border;
+}
+
+.level-2-bg {
+  @apply bg-transparent;
+}
+
+.level-2-indicator {
+  @apply w-2 sm:w-2.5 h-2 sm:h-2.5;
+}
+
+.level-3-container {
+  @apply ml-4 sm:ml-8 pl-3 sm:pl-4 pr-3 sm:pr-4 py-1.5 sm:py-2 mb-1 min-w-0;
+}
+
+.level-3-text {
+  @apply text-xs sm:text-sm font-medium break-words;
+}
+
+.level-3-icon {
+  @apply w-2.5 sm:w-3 h-2.5 sm:h-3;
+}
+
+.level-3-border {
+  @apply border-l border-light-border dark:border-dark-border;
+}
+
+.level-3-bg {
+  @apply bg-transparent;
+}
+
+.level-3-indicator {
+  @apply w-1.5 sm:w-2 h-1.5 sm:h-2;
+}
+
+.level-4-container {
+  @apply ml-6 sm:ml-12 pl-3 sm:pl-4 pr-3 sm:pr-4 py-1 sm:py-1.5 mb-1;
+}
+
+.level-4-text {
+  @apply text-xs font-medium;
+}
+
+.level-4-icon {
+  @apply w-2 sm:w-2.5 h-2 sm:h-2.5;
+}
+
+.level-4-border {
+  @apply border-l border-light-border dark:border-dark-border;
+}
+
+.level-4-bg {
+  @apply bg-transparent;
+}
+
+.level-4-indicator {
+  @apply w-1 sm:w-1.5 h-1 sm:h-1.5;
+}
+
+.level-5-container {
+  @apply ml-8 sm:ml-16 pl-3 sm:pl-4 pr-3 sm:pr-4 py-1 sm:py-1.5 mb-1;
+}
+
+.level-5-text {
+  @apply text-xs font-normal;
+}
+
+.level-5-icon {
+  @apply w-1.5 sm:w-2 h-1.5 sm:h-2;
+}
+
+.level-5-border {
+  @apply border-l border-light-border dark:border-dark-border;
+}
+
+.level-5-bg {
+  @apply bg-transparent;
+}
+
+.level-5-indicator {
+  @apply w-1 sm:w-1.5 h-1 sm:h-1.5;
+}
+
+.level-6-container {
+  @apply ml-10 sm:ml-20 pl-3 sm:pl-4 pr-3 sm:pr-4 py-0.5 sm:py-1 mb-1;
+}
+
+.level-6-text {
+  @apply text-xs font-normal;
+}
+
+.level-6-icon {
+  @apply w-1.5 sm:w-2 h-1.5 sm:h-2;
+}
+
+.level-6-border {
+  @apply border-l border-light-border dark:border-dark-border;
+}
+
+.level-6-bg {
+  @apply bg-transparent;
+}
+
+.level-6-indicator {
+  @apply w-0.5 sm:w-1 h-0.5 sm:h-1;
+}
+
+.sidebar-item-active {
+  @apply text-light-blue dark:text-dark-blue bg-light-blue/10 dark:bg-dark-blue/10 border-light-blue dark:border-dark-blue shadow-sm;
+}
+
+.sidebar-item-inactive {
+  @apply text-light-subtitle dark:text-dark-subtitle hover:text-light-blue dark:hover:text-dark-blue hover:bg-gray-50 dark:hover:bg-gray-800;
+}

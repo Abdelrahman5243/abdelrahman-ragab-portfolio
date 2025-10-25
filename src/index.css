@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   ::-webkit-scrollbar {
     width: 8px;
@@ -45,7 +44,6 @@
     scrollbar-color: rgba(63, 63, 70, 0.4) transparent;
   }
 }
-
 
 @layer components {
   body {
@@ -121,5 +119,21 @@ section {
 }
 
 .hljs {
-    background: transparent;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .sidebar-list p,
+  .sidebar-list span {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-list {
+    width: 70%;
+  }
+  .sidebar-list a {
+    margin-left: 0 !important;
+  }
 }

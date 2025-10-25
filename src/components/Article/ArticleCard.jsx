@@ -7,20 +7,14 @@ const ArticleCard = ({ article }) => {
   return (
     <Link to={`/article/${article._id}`} key={article._id}>
       <motion.div
-        className="relative overflow-hidden flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between 
+        className="relative overflow-hidden flex gap-6 items-start lg:items-center justify-between 
                    px-4 sm:px-6 py-5 rounded-xl border border-light-border dark:border-dark-border 
                    hover:bg-light-border/10 dark:hover:bg-dark-border/10 "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: article._id * 0.1, duration: 0.5 }}
       >
-        <div
-          className="absolute top-3 right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center 
-                     bg-[rgb(69,69,69)] dark:bg-light-primary 
-                     text-dark-title dark:text-light-title 
-                     shadow-sm transition-transform duration-200 hover:scale-110 
-                     opacity-60 sm:opacity-70 md:opacity-80"
-        >
+        <div className="absolute top-3 right-3 centered header_btn">
           <ArrowUpRight size={16} strokeWidth={2} />
         </div>
 
@@ -52,7 +46,7 @@ const ArticleCard = ({ article }) => {
           )}
         </div>
 
-        <div className="hidden md:flex justify-center w-full lg:w-auto mt-4 lg:mt-0">
+        <div className="hidden md:flex justify-center lg:w-auto mt-4 lg:mt-0">
           <img
             src={article.cover}
             alt={article.title}
