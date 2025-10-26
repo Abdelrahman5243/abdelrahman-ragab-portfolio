@@ -1,10 +1,7 @@
 import { List, Circle } from "lucide-react";
-import { useActiveHeading } from "../../hooks/useActiveHeading";
 import "./sidebar.css";
 
-export default function Sidebar({ headings = [] }) {
-  const { activeId, smoothScrollTo } = useActiveHeading();
-
+export default function Sidebar({ headings = [], activeId, smoothScrollTo }) {
   const getLevelClasses = (level) => {
     const classes = {
       1: {

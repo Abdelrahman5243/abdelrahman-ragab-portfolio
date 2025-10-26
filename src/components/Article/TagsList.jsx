@@ -9,7 +9,7 @@ export default function TagsList({ tags }) {
                              text-light-title dark:text-dark-title 
                              bg-light-secondary/60 dark:bg-dark-secondary/60
                              hover:bg-light-border/20 dark:hover:bg-dark-border/20 
-                             transition-all duration-150"
+                             "
         >
           #{tag}
         </span>

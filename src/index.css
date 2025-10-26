@@ -122,6 +122,12 @@ section {
   background: transparent;
 }
 
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .sidebar-list p,
   .sidebar-list span {
