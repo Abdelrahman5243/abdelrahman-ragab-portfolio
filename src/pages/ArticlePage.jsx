@@ -105,7 +105,7 @@ export default function ArticlePage() {
 
       {showSidebar && (
         <div className="lg:hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="relative">
+          <div className="relative max-w-[95%]">
             <Sidebar
               headings={headings}
               activeId={activeId}

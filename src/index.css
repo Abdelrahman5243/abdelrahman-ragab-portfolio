@@ -137,7 +137,7 @@ table {
 
 @media (max-width: 480px) {
   .sidebar-list {
-    width: 70%;
+    width: 85%;
   }
   .sidebar-list a {
     margin-left: 0 !important;
