@@ -106,6 +106,10 @@ export default function Sidebar({ headings = [], activeId, smoothScrollTo }) {
                     onClick={(e) => {
                       e.preventDefault();
                       smoothScrollTo(heading.id);
+                        if (typeof window !== "undefined") {
+                          const closeBtn = document.querySelector(".sidebar-close-btn");
+                          if (closeBtn) closeBtn.click();
+                        }
                     }}
                     className={`
                       sidebar-item group

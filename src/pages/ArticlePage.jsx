@@ -113,7 +113,7 @@ export default function ArticlePage() {
             />
             <button
               onClick={() => setShowSidebar(false)}
-              className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="sidebar-close-btn absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               <X size={20} />
             </button>
