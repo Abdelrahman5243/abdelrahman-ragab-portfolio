@@ -11,6 +11,10 @@
   <link rel="icon" type="image/svg+xml" href="/letter-a.png" />
   <title>Abdelrahman Ragab's Portfolio</title>
 
+  <!-- Theme Color for all devices -->
+  <meta name="theme-color" content="#E0F2FF" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1E1B4B" media="(prefers-color-scheme: dark)" />
+
   <!-- Structured Data -->
   <script type="application/ld+json">
       {
@@ -21,21 +25,32 @@
         "url": "https://portfolio-mauve-pi-20.vercel.app/"
       }
     </script>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+
+  <!-- Optimized Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap">
   </noscript>
 
-  <!-- image that shiw in share preview -->
-  <meta property="og:image" content="/letter-a.png" />
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Abdelrahman Ragab's Portfolio" />
+  <meta property="og:description"
+    content="Showcase of projects and skills using React and Vite. Explore the portfolio to see the developer's work and experience." />
+  <meta property="og:url" content="https://portfolio-mauve-pi-20.vercel.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Open Graph Image for social media sharing -->
+  <meta property="og:image" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/letter-a.png" />
+  <meta property="og:image:url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/letter-a.png" />
+  <meta property="og:image:secure_url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/letter-a.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:alt" content="Abdelrahman Ragab's Portfolio" />
-  <meta property="og:image:url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app" />
-  <meta property="og:image:secure_url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app" />
-  <meta property="og:image:width" content="1200" />
 </head>
 
 <body>
