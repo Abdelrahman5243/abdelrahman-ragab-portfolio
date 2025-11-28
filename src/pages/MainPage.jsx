@@ -1,10 +1,18 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, lazy, Suspense } from "react";
 import Hero from "../components/hero/Hero";
-import Projects from "../components/projects/Projects";
-import Contact from "../components/contact/Contact";
 import Skills from "../components/skills/Skills";
 import Education from "../components/Education";
-import ArticleSection from "../components/Article/ArticleSection";
+
+// Lazy load below-the-fold components
+const Projects = lazy(() => import("../components/projects/Projects"));
+const ArticleSection = lazy(() => import("../components/Article/ArticleSection"));
+const Contact = lazy(() => import("../components/contact/Contact"));
+
+const ComponentLoader = () => (
+  <div className="w-full h-32 flex justify-center items-center">
+    <div className="loader"></div>
+  </div>
+);
 
 function MainPage() {
   useLayoutEffect(() => {
@@ -19,11 +27,17 @@ function MainPage() {
       <div className="divider"></div>
       <Education />
       <div className="divider"></div>
-      <Projects />
+      <Suspense fallback={<ComponentLoader />}>
+        <Projects />
+      </Suspense>
       <div className="divider"></div>
-      <ArticleSection showAll={false} />
+      <Suspense fallback={<ComponentLoader />}>
+        <ArticleSection showAll={false} />
+      </Suspense>
       <div className="divider"></div>
-      <Contact />
+      <Suspense fallback={<ComponentLoader />}>
+        <Contact />
+      </Suspense>
     </>
   );
 }
