@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Award, Calendar, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const Education = () => {
@@ -16,12 +16,12 @@ const Education = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, x: -60, scale: 0.95 },
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 100, damping: 12, duration: 0.8 },
+      transition: { type: "spring", stiffness: 100, damping: 15, duration: 0.6 },
     },
   };
 
@@ -30,39 +30,60 @@ const Education = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { type: "spring", stiffness: 100, damping: 10 },
+      transition: { type: "spring", stiffness: 120, damping: 12 },
     },
   };
 
   return (
-    <section id="education" className="my-12 w-full">
+    <section id="education" className="my-16 w-full">
       <motion.div
-        className="flex gap-3 items-center mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+        className="flex gap-3 items-center mb-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
         variants={headerVariants}
       >
         <motion.div
+          className="relative"
           whileHover={{
             rotate: [0, -10, 10, -10, 0],
+            scale: 1.1,
             transition: { duration: 0.5 },
           }}
         >
+          <div className="absolute inset-0 bg-light-blue dark:bg-dark-blue opacity-20 blur-xl rounded-full" />
           <GraduationCap
-            className="text-blue-600 dark:text-blue-400"
+            className="relative text-light-blue dark:text-dark-blue"
             aria-hidden="true"
-            size={32}
+            size={36}
           />
         </motion.div>
-        <h1 className="font-bold text-light-title dark:text-dark-title mb-0">
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-light-title dark:text-dark-title">
           {education.title}
         </h1>
       </motion.div>
 
-      <motion.div className="my-8" variants={cardVariants}>
-        <div className="p-4 sm:p-6 rounded-lg bg-light-bgHeader dark:bg-dark-bgHeader">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={cardVariants}
+        className="group"
+      >
+        <div className="
+          relative p-6 sm:p-8 rounded-2xl
+          bg-light-secondary dark:bg-dark-secondary
+          border border-light-border dark:border-dark-border
+          shadow-sm
+          transition-all duration-300
+          overflow-hidden
+        ">
+
           <motion.h3
             className="
-              text-base sm:text-lg md:text-xl lg:text-2xl
-              font-semibold text-light-title dark:text-dark-title mb-2
+              text-lg sm:text-xl md:text-2xl
+              font-bold text-light-title dark:text-dark-title 
+              mb-2
             "
             variants={listItemVariants}
           >
@@ -70,108 +91,158 @@ const Education = () => {
           </motion.h3>
 
           <motion.p
-            className="text-sm sm:text-base md:text-lg text-light-subtitle dark:text-dark-subtitle mb-4"
+            className="
+              text-base sm:text-lg md:text-xl 
+              text-light-subtitle dark:text-dark-subtitle 
+              font-medium mb-6
+            "
             variants={listItemVariants}
           >
             Bachelor of Science in Computer Science
           </motion.p>
 
-          <motion.div className="space-y-2 text-light-subtitle dark:text-dark-subtitle">
-            <motion.p
-              className="text-xs sm:text-sm md:text-base"
-              variants={listItemVariants}
-            >
-              • {education.grade}:{" "}
-              <span className="text-green-600 dark:text-green-400 font-medium">
-                {education.items[0]?.grade}
-              </span>
-            </motion.p>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
+            variants={listItemVariants}
+          >
+            <div className="
+              flex items-center gap-3 p-3 rounded-lg
+              bg-light-bgHeader dark:bg-dark-bgHeader
+              border border-light-border/50 dark:border-dark-border/50
+            ">
+              <Award className="text-green-600 dark:text-green-400 flex-shrink-0" size={20} />
+              <div>
+                <p className="text-xs text-light-subtitle dark:text-dark-subtitle">
+                  {education.grade}
+                </p>
+                <p className="text-sm sm:text-base font-semibold text-green-600 dark:text-green-400">
+                  {education.items[0]?.grade}
+                </p>
+              </div>
+            </div>
 
-            <motion.p
-              className="text-xs sm:text-sm md:text-base"
-              variants={listItemVariants}
-            >
-              {education.items[0]?.duration}
-            </motion.p>
+            <div className="
+              flex items-center gap-3 p-3 rounded-lg
+              bg-light-bgHeader dark:bg-dark-bgHeader
+              border border-light-border/50 dark:border-dark-border/50
+            ">
+              <Calendar className="text-light-blue dark:text-dark-blue flex-shrink-0" size={20} />
+              <div>
+                <p className="text-xs text-light-subtitle dark:text-dark-subtitle">Duration</p>
+                <p className="text-sm sm:text-base font-semibold text-light-title dark:text-dark-title">
+                  {education.items[0]?.duration}
+                </p>
+              </div>
+            </div>
+          </motion.div>
 
-            <motion.p
-              className="font-medium text-sm sm:text-base md:text-lg"
-              variants={listItemVariants}
-            >
-              • {education.relevantCoursework}:
-            </motion.p>
-
-            <motion.ul className="list-disc pl-6 sm:pl-8 space-y-1">
+          <motion.div
+            className="mb-6"
+            variants={listItemVariants}
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <BookOpen className="text-light-blue dark:text-dark-blue" size={20} />
+              <h4 className="font-semibold text-base sm:text-lg text-light-title dark:text-dark-title">
+                {education.relevantCoursework}
+              </h4>
+            </div>
+            <motion.ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {education.items[0]?.relevantCoursework.map((course, index) => (
                 <motion.li
                   key={index}
                   variants={listItemVariants}
                   custom={index}
                   className="
-                    text-xs sm:text-sm md:text-base
-                    hover:text-blue-600 dark:hover:text-blue-400 
+                    flex items-start gap-2
+                    text-sm sm:text-base
+                    text-light-subtitle dark:text-dark-subtitle
+                    hover:text-light-blue dark:hover:text-dark-blue
                     transition-colors duration-200
+                    cursor-default
                   "
                 >
-                  {course}
+                  <span className="text-light-blue dark:text-dark-blue mt-1">•</span>
+                  <span>{course}</span>
                 </motion.li>
               ))}
             </motion.ul>
+          </motion.div>
 
-            <motion.p
-              className="mt-4 font-medium text-sm sm:text-base md:text-lg"
-              variants={listItemVariants}
-            >
-              • {education.graduationProject}:{" "}
-              <span className="text-blue-600 dark:text-blue-400">
+          <div className="h-px bg-light-border dark:bg-dark-border my-6" />
+
+          <motion.div variants={listItemVariants}>
+            <div className="
+              p-5 rounded-xl
+              bg-gradient-to-br from-light-bgHeader to-light-primary
+              dark:from-dark-bgHeader dark:to-dark-primary
+              border border-light-border dark:border-dark-border
+            ">
+              <h4 className="
+                font-semibold text-base sm:text-lg md:text-xl 
+                text-light-title dark:text-dark-title 
+                mb-3
+              ">
+                {education.graduationProject}
+              </h4>
+
+              <p className="
+                text-base sm:text-lg font-semibold 
+                text-light-blue dark:text-dark-blue 
+                mb-3
+              ">
                 {education.items[0]?.projectTitle}
-              </span>
-            </motion.p>
+              </p>
 
-            <motion.p
-              className="pl-4 text-xs sm:text-sm md:text-base"
-              variants={listItemVariants}
-            >
-              • {education.grade}:{" "}
-              <span className="text-green-600 dark:text-green-400 font-medium">
-                {education.items[0]?.projectGrade}
-              </span>
-            </motion.p>
+              <div className="flex items-center gap-2 mb-4">
+                <Award className="text-green-600 dark:text-green-400" size={18} />
+                <span className="text-sm text-light-subtitle dark:text-dark-subtitle">
+                  {education.grade}:
+                </span>
+                <span className="text-sm font-semibold text-green-600 dark:text-green-400">
+                  {education.items[0]?.projectGrade}
+                </span>
+              </div>
 
-            <motion.p
-              className="pl-4 mt-2 leading-relaxed text-xs sm:text-sm md:text-base"
-              variants={listItemVariants}
-            >
-              {education.items[0]?.projectDescription}
-            </motion.p>
+              <p className="
+                text-sm sm:text-base 
+                text-light-subtitle dark:text-dark-subtitle 
+                leading-relaxed mb-4
+              ">
+                {education.items[0]?.projectDescription}
+              </p>
 
-            <motion.ul className="list-disc pl-6 sm:pl-10 space-y-2 mt-2">
-              {education.items[0]?.projectFeatures.map((feature, index) => (
-                <motion.li
-                  key={index}
-                  variants={listItemVariants}
-                  custom={index}
-                  className="
-                    text-xs sm:text-sm md:text-base
-                    hover:text-blue-600 dark:hover:text-blue-400 
-                    transition-colors duration-200
-                  "
-                >
-                  {feature}
-                </motion.li>
-              ))}
-            </motion.ul>
+              <motion.ul className="space-y-2 mb-4">
+                {education.items[0]?.projectFeatures.map((feature, index) => (
+                  <motion.li
+                    key={index}
+                    variants={listItemVariants}
+                    custom={index}
+                    className="
+                      flex items-start gap-2
+                      text-sm sm:text-base
+                      text-light-subtitle dark:text-dark-subtitle
+                      hover:text-light-blue dark:hover:text-dark-blue
+                      transition-colors duration-200
+                    "
+                  >
+                    <span className="text-light-blue dark:text-dark-blue mt-1">▸</span>
+                    <span>{feature}</span>
+                  </motion.li>
+                ))}
+              </motion.ul>
 
-            <motion.p
-              className="
-                pl-4 mt-2 italic 
-                text-xs sm:text-sm md:text-base 
-                font-medium text-blue-600/80 dark:text-blue-400/80
-              "
-              variants={listItemVariants}
-            >
-              {education.items[0]?.projectNote}
-            </motion.p>
+              {education.items[0]?.projectNote && (
+                <p className="
+                  text-sm sm:text-base 
+                  italic font-medium
+                  text-light-blue/80 dark:text-dark-blue/80
+                  border-l-2 border-light-blue dark:border-dark-blue
+                  pl-4 py-2
+                ">
+                  {education.items[0]?.projectNote}
+                </p>
+              )}
+            </div>
           </motion.div>
         </div>
       </motion.div>
