@@ -112,6 +112,7 @@ section {
 
 .prose code {
   font-family: "JetBrains Mono", monospace;
+  background: transparent;
 }
 
 .prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
