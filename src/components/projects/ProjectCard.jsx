@@ -65,7 +65,7 @@ const ProjectCard = ({ project, id }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 cursor-pointer"
-            aria-label="View the project's code on GitHub"
+            aria-label={`View the project ${project.title} code on GitHub`}
           >
             <Github size={18} />
           </a>

@@ -26,9 +26,9 @@ const RootLayout = () => {
         <Header />
         <div className="divider"></div>
       </div>
-
-      <Outlet />
-
+      <main>
+        <Outlet />
+      </main>
       <div>
         <div className="divider"></div>
         <Footer />
@@ -36,8 +36,7 @@ const RootLayout = () => {
 
       <a
         className={`text-dark-title bg-[rgb(69,69,69)] rounded-full w-10 h-10 flex justify-center items-center 
-          fixed bottom-10 right-10 transition-opacity duration-1000 ${
-            showScrollButton ? "opacity-100" : "opacity-0"
+          fixed bottom-10 right-10 transition-opacity duration-1000 ${showScrollButton ? "opacity-100" : "opacity-0"
           }`}
         href="#top"
         aria-label="Scroll to top"

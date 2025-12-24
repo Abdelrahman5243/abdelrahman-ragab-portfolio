@@ -27,7 +27,7 @@ const Skills = () => {
         </h1>
       </div>
 
-      <div className="flex flex-wrap gap-4 pl-5 dark:text-dark-subtitle text-light-subtitle">
+      <div className="flex flex-wrap gap-4 pl-5 dark:text-dark-subtitle text-light-subtitle" role="list">
         {mySkills.map((skill, index) => (
           <motion.span
             key={index}
