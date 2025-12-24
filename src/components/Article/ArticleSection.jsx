@@ -48,7 +48,7 @@ const ArticleSection = ({ showAll }) => {
           className="text-light-subtitle dark:text-dark-subtitle"
           aria-hidden="true"
         />
-        <h1 id="skills-title" className="title mb-0">
+        <h1 id="articles-title" className="title mb-0">
           {t("articlesTitle")}
         </h1>
       </div>
