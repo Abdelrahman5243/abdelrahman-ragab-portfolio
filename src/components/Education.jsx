@@ -79,7 +79,7 @@ const Education = () => {
           overflow-hidden
         ">
 
-          <motion.h3
+          <motion.h2
             className="
               text-lg sm:text-xl md:text-2xl
               font-bold text-light-title dark:text-dark-title 
@@ -88,7 +88,7 @@ const Education = () => {
             variants={listItemVariants}
           >
             {education.items[0]?.university}
-          </motion.h3>
+          </motion.h2>
 
           <motion.p
             className="
