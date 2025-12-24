@@ -142,9 +142,9 @@ const Education = () => {
           >
             <div className="flex items-center gap-2 mb-3">
               <BookOpen className="text-light-blue dark:text-dark-blue" size={20} />
-              <h4 className="font-semibold text-base sm:text-lg text-light-title dark:text-dark-title">
+              <h3 className="font-semibold text-base sm:text-lg text-light-title dark:text-dark-title">
                 {education.relevantCoursework}
-              </h4>
+              </h3>
             </div>
             <motion.ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {education.items[0]?.relevantCoursework.map((course, index) => (
