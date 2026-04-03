@@ -1,0 +1,269 @@
+{
+    "navigation": {
+        "about": "من أنا",
+        "skills": "المهارات",
+        "projects": "المشروعات",
+        "contact": "اتصل بي",
+        "articles": "مقالاتي"
+    },
+    "hero": {
+        "title": "عبدالرحمن رجب عبدالباقي",
+        "description": "مطور واجهات أمامية، خريج كلية الهندسة بجامعة الزقازيق. أعمل على تصميم وتطوير مواقع وتطبيقات ويب تركز على سهولة الاستخدام والاستجابة لمختلف الأجهزة، باستخدام أحدث التقنيات مثل Tailwind CSS وReact وJavaScript. أستطيع تقديم تجارب مستخدم متميزة وحل المشكلات البرمجية بفعالية من خلال تطبيق حلول تقنية متقدمة.",
+        "downloadCV": "تحميل السيرة الذاتية",
+        "showCV": "عرض السيرة الذاتية"
+    },
+    "skillsTitle": "المهارات",
+    "articlesTitle": "مقالاتي",
+    "contact": {
+        "title": "تواصل معي",
+        "description": "تواصل معي لمزيد من التفاصيل وابقَ على اطلاع بأحدث مشاريعي.",
+        "successMessage": "شكرًا لك! تم إرسال رسالتك بنجاح. 👌",
+        "form": {
+            "emailLabel": "البريد الإلكتروني:",
+            "emailPlaceholder": "أدخل بريدك الإلكتروني",
+            "messageLabel": "الرسالة:",
+            "messagePlaceholder": "اكتب رسالتك هنا"
+        },
+        "submitButton": "إرسال"
+    },
+    "projects": {
+        "1": {
+            "categories": "ReactJS",
+            "title": "منشئ المواقع",
+            "description": "منشئ مواقع شامل يظهر تقنيات تطوير الويب المتقدمة.",
+            "details": "يوفر هذا المشروع منصة قوية لإنشاء وتخصيص المواقع الإلكترونية. يتضمن ميزات متعددة لبناء وإدارة أقسام المواقع، والقوالب، والمحتوى، مما يظهر الفهم العميق لمبادئ وتقنيات تطوير الويب. يدعم التطبيق التبديل بين اللغتين العربية والإنجليزية، مما يعزز سهولة الوصول وتجربة المستخدم لجمهور متنوع. يمكن للمستخدمين تخصيص الأنماط باستخدام واجهة سهلة الاستخدام، ومعاينة التغييرات في الوقت الفعلي، وإنشاء المحتوى باستخدام الذكاء الاصطناعي. بالإضافة إلى ذلك، يسمح التطبيق للمستخدمين بترتيب واختيار بين أقسام متعددة، مما يضمن تجربة تصميم ويب مرنة ومخصصة. يمثل هذا المشروع ثمرة المهارات المكتسبة خلال الدراسة، ويشمل ممارسات التصميم المتجاوب وأفضل معايير البرمجة.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755179854/j1wjkbwncgtzg8hinibu.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1757778550/f0nuu3xcnfmfxjrnrysk.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180061/asyw4jiwcy0m2lzr2qmd.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1757778583/e5yz4mo0thhn9xwebx98.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755179857/xovmkprgoqqu9rs3e5nw.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/graduation-project",
+            "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "Tailwind CSS",
+                "Redux Toolkit",
+                "Redux Persist",
+                "Axios",
+                "i18next",
+                "React Router",
+                "Swiper",
+                "AOS"
+            ]
+        },
+        "2": {
+            "categories": "ReactJS",
+            "title": "لوحة تحكم إدارة المنتجات",
+            "description": "نظام إدارة CRUD للمنتجات مع ميزات التحليل.",
+            "details": "يتيح هذا المشروع للمستخدمين إدارة المنتجات بفعالية من خلال تقديم وظائف لإضافة وتعديل وحذف معلومات المنتجات. يتضمن صفحة تحليل مفصلة تقدم رؤى وتمثيلات مرئية لمؤشرات الأداء الرئيسية للمنتجات. يضمن استخدام Redux Toolkit لإدارة الحالة تجربة مستخدم سلسة. يعزز SweetAlert التفاعل مع مطالبات التأكيد والإشعارات، مما يساهم في واجهة أنيقة. تم تحسين التطبيق للأداء، مما يضمن استجابة سريعة وتصميم بديهي يعزز الإنتاجية.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185159/m7o5khkavtxn33jztfwp.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185169/fjyssjlgso6dqz8lvlmo.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185178/c73ltttd0ipprplo4i9o.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185190/c8dtqenfhjiqxsqz1fxd.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185198/e685sptgxmsdpfdayksv.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/Product-CRUD-Dashboard",
+            "live": "https://product-crud-dashboard.vercel.app/",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "Redux Toolkit",
+                "Tailwind CSS",
+                "CSS",
+                "Recharts",
+                "Axios",
+                "SweetAlert",
+                "React Router DOM"
+            ]
+        },
+        "3": {
+            "categories": "ReactJS",
+            "title": "محفظتي الشخصية",
+            "description": "موقع محفظة شخصية يعرض أعمال ومشاريع عبد الرحمن رجب.",
+            "details": "يعرض هذا الموقع المحفظة الشخصية المشاريع والمهارات والخبرات. يتضمن أقسامًا لعرض المشاريع، السيرة الذاتية، معلومات الاتصال، والمزيد. تم تصميمه بشكل فعال لتقديم الملف المهني لعبد الرحمن رجب.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180628/rehtgvfkwciytx1djlov.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180644/mxkm0dt2moq7rmwlljr5.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180654/adqmxor5rc7jpxwacxyu.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180665/kquyweptn0bapx8yvrol.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/abdelrahman-ragab-portfolio",
+            "live": "https://abdelrahman-ragab-portfolio-ten.vercel.app/",
+            "technologies": [
+                "React",
+                "Tailwind CSS",
+                "Formspree",
+                "Framer Motion",
+                "i18next",
+                "Lottie",
+                "React Router DOM"
+            ]
+        },
+        "4": {
+            "categories": "ReactJS",
+            "title": "تطبيق القرآن",
+            "description": "تطبيق React لعرض آيات القرآن مع ميزات تشغيل الصوت.",
+            "details": "يقدم هذا المشروع واجهة شاملة لقراءة واستماع آيات القرآن. يتضمن ميزات رئيسية مثل تشغيل الصوت لكل آية، التنقل بين السور والآيات، ووظيفة التشغيل التلقائي التي تواصل تشغيل الصوت أثناء تنقل المستخدم إلى الآية التالية. يدير التطبيق الحالة باستخدام Redux Toolkit لتتبع السورة الحالية، الآية، وتقدم التشغيل الصوتي، مما يضمن تجربة مستخدم سلسة واستجابة سريعة. بالإضافة إلى ذلك، يتضمن المشروع دعم الوضع الداكن لقراءة مريحة وحفظ الحالة التي تحفظ تقدم المستخدم عبر الجلسات باستخدام التخزين المحلي. كما تم إعطاء الأولوية لتحسين الأداء من خلال إدارة ملفات الصوت وبيانات الآيات بشكل فعال مع الحفاظ على أوقات استجابة سريعة.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185221/bn20bogxq3nwhjsartav.png",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185263/h07leayntpdmisvthoj4.jpg",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185270/wdsduvn9qak1ucfshklp.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/quran-app",
+            "live": "https://quran-app-one-tau.vercel.app",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "Redux Toolkit",
+                "Tailwind CSS"
+            ]
+        },
+        "5": {
+            "categories": "ReactJS",
+            "title": "سوق المطاعم",
+            "description": "موقع تجارة إلكترونية للمطعم والسوق، مع ميزات عرض المنتجات ووظائف السلة.",
+            "details": "يجمع هذا المشروع بين وظائف كل من المطعم والسوق في منصة تجارة إلكترونية واحدة. يمكن للمستخدمين تصفح المنتجات بسهولة، وإضافة العناصر إلى سلتهم، وإكمال الطلبات بكل سهولة. يتميز النظام بتصميم نظيف وسهل الاستخدام، مما يضمن تجربة مستخدم محسنة. يتضمن أقسامًا رئيسية مثل نداءات للعمل لتشجيع تفاعل المستخدم، وقسم ميزات مخصص يبرز الجوانب الفريدة للمنصة، وقسم الشهادات الذي يعرض تعليقات العملاء. تعمل هذه العناصر معًا لتوفير تجربة مستخدم احترافية وجذابة.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180511/cgyujxutz9cj4pebe2e2.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180550/gp6fmwvoxgj3x3t9xacj.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180565/aogjr0lzkndadl22wd1d.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180581/wf0ov2zau6zbdqwhe62y.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/restaurant-e-commerce",
+            "live": "https://restaurant-e-commerce.vercel.app/",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "Tailwind CSS",
+                "React Slick",
+                "useContext",
+                "React Router DOM"
+            ]
+        },
+        "6": {
+            "categories": "NextJs",
+            "title": "منصة دورات تعليمية في التصميم الجرافيكي",
+            "description": "منصة ويب مخصصة باستخدام Next.js وTailwind CSS لدورات تصميم الجرافيك، مع صفحات هبوط استجابة وتجربة مستخدم سلسة.",
+            "details": "تم تحسين المنصة لزيادة تفاعل المستخدمين، مع تصميم حديث ومتجاوب يناسب جميع أحجام الشاشات. تعرض صفحة الهبوط المزايا والخصائص الأساسية للدورات، وتم تصميمها باستخدام Tailwind CSS للحصول على تصميم سريع ومتوافق مع الأجهزة المحمولة وحركات سلسة. يُظهر هذا المشروع الخبرة في إنشاء صفحات هبوط تفاعلية للغاية تجذب انتباه المستخدم وتروج للتسجيل في الدورات بسهولة.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185488/mkfd0sbrv0vldkblpowa.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185495/njov6hytwznmq6ibdnfl.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185502/xmsonkdwe3wcrsaieepy.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185510/px9igbnrc21iecear38j.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185518/recw8y5swawhtrusk2lm.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185526/q7odrhxvhwhhfrnagrnh.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185534/jq6b2io1k4calcgaaqcq.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/designshub-courses-platform",
+            "live": "https://designshub-courses-platform.vercel.app",
+            "technologies": [
+                "Next.js",
+                "Tailwind CSS"
+            ]
+        },
+        "7": {
+            "categories": "HTML & CSS & JS",
+            "title": "موقع مركز الألعاب",
+            "description": "منصة ديناميكية تم بناؤها كمركز لاكتشاف واستكشاف مجموعة واسعة من الألعاب.",
+            "details": "هذا المشروع هو منصة شاملة للألعاب مصممة لمساعدة المستخدمين على اكتشاف واستكشاف ألعاب جديدة. يتضمن واجهة تفاعلية وجذابة مع قوائم ألعاب منظمة ووظائف بحث، مما يوفر تجربة مستخدم سلسة. يركز التصميم على إنشاء تجربة تصفح بديهية مع تخطيطات متجاوبة، مما يضمن التوافق عبر أجهزة متعددة. تم بناؤه باستخدام HTML وCSS وJavaScript، ويحتوي على عناصر تفاعلية لتعزيز رحلة المستخدم.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185352/qf1elcznizlo3qp3j2cp.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185359/rwt3wlaay0cxwtxt4oci.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185367/gvpdwp4qtto0gogswd76.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185374/zeizjfwyfoetukrzrajf.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185384/qeiiwe6odsvsvscox7bd.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185391/dv0udy6xd5ncdudzwelx.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185401/gmxxcky2ppqwcru9xve5.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185410/b5mqeodutjkk0g5rtlei.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/game-hub-website",
+            "live": "https://abdelrahman5243.github.io/game-hub-website",
+            "technologies": [
+                "HTML",
+                "JavaScript",
+                "CSS"
+            ]
+        },
+        "8": {
+            "categories": "ReactJS",
+            "title": "صفحة هبوط للمطعم",
+            "description": "صفحة هبوط للمطعم جذابة بصريًا وعالية الاستجابة.",
+            "details": "يسلط هذا المشروع الضوء على صفحة هبوط أنيقة ومحترفة لمطعم، تم بناؤها مع التركيز على التصميم المتجاوب وتجربة مستخدم سلسة عبر جميع الأجهزة. تشمل الميزات الرئيسية أقسامًا بارزة للنداءات للعمل، وصور عالية الجودة، وتنقل سلس. تم تصميم الصفحة لجذب اهتمام الزوار وزيادة التحويلات من خلال رسائل واضحة وتصاميم جذابة. تم تطويرها باستخدام React لتحديث المحتوى الديناميكي، مما يضمن القابلية للتوسع وتحسين الأداء.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185290/avjntrf5a76p5lzkm4df.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185300/hqif6dzopnxyxgbnz42r.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185309/gkj6y5fnn7ejdf7tbuob.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185322/sqdca9ffp0zrjttllv8y.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185334/naz1bxvvyzk9c0jb6vdu.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/Restaurant-Landing-Page",
+            "live": "https://myapp2-kappa.vercel.app/",
+            "technologies": [
+                "JavaScript",
+                "React",
+                "CSS"
+            ]
+        },
+        "9": {
+            "categories": "HTML & CSS & JS",
+            "title": "معرض مطور الويب",
+            "description": "موقع ويب محفظة احترافية تم إنشاؤه لعرض مهارات وتقنيات تطوير الويب.",
+            "details": "يعد هذا الموقع محفظة احترافية لعرض مشاريع تطوير الويب المختلفة، والمهارات، والخبرات. يقدم عرضًا شاملًا لكفاءة تطوير الويب من خلال تصميم منظم جيدًا وأقسام تفاعلية. يركز المشروع على التصميم النظيف والميزات المتجاوبة لجذب الزوار أثناء عرض المشاريع بتنسيق بصري جذاب.",
+            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185439/chyh1o01chkkibmiscdj.webp",
+            "screens_url": [
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185446/evpyaeokfdgn3xxojrba.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185453/a0xgwe5lurlqewcndfec.webp",
+                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185460/mdocz4xxss1il6vf9r2p.webp"
+            ],
+            "repo": "https://github.com/Abdelrahman5243/Web-Developer-Showcase",
+            "live": "https://abdelrahman5243.github.io/Web-Developer-Showcase",
+            "technologies": [
+                "HTML",
+                "CSS"
+            ]
+        }
+    },
+    "education": {
+        "title": "التعليم",
+        "grade": "التقدير",
+        "relevantCoursework": "المقررات التي تم دراستها",
+        "graduationProject": "مشروع التخرج",
+        "items": [
+            {
+                "university": "كلية الهندسة، جامعة الزقازيق",
+                "degree": "بكالوريوس في علوم الكمبيوتر",
+                "grade": "جيد جدًا",
+                "duration": "2019 - 2024",
+                "relevantCoursework": [
+                    "هياكل البيانات والخوارزميات",
+                    "برم الكائنات",
+                    "أنظمة إدارة قواعد البيانات",
+                    "تطوير الويب",
+                    "هندسة البرمجيات",
+                    "شبكات الكمبيوتر"
+                ],
+                "projectTitle": "منصة إنشاء المواقع",
+                "projectGrade": "ممتاز",
+                "projectDescription": "تم تطوير منصة شاملة لإنشاء المواقع تمكّن المستخدمين من إنشاء وتخصيص المواقع بسهولة.",
+                "projectFeatures": [
+                    "تخصيص الموقع ومعاينته في الوقت الفعلي",
+                    "إمكانات توليد المحتوى المدعوم بالذكاء الاصطناعي",
+                    "إدارة الأقسام والترتيب بشكل مرن",
+                    "خيارات متعددة للقوالب وتخصيص الأسلوب",
+                    "تنفيذ تصميم متجاوب",
+                    "واجهة سهلة الاستخدام لإدارة المحتوى"
+                ],
+                "projectNote": "أظهر هذا المشروع الكفاءة في ممارسات تطوير الويب الحديثة، والدعم متعدد اللغات، ومبادئ تصميم واجهات المستخدم المتقدمة."
+            }
+        ]
+    },
+    "technologiesTitle": "التقنيات المستخدمة",
+    "copyright": "© 2024.",
+    "seeMore": "عرض المزيد",
+    "i18nStamp": 1774547930652,
+    "i18nVersion": "v1.0"
+}
