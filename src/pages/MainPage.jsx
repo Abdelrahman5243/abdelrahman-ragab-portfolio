@@ -2,6 +2,7 @@ import { useLayoutEffect, lazy, Suspense } from "react";
 import Hero from "../components/hero/Hero";
 import Skills from "../components/skills/Skills";
 import Education from "../components/Education";
+import Experience from "../components/Experience";
 
 // Lazy load below-the-fold components
 const Projects = lazy(() => import("../components/projects/Projects"));
@@ -26,6 +27,8 @@ function MainPage() {
       <Skills />
       <div className="divider"></div>
       <Education />
+      <div className="divider"></div>
+      <Experience />
       <div className="divider"></div>
       <Suspense fallback={<ComponentLoader />}>
         <Projects />

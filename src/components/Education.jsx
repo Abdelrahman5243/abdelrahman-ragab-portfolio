@@ -1,38 +1,15 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award, Calendar, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import {
+  sectionHeaderVariants,
+  sectionCardVariants,
+  listItemVariants,
+} from "../animations/variants";
 
 const Education = () => {
   const { t } = useTranslation("main");
   const education = t("education", { returnObjects: true });
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: -30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 12 },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { type: "spring", stiffness: 100, damping: 15, duration: 0.6 },
-    },
-  };
-
-  const listItemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { type: "spring", stiffness: 120, damping: 12 },
-    },
-  };
 
   return (
     <section id="education" className="my-16 w-full">
@@ -41,7 +18,7 @@ const Education = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        variants={headerVariants}
+        variants={sectionHeaderVariants}
       >
         <motion.div
           className="relative"
@@ -67,7 +44,7 @@ const Education = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        variants={cardVariants}
+        variants={sectionCardVariants}
         className="group"
       >
         <div className="

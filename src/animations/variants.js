@@ -102,9 +102,40 @@ export const contactAnimationVariants = {
 
 export const contactSuccessVariants = {
   hidden: { opacity: 0, scale: 0.9 }, // Less dramatic scale
-  visible: { 
-    opacity: 1, 
-    scale: 1, 
+  visible: {
+    opacity: 1,
+    scale: 1,
     transition: { duration: 0.4 } // Reduced from 0.6
+  },
+};
+
+// Shared section variants (used in Education, Experience, etc.)
+
+export const sectionHeaderVariants = {
+  hidden: { opacity: 0, y: -30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 12 },
+  },
+};
+
+// Accepts optional custom index for staggered delay (default i=0 → no delay)
+export const sectionCardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 100, damping: 15, delay: i * 0.1 },
+  }),
+};
+
+export const listItemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "spring", stiffness: 120, damping: 12 },
   },
 };

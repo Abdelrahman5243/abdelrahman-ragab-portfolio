@@ -2,13 +2,14 @@
     "navigation": {
         "about": "About",
         "skills": "Skills",
+        "experience": "Experience",
         "projects": "Projects",
         "contact": "Contact",
         "articles": "Articles"
     },
     "hero": {
         "title": "Abdelrahman Ragab Abdelbaky",
-        "description": "Innovative and results-driven front-end web developer with a degree in Engineering from Zagazig University. Proven expertise in designing and implementing responsive, user-friendly websites and applications using modern technologies including Tailwind CSS, React, and JavaScript. Adept at creating seamless user experiences and solving complex problems through effective code solutions.",
+        "description": "Frontend Developer with hands-on experience building real-world e-commerce and LMS platforms using React, Next.js, and Magento 2. Focused on performance optimization (Core Web Vitals), scalable UI architecture, and delivering smooth multilingual (AR/EN) experiences with proper RTL/LTR support. Experienced in building GraphQL-powered PWAs, SSR applications, and handling complex marketplace workflows within Agile teams.",
         "downloadCV": "Download CV",
         "showCV": "Preview CV"
     },
@@ -258,6 +259,71 @@
                     "User-friendly interface for content management"
                 ],
                 "projectNote": "This project demonstrated proficiency in modern web development practices, multilingual support, and advanced user interface design principles."
+            }
+        ]
+    },
+    "experience": {
+        "title": "Experience",
+        "present": "Present",
+        "items": [
+            {
+                "role": "Frontend Developer",
+                "company": "CROCOIT",
+                "period": "Apr 2025 – Present",
+                "location": "Cairo",
+                "type": "full-time",
+                "projects": [
+                    {
+                        "name": "New Almasry — ECommerce PWA",
+                        "achievements": [
+                            "Built Magento PWA (Venia) with React.js, Apollo Client, GraphQL",
+                            "Implemented multilingual support (AR/EN) with RTL/LTR handling",
+                            "Optimized Core Web Vitals (LCP, CLS) and overall performance",
+                            "Integrated GTM and tracking pixels for analytics and conversion tracking",
+                            "Developed responsive product catalog, cart, and checkout flows"
+                        ]
+                    },
+                    {
+                        "name": "Etlala — Fashion Marketplace (Magento 2)",
+                        "achievements": [
+                            "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS and GraphQL for multiple modules",
+                            "Built reusable UI components across the platform",
+                            "Developed complex marketplace workflows: subscriptions, seller states, plan upgrades",
+                            "Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination & dynamic loaders"
+                        ]
+                    },
+                    {
+                        "name": "SPC Online Academy — Medical LMS (Next.js)",
+                        "inProgress": true,
+                        "achievements": [
+                            "Built SSR-powered LMS platform with multilingual support",
+                            "Developed core features (auth, courses, dashboard, video tracking)",
+                            "Implemented scalable i18n system and API integration"
+                        ]
+                    }
+                ]
+            },
+            {
+                "role": "Frontend Developer Trainee",
+                "company": "CROCOIT",
+                "period": "Nov 2024 – Mar 2025",
+                "location": "Cairo",
+                "type": "trainee",
+                "achievements": [
+                    "Completed a practical training program focused on modern Magento 2 frontend development",
+                    "Worked with Page Builder, widgets, layout XML, PHTML templates, and static assets",
+                    "Gained experience with RequireJS, Git workflows, and converting Figma designs into UI components"
+                ]
+            },
+            {
+                "role": "React.js Summer Training",
+                "company": "ITI",
+                "period": "Sep 2023",
+                "location": "",
+                "type": "training",
+                "achievements": [
+                    "Built responsive web applications using React.js, Bootstrap, and ES6 JavaScript, focusing on clean, modular code"
+                ]
             }
         ]
     },
