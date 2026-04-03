@@ -18,7 +18,8 @@ const Header = () => {
 
   const NAV_ITEMS = [
     { label: t("navigation.about"), href: "/#about" },
-    { label: t("navigation.skills"), href: `/#skills` },
+    { label: t("navigation.skills"), href: "/#skills" },
+    { label: t("navigation.experience"), href: "/#experience" },
     { label: t("navigation.projects"), href: "/#projects" },
     { label: t("navigation.contact"), href: "/#contact" },
     // { label: t("navigation.articles"), href: "/all-articles" },
