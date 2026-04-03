@@ -21,7 +21,7 @@ const Header = () => {
     { label: t("navigation.skills"), href: `/#skills` },
     { label: t("navigation.projects"), href: "/#projects" },
     { label: t("navigation.contact"), href: "/#contact" },
-    { label: t("navigation.articles"), href: "/all-articles" },
+    // { label: t("navigation.articles"), href: "/all-articles" },
   ];
 
   const closeModal = () => {
