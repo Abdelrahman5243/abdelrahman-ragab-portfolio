@@ -7,7 +7,7 @@ import { containerVariants, itemVariants, downloadVariants } from "../../animati
 const Hero = () => {
   const { t } = useTranslation("main");
 
-  const cvUrl = "/cv/Abdelrahman-Ragab-Frontend-CV.pdf";
+  const cvUrl = "https://drive.google.com/uc?export=download&id=16zAur4LWn7n6oGUzxqgL4EIFkIL3VXM0";
 
   return (
     <motion.section
@@ -86,7 +86,7 @@ const Hero = () => {
 
             <motion.a
               href={cvUrl}
-              download="Abdelrahman-Ragab-Frontend-CV.pdf"
+              download
               className="
                 relative py-2 px-6 
                 backdrop-blur-sm 
