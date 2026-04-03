@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { SunDim, CloudMoon, Languages, Menu } from "lucide-react";
 import Modal from "./Modal";
 import "./header.css";
@@ -22,7 +22,7 @@ const Header = () => {
     { label: t("navigation.experience"), href: "/#experience" },
     { label: t("navigation.projects"), href: "/#projects" },
     { label: t("navigation.contact"), href: "/#contact" },
-    // { label: t("navigation.articles"), href: "/all-articles" },
+    { label: t("navigation.articles"), href: "/all-articles" },
   ];
 
   const closeModal = () => {
