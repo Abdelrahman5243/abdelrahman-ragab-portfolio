@@ -274,7 +274,8 @@
                 "type": "full-time",
                 "projects": [
                     {
-                        "name": "New Almasry — متجر إلكتروني PWA",
+                        "name": "صيدليه المصري — متجر إلكتروني ",
+                        "link": "https://almasrypharmacy.com/",
                         "achievements": [
                             "بناء Magento PWA (Venia) باستخدام React.js وApollo Client وGraphQL",
                             "تطبيق دعم متعدد اللغات (AR/EN) مع معالجة RTL/LTR",
@@ -285,6 +286,7 @@
                     },
                     {
                         "name": "Etlala — سوق الأزياء (Magento 2)",
+                        "link": "#",
                         "achievements": [
                             "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة",
                             "بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة",
@@ -294,6 +296,7 @@
                     },
                     {
                         "name": "SPC Online Academy — منصة LMS الطبية (Next.js)",
+                        "link": "#",
                         "inProgress": true,
                         "achievements": [
                             "بناء منصة LMS مدعومة بـ SSR مع دعم متعدد اللغات",

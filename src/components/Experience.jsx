@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, MapPin, Calendar } from "lucide-react";
+import { Briefcase, MapPin, Calendar, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
   sectionHeaderVariants,
@@ -120,9 +120,21 @@ const Experience = () => {
                         "
                       >
                         <div className="flex flex-wrap items-center gap-2 mb-2">
-                          <p className="text-sm sm:text-base font-semibold text-light-title dark:text-dark-title">
-                            {project.name}
-                          </p>
+                          {project.link ? (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm sm:text-base font-semibold text-light-title dark:text-dark-title hover:text-light-blue dark:hover:text-dark-blue transition-colors"
+                            >
+                              <span>{project.name}</span>
+                              <ExternalLink size={14} className="flex-shrink-0 opacity-70" />
+                            </a>
+                          ) : (
+                            <p className="text-sm sm:text-base font-semibold text-light-title dark:text-dark-title">
+                              {project.name}
+                            </p>
+                          )}
                           {project.inProgress && (
                             <span className="text-xs font-semibold px-2 py-0.5 rounded-full text-amber-600 dark:text-amber-400 bg-amber-500/10 dark:bg-amber-400/10 border border-amber-500/20 dark:border-amber-400/20">
                               In Progress

@@ -274,7 +274,8 @@
                 "type": "full-time",
                 "projects": [
                     {
-                        "name": "New Almasry — ECommerce PWA",
+                        "name": "Almasry Pharmacy — ECommerce PWA",
+                        "link": "https://almasrypharmacy.com/",
                         "achievements": [
                             "Built Magento PWA (Venia) with React.js, Apollo Client, GraphQL",
                             "Implemented multilingual support (AR/EN) with RTL/LTR handling",
@@ -285,8 +286,9 @@
                     },
                     {
                         "name": "Etlala — Fashion Marketplace (Magento 2)",
+                        "link": "#",
                         "achievements": [
-                            "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS and GraphQL for multiple modules",
+                            "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS for multiple modules",
                             "Built reusable UI components across the platform",
                             "Developed complex marketplace workflows: subscriptions, seller states, plan upgrades",
                             "Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination & dynamic loaders"
@@ -294,6 +296,7 @@
                     },
                     {
                         "name": "SPC Online Academy — Medical LMS (Next.js)",
+                        "link": "#",
                         "inProgress": true,
                         "achievements": [
                             "Built SSR-powered LMS platform with multilingual support",
