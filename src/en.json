@@ -30,6 +30,7 @@
     "projects": {
         "1": {
             "categories": "ReactJS",
+            "badge": "Graduation",
             "title": "Website Builder Platform (Graduation Project)",
             "description": "A comprehensive website builder showcasing advanced web development techniques.",
             "details": "This project provides a powerful platform for creating and customizing websites. It includes various features for building and managing website sections, templates, and content, demonstrating a deep understanding of web development principles and techniques. The application supports switching between Arabic and English, enhancing accessibility and user experience for a diverse audience. Users can customize styles using a user-friendly interface, preview their changes in real-time, and generate content using AI. Additionally, the application allows users to arrange and choose between various sections, ensuring a flexible and tailored web design experience. This project represents the culmination of skills acquired during studies, incorporating responsive design practices and best coding standards.",
@@ -225,6 +226,104 @@
             "technologies": [
                 "HTML",
                 "CSS"
+            ]
+        },
+        "10": {
+            "categories": "ReactJS",
+            "company": "CROCOIT",
+            "title": "Almasry Pharmacy — ECommerce PWA",
+            "description": "A production-grade Magento PWA for a pharmacy, built with React, Apollo Client, GraphQL, and 8 integrated payment gateways — targeting Arabic/RTL markets with offline-first capabilities.",
+            "details": "A fully customized Magento PWA Studio e-commerce platform for an online pharmacy. Built on top of Venia with 128+ custom UI components and 50+ Peregrine business logic hooks (talons) developed from scratch. Integrated 8 payment gateways in production each as a self-contained PWA Studio module with its own GraphQL mutations and billing flows. Implemented a full offline-first Service Worker. Full RTL/LTR support via PostCSS RTL with dynamic direction switching and internationalization via React-Intl. Integrated GTM and tracking pixels for analytics and conversion tracking.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925037/Screenshot_from_2026-06-08_16-20-10_c7nvka.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925036/Screenshot_from_2026-06-08_16-20-42_v7vs1e.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925035/Screenshot_from_2026-06-08_16-21-07_rvdphw.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925033/Screenshot_from_2026-06-08_16-21-50_arwxtb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925031/Screenshot_from_2026-06-08_16-20-50_rxxhbs.png"
+            ],
+            "repo": "#",
+            "live": "https://almasrypharmacy.com/",
+            "technologies": [
+                "React 17",
+                "Apollo Client",
+                "GraphQL",
+                "Magento PWA Studio",
+                "Redux",
+                "Workbox",
+                "Tailwind CSS",
+                "PostCSS RTL",
+                "React-Intl",
+                "Webpack",
+                "GTM"
+            ]
+        },
+        "11": {
+            "categories": "Magento 2",
+            "company": "CROCOIT",
+            "title": "Etlala — Fashion Marketplace",
+            "description": "A Magento 2 fashion marketplace with complex seller workflows, multi-store support, and AR/EN RTL/LTR layouts.",
+            "details": "Extended the Magento 2 frontend using Layout XML, PHTML, RequireJS, and GraphQL for multiple modules. Built reusable UI components across the platform and developed complex marketplace workflows including subscriptions, seller states, and plan upgrades. Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination and dynamic loaders.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
+            ],
+            "repo": "#",
+            "live": "#",
+            "technologies": [
+                "Magento 2",
+                "Layout XML",
+                "PHTML",
+                "RequireJS",
+                "GraphQL",
+                "JavaScript"
+            ]
+        },
+        "12": {
+            "categories": "NextJs",
+            "company": "CROCOIT",
+            "title": "SPC Online Academy — Medical LMS",
+            "description": "A full-featured medical learning management system built with Next.js 16 and React 19, supporting AR/EN with RTL/LTR, HLS video streaming, role-based access, and multi-method payment checkout.",
+            "details": "SPC Online Academy is an enterprise-grade LMS platform for medical professionals. Built with Next.js App Router (SSR/SSG) and React 19, the platform delivers a complete learning experience across public, student, and instructor portals. Features include HLS video streaming via Plyr with adaptive quality (360p–1080p), progress tracking, and video watermarking for content protection. The multilingual system supports Arabic and English with dynamic RTL/LTR switching and font swapping (Cairo / Inter). Authentication is JWT-based with automatic token refresh, role-based access (student / instructor), and device management. The checkout system integrates multiple payment methods (card, wallet, cash outlet, bank installments) with order retry logic. The student portal includes a dashboard, course enrollment, certificate management, quiz system, invoices, and an offline mode. Built with a clean service-layer architecture using Axios interceptors, Zustand stores, and server-side metadata for full SEO support.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017309/Screenshot_from_2026-06-09_18-01-41_np1hb0.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017374/Screenshot_from_2026-06-09_18-02-45_d2fhd8.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017400/Screenshot_from_2026-06-09_18-03-14_r4ktjp.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017443/Screenshot_from_2026-06-09_18-03-56_f5c8si.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017490/Screenshot_from_2026-06-09_18-04-44_rvngca.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017529/Screenshot_from_2026-06-09_18-05-23_bidyvb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017576/Screenshot_from_2026-06-09_18-05-35_naey9w.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017580/Screenshot_from_2026-06-09_18-06-14_vicxey.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017661/Screenshot_from_2026-06-09_18-07-35_mprrdf.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017712/Screenshot_from_2026-06-09_18-08-25_fzla8m.png"
+            ],
+            "repo": "#",
+            "live": "https://spc.a2za1.com/",
+            "technologies": [
+                "Next.js 16",
+                "React 19",
+                "Tailwind CSS 4",
+                "Zustand",
+                "Axios",
+                "HLS.js",
+                "Plyr",
+                "Framer Motion",
+                "Recharts",
+                "Swiper",
+                "DOMPurify",
+                "REST API",
+                "GTM"
             ]
         }
     },

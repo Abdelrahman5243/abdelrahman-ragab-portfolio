@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink, GithubIcon, MoreVertical } from "lucide-react"
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Slider from "../components/slider/Slider";
+import ThumbnailGallery from "../components/lightbox/ThumbnailGallery";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -53,6 +54,11 @@ const ProjectDetails = () => {
         <Slider project={projectData} language={i18n.language} />
       </motion.div>
 
+      {/* Thumbnail Gallery */}
+      {projectData.screens_url && projectData.screens_url.length > 0 && (
+        <ThumbnailGallery images={projectData.screens_url} />
+      )}
+
       {/* Project Title & Details */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -60,7 +66,7 @@ const ProjectDetails = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <div className="flex gap-3 sm:gap-4 items-center my-6 sm:my-8 mt-6">
+        <div className="flex gap-3 sm:gap-4 items-center my-6 sm:my-8 mt-6 flex-wrap">
           <MoreVertical
             className="text-light-subtitle dark:text-dark-subtitle"
             aria-hidden="true"
@@ -68,6 +74,18 @@ const ProjectDetails = () => {
           <h1 className="title mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl break-words">
             {projectData.title}
           </h1>
+          {projectData.company && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/20 text-xs font-medium text-light-subtitle dark:text-dark-subtitle">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              @ {projectData.company}
+            </div>
+          )}
+          {projectData.badge && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/20 text-xs font-medium text-light-subtitle dark:text-dark-subtitle">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              {projectData.badge}
+            </div>
+          )}
         </div>
         <p className="description mx-2 sm:mx-4 leading-6 sm:leading-7 md:leading-8 lg:leading-10 text-sm sm:text-base md:text-lg lg:text-xl break-words">
           {projectData.details}
@@ -119,32 +137,36 @@ const ProjectDetails = () => {
         className="flex flex-wrap gap-3 sm:gap-4 px-2 sm:px-4"
       >
         {/* Live Demo */}
-        <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <a
-            href={projectData.live}
-            className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Go to live demo</span>
-            <ExternalLink size={16} className="sm:w-5 sm:h-5" />
-            <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-orange-300 to-transparent" />
-          </a>
-        </motion.li>
+        {projectData.live && projectData.live !== "#" && (
+          <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <a
+              href={projectData.live}
+              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Go to live demo</span>
+              <ExternalLink size={16} className="sm:w-5 sm:h-5" />
+              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-orange-300 to-transparent" />
+            </a>
+          </motion.li>
+        )}
 
         {/* Code Repo */}
-        <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <a
-            href={projectData.repo}
-            className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Go to Code</span>
-            <GithubIcon size={16} className="sm:w-5 sm:h-5" />
-            <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-red-300 to-transparent" />
-          </a>
-        </motion.li>
+        {projectData.repo && projectData.repo !== "#" && (
+          <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <a
+              href={projectData.repo}
+              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Go to Code</span>
+              <GithubIcon size={16} className="sm:w-5 sm:h-5" />
+              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-red-300 to-transparent" />
+            </a>
+          </motion.li>
+        )}
       </motion.ul>
     </motion.div>
   );

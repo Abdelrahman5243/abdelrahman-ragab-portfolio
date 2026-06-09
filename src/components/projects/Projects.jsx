@@ -8,10 +8,9 @@ const Projects = () => {
 
   const projectsData = t("projects", { returnObjects: true });
 
-  const myProjects = Object.keys(projectsData).map((id) => ({
-    id,
-    ...projectsData[id],
-  }));
+  const myProjects = Object.keys(projectsData)
+    .map((id) => ({ id, ...projectsData[id] }))
+    .sort((a, b) => (b.company ? 1 : 0) - (a.company ? 1 : 0));
 
   return (
     <section

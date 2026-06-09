@@ -32,6 +32,20 @@ const ProjectCard = ({ project, id }) => {
             />
           )}
         </Link>
+
+        {project.company && (
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            @ {project.company}
+          </div>
+        )}
+
+        {project.badge && (
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+            {project.badge}
+          </div>
+        )}
       </div>
 
       <h1
@@ -50,39 +64,45 @@ const ProjectCard = ({ project, id }) => {
 
       <div className="flex justify-center items-center flex-wrap gap-10 m-4 text-xs sm:text-sm md:text-base lg:text-lg mt-4 text-light-subtitle dark:text-dark-subtitle">
         <div className="flex gap-4 items-center">
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 cursor-pointer"
-            aria-label={`View the project at ${project.title}`}
-          >
-            <ExternalLink size={18} />
-          </a>
+          {project.live && project.live !== "#" && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 cursor-pointer"
+              aria-label={`View the project at ${project.title}`}
+            >
+              <ExternalLink size={18} />
+            </a>
+          )}
 
-          <a
-            href={project.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 cursor-pointer"
-            aria-label={`View the project ${project.title} code on GitHub`}
-          >
-            <Github size={18} />
-          </a>
+          {project.repo && project.repo !== "#" && (
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 cursor-pointer"
+              aria-label={`View the project ${project.title} code on GitHub`}
+            >
+              <Github size={18} />
+            </a>
+          )}
         </div>
 
-        <Link
-          to={`project-details/${id}`}
-          className="group/btn flex items-center gap-2 mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 text-sm sm:text-base cursor-pointer"
-          aria-label={`View details for project ${id}`}
-        >
-          <span>View details</span>
-          <ArrowLeft
-            size={16}
-            className={`mt-0.5 transition-transform duration-300 ${language === "ar" ? "group-hover/btn:-translate-x-1" : "rotate-180 group-hover/btn:translate-x-1"
-              }`}
-          />
-        </Link>
+        {!project.repo || project.repo !== "#" ? (
+          <Link
+            to={`project-details/${id}`}
+            className="group/btn flex items-center gap-2 mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 text-sm sm:text-base cursor-pointer"
+            aria-label={`View details for project ${id}`}
+          >
+            <span>View details</span>
+            <ArrowLeft
+              size={16}
+              className={`mt-0.5 transition-transform duration-300 ${language === "ar" ? "group-hover/btn:-translate-x-1" : "rotate-180 group-hover/btn:translate-x-1"
+                }`}
+            />
+          </Link>
+        ) : null}
 
       </div>
     </>

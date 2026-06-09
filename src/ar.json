@@ -30,6 +30,7 @@
     "projects": {
         "1": {
             "categories": "ReactJS",
+            "badge": "Graduation",
             "title": "منشئ المواقع",
             "description": "منشئ مواقع شامل يظهر تقنيات تطوير الويب المتقدمة.",
             "details": "يوفر هذا المشروع منصة قوية لإنشاء وتخصيص المواقع الإلكترونية. يتضمن ميزات متعددة لبناء وإدارة أقسام المواقع، والقوالب، والمحتوى، مما يظهر الفهم العميق لمبادئ وتقنيات تطوير الويب. يدعم التطبيق التبديل بين اللغتين العربية والإنجليزية، مما يعزز سهولة الوصول وتجربة المستخدم لجمهور متنوع. يمكن للمستخدمين تخصيص الأنماط باستخدام واجهة سهلة الاستخدام، ومعاينة التغييرات في الوقت الفعلي، وإنشاء المحتوى باستخدام الذكاء الاصطناعي. بالإضافة إلى ذلك، يسمح التطبيق للمستخدمين بترتيب واختيار بين أقسام متعددة، مما يضمن تجربة تصميم ويب مرنة ومخصصة. يمثل هذا المشروع ثمرة المهارات المكتسبة خلال الدراسة، ويشمل ممارسات التصميم المتجاوب وأفضل معايير البرمجة.",
@@ -225,6 +226,104 @@
             "technologies": [
                 "HTML",
                 "CSS"
+            ]
+        },
+        "10": {
+            "categories": "ReactJS",
+            "company": "CROCOIT",
+            "title": "صيدلية المصري — متجر إلكتروني PWA",
+            "description": "منصة Magento PWA احترافية لصيدلية إلكترونية، مبنية بـ React وApollo Client وGraphQL مع 8 بوابات دفع مدمجة — مستهدفة أسواق عربية مع RTL ودعم كامل للعمل بدون إنترنت.",
+            "details": "منصة Magento PWA Studio مخصصة بالكامل لصيدلية إلكترونية. مبنية على Venia مع 128+ مكون UI مخصص و50+ hook منطق أعمال (talons) تم تطويرها من الصفر. دمج 8 بوابات دفع في بيئة الإنتاج كل منها وحدة PWA Studio مستقلة مع GraphQL mutations خاصة بها. تطبيق Service Worker كامل للعمل بدون إنترنت. دعم كامل RTL/LTR عبر PostCSS RTL مع تبديل الاتجاه ديناميكياً والترجمة عبر React-Intl. دمج GTM وبكسلات التتبع للتحليلات وتتبع التحويلات.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925037/Screenshot_from_2026-06-08_16-20-10_c7nvka.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925036/Screenshot_from_2026-06-08_16-20-42_v7vs1e.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925035/Screenshot_from_2026-06-08_16-21-07_rvdphw.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925033/Screenshot_from_2026-06-08_16-21-50_arwxtb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925031/Screenshot_from_2026-06-08_16-20-50_rxxhbs.png"
+            ],
+            "repo": "#",
+            "live": "https://almasrypharmacy.com/",
+            "technologies": [
+                "React 17",
+                "Apollo Client",
+                "GraphQL",
+                "Magento PWA Studio",
+                "Redux",
+                "Workbox",
+                "Tailwind CSS",
+                "PostCSS RTL",
+                "React-Intl",
+                "Webpack",
+                "GTM"
+            ]
+        },
+        "11": {
+            "categories": "Magento 2",
+            "company": "CROCOIT",
+            "title": "إتلالا — سوق الأزياء",
+            "description": "سوق أزياء على Magento 2 مع سير عمل بائعين معقدة ودعم متعدد المتاجر بـ AR/EN.",
+            "details": "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة. بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة وتطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط. دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
+            ],
+            "repo": "#",
+            "live": "#",
+            "technologies": [
+                "Magento 2",
+                "Layout XML",
+                "PHTML",
+                "RequireJS",
+                "GraphQL",
+                "JavaScript"
+            ]
+        },
+        "12": {
+            "categories": "NextJs",
+            "company": "CROCOIT",
+            "title": "SPC Online Academy — منصة LMS الطبية",
+            "description": "منصة تعليم إلكتروني طبية متكاملة مبنية بـ Next.js 16 وReact 19، تدعم AR/EN مع RTL/LTR، بث فيديو HLS، صلاحيات متعددة الأدوار، وعمليات دفع متعددة الطرق.",
+            "details": "SPC Online Academy منصة LMS متكاملة للمتخصصين الطبيين. مبنية بـ Next.js App Router (SSR/SSG) وReact 19، تقدم تجربة تعليمية شاملة عبر بوابات عامة وبوابة الطالب والمدرس. تتضمن بث فيديو HLS عبر Plyr مع جودة تكيفية (360p–1080p)، تتبع التقدم، وعلامة مائية للحماية. نظام متعدد اللغات يدعم العربية والإنجليزية مع تبديل RTL/LTR ديناميكي وتبديل الخطوط (Cairo / Inter). المصادقة مبنية على JWT مع تجديد تلقائي للتوكن، صلاحيات متعددة الأدوار (طالب / مدرس)، وإدارة الأجهزة. نظام الدفع يدعم طرقاً متعددة (بطاقة، محفظة، نقاط بيع، أقساط بنكية) مع منطق إعادة المحاولة. بوابة الطالب تشمل لوحة تحكم، التسجيل في الدورات، إدارة الشهادات، نظام اختبارات، الفواتير، ووضع عمل بدون إنترنت. مبني بـ service-layer architecture نظيفة باستخدام Axios interceptors وZustand stores وserver-side metadata لدعم SEO كامل.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017309/Screenshot_from_2026-06-09_18-01-41_np1hb0.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017374/Screenshot_from_2026-06-09_18-02-45_d2fhd8.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017400/Screenshot_from_2026-06-09_18-03-14_r4ktjp.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017443/Screenshot_from_2026-06-09_18-03-56_f5c8si.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017490/Screenshot_from_2026-06-09_18-04-44_rvngca.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017529/Screenshot_from_2026-06-09_18-05-23_bidyvb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017576/Screenshot_from_2026-06-09_18-05-35_naey9w.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017580/Screenshot_from_2026-06-09_18-06-14_vicxey.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017661/Screenshot_from_2026-06-09_18-07-35_mprrdf.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017712/Screenshot_from_2026-06-09_18-08-25_fzla8m.png"
+            ],
+            "repo": "#",
+            "live": "https://spc.a2za1.com",
+            "technologies": [
+                "Next.js 16",
+                "React 19",
+                "Tailwind CSS 4",
+                "Zustand",
+                "Axios",
+                "HLS.js",
+                "Plyr",
+                "Framer Motion",
+                "Recharts",
+                "Swiper",
+                "DOMPurify",
+                "REST API",
+                "GTM"
             ]
         }
     },
