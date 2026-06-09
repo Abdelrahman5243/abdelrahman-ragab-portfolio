@@ -260,35 +260,6 @@
             ]
         },
         "11": {
-            "categories": "Magento 2",
-            "company": "CROCOIT",
-            "title": "Etlala — Fashion Marketplace",
-            "description": "A Magento 2 fashion marketplace with complex seller workflows, multi-store support, and AR/EN RTL/LTR layouts.",
-            "details": "Extended the Magento 2 frontend using Layout XML, PHTML, RequireJS, and GraphQL for multiple modules. Built reusable UI components across the platform and developed complex marketplace workflows including subscriptions, seller states, and plan upgrades. Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination and dynamic loaders.",
-            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
-            "screens_url": [
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
-            ],
-            "repo": "#",
-            "live": "#",
-            "technologies": [
-                "Magento 2",
-                "Layout XML",
-                "PHTML",
-                "RequireJS",
-                "GraphQL",
-                "JavaScript"
-            ]
-        },
-        "12": {
             "categories": "NextJs",
             "company": "CROCOIT",
             "title": "SPC Online Academy — Medical LMS",
@@ -324,6 +295,35 @@
                 "DOMPurify",
                 "REST API",
                 "GTM"
+            ]
+        },
+        "12": {
+            "categories": "Magento 2",
+            "company": "CROCOIT",
+            "title": "Etlala — Fashion Marketplace",
+            "description": "A Magento 2 fashion marketplace with complex seller workflows, multi-store support, and AR/EN RTL/LTR layouts.",
+            "details": "Extended the Magento 2 frontend using Layout XML, PHTML, RequireJS, and GraphQL for multiple modules. Built reusable UI components across the platform and developed complex marketplace workflows including subscriptions, seller states, and plan upgrades. Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination and dynamic loaders.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
+            ],
+            "repo": "#",
+            "live": "#",
+            "technologies": [
+                "Magento 2",
+                "Layout XML",
+                "PHTML",
+                "RequireJS",
+                "GraphQL",
+                "JavaScript"
             ]
         }
     },

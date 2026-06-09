@@ -260,35 +260,6 @@
             ]
         },
         "11": {
-            "categories": "Magento 2",
-            "company": "CROCOIT",
-            "title": "إتلالا — سوق الأزياء",
-            "description": "سوق أزياء على Magento 2 مع سير عمل بائعين معقدة ودعم متعدد المتاجر بـ AR/EN.",
-            "details": "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة. بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة وتطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط. دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية.",
-            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
-            "screens_url": [
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
-            ],
-            "repo": "#",
-            "live": "#",
-            "technologies": [
-                "Magento 2",
-                "Layout XML",
-                "PHTML",
-                "RequireJS",
-                "GraphQL",
-                "JavaScript"
-            ]
-        },
-        "12": {
             "categories": "NextJs",
             "company": "CROCOIT",
             "title": "SPC Online Academy — منصة LMS الطبية",
@@ -324,6 +295,35 @@
                 "DOMPurify",
                 "REST API",
                 "GTM"
+            ]
+        },
+        "12": {
+            "categories": "Magento 2",
+            "company": "CROCOIT",
+            "title": "إتلالا — سوق الأزياء",
+            "description": "سوق أزياء على Magento 2 مع سير عمل بائعين معقدة ودعم متعدد المتاجر بـ AR/EN.",
+            "details": "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة. بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة وتطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط. دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية.",
+            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+            "screens_url": [
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
+                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
+            ],
+            "repo": "#",
+            "live": "#",
+            "technologies": [
+                "Magento 2",
+                "Layout XML",
+                "PHTML",
+                "RequireJS",
+                "GraphQL",
+                "JavaScript"
             ]
         }
     },
