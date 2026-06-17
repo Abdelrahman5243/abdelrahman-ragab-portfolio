@@ -1,5 +1,12 @@
 .header_btn {
-  @apply text-light-subtitle dark:text-dark-subtitle w-10 h-10 border border-light-border dark:border-dark-border rounded-full bg-light-bgHeader dark:bg-dark-bgHeader p-2;
+  @apply text-light-subtitle dark:text-dark-subtitle w-10 h-10 border border-light-border dark:border-dark-border rounded-full bg-light-secondary dark:bg-dark-secondary p-2 backdrop-blur-sm transition-all duration-200;
+  box-shadow: 0 10px 30px rgb(15 23 42 / 0.04);
+}
+
+.header_btn:hover {
+  @apply text-light-title dark:text-dark-title;
+  border-color: rgb(var(--accent-light-rgb) / 0.35);
+  transform: translateY(-1px);
 }
 @keyframes mymove {
   0% {

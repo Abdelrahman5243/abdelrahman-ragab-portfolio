@@ -9,8 +9,8 @@ import {
 
 const typeColors = {
   "full-time": "text-light-blue dark:text-dark-blue bg-light-blue/10 dark:bg-dark-blue/10",
-  trainee: "text-purple-500 dark:text-purple-400 bg-purple-500/10 dark:bg-purple-400/10",
-  training: "text-green-600 dark:text-green-400 bg-green-600/10 dark:bg-green-400/10",
+  trainee: "text-light-blue dark:text-dark-blue bg-light-blue/10 dark:bg-dark-blue/10",
+  training: "text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-400/10",
 };
 
 const typeLabels = {
@@ -40,7 +40,7 @@ const Experience = () => {
             transition: { duration: 0.5 },
           }}
         >
-          <div className="absolute inset-0 bg-light-blue dark:bg-dark-blue opacity-20 blur-xl rounded-full" />
+          <div className="absolute inset-0 bg-light-blue dark:bg-dark-blue opacity-15 blur-xl rounded-full" />
           <Briefcase
             className="relative text-light-blue dark:text-dark-blue"
             aria-hidden="true"
@@ -54,7 +54,7 @@ const Experience = () => {
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute start-[11px] top-2 bottom-2 w-0.5 bg-light-border dark:bg-dark-border hidden sm:block" />
+          <div className="absolute start-[11px] top-2 bottom-2 w-0.5 bg-light-border/80 dark:bg-dark-border hidden sm:block" />
 
         <div className="space-y-6">
           {experience.items?.map((item, index) => (
@@ -68,13 +68,13 @@ const Experience = () => {
               className="sm:ps-8 relative"
             >
               {/* Timeline dot */}
-              <div className="absolute start-0 top-6 w-[23px] h-[23px] rounded-full bg-light-blue dark:bg-dark-blue border-4 border-light-primary dark:border-dark-primary hidden sm:block" />
+              <div className="absolute start-0 top-6 w-[23px] h-[23px] rounded-full bg-light-blue dark:bg-dark-blue border-4 border-light-primary dark:border-dark-primary hidden sm:block shadow-[0_0_0_6px_rgb(var(--accent-light-rgb)_/_0.08)] dark:shadow-[0_0_0_6px_rgb(var(--accent-dark-rgb)_/_0.08)]" />
 
               <div className="
                 p-5 sm:p-6 rounded-2xl
-                bg-light-secondary dark:bg-dark-secondary
-                border border-light-border dark:border-dark-border
-                shadow-sm
+                bg-light-secondary/95 dark:bg-dark-secondary/95
+                border border-light-border/80 dark:border-dark-border
+                shadow-[0_18px_50px_rgb(15_23_42_/_0.05)]
                 transition-all duration-300
               ">
                 {/* Header row */}
@@ -115,8 +115,8 @@ const Experience = () => {
                         variants={listItemVariants}
                         className="
                           p-4 rounded-xl
-                          bg-light-bgHeader dark:bg-dark-bgHeader
-                          border border-light-border/50 dark:border-dark-border/50
+                          bg-light-bgHeader/85 dark:bg-dark-bgHeader/85
+                          border border-light-border/80 dark:border-dark-border
                         "
                       >
                         <div className="flex flex-wrap items-center gap-2 mb-2">

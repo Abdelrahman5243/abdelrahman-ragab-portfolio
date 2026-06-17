@@ -28,7 +28,7 @@ const Education = () => {
             transition: { duration: 0.5 },
           }}
         >
-          <div className="absolute inset-0 bg-light-blue dark:bg-dark-blue opacity-20 blur-xl rounded-full" />
+          <div className="absolute inset-0 bg-light-blue dark:bg-dark-blue opacity-15 blur-xl rounded-full" />
           <GraduationCap
             className="relative text-light-blue dark:text-dark-blue"
             aria-hidden="true"
@@ -49,9 +49,9 @@ const Education = () => {
       >
         <div className="
           relative p-6 sm:p-8 rounded-2xl
-          bg-light-secondary dark:bg-dark-secondary
-          border border-light-border dark:border-dark-border
-          shadow-sm
+          bg-light-secondary/95 dark:bg-dark-secondary/95
+          border border-light-border/80 dark:border-dark-border
+          shadow-[0_18px_50px_rgb(15_23_42_/_0.05)]
           transition-all duration-300
           overflow-hidden
         ">
@@ -84,8 +84,8 @@ const Education = () => {
           >
             <div className="
               flex items-center gap-3 p-3 rounded-lg
-              bg-light-bgHeader dark:bg-dark-bgHeader
-              border border-light-border/50 dark:border-dark-border/50
+              bg-light-bgHeader/85 dark:bg-dark-bgHeader/85
+              border border-light-border/80 dark:border-dark-border
             ">
               <Award className="text-green-600 dark:text-green-400 flex-shrink-0" size={20} />
               <div>
@@ -100,8 +100,8 @@ const Education = () => {
 
             <div className="
               flex items-center gap-3 p-3 rounded-lg
-              bg-light-bgHeader dark:bg-dark-bgHeader
-              border border-light-border/50 dark:border-dark-border/50
+              bg-light-bgHeader/85 dark:bg-dark-bgHeader/85
+              border border-light-border/80 dark:border-dark-border
             ">
               <Calendar className="text-light-blue dark:text-dark-blue flex-shrink-0" size={20} />
               <div>

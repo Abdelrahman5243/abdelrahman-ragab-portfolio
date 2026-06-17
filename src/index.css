@@ -2,6 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   Palette system — swap accent + neutral tokens via body[data-palette]
+   Default (no attribute) = "slate"
+   ========================================================================== */
+
+:root,
+body[data-palette="slate"] {
+  --light-primary: #FAFAFA;
+  --light-secondary: #FFFFFF;
+  --light-border: rgba(228, 228, 231, 0.7);
+  --light-title: #09090B;
+  --light-subtitle: #71717A;
+  --light-bgHeader: #F8F8F8;
+  --light-iconHover: #27272A;
+  --dark-primary: #09090B;
+  --dark-secondary: #1C1C1F;
+  --dark-border: rgba(63, 63, 70, 0.3);
+  --dark-title: #FAFAFA;
+  --dark-subtitle: #A0A0AB;
+  --dark-bgHeader: #18181B;
+  --dark-iconHover: #E2E2E2;
+  --light-accent: #2563EB;
+  --dark-accent: #3B82F6;
+  --accent-light-rgb: 37 99 235;
+  --accent-dark-rgb: 59 130 246;
+  --page-bg:
+    radial-gradient(circle at top left, rgb(var(--accent-light-rgb) / 0.06), transparent 32%),
+    linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
+  --page-glow:
+    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.08), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgb(var(--accent-light-rgb) / 0.04), transparent 24%);
+  --surface-shadow: 0 22px 70px rgb(9 9 11 / 0.08);
+}
+
+/* Rose Gold — near-black + muted rose */
+body[data-palette="obsidian"] {
+  --light-primary: #FAFAFA;
+  --light-secondary: #FFFFFF;
+  --light-border: rgba(228, 228, 231, 0.7);
+  --light-title: #09090B;
+  --light-subtitle: #71717A;
+  --light-bgHeader: #F8F8F8;
+  --light-iconHover: #27272A;
+  --dark-primary: #09090B;
+  --dark-secondary: #1C1C1F;
+  --dark-border: rgba(63, 63, 70, 0.3);
+  --dark-title: #FAFAFA;
+  --dark-subtitle: #A0A0AB;
+  --dark-bgHeader: #18181B;
+  --dark-iconHover: #E2E2E2;
+  --light-accent: #BE185D;
+  --dark-accent: #F472B6;
+  --accent-light-rgb: 190 24 93;
+  --accent-dark-rgb: 244 114 182;
+  --page-bg:
+    radial-gradient(circle at top left, rgb(var(--accent-light-rgb) / 0.05), transparent 32%),
+    linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
+  --page-glow:
+    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.06), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgb(var(--accent-light-rgb) / 0.03), transparent 24%);
+  --surface-shadow: 0 22px 70px rgb(9 9 11 / 0.08);
+}
+
+/* Warm Amber — near-black + warm amber */
+body[data-palette="carbon"] {
+  --light-primary: #FAFAFA;
+  --light-secondary: #FFFFFF;
+  --light-border: rgba(228, 228, 231, 0.7);
+  --light-title: #09090B;
+  --light-subtitle: #71717A;
+  --light-bgHeader: #F8F8F8;
+  --light-iconHover: #27272A;
+  --dark-primary: #09090B;
+  --dark-secondary: #1C1C1F;
+  --dark-border: rgba(63, 63, 70, 0.3);
+  --dark-title: #FAFAFA;
+  --dark-subtitle: #A0A0AB;
+  --dark-bgHeader: #18181B;
+  --dark-iconHover: #E2E2E2;
+  --light-accent: #B45309;
+  --dark-accent: #FBBF24;
+  --accent-light-rgb: 180 83 9;
+  --accent-dark-rgb: 251 191 36;
+  --page-bg:
+    radial-gradient(circle at top left, rgb(var(--accent-light-rgb) / 0.05), transparent 32%),
+    linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
+  --page-glow:
+    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.06), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgb(var(--accent-light-rgb) / 0.03), transparent 24%);
+  --surface-shadow: 0 22px 70px rgb(9 9 11 / 0.08);
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background: var(--page-bg);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background: var(--page-glow);
+}
+
+body::after {
+  background:
+    radial-gradient(circle at 50% 0%, rgb(var(--accent-light-rgb) / 0.06), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgb(var(--accent-dark-rgb) / 0.04), transparent 26%);
+}
+
+body.dark {
+  background: linear-gradient(180deg, var(--dark-primary) 0%, var(--dark-secondary) 100%);
+}
+
 @layer base {
   ::-webkit-scrollbar {
     width: 8px;
@@ -55,7 +178,8 @@
   }
 
   .container {
-    @apply border border-light-border dark:border-dark-border mx-auto bg-light-secondary dark:bg-dark-secondary px-4;
+    @apply border border-light-border dark:border-dark-border mx-auto bg-light-secondary dark:bg-dark-secondary px-4 backdrop-blur-xl;
+    box-shadow: var(--surface-shadow);
   }
 
   .centered {
@@ -87,7 +211,7 @@
   }
 
   .project_btn {
-    @apply py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex items-center gap-4 border border-light-border dark:border-dark-border hover:border-dark-blue transition-all duration-300 hover:scale-95;
+    @apply py-2 px-6 bg-light-bgHeader dark:bg-dark-bgHeader text-light-subtitle dark:text-dark-subtitle rounded flex items-center gap-4 border border-light-border dark:border-dark-border hover:border-light-blue dark:hover:border-dark-blue transition-all duration-300 hover:scale-[0.98];
   }
 }
 

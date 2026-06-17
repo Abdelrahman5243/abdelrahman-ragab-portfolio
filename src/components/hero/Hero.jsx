@@ -40,7 +40,7 @@ const Hero = () => {
               mt-2
               text-base sm:text-lg md:text-xl lg:text-2xl
               font-medium tracking-wide
-              text-green-600 dark:text-green-400 
+              text-light-blue dark:text-dark-blue
             "
             variants={itemVariants}
           >
@@ -68,19 +68,21 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="
-                relative py-2 px-6 
-                backdrop-blur-sm 
-                border border-dark-bgHeader/10 dark:border-light-bgHeader/10 
-                bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 
-                text-sm sm:text-base md:text-lg 
-                text-light-subtitle dark:text-dark-subtitle 
+                relative py-2.5 px-7
+                border border-light-border dark:border-dark-border
+                bg-transparent
+                text-sm font-medium
+                text-light-subtitle dark:text-dark-subtitle
                 rounded-full flex gap-2 items-center justify-center
+                transition-colors duration-200
+                hover:border-light-blue dark:hover:border-dark-blue
+                hover:text-light-blue dark:hover:text-dark-blue
               "
               aria-label="Preview CV"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
             >
-              <ExternalLink size={18} />
+              <ExternalLink size={15} />
               <span>{t(HERO_CONTENT.showCVKey)}</span>
             </motion.a>
 
@@ -88,20 +90,20 @@ const Hero = () => {
               href={cvUrl}
               download
               className="
-                relative py-2 px-6 
-                backdrop-blur-sm 
-                border border-dark-bgHeader/10 dark:border-light-bgHeader/10 
-                bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 
-                text-sm sm:text-base md:text-lg 
-                text-light-subtitle dark:text-dark-subtitle 
+                relative py-2.5 px-7
+                bg-light-blue dark:bg-dark-blue
+                text-sm font-medium
+                text-white
                 rounded-full flex gap-2 items-center justify-center
+                transition-opacity duration-200
+                hover:opacity-90
               "
               aria-label="Download CV"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
             >
               <motion.div variants={downloadVariants} animate="animate">
-                <Download size={18} />
+                <Download size={15} />
               </motion.div>
               <span>{t("hero.downloadCV", "Download CV")}</span>
             </motion.a>

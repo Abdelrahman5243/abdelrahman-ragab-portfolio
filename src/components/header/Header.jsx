@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { SunDim, CloudMoon, Languages, Menu } from "lucide-react";
 import Modal from "./Modal";
+import PalettePicker from "./PalettePicker";
 import "./header.css";
 import { useThemeMode } from "../../hooks/useThemeMode";
 import { useTranslationMode } from "../../hooks/useTranslationMode";
@@ -54,14 +55,14 @@ const Header = () => {
         />
       )}
       <nav
-        className="p-2 px-3 sm:p-3 sm:px-5 border border-light-border dark:border-dark-border rounded-full hidden md:flex"
+        className="p-2 px-3 sm:p-3 sm:px-5 border border-light-border/80 dark:border-dark-border rounded-full hidden md:flex bg-light-secondary/70 dark:bg-dark-secondary/70 backdrop-blur-xl shadow-[0_12px_40px_rgb(15_23_42_/_0.06)]"
         aria-label="Main navigation"
       >
         <ul className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-5 text-[0.7rem] sm:text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-medium tracking-tight">
           {NAV_ITEMS.map((item) => (
             <li
               key={item.label}
-              className="hover:text-dark-subtitle whitespace-nowrap"
+              className="hover:text-light-blue dark:hover:text-dark-blue whitespace-nowrap transition-colors"
             >
               <HashLink to={item.href} aria-label={item.label}>
                 {item.label}
@@ -83,6 +84,7 @@ const Header = () => {
             <Languages />
           </button>
         )}
+        <PalettePicker />
         <button
           onClick={toggleTheme}
           className="centered header_btn"

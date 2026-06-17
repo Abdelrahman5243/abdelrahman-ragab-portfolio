@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
-import { motion, useScroll, useSpring } from "framer-motion";
 import ArticleHeader from "../components/Article/ArticleHeader";
 import MarkdownRenderer from "../components/Article/MarkdownRenderer";
 import Sidebar from "../components/Article/Sidebar";
@@ -16,33 +16,40 @@ export default function ArticlePage() {
   const [headings, setHeadings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showSidebar, setShowSidebar] = useState(false);
+  const progressBarRef = useRef(null);
   const navigate = useNavigate();
   const { id } = useParams();
 
   const { activeId, smoothScrollTo } = useActiveHeading();
-
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   useEffect(() => {
+    if (loading) return;
+    const bar = progressBarRef.current;
+    if (!bar) return;
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = `${pct}%`;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading]);
+
+  useEffect(() => {
     const loadArticle = async () => {
       try {
         setLoading(true);
         const articleData = await fetchArticleById(id);
-
         if (!articleData) {
           navigate("/", { replace: true });
           return;
         }
-
         setArticle(articleData);
       } catch (err) {
         console.error("Error fetching article:", err);
@@ -51,7 +58,6 @@ export default function ArticlePage() {
         setLoading(false);
       }
     };
-
     if (id) loadArticle();
   }, [id, navigate]);
 
@@ -61,13 +67,12 @@ export default function ArticlePage() {
     const list = Array.from(headingEls).map((el, index) => {
       let id = el.id?.trim();
       if (!id) {
-        // generate a unique id based on index and text
         id = `${el.innerText
           .toLowerCase()
           .replace(/\s+/g, "-")
           .replace(/[^\w-]/g, "")
           .slice(0, 30)}-${index}`;
-        el.id = id; // attach to DOM element for linking
+        el.id = id;
       }
       return {
         id,
@@ -75,7 +80,6 @@ export default function ArticlePage() {
         level: Number(el.tagName.replace("H", "")),
       };
     });
-
     setHeadings(list);
   }, [article?.markdown]);
 
@@ -85,10 +89,14 @@ export default function ArticlePage() {
 
   return (
     <>
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-light-blue via-purple-500 to-light-blue dark:from-dark-blue dark:via-purple-600 dark:to-dark-blue origin-left z-50"
-        style={{ scaleX }}
-      />
+      {createPortal(
+        <div
+          ref={progressBarRef}
+          className="fixed top-0 left-0 h-1 z-[9999] w-0"
+          style={{ background: "var(--dark-accent)" }}
+        />,
+        document.body
+      )}
 
       <div className="relative py-10 grid grid-cols-1 lg:grid-cols-[calc(100%-420px)_400px] gap-8 justify-between max-w-full mx-auto transition-all duration-500 ease-in-out">
         <aside className="hidden lg:block sticky lg:top-10 self-start transition-all duration-500 ease-in-out lg:order-3 order-0">

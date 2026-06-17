@@ -15,7 +15,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full mx-auto my-8 bg-light-secondary dark:bg-dark-secondary"
+      className="w-full mx-auto my-8"
       aria-labelledby="projects-title"
     >
       <div className="flex items-center gap-4 mb-14 text-2xl sm:text-3xl md:text-4xl">
@@ -37,7 +37,7 @@ const Projects = () => {
             <div
               key={project.id}
               custom={index}
-              className="flex flex-col justify-between w-full rounded-lg shadow-sm bg-light-bgHeader dark:bg-dark-bgHeader group"
+              className="flex flex-col justify-between w-full rounded-2xl border border-light-border/80 dark:border-dark-border bg-light-secondary/90 dark:bg-dark-secondary/90 shadow-[0_18px_50px_rgb(15_23_42_/_0.05)] group overflow-hidden"
               aria-labelledby={`project-${project.id}-title`}
               aria-describedby={`project-${project.id}-description`}
             >

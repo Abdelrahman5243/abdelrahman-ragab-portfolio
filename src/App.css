@@ -14,13 +14,13 @@ nav{
   font-weight: bold;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px #000;
-  background: conic-gradient(from -135deg at 100% 50%, #000 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, #000 0) text no-repeat;
+  -webkit-text-stroke: 1px rgb(15 23 42 / 0.85);
+  background: conic-gradient(from -135deg at 100% 50%, rgb(var(--accent-light-rgb)) 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, rgb(var(--accent-light-rgb)) 0) text no-repeat;
   animation: l6 2s linear infinite;
 }
 .dark .loader{
-  -webkit-text-stroke: 1px #fff;
-  background: conic-gradient(from -135deg at 100% 50%, #fff 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, #fff 0) text no-repeat;
+  -webkit-text-stroke: 1px rgb(248 250 252 / 0.9);
+  background: conic-gradient(from -135deg at 100% 50%, rgb(var(--accent-dark-rgb)) 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, rgb(var(--accent-dark-rgb)) 0) text no-repeat;
 }
 
 .loader:before {
@@ -50,11 +50,11 @@ nav{
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: black !important;
+  background: rgb(var(--accent-light-rgb)) !important;
 }
 
 .swiper-button-prev, .swiper-button-next{
-  color: #000000 !important; 
+  color: rgb(var(--accent-light-rgb)) !important; 
 }
 
 .swiper-slide.swiper-slide-active.mx-auto.w-full{

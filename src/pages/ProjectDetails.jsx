@@ -75,13 +75,13 @@ const ProjectDetails = () => {
             {projectData.title}
           </h1>
           {projectData.company && (
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/20 text-xs font-medium text-light-subtitle dark:text-dark-subtitle">
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-light-secondary/80 dark:bg-dark-secondary/80 border border-light-border/80 dark:border-dark-border text-xs font-medium text-light-subtitle dark:text-dark-subtitle backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               @ {projectData.company}
             </div>
           )}
           {projectData.badge && (
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/10 dark:bg-white/10 border border-black/10 dark:border-white/20 text-xs font-medium text-light-subtitle dark:text-dark-subtitle">
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-light-secondary/80 dark:bg-dark-secondary/80 border border-light-border/80 dark:border-dark-border text-xs font-medium text-light-subtitle dark:text-dark-subtitle backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
               {projectData.badge}
             </div>
@@ -141,7 +141,7 @@ const ProjectDetails = () => {
           <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <a
               href={projectData.live}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base"
+              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -157,7 +157,7 @@ const ProjectDetails = () => {
           <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <a
               href={projectData.repo}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-dark-bgHeader/10 dark:border-light-bgHeader/10 bg-light-bgHeader/80 dark:bg-dark-bgHeader/80 text-light-subtitle dark:text-dark-subtitle rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base"
+              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
               target="_blank"
               rel="noopener noreferrer"
             >

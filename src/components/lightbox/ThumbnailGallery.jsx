@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
@@ -17,28 +18,18 @@ const ThumbnailGallery = ({ images = [] }) => {
     document.body.style.overflow = "unset";
   };
 
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const goToPrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  const goToNext = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const goToPrev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   const handleKeyDown = (e) => {
-    if (!isOpen) return;
     if (e.key === "ArrowRight") goToNext();
     if (e.key === "ArrowLeft") goToPrev();
     if (e.key === "Escape") closeLightbox();
   };
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("keydown", handleKeyDown);
-  }
-
   return (
     <>
-      {/* Horizontal Thumbnail Gallery */}
+      {/* Thumbnail Gallery */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -49,8 +40,6 @@ const ThumbnailGallery = ({ images = [] }) => {
         <h3 className="text-sm sm:text-base font-medium text-light-title dark:text-dark-title mb-4 px-2 sm:px-4">
           Gallery
         </h3>
-
-        {/* Scrollable Thumbnail Container */}
         <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-hide px-2 sm:px-4">
           {images.map((image, index) => (
             <motion.button
@@ -72,79 +61,68 @@ const ThumbnailGallery = ({ images = [] }) => {
         </div>
       </motion.div>
 
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={closeLightbox}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center"
-          >
+      {/* Lightbox Portal */}
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full h-full flex items-center justify-center px-4 sm:px-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={closeLightbox}
+              onKeyDown={handleKeyDown}
+              tabIndex={-1}
+              className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center"
             >
-              <img
+              {/* Close */}
+              <button
+                onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+                className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              >
+                <X size={20} className="text-white" />
+              </button>
+
+              {/* Image */}
+              <motion.img
+                key={currentIndex}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.25 }}
                 src={images[currentIndex]}
                 alt={`Gallery ${currentIndex + 1}`}
-                className="max-w-full max-h-[90vh] object-contain"
+                onClick={(e) => e.stopPropagation()}
+                className="max-w-[85vw] max-h-[85vh] object-contain rounded-lg"
               />
 
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={closeLightbox}
-                className="absolute top-4 right-4 sm:top-8 sm:right-8 p-2 sm:p-3 rounded-full bg-black/60 hover:bg-black/80 transition-colors"
-              >
-                <X size={24} className="text-white" />
-              </motion.button>
-
+              {/* Prev / Next */}
               {images.length > 1 && (
                 <>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goToPrev();
-                    }}
-                    className="absolute left-4 sm:left-8 p-2 sm:p-3 rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+                  <button
+                    onClick={(e) => { e.stopPropagation(); goToPrev(); }}
+                    className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                   >
-                    <ChevronLeft size={24} className="text-white" />
-                  </motion.button>
+                    <ChevronLeft size={22} className="text-white" />
+                  </button>
 
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goToNext();
-                    }}
-                    className="absolute right-4 sm:right-8 p-2 sm:p-3 rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+                  <button
+                    onClick={(e) => { e.stopPropagation(); goToNext(); }}
+                    className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                   >
-                    <ChevronRight size={24} className="text-white" />
-                  </motion.button>
+                    <ChevronRight size={22} className="text-white" />
+                  </button>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium"
-                  >
+                  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium">
                     {currentIndex + 1} / {images.length}
-                  </motion.div>
+                  </div>
                 </>
               )}
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 };

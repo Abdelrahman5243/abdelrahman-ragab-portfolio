@@ -9,8 +9,10 @@ const ArticleCard = ({ article }) => {
       <motion.div
         dir="ltr"
         className="relative overflow-hidden flex gap-6 items-start lg:items-center justify-between 
-                   px-4 sm:px-6 py-5 rounded-xl border border-light-border dark:border-dark-border 
-                   hover:bg-light-border/10 dark:hover:bg-dark-border/10 "
+                   px-4 sm:px-6 py-5 rounded-2xl border border-light-border/80 dark:border-dark-border 
+                   bg-light-secondary/90 dark:bg-dark-secondary/90
+                   hover:bg-light-blue/5 dark:hover:bg-dark-blue/10 
+                   shadow-[0_14px_40px_rgb(15_23_42_/_0.04)]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: article._id * 0.1, duration: 0.5 }}

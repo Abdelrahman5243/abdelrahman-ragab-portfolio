@@ -34,14 +34,14 @@ const ProjectCard = ({ project, id }) => {
         </Link>
 
         {project.company && (
-          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border border-white/15 text-white text-xs font-medium shadow-lg">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             @ {project.company}
           </div>
         )}
 
         {project.badge && (
-          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
+          <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border border-white/15 text-white text-xs font-medium shadow-lg">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
             {project.badge}
           </div>
@@ -69,7 +69,7 @@ const ProjectCard = ({ project, id }) => {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 cursor-pointer"
+              className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border/80 dark:border-dark-border bg-light-secondary/80 dark:bg-dark-secondary/80 hover:border-light-blue/40 dark:hover:border-dark-blue/40 hover:bg-light-blue/5 dark:hover:bg-dark-blue/10 transition-all duration-200 cursor-pointer"
               aria-label={`View the project at ${project.title}`}
             >
               <ExternalLink size={18} />
@@ -81,7 +81,7 @@ const ProjectCard = ({ project, id }) => {
               href={project.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 cursor-pointer"
+              className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border/80 dark:border-dark-border bg-light-secondary/80 dark:bg-dark-secondary/80 hover:border-light-blue/40 dark:hover:border-dark-blue/40 hover:bg-light-blue/5 dark:hover:bg-dark-blue/10 transition-all duration-200 cursor-pointer"
               aria-label={`View the project ${project.title} code on GitHub`}
             >
               <Github size={18} />
@@ -92,7 +92,7 @@ const ProjectCard = ({ project, id }) => {
         {!project.repo || project.repo !== "#" ? (
           <Link
             to={`project-details/${id}`}
-            className="group/btn flex items-center gap-2 mb-2 px-4 py-2 rounded-xl border border-light-border dark:border-dark-border hover:bg-light-border/10 dark:hover:bg-dark-border/10 transition-colors duration-200 text-sm sm:text-base cursor-pointer"
+            className="group/btn flex items-center gap-2 mb-2 px-4 py-2 rounded-2xl border border-light-border/80 dark:border-dark-border bg-light-secondary/80 dark:bg-dark-secondary/80 hover:border-light-blue/40 dark:hover:border-dark-blue/40 hover:bg-light-blue/5 dark:hover:bg-dark-blue/10 transition-all duration-200 text-sm sm:text-base cursor-pointer"
             aria-label={`View details for project ${id}`}
           >
             <span>View details</span>

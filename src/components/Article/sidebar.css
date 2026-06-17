@@ -7,7 +7,8 @@
 }
 
 .sidebar-header {
-  @apply px-4 sm:px-6 py-3 sm:py-4 border-b border-light-border dark:border-dark-border bg-gradient-to-r from-light-blue/5 to-transparent dark:from-dark-blue/5;
+  @apply px-4 sm:px-6 py-3 sm:py-4 border-b border-light-border dark:border-dark-border;
+  background-image: linear-gradient(90deg, rgb(var(--accent-light-rgb) / 0.05), transparent);
 }
 
 .sidebar-title {
@@ -43,7 +44,8 @@
 }
 
 .sidebar-footer {
-  @apply px-4 sm:px-6 py-2 sm:py-3 border-t border-light-border dark:border-dark-border bg-light-primary/50 dark:bg-dark-primary/50;
+  @apply px-4 sm:px-6 py-2 sm:py-3 border-t border-light-border dark:border-dark-border;
+  background-color: rgb(var(--accent-light-rgb) / 0.03);
 }
 
 .sidebar-footer-content {
@@ -79,7 +81,7 @@
 }
 
 .level-1-bg {
-  @apply bg-light-blue/5 dark:bg-dark-blue/5;
+  background-color: rgb(var(--accent-light-rgb) / 0.05);
 }
 
 .level-1-indicator {
@@ -207,7 +209,8 @@
 }
 
 .sidebar-item-active {
-  @apply text-light-blue dark:text-dark-blue bg-light-blue/10 dark:bg-dark-blue/10 border-light-blue dark:border-dark-blue shadow-sm;
+  @apply text-light-blue dark:text-dark-blue border-light-blue dark:border-dark-blue shadow-sm;
+  background-color: rgb(var(--accent-light-rgb) / 0.08);
 }
 
 .sidebar-item-inactive {
