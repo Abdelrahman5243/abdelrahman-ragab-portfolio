@@ -125,32 +125,41 @@ export default function ArticlePage() {
           <MarkdownRenderer markdown={markdown} />
         </section>
 
-        {showSidebar && (
-          <div className="lg:hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-            <div className="relative max-w-[95%]">
-              <Sidebar
-                headings={headings}
-                activeId={activeId}
-                smoothScrollTo={smoothScrollTo}
-              />
-              <button
-                onClick={() => setShowSidebar(false)}
-                className="sidebar-close-btn absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                <X size={20} />
-              </button>
-            </div>
-          </div>
-        )}
-
-        <button
-          onClick={() => setShowSidebar(true)}
-          className="lg:hidden fixed bottom-6 left-6 z-40 flex items-center gap-2 bg-[rgb(69,69,69)] text-white rounded-full py-2 px-4"
-        >
-          <Menu size={20} />
-          <span className="text-sm font-medium">Contents</span>
-        </button>
       </div>
+
+      {createPortal(
+        <>
+          {showSidebar && (
+            <div
+              className="lg:hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/50"
+              onClick={() => setShowSidebar(false)}
+            >
+              <div className="relative max-w-[95%]" onClick={(e) => e.stopPropagation()}>
+                <Sidebar
+                  headings={headings}
+                  activeId={activeId}
+                  smoothScrollTo={smoothScrollTo}
+                />
+                <button
+                  onClick={() => setShowSidebar(false)}
+                  className="sidebar-close-btn absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+            </div>
+          )}
+
+          <button
+            onClick={() => setShowSidebar(true)}
+            className="lg:hidden fixed bottom-6 left-6 z-[9997] flex items-center gap-2 bg-[rgb(69,69,69)] text-white rounded-full py-2 px-4"
+          >
+            <Menu size={20} />
+            <span className="text-sm font-medium">Contents</span>
+          </button>
+        </>,
+        document.body
+      )}
     </>
   );
 }

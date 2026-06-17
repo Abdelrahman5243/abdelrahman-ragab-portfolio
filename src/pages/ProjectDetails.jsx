@@ -1,10 +1,16 @@
-import { Suspense, lazy, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ExternalLink, GithubIcon, MoreVertical } from "lucide-react";
+import { ArrowLeft, ExternalLink, GithubIcon, MoreVertical, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Slider from "../components/slider/Slider";
 import ThumbnailGallery from "../components/lightbox/ThumbnailGallery";
+
+const parseDetails = (text = "") =>
+  text
+    .split(/(?<=[.!؟])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 10);
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -87,9 +93,24 @@ const ProjectDetails = () => {
             </div>
           )}
         </div>
-        <p className="description mx-2 sm:mx-4 leading-6 sm:leading-7 md:leading-8 lg:leading-10 text-sm sm:text-base md:text-lg lg:text-xl break-words">
-          {projectData.details}
-        </p>
+        <ul className="mx-2 sm:mx-4 flex flex-col gap-3 mt-2">
+          {parseDetails(projectData.details).map((sentence, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.06 }}
+              className="flex items-start gap-3 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
+            >
+              <CheckCircle2
+                size={16}
+                className="mt-1 flex-shrink-0 text-light-blue dark:text-dark-blue"
+              />
+              <span>{sentence}</span>
+            </motion.li>
+          ))}
+        </ul>
       </motion.div>
 
       {/* Technologies */}

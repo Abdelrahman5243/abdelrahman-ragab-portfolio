@@ -89,7 +89,7 @@ const ProjectCard = ({ project, id }) => {
           )}
         </div>
 
-        {!project.repo || project.repo !== "#" ? (
+        {
           <Link
             to={`project-details/${id}`}
             className="group/btn flex items-center gap-2 mb-2 px-4 py-2 rounded-2xl border border-light-border/80 dark:border-dark-border bg-light-secondary/80 dark:bg-dark-secondary/80 hover:border-light-blue/40 dark:hover:border-dark-blue/40 hover:bg-light-blue/5 dark:hover:bg-dark-blue/10 transition-all duration-200 text-sm sm:text-base cursor-pointer"
@@ -102,7 +102,7 @@ const ProjectCard = ({ project, id }) => {
                 }`}
             />
           </Link>
-        ) : null}
+        }
 
       </div>
     </>
