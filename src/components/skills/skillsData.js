@@ -2,7 +2,7 @@ export const mySkills = [
   {
     category: "Core Languages",
     categoryAr: "اللغات الأساسية",
-    items: ["JavaScript", "TypeScript", "HTML5", "CSS3"],
+    items: ["JavaScript", "HTML5", "CSS3"],
   },
   {
     category: "Frameworks & Libraries",
