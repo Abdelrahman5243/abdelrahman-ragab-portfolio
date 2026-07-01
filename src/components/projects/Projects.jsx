@@ -8,9 +8,15 @@ const Projects = () => {
 
   const projectsData = t("projects", { returnObjects: true });
 
+  const rank = (project) => {
+    if (project.featured) return 2;
+    if (project.company) return 1;
+    return 0;
+  };
+
   const myProjects = Object.keys(projectsData)
     .map((id) => ({ id, ...projectsData[id] }))
-    .sort((a, b) => (b.company ? 1 : 0) - (a.company ? 1 : 0));
+    .sort((a, b) => rank(b) - rank(a));
 
   return (
     <section

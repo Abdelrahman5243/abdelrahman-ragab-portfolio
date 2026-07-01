@@ -232,8 +232,58 @@
             "categories": "ReactJS",
             "company": "CROCOIT",
             "title": "Almasry Pharmacy — ECommerce PWA",
-            "description": "A production-grade Magento PWA for a pharmacy, built with React, Apollo Client, GraphQL, and 8 integrated payment gateways — targeting Arabic/RTL markets with offline-first capabilities.",
-            "details": "A fully customized Magento PWA Studio e-commerce platform for an online pharmacy. Built on top of Venia with 128+ custom UI components and 50+ Peregrine business logic hooks (talons) developed from scratch. Integrated 8 payment gateways in production each as a self-contained PWA Studio module with its own GraphQL mutations and billing flows. Implemented a full offline-first Service Worker. Full RTL/LTR support via PostCSS RTL with dynamic direction switching and internationalization via React-Intl. Integrated GTM and tracking pixels for analytics and conversion tracking.",
+            "description": "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market, built on Venia with 100+ custom UI components and 50+ Peregrine talons, a checkout supporting 7 payment methods, and an optimized image pipeline.",
+            "details": "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market, built on Venia with 100+ custom UI components and 50+ Peregrine hooks (talons). Includes a checkout with 7 payment methods, an RxJS event system feeding GA4, Arabic/English support, an optimized image pipeline with a Workbox service worker, auto-translate for foreign visitors, and SEO/GEO improvements.",
+            "detailGroups": [
+                {
+                    "title": "Overview",
+                    "items": [
+                        "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market.",
+                        "Built on Venia with 100+ custom UI components and 50+ Peregrine hooks (talons)."
+                    ]
+                },
+                {
+                    "title": "Checkout & Payments",
+                    "items": [
+                        "Built a checkout that supports 7 payment methods: Braintree, Apple Pay, Checkout.com, Tamara, Tabby, valU, and Cash on Delivery.",
+                        "Handled carts that split into more than one order, and restored the cart when a payment fails partway so the user can try again."
+                    ]
+                },
+                {
+                    "title": "Events & Analytics",
+                    "items": [
+                        "Added an event system on top of RxJS so analytics and UI parts that load late still receive events that fired earlier.",
+                        "Connected it to the GA4 dataLayer for cart, checkout, and conversion tracking."
+                    ]
+                },
+                {
+                    "title": "Arabic / English Support",
+                    "items": [
+                        "Added RTL/LTR handling with PostCSS-RTL and React-Intl, plus store-view switching that detects Arabic input and swaps the Magento store view at runtime.",
+                        "Built a country phone input using the native Intl.DisplayNames API with localized country names and per-country validation."
+                    ]
+                },
+                {
+                    "title": "Images & Caching",
+                    "items": [
+                        "Improved image loading with a pipeline that switches between Cloudflare image transforms and a backend service depending on the source, serving WebP/JPG/PNG.",
+                        "Set up a Workbox service worker with different caching strategies for images, JS, and HTML for faster loads and offline support."
+                    ]
+                },
+                {
+                    "title": "Auto-Translate for Foreign Visitors",
+                    "items": [
+                        "Detects the visitor's browser language: Arabic/English visitors see no change, while other languages get the store auto-translated via Google Translate with a small bar to switch or reset."
+                    ]
+                },
+                {
+                    "title": "SEO & GEO",
+                    "items": [
+                        "Improved SEO/GEO (Generative Engine Optimization) across the storefront: added canonical URLs, hreflang tags for the bilingual pages, and Open Graph / Twitter Card tags.",
+                        "Added and fixed structured data (JSON-LD): Product, Organization, AggregateRating, BreadcrumbList, a Person schema for the founder, and FAQPage — and cleaned up meta descriptions and broken image URLs."
+                    ]
+                }
+            ],
             "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
             "screens_url": [
                 "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
@@ -246,25 +296,83 @@
             "repo": "#",
             "live": "https://almasrypharmacy.com/",
             "technologies": [
-                "React 17",
+                "React",
+                "Magento PWA Studio 14.3.1",
                 "Apollo Client",
                 "GraphQL",
-                "Magento PWA Studio",
                 "Redux",
+                "RxJS",
                 "Workbox",
                 "Tailwind CSS",
                 "PostCSS RTL",
                 "React-Intl",
+                "Cloudflare",
                 "Webpack",
-                "GTM"
+                "GA4 / GTM"
             ]
         },
         "11": {
             "categories": "NextJs",
             "company": "CROCOIT",
+            "featured": true,
             "title": "SPC Online Academy — Medical LMS",
-            "description": "A full-featured medical learning management system built with Next.js 16 and React 19, supporting AR/EN with RTL/LTR, HLS video streaming, role-based access, and multi-method payment checkout.",
-            "details": "SPC Online Academy is an enterprise-grade LMS platform for medical professionals. Built with Next.js App Router (SSR/SSG) and React 19, the platform delivers a complete learning experience across public, student, and instructor portals. Features include HLS video streaming via Plyr with adaptive quality (360p–1080p), progress tracking, and video watermarking for content protection. The multilingual system supports Arabic and English with dynamic RTL/LTR switching and font swapping (Cairo / Inter). Authentication is JWT-based with automatic token refresh, role-based access (student / instructor), and device management. The checkout system integrates multiple payment methods (card, wallet, cash outlet, bank installments) with order retry logic. The student portal includes a dashboard, course enrollment, certificate management, quiz system, invoices, and an offline mode. Built with a clean service-layer architecture using Axios interceptors, Zustand stores, and server-side metadata for full SEO support.",
+            "description": "A medical learning platform (LMS) built with Next.js (App Router) and React 19, with public, student, and instructor areas. Includes a custom HLS video player, content protection, and a checkout with multiple payment methods.",
+            "details": "A medical learning platform (LMS) built with Next.js (App Router) and React 19, with public, student, and instructor areas. Includes a custom HLS video player, video content protection, Arabic/English support with RTL/LTR, JWT auth, a checkout with multiple payment methods, and a 96/100 Lighthouse score.",
+            "detailGroups": [
+                {
+                    "title": "Overview",
+                    "items": [
+                        "A medical learning platform (LMS) built with Next.js (App Router) and React 19, with public, student, and instructor areas.",
+                        "Set up a clean service layer with Axios, server-side theming to avoid a color flash on load, and a deployment with quick rollback."
+                    ]
+                },
+                {
+                    "title": "Video Player",
+                    "items": [
+                        "Built a custom HLS video player with quality options (Auto/480p/720p/1080p), resume playback, and subtitles in two languages (SRT/VTT)."
+                    ]
+                },
+                {
+                    "title": "Content Protection",
+                    "items": [
+                        "Added content protection for the course videos, including a watermark and measures to discourage unauthorized copying."
+                    ]
+                },
+                {
+                    "title": "State & Shared Logic",
+                    "items": [
+                        "Managed app state with Zustand (auth, cart, enrollment, subscription) with instant UI updates that roll back on error, and kept the same state in sync across pages.",
+                        "Moved shared access logic into reusable hooks so course access and checkout buttons behave the same everywhere across the app."
+                    ]
+                },
+                {
+                    "title": "Languages & Auth",
+                    "items": [
+                        "Added Arabic/English support with RTL/LTR switching, font swapping (Cairo/Inter), and no layout jump when the language changes.",
+                        "Built JWT auth with silent token refresh, role-based redirects, and route guards, and handled the difference between manual logout and an expired session."
+                    ]
+                },
+                {
+                    "title": "Checkout & Payments",
+                    "items": [
+                        "Built a checkout with card, wallet, cash outlet, and bank installments, with order retry and reliable promo-code handling."
+                    ]
+                },
+                {
+                    "title": "Performance, SEO & Analytics",
+                    "items": [
+                        "Improved performance to a 96/100 Lighthouse score (Desktop) — LCP 0.9s, CLS 0.028, FCP 0.4s — using lazy loading, dynamic imports, and smaller bundles.",
+                        "Added SEO with JSON-LD, dynamic Open Graph images, a sitemap, and server-rendered metadata in both languages.",
+                        "Set up GTM/GA4 tracking for the main e-commerce steps and fixed common tracking issues like duplicate and repeated events."
+                    ]
+                },
+                {
+                    "title": "Student & Instructor Area",
+                    "items": [
+                        "Dashboard, course enrollment, certificates, quizzes, and invoices."
+                    ]
+                }
+            ],
             "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
             "screens_url": [
                 "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
@@ -373,34 +481,38 @@
                 "type": "full-time",
                 "projects": [
                     {
+                        "name": "SPC Online Academy — Medical LMS (Next.js)",
+                        "projectId": "11",
+                        "link": "https://spc.a2za1.com/",
+                        "achievements": [
+                            "Built a medical LMS with Next.js (App Router), React 19, and Zustand, with public, student, and instructor areas",
+                            "Built a custom HLS video player with quality options, resume playback, and subtitles, plus video content protection (watermark and leak tracing)",
+                            "Managed app state with Zustand (instant updates with rollback) and added Arabic/English support with RTL/LTR switching",
+                            "Built JWT auth (silent refresh, roles, route guards) and a checkout with card, wallet, cash outlet, and bank installments",
+                            "Improved performance to a 96/100 Lighthouse score (LCP 0.9s, FCP 0.4s, CLS 0.028), and set up SEO and GTM/GA4 tracking"
+                        ]
+                    },
+                    {
                         "name": "Almasry Pharmacy — ECommerce PWA",
+                        "projectId": "10",
                         "link": "https://almasrypharmacy.com/",
                         "achievements": [
-                            "Built Magento PWA (Venia) with React.js, Apollo Client, GraphQL",
-                            "Implemented multilingual support (AR/EN) with RTL/LTR handling",
-                            "Optimized Core Web Vitals (LCP, CLS) and overall performance",
-                            "Integrated GTM and tracking pixels for analytics and conversion tracking",
-                            "Developed responsive product catalog, cart, and checkout flows"
+                            "Built 100+ custom UI components and 50+ Peregrine talons on a Magento PWA Studio storefront for an Arabic/RTL pharmacy",
+                            "Built a checkout with 7 payment methods (Braintree, Apple Pay, Checkout.com, Tamara, Tabby, valU, COD), split-order support, and cart recovery on failed payments",
+                            "Added an RxJS event system so late-loading analytics and UI still receive earlier events, feeding the GA4 dataLayer",
+                            "Added Arabic/English support with RTL/LTR handling and store-view switching that detects Arabic input at runtime",
+                            "Improved image loading with a Cloudflare/backend pipeline (WebP/JPG/PNG) and set up a Workbox service worker for faster loads and offline support"
                         ]
                     },
                     {
                         "name": "Etlala — Fashion Marketplace (Magento 2)",
-                        "link": "#",
+                        "projectId": "12",
+                        "link": "/project-details/12",
                         "achievements": [
                             "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS for multiple modules",
                             "Built reusable UI components across the platform",
                             "Developed complex marketplace workflows: subscriptions, seller states, plan upgrades",
                             "Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination & dynamic loaders"
-                        ]
-                    },
-                    {
-                        "name": "SPC Online Academy — Medical LMS (Next.js)",
-                        "link": "#",
-                        "inProgress": true,
-                        "achievements": [
-                            "Built SSR-powered LMS platform with multilingual support",
-                            "Developed core features (auth, courses, dashboard, video tracking)",
-                            "Implemented scalable i18n system and API integration"
                         ]
                     }
                 ]
@@ -432,6 +544,7 @@
     "technologiesTitle": "Technologies Used",
     "copyright": "© 2024.",
     "seeMore": "Show More",
+    "viewDetails": "View details",
     "i18nStamp": 1774547930790,
     "i18nVersion": "v1.0"
 }

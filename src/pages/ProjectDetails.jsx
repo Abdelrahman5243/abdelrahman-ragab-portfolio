@@ -93,24 +93,61 @@ const ProjectDetails = () => {
             </div>
           )}
         </div>
-        <ul className="mx-2 sm:mx-4 flex flex-col gap-3 mt-2">
-          {parseDetails(projectData.details).map((sentence, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, x: -12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.06 }}
-              className="flex items-start gap-3 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
-            >
-              <CheckCircle2
-                size={16}
-                className="mt-1 flex-shrink-0 text-light-blue dark:text-dark-blue"
-              />
-              <span>{sentence}</span>
-            </motion.li>
-          ))}
-        </ul>
+        {Array.isArray(projectData.detailGroups) &&
+        projectData.detailGroups.length > 0 ? (
+          <div className="mx-0 sm:mx-2 grid gap-4 mt-4 sm:grid-cols-2">
+            {projectData.detailGroups.map((group, gi) => (
+              <motion.div
+                key={gi}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: gi * 0.06 }}
+                className="rounded-2xl p-5 bg-light-secondary/70 dark:bg-dark-secondary/60 border border-light-border/60 dark:border-dark-border hover:border-light-blue/40 dark:hover:border-dark-blue/40 transition-colors"
+              >
+                <h3 className="flex items-center gap-2.5 mb-3 text-base sm:text-lg font-bold text-light-title dark:text-dark-title">
+                  <span className="w-2 h-2 rounded-full bg-light-blue dark:bg-dark-blue flex-shrink-0" />
+                  {group.title}
+                </h3>
+                <ul className="flex flex-col gap-2.5">
+                  {group.items.map((item, ii) => (
+                    <li
+                      key={ii}
+                      className="flex items-start gap-2.5 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
+                    >
+                      <CheckCircle2
+                        size={16}
+                        className="mt-1 flex-shrink-0 text-light-blue dark:text-dark-blue"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <ul className="mx-0 sm:mx-2 grid gap-3 mt-4 sm:grid-cols-2">
+            {parseDetails(projectData.details).map((sentence, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.05 }}
+                className="flex items-start gap-3 rounded-xl p-4 bg-light-secondary/70 dark:bg-dark-secondary/60 border border-light-border/60 dark:border-dark-border hover:border-light-blue/40 dark:hover:border-dark-blue/40 transition-colors"
+              >
+                <CheckCircle2
+                  size={18}
+                  className="mt-0.5 flex-shrink-0 text-light-blue dark:text-dark-blue"
+                />
+                <span className="text-sm sm:text-base text-light-title/90 dark:text-dark-title/90 leading-7">
+                  {sentence}
+                </span>
+              </motion.li>
+            ))}
+          </ul>
+        )}
       </motion.div>
 
       {/* Technologies */}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Briefcase, MapPin, Calendar, ExternalLink } from "lucide-react";
+import { Briefcase, MapPin, Calendar, ExternalLink, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import {
   sectionHeaderVariants,
   sectionCardVariants,
@@ -20,7 +21,7 @@ const typeLabels = {
 };
 
 const Experience = () => {
-  const { t } = useTranslation("main");
+  const { t, i18n } = useTranslation("main");
   const experience = t("experience", { returnObjects: true });
 
   return (
@@ -146,13 +147,25 @@ const Experience = () => {
                             <motion.li
                               key={aIdx}
                               variants={listItemVariants}
-                              className="flex items-start gap-2 text-sm text-light-subtitle dark:text-dark-subtitle"
+                              className="flex items-start gap-2 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
                             >
                               <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">▸</span>
                               <span>{ach}</span>
                             </motion.li>
                           ))}
                         </ul>
+                        {project.projectId && (
+                          <Link
+                            to={`project-details/${project.projectId}`}
+                            className="group/btn mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-light-blue dark:text-dark-blue hover:gap-2.5 transition-all"
+                          >
+                            <span>{t("viewDetails")}</span>
+                            <ArrowRight
+                              size={15}
+                              className={`flex-shrink-0 ${i18n.language === "ar" ? "rotate-180" : ""}`}
+                            />
+                          </Link>
+                        )}
                       </motion.div>
                     ))}
                   </div>
