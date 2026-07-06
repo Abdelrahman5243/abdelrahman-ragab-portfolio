@@ -26,13 +26,13 @@ function MainPage() {
       <div className="divider"></div>
       <Skills />
       <div className="divider"></div>
-      <Education />
-      <div className="divider"></div>
       <Experience />
       <div className="divider"></div>
       <Suspense fallback={<ComponentLoader />}>
         <Projects />
       </Suspense>
+      <div className="divider"></div>
+      <Education />
       <div className="divider"></div>
       <Suspense fallback={<ComponentLoader />}>
         <ArticleSection showAll={false} />
