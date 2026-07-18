@@ -388,7 +388,7 @@
                 "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017712/Screenshot_from_2026-06-09_18-08-25_fzla8m.png"
             ],
             "repo": "#",
-            "live": "https://spc.a2za1.com/",
+            "live": "https://betaspc.a2za1.com/",
             "technologies": [
                 "Next.js 16",
                 "React 19",
@@ -483,7 +483,7 @@
                     {
                         "name": "SPC Online Academy — Medical LMS (Next.js)",
                         "projectId": "11",
-                        "link": "https://spc.a2za1.com/",
+                        "link": "https://betaspc.a2za1.com/",
                         "achievements": [
                             "Built a medical LMS with Next.js (App Router), React 19, and Zustand, with public, student, and instructor areas",
                             "Built a custom HLS video player with quality options, resume playback, and subtitles, plus video content protection (watermark and leak tracing)",
