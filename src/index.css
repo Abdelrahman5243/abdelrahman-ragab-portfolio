@@ -4,125 +4,119 @@
 
 /* ==========================================================================
    Palette system — swap accent + neutral tokens via body[data-palette]
-   Default (no attribute) = "slate"
+   Neutrals and accents are taken directly from Radix Colors' published
+   scales (radix-ui.com/colors) — the same system shadcn/ui builds on — so
+   contrast and "calm" are inherited from a tested scale, not eyeballed.
+   Mapping: primary = step 1, secondary (card) = step 2, border = step 6/7,
+   subtitle = step 11, title = step 12, accent = step 9/11.
+   Default (no attribute) = "sand" (Sand + Amber) — the warm baseline tone.
    ========================================================================== */
 
 :root,
+body[data-palette="sand"] {
+  --light-primary: #fdfdfc;
+  --light-secondary: #f9f9f8;
+  --light-border: #cfceca;
+  --light-title: #21201c;
+  --light-subtitle: #63635e;
+  --light-bgHeader: #fdfdfc;
+  --light-iconHover: #21201c;
+  --dark-primary: #111110;
+  --dark-secondary: #191918;
+  --dark-border: #494844;
+  --dark-title: #eeeeec;
+  --dark-subtitle: #b5b3ad;
+  --dark-bgHeader: #111110;
+  --dark-iconHover: #eeeeec;
+  --light-accent: #ab6400;
+  --dark-accent: #ffca16;
+  --accent-light-rgb: 171 100 0;
+  --accent-dark-rgb: 255 202 22;
+  --accent-wash-light: rgb(171 100 0 / 0.06);
+  --accent-wash-dark: rgb(255 202 22 / 0.1);
+  --page-bg: var(--light-primary);
+  --page-glow: none;
+  --surface-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+/* Slate — cool neutral undertone, Blue accent */
+body[data-palette="mono"] {
+  --light-primary: #fcfcfd;
+  --light-secondary: #f9f9fb;
+  --light-border: #cdced6;
+  --light-title: #1c2024;
+  --light-subtitle: #60646c;
+  --light-bgHeader: #fcfcfd;
+  --light-iconHover: #1c2024;
+  --dark-primary: #111113;
+  --dark-secondary: #18191b;
+  --dark-border: #43484e;
+  --dark-title: #edeef0;
+  --dark-subtitle: #b0b4ba;
+  --dark-bgHeader: #111113;
+  --dark-iconHover: #edeef0;
+  --light-accent: #0090ff;
+  --dark-accent: #0090ff;
+  --accent-light-rgb: 0 144 255;
+  --accent-dark-rgb: 0 144 255;
+  --accent-wash-light: rgb(0 144 255 / 0.06);
+  --accent-wash-dark: rgb(0 144 255 / 0.1);
+  --page-bg: var(--light-primary);
+  --page-glow: none;
+  --surface-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+/* Gray — true neutral (no undertone), same Blue accent */
 body[data-palette="slate"] {
-  --light-primary: #FAFAFA;
-  --light-secondary: #FFFFFF;
-  --light-border: rgba(228, 228, 231, 0.7);
-  --light-title: #09090B;
-  --light-subtitle: #71717A;
-  --light-bgHeader: #F8F8F8;
-  --light-iconHover: #27272A;
-  --dark-primary: #09090B;
-  --dark-secondary: #1C1C1F;
-  --dark-border: rgba(63, 63, 70, 0.3);
-  --dark-title: #FAFAFA;
-  --dark-subtitle: #A0A0AB;
-  --dark-bgHeader: #18181B;
-  --dark-iconHover: #E2E2E2;
-  --light-accent: #2563EB;
-  --dark-accent: #3B82F6;
-  --accent-light-rgb: 37 99 235;
-  --accent-dark-rgb: 59 130 246;
-  --page-bg:
-    radial-gradient(circle at top left, rgb(var(--accent-light-rgb) / 0.06), transparent 32%),
-    linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
-  --page-glow:
-    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.08), transparent 28%),
-    radial-gradient(circle at 80% 0%, rgb(var(--accent-light-rgb) / 0.04), transparent 24%);
-  --surface-shadow: 0 22px 70px rgb(9 9 11 / 0.08);
-}
-
-/* Rose Gold — near-black + muted rose */
-body[data-palette="obsidian"] {
-  --light-primary: #FAFAFA;
-  --light-secondary: #FFFFFF;
-  --light-border: rgba(228, 228, 231, 0.7);
-  --light-title: #09090B;
-  --light-subtitle: #71717A;
-  --light-bgHeader: #F8F8F8;
-  --light-iconHover: #27272A;
-  --dark-primary: #09090B;
-  --dark-secondary: #1C1C1F;
-  --dark-border: rgba(63, 63, 70, 0.3);
-  --dark-title: #FAFAFA;
-  --dark-subtitle: #A0A0AB;
-  --dark-bgHeader: #18181B;
-  --dark-iconHover: #E2E2E2;
-  --light-accent: #BE185D;
-  --dark-accent: #F472B6;
-  --accent-light-rgb: 190 24 93;
-  --accent-dark-rgb: 244 114 182;
-  --page-bg:
-    radial-gradient(circle at top left, rgb(var(--accent-light-rgb) / 0.05), transparent 32%),
-    linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
-  --page-glow:
-    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.06), transparent 28%),
-    radial-gradient(circle at 80% 0%, rgb(var(--accent-light-rgb) / 0.03), transparent 24%);
-  --surface-shadow: 0 22px 70px rgb(9 9 11 / 0.08);
-}
-
-/* Warm Amber — near-black + warm amber */
-body[data-palette="carbon"] {
-  --light-primary: #FAFAFA;
-  --light-secondary: #FFFFFF;
-  --light-border: rgba(228, 228, 231, 0.7);
-  --light-title: #09090B;
-  --light-subtitle: #71717A;
-  --light-bgHeader: #F8F8F8;
-  --light-iconHover: #27272A;
-  --dark-primary: #09090B;
-  --dark-secondary: #1C1C1F;
-  --dark-border: rgba(63, 63, 70, 0.3);
-  --dark-title: #FAFAFA;
-  --dark-subtitle: #A0A0AB;
-  --dark-bgHeader: #18181B;
-  --dark-iconHover: #E2E2E2;
-  --light-accent: #B45309;
-  --dark-accent: #FBBF24;
-  --accent-light-rgb: 180 83 9;
-  --accent-dark-rgb: 251 191 36;
-  --page-bg:
-    radial-gradient(circle at top left, rgb(var(--accent-light-rgb) / 0.05), transparent 32%),
-    linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
-  --page-glow:
-    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.06), transparent 28%),
-    radial-gradient(circle at 80% 0%, rgb(var(--accent-light-rgb) / 0.03), transparent 24%);
-  --surface-shadow: 0 22px 70px rgb(9 9 11 / 0.08);
+  --light-primary: #fcfcfc;
+  --light-secondary: #f9f9f9;
+  --light-border: #cecece;
+  --light-title: #202020;
+  --light-subtitle: #646464;
+  --light-bgHeader: #fcfcfc;
+  --light-iconHover: #202020;
+  --dark-primary: #111111;
+  --dark-secondary: #191919;
+  --dark-border: #464646;
+  --dark-title: #eeeeee;
+  --dark-subtitle: #b4b4b4;
+  --dark-bgHeader: #111111;
+  --dark-iconHover: #eeeeee;
+  --light-accent: #0090ff;
+  --dark-accent: #0090ff;
+  --accent-light-rgb: 0 144 255;
+  --accent-dark-rgb: 0 144 255;
+  --accent-wash-light: rgb(0 144 255 / 0.06);
+  --accent-wash-dark: rgb(0 144 255 / 0.1);
+  --page-bg: var(--light-primary);
+  --page-glow: none;
+  --surface-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
 }
 
 body {
   position: relative;
-  isolation: isolate;
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background: var(--page-bg);
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-}
-
-body::before {
-  background: var(--page-glow);
-}
-
-body::after {
-  background:
-    radial-gradient(circle at 50% 0%, rgb(var(--accent-light-rgb) / 0.06), transparent 34%),
-    radial-gradient(circle at 50% 100%, rgb(var(--accent-dark-rgb) / 0.04), transparent 26%);
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--light-primary);
 }
 
 body.dark {
-  background: linear-gradient(180deg, var(--dark-primary) 0%, var(--dark-secondary) 100%);
+  background: var(--dark-primary);
+}
+
+/* Fast, modern default for interactive state changes across the site. */
+a,
+button,
+.hero-badge,
+.skill-panel,
+.skill-item,
+.experience-card,
+.education-card-surface,
+.contact-card,
+.form-input,
+.header_btn {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 0.18s;
 }
 
 @layer base {
@@ -177,9 +171,12 @@ body.dark {
     @apply bg-dark-primary text-white;
   }
 
-  .container {
-    @apply border border-light-border dark:border-dark-border mx-auto bg-light-secondary dark:bg-dark-secondary px-4 backdrop-blur-xl;
-    box-shadow: var(--surface-shadow);
+  .page-shell {
+    @apply mx-auto;
+    max-width: 1280px;
+    /* No own background — inherits straight through to <body>'s color-transition,
+       so the theme toggle fades as one continuous surface instead of two
+       stacked opaque layers switching independently. */
   }
 
   .centered {
@@ -197,8 +194,86 @@ body.dark {
     margin-left: -2rem;
   }
 
+  /* Consistent, generous vertical rhythm between major page sections. */
+  .section-block {
+    padding-block: clamp(3rem, 6vw, 5.5rem);
+  }
+
   .title {
     @apply text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 dark:text-dark-title text-light-title;
+  }
+
+  .section-heading {
+    @apply flex flex-col items-start gap-3 mb-10;
+    margin-top: 0;
+    padding-top: 0.25rem;
+  }
+
+  /* "aside" — eyebrow sits beside the title in a narrow left column instead
+     of stacked above it; used for the timeline-style sections. */
+  .section-heading-aside {
+    @apply sm:flex-row sm:items-baseline sm:gap-8;
+  }
+
+  .section-heading-aside .section-heading-kicker {
+    @apply sm:w-40 sm:flex-shrink-0;
+  }
+
+  /* "stacked" — compact opener with no connecting rule, for shorter sections. */
+  .section-heading-stacked .section-heading-row {
+    @apply w-auto;
+  }
+
+  .section-heading-trailing {
+    @apply ms-auto flex-shrink-0;
+  }
+
+  .section-heading-count {
+    @apply text-sm font-semibold whitespace-nowrap;
+    color: var(--light-subtitle);
+  }
+
+  .dark .section-heading-count {
+    color: var(--dark-subtitle);
+  }
+
+  .section-heading-kicker {
+    @apply flex items-center gap-2;
+    color: var(--light-title);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .dark .section-heading-kicker {
+    color: var(--dark-title);
+  }
+
+  .section-heading-dot {
+    @apply inline-block rounded-full;
+    width: 6px;
+    height: 6px;
+    background: rgb(var(--accent-light-rgb));
+  }
+
+  .dark .section-heading-dot {
+    background: rgb(var(--accent-dark-rgb));
+  }
+
+  .section-heading-row {
+    @apply flex w-full items-center gap-5;
+    min-width: 0;
+  }
+
+  .section-heading h2 {
+    @apply m-0 font-extrabold leading-none tracking-[-0.04em] text-light-title dark:text-dark-title;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+  }
+
+  .section-heading-line {
+    @apply h-px flex-1 bg-light-border dark:bg-dark-border;
+    min-width: 2rem;
   }
 
   .description {
@@ -267,4 +342,225 @@ table {
   .sidebar-list a {
     margin-left: 0 !important;
   }
+}
+
+/* Global type scale: comfortable reading first, expressive display type second. */
+body {
+  font-family: "Manrope", "Cairo", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.arabic {
+  font-family: "Cairo", "Manrope", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Manrope", "Cairo", sans-serif;
+  text-wrap: balance;
+}
+
+body.arabic h1,
+body.arabic h2,
+body.arabic h3,
+body.arabic h4 {
+  font-family: "Cairo", "Manrope", sans-serif;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: -0.035em;
+}
+
+.section-heading-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+.description {
+  max-width: 68ch;
+  font-size: clamp(1rem, 1.4vw, 1.125rem) !important;
+  line-height: 1.75;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light-title);
+}
+
+.dark .hero-eyebrow {
+  color: var(--dark-title);
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  font-size: clamp(2.75rem, 8vw, 5.5rem) !important;
+  color: var(--light-title);
+}
+
+.dark .hero-title {
+  color: var(--dark-title);
+}
+
+.hero-description {
+  max-width: 56ch;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--light-subtitle);
+}
+
+.dark .hero-description {
+  color: var(--dark-subtitle);
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-btn:active {
+  transform: scale(0.97);
+}
+
+.hero-btn-primary {
+  background: var(--light-title);
+  color: var(--light-primary);
+}
+
+.hero-btn-primary:hover {
+  opacity: 0.85;
+}
+
+.dark .hero-btn-primary {
+  background: var(--dark-title);
+  color: var(--dark-primary);
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: var(--light-title);
+  border: 1px solid var(--light-border);
+}
+
+.hero-btn-secondary:hover {
+  border-color: rgb(var(--accent-light-rgb) / 0.5);
+}
+
+.dark .hero-btn-secondary {
+  color: var(--dark-title);
+  border-color: var(--dark-border);
+}
+
+.dark .hero-btn-secondary:hover {
+  border-color: rgb(var(--accent-dark-rgb) / 0.5);
+}
+
+.hero-social-link {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-social-link:hover {
+  color: var(--light-title);
+  transform: translateY(-2px);
+}
+
+.dark .hero-social-link:hover {
+  color: var(--dark-title);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--light-border);
+  background: var(--light-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--light-title);
+}
+
+.dark .hero-badge {
+  border-color: var(--dark-border);
+  background: var(--dark-secondary);
+  color: var(--dark-title);
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgb(var(--accent-light-rgb));
+}
+
+.dark .hero-badge-dot {
+  background: rgb(var(--accent-dark-rgb));
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+label,
+input,
+textarea,
+button {
+  line-height: 1.4;
+}
+
+footer {
+  font-size: 0.875rem !important;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .section-heading {
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-heading-kicker {
+    font-size: 0.73rem;
+    letter-spacing: 0.08em;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+    line-height: 1.05;
+    max-width: 75%;
+  }
+
+  .section-heading-row {
+    gap: 1rem;
+  }
+
+  .section-heading-line {
+    min-width: 1rem;
+  }
+
+  .section-heading-trailing { font-size: 0.72rem; }
 }

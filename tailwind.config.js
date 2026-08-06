@@ -29,9 +29,6 @@ export default {
           iconHover: "var(--light-iconHover)",
         },
       },
-      container: {
-        center: true,
-      },
       screens: {
         xs: "480px",
       },

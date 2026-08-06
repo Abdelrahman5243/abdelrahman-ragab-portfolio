@@ -1,62 +1,38 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Calendar, BookOpen } from "lucide-react";
+import { Award, Calendar, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
-  sectionHeaderVariants,
   sectionCardVariants,
   listItemVariants,
 } from "../animations/variants";
+import SectionHeader from "./SectionHeader";
+import "./experience.css";
 
 const Education = () => {
   const { t } = useTranslation("main");
   const education = t("education", { returnObjects: true });
 
   return (
-    <section id="education" className="my-16 w-full">
-      <motion.div
-        className="flex gap-3 items-center mb-8"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionHeaderVariants}
-      >
-        <motion.div
-          className="relative"
-          whileHover={{
-            rotate: [0, -10, 10, -10, 0],
-            scale: 1.1,
-            transition: { duration: 0.5 },
-          }}
-        >
-          <div className="absolute inset-0 bg-light-blue dark:bg-dark-blue opacity-15 blur-xl rounded-full" />
-          <GraduationCap
-            className="relative text-light-blue dark:text-dark-blue"
-            aria-hidden="true"
-            size={36}
-          />
-        </motion.div>
-        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl text-light-title dark:text-dark-title">
-          {education.title}
-        </h2>
-      </motion.div>
+    <section id="education" className="education-section section-block w-full">
+      <SectionHeader title={education.title} eyebrow="04 / EDUCATION" layout="stacked" />
 
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={sectionCardVariants}
-        className="group"
+        className="education-card group"
       >
-        <div className="
+        <div className="education-card-surface
           relative p-6 sm:p-8 rounded-2xl
-          bg-light-secondary/95 dark:bg-dark-secondary/95
-          border border-light-border/80 dark:border-dark-border
-          shadow-[0_18px_50px_rgb(15_23_42_/_0.05)]
+          bg-light-secondary dark:bg-dark-secondary
+          border border-light-border dark:border-dark-border
           transition-all duration-300
           overflow-hidden
         ">
 
           <motion.h2
+            id="education-institution"
             className="
               text-lg sm:text-xl md:text-2xl
               font-bold text-light-title dark:text-dark-title 
@@ -79,33 +55,33 @@ const Education = () => {
           </motion.p>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
+            className="education-facts grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
             variants={listItemVariants}
           >
-            <div className="
+            <div className="education-fact
               flex items-center gap-3 p-3 rounded-lg
-              bg-light-bgHeader/85 dark:bg-dark-bgHeader/85
-              border border-light-border/80 dark:border-dark-border
+              bg-light-primary dark:bg-dark-primary
+              border border-light-border dark:border-dark-border
             ">
-              <Award className="text-green-600 dark:text-green-400 flex-shrink-0" size={20} />
+              <Award className="text-light-title dark:text-dark-title flex-shrink-0" size={20} />
               <div>
-                <p className="text-xs text-light-subtitle dark:text-dark-subtitle">
+                <p className="text-sm text-light-subtitle dark:text-dark-subtitle">
                   {education.grade}
                 </p>
-                <p className="text-sm sm:text-base font-semibold text-green-600 dark:text-green-400">
+                <p className="text-sm sm:text-base font-semibold text-light-title dark:text-dark-title">
                   {education.items[0]?.grade}
                 </p>
               </div>
             </div>
 
-            <div className="
+            <div className="education-fact
               flex items-center gap-3 p-3 rounded-lg
-              bg-light-bgHeader/85 dark:bg-dark-bgHeader/85
-              border border-light-border/80 dark:border-dark-border
+              bg-light-primary dark:bg-dark-primary
+              border border-light-border dark:border-dark-border
             ">
-              <Calendar className="text-light-blue dark:text-dark-blue flex-shrink-0" size={20} />
+              <Calendar className="text-light-title dark:text-dark-title flex-shrink-0" size={20} />
               <div>
-                <p className="text-xs text-light-subtitle dark:text-dark-subtitle">Duration</p>
+                <p className="text-sm text-light-subtitle dark:text-dark-subtitle">Duration</p>
                 <p className="text-sm sm:text-base font-semibold text-light-title dark:text-dark-title">
                   {education.items[0]?.duration}
                 </p>
@@ -114,11 +90,11 @@ const Education = () => {
           </motion.div>
 
           <motion.div
-            className="mb-6"
+            className="education-coursework mb-6"
             variants={listItemVariants}
           >
-            <div className="flex items-center gap-2 mb-3">
-              <BookOpen className="text-light-blue dark:text-dark-blue" size={20} />
+            <div className="education-subheading flex items-center gap-2 mb-3">
+              <BookOpen className="text-light-title dark:text-dark-title" size={20} />
               <h3 className="font-semibold text-base sm:text-lg text-light-title dark:text-dark-title">
                 {education.relevantCoursework}
               </h3>
@@ -133,7 +109,7 @@ const Education = () => {
                     flex items-start gap-2
                     text-sm sm:text-base
                     text-light-subtitle dark:text-dark-subtitle
-                    hover:text-light-blue dark:hover:text-dark-blue
+                    hover:text-light-title dark:hover:text-dark-title
                     transition-colors duration-200
                     cursor-default
                   "
@@ -148,34 +124,33 @@ const Education = () => {
           <div className="h-px bg-light-border dark:bg-dark-border my-6" />
 
           <motion.div variants={listItemVariants}>
-            <div className="
+            <div className="education-project
               p-5 rounded-xl
-              bg-gradient-to-br from-light-bgHeader to-light-primary
-              dark:from-dark-bgHeader dark:to-dark-primary
+              bg-light-primary dark:bg-dark-primary
               border border-light-border dark:border-dark-border
             ">
               <h4 className="
-                font-semibold text-base sm:text-lg md:text-xl 
-                text-light-title dark:text-dark-title 
+                font-semibold text-base sm:text-lg md:text-xl
+                text-light-title dark:text-dark-title
                 mb-3
               ">
                 {education.graduationProject}
               </h4>
 
               <p className="
-                text-base sm:text-lg font-semibold 
-                text-light-blue dark:text-dark-blue 
+                text-base sm:text-lg font-semibold
+                text-light-title dark:text-dark-title
                 mb-3
               ">
                 {education.items[0]?.projectTitle}
               </p>
 
               <div className="flex items-center gap-2 mb-4">
-                <Award className="text-green-600 dark:text-green-400" size={18} />
+                <Award className="text-light-title dark:text-dark-title" size={18} />
                 <span className="text-sm text-light-subtitle dark:text-dark-subtitle">
                   {education.grade}:
                 </span>
-                <span className="text-sm font-semibold text-green-600 dark:text-green-400">
+                <span className="text-sm font-semibold text-light-title dark:text-dark-title">
                   {education.items[0]?.projectGrade}
                 </span>
               </div>
@@ -198,7 +173,7 @@ const Education = () => {
                       flex items-start gap-2
                       text-sm sm:text-base
                       text-light-subtitle dark:text-dark-subtitle
-                      hover:text-light-blue dark:hover:text-dark-blue
+                      hover:text-light-title dark:hover:text-dark-title
                       transition-colors duration-200
                     "
                   >
@@ -210,11 +185,11 @@ const Education = () => {
 
               {education.items[0]?.projectNote && (
                 <p className="
-                  text-sm sm:text-base 
+                  text-sm sm:text-base
                   italic font-medium
-                  text-light-blue/80 dark:text-dark-blue/80
-                  border-l-2 border-light-blue dark:border-dark-blue
-                  pl-4 py-2
+                  text-light-subtitle dark:text-dark-subtitle
+                  border-t border-light-border dark:border-dark-border
+                  pt-3 mt-1
                 ">
                   {education.items[0]?.projectNote}
                 </p>

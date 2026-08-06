@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { SunDim, CloudMoon, Languages, Menu } from "lucide-react";
 import Modal from "./Modal";
 import PalettePicker from "./PalettePicker";
@@ -8,6 +9,7 @@ import { useTranslationMode } from "../../hooks/useTranslationMode";
 import { useTranslation } from "react-i18next";
 import { HashLink } from "react-router-hash-link";
 import { useLocation } from "react-router-dom";
+import { HashLink as BrandLink } from "react-router-hash-link";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -30,6 +32,41 @@ const Header = () => {
     setShowModal(false);
   };
 
+  const headerControls = (
+    <>
+      {!isArticlePage && (
+        <button
+          onClick={toggleLanguage}
+          className="centered header_btn"
+          aria-label={`Switch to ${
+            currentLang === "en" ? "Arabic" : "English"
+          }`}
+        >
+          <Languages />
+        </button>
+      )}
+      <PalettePicker />
+      <button
+        onClick={toggleTheme}
+        className="centered header_btn overflow-hidden"
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      >
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={theme}
+            className="centered"
+            initial={{ opacity: 0, rotate: -90, scale: 0.6 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            exit={{ opacity: 0, rotate: 90, scale: 0.6 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {theme === "dark" ? <CloudMoon /> : <SunDim />}
+          </motion.span>
+        </AnimatePresence>
+      </button>
+    </>
+  );
+
   useEffect(() => {
     if (isArticlePage && currentLang !== "en") {
       i18n.changeLanguage("en");
@@ -39,7 +76,11 @@ const Header = () => {
   }, [isArticlePage, currentLang, i18n]);
 
   return (
-    <header className="flex justify-between items-center py-4">
+    <header className="site-header flex justify-between items-center py-4">
+      <BrandLink to="/#about" className="site-brand" aria-label="Go to homepage">
+        <img src="/letter-a.png" alt="Abdelrahman Ragab logo" />
+        <span>AR<span className="site-brand-dot">.</span></span>
+      </BrandLink>
       <button
         onClick={() => setShowModal(true)}
         className="centered header_btn md:hidden"
@@ -47,22 +88,18 @@ const Header = () => {
       >
         <Menu />
       </button>
-      {showModal && (
-        <Modal
-          ITEMS={NAV_ITEMS}
-          closeModal={closeModal}
-          showModal={showModal}
-        />
-      )}
-      <nav
-        className="p-2 px-3 sm:p-3 sm:px-5 border border-light-border/80 dark:border-dark-border rounded-full hidden md:flex bg-light-secondary/70 dark:bg-dark-secondary/70 backdrop-blur-xl shadow-[0_12px_40px_rgb(15_23_42_/_0.06)]"
-        aria-label="Main navigation"
-      >
-        <ul className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-5 text-[0.7rem] sm:text-[0.8rem] md:text-[0.9rem] lg:text-[1rem] font-medium tracking-tight">
+      <Modal
+        ITEMS={NAV_ITEMS}
+        closeModal={closeModal}
+        showModal={showModal}
+        controls={headerControls}
+      />
+      <nav className="hidden md:flex" aria-label="Main navigation">
+        <ul className="flex gap-6 lg:gap-8 text-sm font-medium">
           {NAV_ITEMS.map((item) => (
             <li
               key={item.label}
-              className="hover:text-light-blue dark:hover:text-dark-blue whitespace-nowrap transition-colors"
+              className="text-light-title dark:text-dark-title whitespace-nowrap"
             >
               <HashLink to={item.href} aria-label={item.label}>
                 {item.label}
@@ -72,26 +109,8 @@ const Header = () => {
         </ul>
       </nav>
 
-      <div className="flex gap-4">
-        {!isArticlePage && (
-          <button
-            onClick={toggleLanguage}
-            className="centered header_btn"
-            aria-label={`Switch to ${
-              currentLang === "en" ? "Arabic" : "English"
-            }`}
-          >
-            <Languages />
-          </button>
-        )}
-        <PalettePicker />
-        <button
-          onClick={toggleTheme}
-          className="centered header_btn"
-          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-        >
-          {theme === "dark" ? <CloudMoon /> : <SunDim />}
-        </button>
+      <div className="hidden md:flex gap-4">
+        {headerControls}
       </div>
     </header>
   );

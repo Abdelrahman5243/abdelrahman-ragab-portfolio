@@ -1,13 +1,363 @@
-.filter-btn {
-    min-width: 141px;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
 }
 
-.card {
-    width: 330px;
-    border-radius: 10px;
-    overflow: hidden;
+.project-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--light-secondary);
+  border: 1px solid var(--light-border);
+  border-radius: 12px;
+  transition: border-color 200ms ease;
 }
 
-.card img {
-    width: 100%;
+.dark .project-card {
+  background: var(--dark-secondary);
+  border-color: var(--dark-border);
+}
+
+.project-card:hover {
+  border-color: rgb(var(--accent-light-rgb) / 0.35);
+}
+
+.dark .project-card:hover {
+  border-color: rgb(var(--accent-dark-rgb) / 0.35);
+}
+
+.project-card:focus-within {
+  outline: 2px solid rgb(var(--accent-light-rgb) / 0.6);
+  outline-offset: 2px;
+}
+
+.dark .project-card:focus-within {
+  outline-color: rgb(var(--accent-dark-rgb) / 0.6);
+}
+
+.project-card-media {
+  border-bottom: 1px solid var(--light-border);
+}
+
+.dark .project-card-media {
+  border-color: var(--dark-border);
+}
+
+.project-card-visual-link {
+  display: block;
+  color: inherit;
+}
+
+/* Browser-chrome window frame around the real project screenshot — a nod
+   to the "code editor" register without hiding the actual shipped product. */
+.project-card-window {
+  background: var(--light-primary);
+}
+
+.dark .project-card-window {
+  background: var(--dark-primary);
+}
+
+.project-card-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 2.1rem;
+  padding: 0 0.7rem;
+  background: var(--light-secondary);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.dark .project-card-window-bar {
+  background: var(--dark-secondary);
+  border-color: var(--dark-border);
+}
+
+.project-card-window-dots {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 0.3rem;
+}
+
+.project-card-window-dots i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--light-border);
+}
+
+.dark .project-card-window-dots i {
+  background: var(--dark-border);
+}
+
+.project-card-window-url {
+  overflow: hidden;
+  color: var(--light-subtitle);
+  background: var(--light-primary);
+  border: 1px solid var(--light-border);
+  border-radius: 5px;
+  padding: 0.15rem 0.6rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dark .project-card-window-url {
+  color: var(--dark-subtitle);
+  background: var(--dark-primary);
+  border-color: var(--dark-border);
+}
+
+.project-card-visual {
+  position: relative;
+  aspect-ratio: 1.5 / 1;
+  overflow: hidden;
+  background: var(--light-primary);
+}
+
+.dark .project-card-visual {
+  background: var(--dark-primary);
+}
+
+.project-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-card-image {
+  transform: scale(1.03);
+}
+
+.project-card-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.project-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.1rem;
+}
+
+.project-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.project-card-meta {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  color: var(--light-subtitle);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dark .project-card-meta {
+  color: var(--dark-subtitle);
+}
+
+.project-card-meta-accent {
+  padding: 0.22rem 0.5rem;
+  color: var(--light-title);
+  background: var(--light-primary);
+  border: 1px solid var(--light-border);
+  border-radius: 999px;
+}
+
+.dark .project-card-meta-accent {
+  color: var(--dark-title);
+  background: var(--dark-primary);
+  border-color: var(--dark-border);
+}
+
+.project-card-meta-rule {
+  width: 1rem;
+  height: 1px;
+  flex: 0 0 auto;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+.project-card-meta > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-card-links {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.3rem;
+}
+
+.project-card-icon-link {
+  display: grid;
+  width: 1.85rem;
+  height: 1.85rem;
+  place-items: center;
+  color: var(--light-subtitle);
+  border: 1px solid var(--light-border);
+  border-radius: 7px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.dark .project-card-icon-link {
+  color: var(--dark-subtitle);
+  border-color: var(--dark-border);
+}
+
+.project-card-icon-link:hover,
+.project-card-icon-link:focus-visible {
+  color: var(--light-title);
+  border-color: rgb(var(--accent-light-rgb) / 0.4);
+}
+
+.dark .project-card-icon-link:hover,
+.dark .project-card-icon-link:focus-visible {
+  color: var(--dark-title);
+  border-color: rgb(var(--accent-dark-rgb) / 0.4);
+}
+
+.project-card-title {
+  margin: 0;
+  color: var(--light-title);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.dark .project-card-title {
+  color: var(--dark-title);
+}
+
+.project-card-description {
+  display: -webkit-box;
+  min-height: 2.6em;
+  margin: 0.45rem 0 0.9rem;
+  overflow: hidden;
+  color: var(--light-subtitle);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.dark .project-card-description {
+  color: var(--dark-subtitle);
+}
+
+.project-card-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+}
+
+.project-card-technologies span {
+  padding: 0.24rem 0.5rem;
+  color: var(--light-subtitle);
+  background: var(--light-primary);
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.dark .project-card-technologies span {
+  color: var(--dark-subtitle);
+  background: var(--dark-primary);
+  border-color: var(--dark-border);
+}
+
+.project-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--light-border);
+}
+
+.dark .project-card-footer {
+  border-color: var(--dark-border);
+}
+
+.project-card-company {
+  overflow: hidden;
+  color: var(--light-subtitle);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dark .project-card-company {
+  color: var(--dark-subtitle);
+}
+
+.project-card-details-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 0 0 auto;
+  color: var(--light-title);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: gap 150ms ease, color 150ms ease;
+}
+
+.dark .project-card-details-link {
+  color: var(--dark-title);
+}
+
+.project-card-details-link:hover,
+.project-card-details-link:focus-visible {
+  gap: 0.55rem;
+  color: rgb(var(--accent-light-rgb));
+}
+
+.dark .project-card-details-link:hover,
+.dark .project-card-details-link:focus-visible {
+  color: rgb(var(--accent-dark-rgb));
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card-image {
+    transition-duration: 0.01ms;
+  }
 }

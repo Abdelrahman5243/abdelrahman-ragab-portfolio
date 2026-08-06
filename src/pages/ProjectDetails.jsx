@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ExternalLink, GithubIcon, MoreVertical, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, GithubIcon, MoreVertical, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Slider from "../components/slider/Slider";
@@ -13,9 +13,16 @@ const parseDetails = (text = "") =>
     .filter((s) => s.length > 10);
 
 const ProjectDetails = () => {
-  const { id } = useParams();
+  const { id: slug } = useParams();
   const { i18n, t } = useTranslation("main");
-  const projectData = t(`projects.${id}`, { returnObjects: true });
+  const projectData = t(`projects.${slug}`, { returnObjects: true });
+  const allProjects = t("projects", { returnObjects: true });
+
+  const relatedProjects = Object.entries(allProjects)
+    .filter(([key]) => key !== slug)
+    .map(([key, project]) => ({ id: key, ...project }))
+    .sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
+    .slice(0, 3);
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -196,36 +203,82 @@ const ProjectDetails = () => {
       >
         {/* Live Demo */}
         {projectData.live && projectData.live !== "#" && (
-          <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.li whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}>
             <a
               href={projectData.live}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
+              className="py-1.5 px-3 sm:py-2 sm:px-6 border border-light-border dark:border-dark-border bg-light-secondary dark:bg-dark-secondary text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base hover:border-light-blue/40 dark:hover:border-dark-blue/40"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span>Go to live demo</span>
               <ExternalLink size={16} className="sm:w-5 sm:h-5" />
-              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-orange-300 to-transparent" />
             </a>
           </motion.li>
         )}
 
         {/* Code Repo */}
         {projectData.repo && projectData.repo !== "#" && (
-          <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.li whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}>
             <a
               href={projectData.repo}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
+              className="py-1.5 px-3 sm:py-2 sm:px-6 border border-light-border dark:border-dark-border bg-light-secondary dark:bg-dark-secondary text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base hover:border-light-blue/40 dark:hover:border-dark-blue/40"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span>Go to Code</span>
               <GithubIcon size={16} className="sm:w-5 sm:h-5" />
-              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-red-300 to-transparent" />
             </a>
           </motion.li>
         )}
       </motion.ul>
+
+      {/* Related projects */}
+      {relatedProjects.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-12 sm:mt-16 pt-8 border-t border-light-border dark:border-dark-border"
+        >
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-light-title dark:text-dark-title mb-6">
+            {t("moreProjects", "More Projects")}
+          </h2>
+          <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-2">
+            {relatedProjects.map((project) => (
+              <Link
+                key={project.id}
+                to={`/project-details/${project.id}`}
+                className="group flex-shrink-0 w-64 sm:w-72 rounded-2xl border border-light-border dark:border-dark-border bg-light-secondary dark:bg-dark-secondary overflow-hidden hover:border-light-blue/30 dark:hover:border-dark-blue/30 transition-colors"
+              >
+                <div className="w-full h-36 sm:h-40 overflow-hidden">
+                  <img
+                    src={project.image_url}
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-sm sm:text-base font-semibold text-light-title dark:text-dark-title mb-1 line-clamp-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-light-subtitle dark:text-dark-subtitle line-clamp-2">
+                    {project.description}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-light-title dark:text-dark-title">
+                    {t("viewDetails")}
+                    <ArrowRight
+                      size={14}
+                      className={i18n.language === "ar" ? "rotate-180" : ""}
+                    />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   );
 };

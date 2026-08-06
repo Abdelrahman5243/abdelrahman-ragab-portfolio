@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react";
 
 export const PALETTES = [
-  { id: "slate", name: "Classic Blue", light: "#2563EB", dark: "#3B82F6" },
-  { id: "obsidian", name: "Rose Gold", light: "#BE185D", dark: "#F472B6" },
-  { id: "carbon", name: "Warm Amber", light: "#B45309", dark: "#FBBF24" },
+  { id: "sand", name: "Sand", light: "#AB6400", dark: "#FFCA16" },
+  { id: "mono", name: "Slate", light: "#0090FF", dark: "#0090FF" },
+  { id: "slate", name: "Gray", light: "#0090FF", dark: "#0090FF" },
 ];
 
 const STORAGE_KEY = "currentPalette";
-const DEFAULT_PALETTE = "slate";
+// Bumped when the default/available palettes change materially, so a value
+// saved under an older scheme doesn't silently stick around as a stale pick.
+const STORAGE_VERSION_KEY = "currentPaletteVersion";
+const STORAGE_VERSION = "2";
+const DEFAULT_PALETTE = "sand";
 const VALID_PALETTES = new Set(PALETTES.map((palette) => palette.id));
 
 export const usePalette = () => {
   const [palette, setPalette] = useState(
     () => {
+      if (localStorage.getItem(STORAGE_VERSION_KEY) !== STORAGE_VERSION) {
+        localStorage.setItem(STORAGE_VERSION_KEY, STORAGE_VERSION);
+        localStorage.removeItem(STORAGE_KEY);
+        return DEFAULT_PALETTE;
+      }
       const storedPalette = localStorage.getItem(STORAGE_KEY);
       return VALID_PALETTES.has(storedPalette) ? storedPalette : DEFAULT_PALETTE;
     }

@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import ArticleHeader from "../components/Article/ArticleHeader";
 import MarkdownRenderer from "../components/Article/MarkdownRenderer";
 import Sidebar from "../components/Article/Sidebar";
@@ -9,16 +10,17 @@ import TagsList from "../components/Article/TagsList";
 import { Menu, X } from "lucide-react";
 import { useActiveHeading } from "../hooks/useActiveHeading";
 import "highlight.js/styles/github-dark.css";
-import { fetchArticleById } from "../services/articleService";
+import { fetchArticleBySlug, fetchAllArticles } from "../services/articleService";
 
 export default function ArticlePage() {
   const [article, setArticle] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [siblings, setSiblings] = useState({ prev: null, next: null });
   const progressBarRef = useRef(null);
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { id: slug } = useParams();
 
   const { activeId, smoothScrollTo } = useActiveHeading();
 
@@ -45,12 +47,21 @@ export default function ArticlePage() {
     const loadArticle = async () => {
       try {
         setLoading(true);
-        const articleData = await fetchArticleById(id);
+        const [articleData, allArticles] = await Promise.all([
+          fetchArticleBySlug(slug),
+          fetchAllArticles(),
+        ]);
         if (!articleData) {
           navigate("/", { replace: true });
           return;
         }
         setArticle(articleData);
+
+        const index = allArticles.findIndex((a) => a.slug === slug);
+        setSiblings({
+          prev: index > 0 ? allArticles[index - 1] : null,
+          next: index >= 0 && index < allArticles.length - 1 ? allArticles[index + 1] : null,
+        });
       } catch (err) {
         console.error("Error fetching article:", err);
         navigate("/", { replace: true });
@@ -58,8 +69,8 @@ export default function ArticlePage() {
         setLoading(false);
       }
     };
-    if (id) loadArticle();
-  }, [id, navigate]);
+    if (slug) loadArticle();
+  }, [slug, navigate]);
 
   useEffect(() => {
     if (!article?.markdown) return;
@@ -123,6 +134,31 @@ export default function ArticlePage() {
           {tags && <TagsList tags={tags} />}
           <div className="divider mt-10" />
           <MarkdownRenderer markdown={markdown} />
+
+          {(siblings.prev || siblings.next) && (
+            <nav className="article-nav not-prose" aria-label="Article navigation">
+              {siblings.prev ? (
+                <Link to={`/article/${siblings.prev.slug}`} className="article-nav-card article-nav-prev">
+                  <ArrowLeft size={16} className="article-nav-icon" aria-hidden="true" />
+                  <span>
+                    <span className="article-nav-label">Previous</span>
+                    <span className="article-nav-title">{siblings.prev.title}</span>
+                  </span>
+                </Link>
+              ) : (
+                <span />
+              )}
+              {siblings.next && (
+                <Link to={`/article/${siblings.next.slug}`} className="article-nav-card article-nav-next">
+                  <span>
+                    <span className="article-nav-label">Next</span>
+                    <span className="article-nav-title">{siblings.next.title}</span>
+                  </span>
+                  <ArrowRight size={16} className="article-nav-icon" aria-hidden="true" />
+                </Link>
+              )}
+            </nav>
+          )}
         </section>
 
       </div>

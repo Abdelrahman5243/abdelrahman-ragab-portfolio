@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { BookOpenText } from "lucide-react";
+import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import { useTranslationMode } from "../../hooks/useTranslationMode";
 import { fetchAllArticles } from "../../services/articleService";
+import SectionHeader from "../SectionHeader";
 
 const ArticleSection = ({ showAll }) => {
   const [articles, setArticles] = useState([]);
@@ -42,16 +43,13 @@ const ArticleSection = ({ showAll }) => {
   if (!articles || articles.length === 0) return null;
 
   return (
-    <section id="articles" className="my-12 w-full">
-      <div className="flex gap-4 items-center mb-8 text-3xl">
-        <BookOpenText
-          className="text-light-subtitle dark:text-dark-subtitle"
-          aria-hidden="true"
-        />
-        <h1 id="articles-title" className="title mb-0">
-          {t("articlesTitle")}
-        </h1>
-      </div>
+    <section id="articles" className="section-block w-full">
+      <SectionHeader
+        id="articles-title"
+        title={t("articlesTitle")}
+        eyebrow="05 / ARTICLES"
+        layout="stacked"
+      />
 
       <div className="flex flex-col gap-3">
         {articles.map((article) => (
@@ -63,9 +61,9 @@ const ArticleSection = ({ showAll }) => {
         <div className="mt-8 text-center mx-auto max-w-48">
         <Link
           to="/all-articles"
-          className="relative py-2 px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border 
-            bg-light-secondary/85 dark:bg-dark-secondary/85 text-sm sm:text-base md:text-lg 
-            text-light-title dark:text-dark-title rounded-full shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
+          className="relative py-2 px-6 border border-light-border dark:border-dark-border
+            bg-light-secondary dark:bg-dark-secondary text-sm sm:text-base md:text-lg
+            text-light-title dark:text-dark-title rounded-full hover:border-light-blue/40 dark:hover:border-dark-blue/40"
           aria-label="Show More Articles"
         >
             <span>{t("seeMore")}</span>
@@ -74,6 +72,10 @@ const ArticleSection = ({ showAll }) => {
       )}
     </section>
   );
+};
+
+ArticleSection.propTypes = {
+  showAll: PropTypes.bool,
 };
 
 export default ArticleSection;
