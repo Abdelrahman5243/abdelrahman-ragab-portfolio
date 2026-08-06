@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { HERO_CONTENT } from "./heroContent.js";
 import { ExternalLink, Download } from "lucide-react";
 import { containerVariants, itemVariants } from "../../animations/variants";
+import { file_download, external_link_click } from "../../analytics";
 
 const Hero = () => {
   const { t } = useTranslation("main");
@@ -49,6 +50,15 @@ const Hero = () => {
           className="hero-btn hero-btn-primary"
           aria-label="Download CV"
           whileTap={{ scale: 0.97 }}
+          onClick={() =>
+            // Example: file download tracking.
+            file_download({
+              fileName: "Abdelrahman-Ragab-CV.pdf",
+              url: cvUrl,
+              label: "Download CV",
+              location: "hero",
+            })
+          }
         >
           <Download size={16} />
           <span>{t("hero.downloadCV", "Download CV")}</span>
@@ -61,6 +71,14 @@ const Hero = () => {
           className="hero-btn hero-btn-secondary"
           aria-label="Preview CV"
           whileTap={{ scale: 0.97 }}
+          onClick={() =>
+            // Example: external link click tracking.
+            external_link_click({
+              url: HERO_CONTENT.cvUrl,
+              label: "Preview CV",
+              location: "hero",
+            })
+          }
         >
           <ExternalLink size={16} />
           <span>{t(HERO_CONTENT.showCVKey)}</span>
@@ -79,6 +97,14 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="hero-social-link"
             aria-label={link.ariaLabel}
+            onClick={() =>
+              // Example: external link click tracking (social profiles).
+              external_link_click({
+                url: link.href,
+                label: link.ariaLabel,
+                location: "hero_social",
+              })
+            }
           >
             <link.icon size="1.05em" />
           </a>

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Spinner from "../spinner/Spinner";
 import { Github, Linkedin, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
@@ -12,12 +12,24 @@ import {
 } from "../../animations/variants"; 
 import "./contact.css";
 import SectionHeader from "../SectionHeader";
+import { button_click, external_link_click, form_submit } from "../../analytics";
 
 const Contact = () => {
   const { t } = useTranslation("main");
   const [state, handleSubmit] = useForm("xqazqwbr");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const wasSubmitting = useRef(false);
+
+  // Example: form_submit tracking. Formspree's `state.succeeded` flips once
+  // per successful submission, so we fire on that transition (not on the
+  // click) — this measures completed submissions, not just attempts.
+  useEffect(() => {
+    if (state.succeeded && wasSubmitting.current) {
+      form_submit({ formName: "contact", formId: "xqazqwbr" });
+    }
+    wasSubmitting.current = state.submitting;
+  }, [state.succeeded, state.submitting]);
 
   const contactLinks = [
     { label: "Email", value: "abdelrahman.ragab.abdelbaky@gmail.com", note: "Drop me a line", href: "mailto:abdelrahman.ragab.abdelbaky@gmail.com", icon: Mail },
@@ -46,7 +58,20 @@ const Contact = () => {
         animate={isInView ? "visible" : "hidden"}
       >
         {contactLinks.map(({ label, value, note, href, icon: Icon }) => (
-          <a className="contact-card" href={href} key={label} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
+          <a
+            className="contact-card"
+            href={href}
+            key={label}
+            target={href.startsWith("http") ? "_blank" : undefined}
+            rel={href.startsWith("http") ? "noreferrer" : undefined}
+            onClick={() => {
+              // Example: contact button click tracking (email/LinkedIn/GitHub/WhatsApp).
+              button_click({ label, location: "contact_cards", destination: href });
+              if (href.startsWith("http")) {
+                external_link_click({ url: href, label, location: "contact_cards" });
+              }
+            }}
+          >
             <span className="contact-card-icon"><Icon size={20} strokeWidth={1.8} /></span>
             <span className="contact-card-copy">
               <span className="contact-card-label">{label}</span>
@@ -94,7 +119,16 @@ const Contact = () => {
           />
           <ValidationError prefix="Message" field="message" errors={state.errors} />
 
-          <button type="submit" disabled={state.submitting} className="form-button">
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className="form-button"
+            onClick={() =>
+              // Example: CTA button click tracking (fires on click; actual
+              // completion is tracked separately by the form_submit effect above).
+              button_click({ label: "Send message", location: "contact_form", variant: "primary" })
+            }
+          >
             {state.submitting && <Spinner />}
             {t("contact.submitButton")}
             <ArrowUpRight size={17} aria-hidden="true" />
@@ -115,7 +149,14 @@ const Contact = () => {
         animate={isInView ? "visible" : "hidden"}
       >
         <span>{t("contact.footerPrompt", "Prefer a quick chat?")}</span>
-        <a href="mailto:abdelrahman.ragab.abdelbaky@gmail.com">{t("contact.footerAction", "Send me an email")}</a>
+        <a
+          href="mailto:abdelrahman.ragab.abdelbaky@gmail.com"
+          onClick={() =>
+            button_click({ label: "Send me an email", location: "contact_footer" })
+          }
+        >
+          {t("contact.footerAction", "Send me an email")}
+        </a>
       </motion.div>
     </section>
   );

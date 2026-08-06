@@ -4,6 +4,7 @@ import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SkeletonLoader from "../spinner/SkeletonLoader";
+import { external_link_click } from "../../analytics";
 
 const getHost = (url) => {
   if (!url || url === "#") return "localhost";
@@ -58,12 +59,32 @@ const ProjectCard = ({ project, id }) => {
           </div>
           <div className="project-card-links">
             {project.live && project.live !== "#" && (
-              <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-card-icon-link" aria-label={`View ${project.title} live`}>
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-card-icon-link"
+                aria-label={`View ${project.title} live`}
+                onClick={() =>
+                  // Example: external link click tracking (project live demo).
+                  external_link_click({ url: project.live, label: `${project.title} live demo`, location: "project_card" })
+                }
+              >
                 <ExternalLink size={16} />
               </a>
             )}
             {project.repo && project.repo !== "#" && (
-              <a href={project.repo} target="_blank" rel="noopener noreferrer" className="project-card-icon-link" aria-label={`View ${project.title} source code`}>
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-card-icon-link"
+                aria-label={`View ${project.title} source code`}
+                onClick={() =>
+                  // Example: external link click tracking (project repo).
+                  external_link_click({ url: project.repo, label: `${project.title} repo`, location: "project_card" })
+                }
+              >
                 <Github size={16} />
               </a>
             )}
