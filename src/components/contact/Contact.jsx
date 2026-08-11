@@ -13,6 +13,7 @@ import {
   contactSuccessVariants,
 } from "../../animations/variants"; 
 import "./contact.css";
+import { button_click, form_submit } from "../../analytics";
 
 const Lottie = React.lazy(() => import("lottie-react"));
 
@@ -21,6 +22,17 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("xqazqwbr");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const wasSubmitting = useRef(false);
+
+  // Example: form_submit tracking. Formspree's `state.succeeded` flips once
+  // per successful submission, so we fire on that transition (not on the
+  // click) — this measures completed submissions, not just attempts.
+  useEffect(() => {
+    if (state.succeeded && wasSubmitting.current) {
+      form_submit({ formName: "contact", formId: "xqazqwbr" });
+    }
+    wasSubmitting.current = state.submitting;
+  }, [state.succeeded, state.submitting]);
 
   const [animationData, setAnimationData] = useState(null);
 
@@ -104,6 +116,11 @@ const Contact = () => {
             type="submit"
             disabled={state.submitting}
             className="form-button relative"
+            onClick={() =>
+              // Example: CTA button click tracking (fires on click; actual
+              // completion is tracked separately by the form_submit effect above).
+              button_click({ label: "Send message", location: "contact_form", variant: "primary" })
+            }
           >
             {state.submitting && (
               <Spinner className="absolute left-3 top-1/2 transform -translate-y-1/2" />

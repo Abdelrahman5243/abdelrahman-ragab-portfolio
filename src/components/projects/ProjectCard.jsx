@@ -3,6 +3,7 @@ import { Github, ExternalLink, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SkeletonLoader from "../spinner/SkeletonLoader";
+import { external_link_click } from "../../analytics";
 
 const ProjectCard = ({ project, id }) => {
   const { i18n } = useTranslation("main");
@@ -71,6 +72,10 @@ const ProjectCard = ({ project, id }) => {
               rel="noopener noreferrer"
               className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border/80 dark:border-dark-border bg-light-secondary/80 dark:bg-dark-secondary/80 hover:border-light-blue/40 dark:hover:border-dark-blue/40 hover:bg-light-blue/5 dark:hover:bg-dark-blue/10 transition-all duration-200 cursor-pointer"
               aria-label={`View the project at ${project.title}`}
+              onClick={() =>
+                // Example: external link click tracking (project live demo).
+                external_link_click({ url: project.live, label: `${project.title} live demo`, location: "project_card" })
+              }
             >
               <ExternalLink size={18} />
             </a>
@@ -83,6 +88,10 @@ const ProjectCard = ({ project, id }) => {
               rel="noopener noreferrer"
               className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border/80 dark:border-dark-border bg-light-secondary/80 dark:bg-dark-secondary/80 hover:border-light-blue/40 dark:hover:border-dark-blue/40 hover:bg-light-blue/5 dark:hover:bg-dark-blue/10 transition-all duration-200 cursor-pointer"
               aria-label={`View the project ${project.title} code on GitHub`}
+              onClick={() =>
+                // Example: external link click tracking (project repo).
+                external_link_click({ url: project.repo, label: `${project.title} repo`, location: "project_card" })
+              }
             >
               <Github size={18} />
             </a>

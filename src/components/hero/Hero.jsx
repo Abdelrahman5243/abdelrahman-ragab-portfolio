@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { HERO_CONTENT } from "./heroContent.js";
 import { ExternalLink, Download } from "lucide-react";
 import { containerVariants, itemVariants, downloadVariants } from "../../animations/variants";
+import { file_download, external_link_click } from "../../analytics";
 
 const Hero = () => {
   const { t } = useTranslation("main");
@@ -81,6 +82,14 @@ const Hero = () => {
               aria-label="Preview CV"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
+              onClick={() =>
+                // Example: external link click tracking.
+                external_link_click({
+                  url: HERO_CONTENT.cvUrl,
+                  label: "Preview CV",
+                  location: "hero",
+                })
+              }
             >
               <ExternalLink size={15} />
               <span>{t(HERO_CONTENT.showCVKey)}</span>
@@ -101,6 +110,15 @@ const Hero = () => {
               aria-label="Download CV"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
+              onClick={() =>
+                // Example: file download tracking.
+                file_download({
+                  fileName: "Abdelrahman-Ragab-CV.pdf",
+                  url: cvUrl,
+                  label: "Download CV",
+                  location: "hero",
+                })
+              }
             >
               <motion.div variants={downloadVariants} animate="animate">
                 <Download size={15} />
@@ -113,8 +131,8 @@ const Hero = () => {
 
       <motion.div
         className="
-          flex gap-6 mb-8 
-          text-lg sm:text-xl md:text-2xl 
+          flex gap-6 mb-8
+          text-lg sm:text-xl md:text-2xl
           dark:text-dark-subtitle text-light-subtitle
         "
         variants={containerVariants}
@@ -133,6 +151,14 @@ const Hero = () => {
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
             aria-label={link.ariaLabel}
+            onClick={() =>
+              // Example: external link click tracking (social profiles).
+              external_link_click({
+                url: link.href,
+                label: link.ariaLabel,
+                location: "hero_social",
+              })
+            }
           >
             <link.icon size="1em" />
           </motion.a>
