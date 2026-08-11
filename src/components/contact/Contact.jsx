@@ -1,18 +1,21 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState, Suspense } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Spinner from "../spinner/Spinner";
-import { Github, Linkedin, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
 import {
+  contactIconVariants,
+  contactTitleVariants,
   contactDescriptionVariants,
-  contactAnimationVariants,
   contactFormVariants,
+  contactAnimationVariants,
   contactSuccessVariants,
 } from "../../animations/variants"; 
 import "./contact.css";
-import SectionHeader from "../SectionHeader";
-import { button_click, external_link_click, form_submit } from "../../analytics";
+import { button_click, form_submit } from "../../analytics";
+
+const Lottie = React.lazy(() => import("lottie-react"));
 
 const Contact = () => {
   const { t } = useTranslation("main");
@@ -31,76 +34,62 @@ const Contact = () => {
     wasSubmitting.current = state.submitting;
   }, [state.succeeded, state.submitting]);
 
-  const contactLinks = [
-    { label: "Email", value: "abdelrahman.ragab.abdelbaky@gmail.com", note: "Drop me a line", href: "mailto:abdelrahman.ragab.abdelbaky@gmail.com", icon: Mail },
-    { label: "LinkedIn", value: "abdelrahman-ragab", note: "Let’s connect", href: "https://linkedin.com/in/abdelrahman-ragab-9443b8264", icon: Linkedin },
-    { label: "GitHub", value: "Abdelrahman5243", note: "See my work", href: "https://github.com/Abdelrahman5243", icon: Github },
-    { label: "WhatsApp", value: "+20 102 168 7760", note: "Chat directly", href: "https://wa.me/201021687760", icon: MessageCircle },
-  ];
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    if (isInView && !animationData) {
+      import("../../assets/animation/contact.json").then((mod) =>
+        setAnimationData(mod.default || mod)
+      );
+    }
+  }, [isInView, animationData]);
 
   return (
-    <section id="contact" className="section-block contact-closing" ref={ref}>
-      <SectionHeader title={t("contact.title")} eyebrow="06 / CONTACT" layout="stacked" />
+    <section id="contact" className="my-8" ref={ref}>
+      <div className="flex gap-4 items-center mb-4 text-3xl">
+        <motion.div
+          variants={contactIconVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <Mail className="section-title" aria-hidden="true" />
+        </motion.div>
+
+        <motion.h1
+          variants={contactTitleVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="title mb-0"
+        >
+          {t("contact.title")}
+        </motion.h1>
+      </div>
 
       <motion.p
         variants={contactDescriptionVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="description mb-8 leading-6 max-w-2xl"
+        className="description mb-8 leading-6"
       >
         {t("contact.description")}
       </motion.p>
 
-      <motion.div
-        className="contact-grid"
-        variants={contactAnimationVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        {contactLinks.map(({ label, value, note, href, icon: Icon }) => (
-          <a
-            className="contact-card"
-            href={href}
-            key={label}
-            target={href.startsWith("http") ? "_blank" : undefined}
-            rel={href.startsWith("http") ? "noreferrer" : undefined}
-            onClick={() => {
-              // Example: contact button click tracking (email/LinkedIn/GitHub/WhatsApp).
-              button_click({ label, location: "contact_cards", destination: href });
-              if (href.startsWith("http")) {
-                external_link_click({ url: href, label, location: "contact_cards" });
-              }
-            }}
-          >
-            <span className="contact-card-icon"><Icon size={20} strokeWidth={1.8} /></span>
-            <span className="contact-card-copy">
-              <span className="contact-card-label">{label}</span>
-              <strong>{value}</strong>
-              <small>{note}</small>
-            </span>
-            <ArrowUpRight className="contact-card-arrow" size={18} aria-hidden="true" />
-          </a>
-        ))}
-      </motion.div>
-
-      <motion.div
-        className="contact-form-panel"
-        variants={contactFormVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        <div className="contact-form-heading">
-          <span className="contact-card-label">{t("contact.form.kicker", "Have a project in mind?")}</span>
-          <h2>{t("contact.form.title", "Send me a message")}</h2>
-        </div>
-        <form onSubmit={handleSubmit} aria-labelledby="contact-form-title">
+      <div className="flex my-8 items-center flex-col-reverse md:flex-row">
+        <motion.form
+          onSubmit={handleSubmit}
+          className="w-full md:w-1/2 flex flex-col gap-4 mb-6 modal-text"
+          aria-labelledby="contact-form"
+          variants={contactFormVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           <label htmlFor="email">{t("contact.form.emailLabel")}</label>
           <input
             type="email"
             name="email"
             id="email"
             required
-            autoComplete="email"
+            autoComplete="off"
             placeholder={t("contact.form.emailPlaceholder")}
             className="form-input"
             aria-required="true"
@@ -112,52 +101,63 @@ const Contact = () => {
             name="message"
             id="message"
             required
-            rows="5"
+            rows="6"
             placeholder={t("contact.form.messagePlaceholder")}
             className="form-input resize-none"
             aria-required="true"
+          ></textarea>
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
           />
-          <ValidationError prefix="Message" field="message" errors={state.errors} />
 
           <button
             type="submit"
             disabled={state.submitting}
-            className="form-button"
+            className="form-button relative"
             onClick={() =>
               // Example: CTA button click tracking (fires on click; actual
               // completion is tracked separately by the form_submit effect above).
               button_click({ label: "Send message", location: "contact_form", variant: "primary" })
             }
           >
-            {state.submitting && <Spinner />}
+            {state.submitting && (
+              <Spinner className="absolute left-3 top-1/2 transform -translate-y-1/2" />
+            )}
             {t("contact.submitButton")}
-            <ArrowUpRight size={17} aria-hidden="true" />
           </button>
 
           {state.succeeded && (
-            <motion.p variants={contactSuccessVariants} initial="hidden" animate="visible" className="contact-success">
+            <motion.p
+              variants={contactSuccessVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-xl mt-6"
+            >
               {t("contact.successMessage")}
             </motion.p>
           )}
-        </form>
-      </motion.div>
+        </motion.form>
 
-      <motion.div
-        className="contact-footer-note"
-        variants={contactAnimationVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        <span>{t("contact.footerPrompt", "Prefer a quick chat?")}</span>
-        <a
-          href="mailto:abdelrahman.ragab.abdelbaky@gmail.com"
-          onClick={() =>
-            button_click({ label: "Send me an email", location: "contact_footer" })
-          }
+        <motion.div
+          className="w-full md:w-1/2"
+          variants={contactAnimationVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
-          {t("contact.footerAction", "Send me an email")}
-        </a>
-      </motion.div>
+          <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
+            {animationData && (
+              <Lottie
+                className="contact-animation h-[355px]"
+                animationData={animationData}
+                aria-label="contact animation"
+                role="img"
+              />
+            )}
+          </Suspense>
+        </motion.div>
+      </div>
     </section>
   );
 };

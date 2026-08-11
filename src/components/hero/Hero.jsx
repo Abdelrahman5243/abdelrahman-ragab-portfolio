@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { HERO_CONTENT } from "./heroContent.js";
 import { ExternalLink, Download } from "lucide-react";
-import { containerVariants, itemVariants } from "../../animations/variants";
+import { containerVariants, itemVariants, downloadVariants } from "../../animations/variants";
 import { file_download, external_link_click } from "../../analytics";
 
 const Hero = () => {
@@ -14,88 +14,142 @@ const Hero = () => {
     <motion.section
       id="about"
       aria-labelledby="hero-title"
-      className="w-full py-10 md:py-16 flex flex-col items-center text-center"
+      className="flex flex-col items-center px-4"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <motion.span className="hero-badge" variants={itemVariants}>
-        <span className="hero-badge-dot" aria-hidden="true" />
-        {t("hero.availability")}
-      </motion.span>
+      <div className="flex mt-8 items-center flex-col-reverse md:flex-row py-8">
+        <motion.div
+          className="left-section w-full text-center relative"
+          variants={itemVariants}
+        >
+          <motion.h1
+            id="hero-title"
+            className="
+              text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+              font-bold leading-tight 
+              text-light-title dark:text-dark-title
+            "
+            variants={itemVariants}
+          >
+            {t(HERO_CONTENT.titleKey)}
+          </motion.h1>
 
-      <motion.p className="hero-eyebrow mt-6 justify-center" variants={itemVariants}>
-        {t("hero.eyebrow")}
-      </motion.p>
+          <motion.h2
+            className="
+              mt-2
+              text-base sm:text-lg md:text-xl lg:text-2xl
+              font-medium tracking-wide
+              text-light-blue dark:text-dark-blue
+            "
+            variants={itemVariants}
+          >
+            {t("hero.jobTitle", "Front-End Developer")}
+          </motion.h2>
 
-      <motion.h1
-        id="hero-title"
-        className="hero-title mt-4 max-w-4xl"
-        variants={itemVariants}
-      >
-        {t(HERO_CONTENT.titleKey)}
-      </motion.h1>
+          <p
+            className="
+              mt-4
+              text-sm sm:text-base md:text-lg lg:text-xl
+              text-light-subtitle dark:text-dark-subtitle
+              max-w-2xl mx-auto
+            "
+            style={{ lineHeight: 1.8 }}
+          >
+            {t(HERO_CONTENT.descriptionKey)}
+          </p>
 
-      <motion.p className="hero-description mt-6 mx-auto" variants={itemVariants}>
-        {t(HERO_CONTENT.descriptionKey)}
-      </motion.p>
+          <motion.div
+            className="flex m-auto gap-4 mb-8 max-w-max mt-6 flex-wrap justify-center"
+            variants={itemVariants}
+          >
+            <motion.a
+              href={HERO_CONTENT.cvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                relative py-2.5 px-7
+                border border-light-border dark:border-dark-border
+                bg-transparent
+                text-sm font-medium
+                text-light-subtitle dark:text-dark-subtitle
+                rounded-full flex gap-2 items-center justify-center
+                transition-colors duration-200
+                hover:border-light-blue dark:hover:border-dark-blue
+                hover:text-light-blue dark:hover:text-dark-blue
+              "
+              aria-label="Preview CV"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() =>
+                // Example: external link click tracking.
+                external_link_click({
+                  url: HERO_CONTENT.cvUrl,
+                  label: "Preview CV",
+                  location: "hero",
+                })
+              }
+            >
+              <ExternalLink size={15} />
+              <span>{t(HERO_CONTENT.showCVKey)}</span>
+            </motion.a>
+
+            <motion.a
+              href={cvUrl}
+              download
+              className="
+                relative py-2.5 px-7
+                bg-light-blue dark:bg-dark-blue
+                text-sm font-medium
+                text-white
+                rounded-full flex gap-2 items-center justify-center
+                transition-opacity duration-200
+                hover:opacity-90
+              "
+              aria-label="Download CV"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() =>
+                // Example: file download tracking.
+                file_download({
+                  fileName: "Abdelrahman-Ragab-CV.pdf",
+                  url: cvUrl,
+                  label: "Download CV",
+                  location: "hero",
+                })
+              }
+            >
+              <motion.div variants={downloadVariants} animate="animate">
+                <Download size={15} />
+              </motion.div>
+              <span>{t("hero.downloadCV", "Download CV")}</span>
+            </motion.a>
+          </motion.div>
+        </motion.div>
+      </div>
 
       <motion.div
-        className="flex gap-4 mt-8 flex-wrap justify-center"
-        variants={itemVariants}
-      >
-        <motion.a
-          href={cvUrl}
-          download
-          className="hero-btn hero-btn-primary"
-          aria-label="Download CV"
-          whileTap={{ scale: 0.97 }}
-          onClick={() =>
-            // Example: file download tracking.
-            file_download({
-              fileName: "Abdelrahman-Ragab-CV.pdf",
-              url: cvUrl,
-              label: "Download CV",
-              location: "hero",
-            })
-          }
-        >
-          <Download size={16} />
-          <span>{t("hero.downloadCV", "Download CV")}</span>
-        </motion.a>
-
-        <motion.a
-          href={HERO_CONTENT.cvUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hero-btn hero-btn-secondary"
-          aria-label="Preview CV"
-          whileTap={{ scale: 0.97 }}
-          onClick={() =>
-            // Example: external link click tracking.
-            external_link_click({
-              url: HERO_CONTENT.cvUrl,
-              label: "Preview CV",
-              location: "hero",
-            })
-          }
-        >
-          <ExternalLink size={16} />
-          <span>{t(HERO_CONTENT.showCVKey)}</span>
-        </motion.a>
-      </motion.div>
-
-      <motion.div
-        className="flex gap-5 mt-8 justify-center text-lg text-light-subtitle dark:text-dark-subtitle"
-        variants={itemVariants}
+        className="
+          flex gap-6 mb-8
+          text-lg sm:text-xl md:text-2xl
+          dark:text-dark-subtitle text-light-subtitle
+        "
+        variants={containerVariants}
       >
         {HERO_CONTENT.socialLinks.map((link, index) => (
-          <a
+          <motion.a
             key={index}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-social-link"
+            className="hover:scale-110 transform transition-transform duration-200"
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.2,
+              rotate: [0, -10, 10, -10, 0],
+              transition: { duration: 0.5, ease: "easeInOut" },
+            }}
             aria-label={link.ariaLabel}
             onClick={() =>
               // Example: external link click tracking (social profiles).
@@ -106,8 +160,8 @@ const Hero = () => {
               })
             }
           >
-            <link.icon size="1.05em" />
-          </a>
+            <link.icon size="1em" />
+          </motion.a>
         ))}
       </motion.div>
     </motion.section>

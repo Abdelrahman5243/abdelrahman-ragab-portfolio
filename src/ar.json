@@ -8,23 +8,16 @@
         "articles": "مقالاتي"
     },
     "hero": {
-        "eyebrow": "مطور واجهات أمامية  •  مصر  •  أكثر من 1.5 سنة خبرة",
         "title": "عبدالرحمن رجب عبدالباقي",
         "description": "مطور واجهات أمامية، أمتلك أكثر من سنة ونصف من الخبرة الاحترافية في بناء تطبيقات تجارة إلكترونية وتعليم إلكتروني وأسواق قابلة للتوسع باستخدام React وNext.js وMagento 2. لديّ خبرة في تطوير تطبيقات SSR وPWA باستخدام GraphQL، وتحسين Core Web Vitals، وتحسين SEO، ودمج GA4/GTM، وبناء تطبيقات متعددة اللغات (AR/EN) مع دعم RTL/LTR. ماهر في بناء مكونات واجهة قابلة لإعادة الاستخدام، ومعماريات واجهات أمامية متينة، وتقديم تجارب مستخدم جاهزة للإنتاج ضمن فرق Agile.",
         "downloadCV": "تحميل السيرة الذاتية",
-        "showCV": "عرض السيرة الذاتية",
-        "availability": "متاح لفرص عمل جديدة"
+        "showCV": "عرض السيرة الذاتية"
     },
     "skillsTitle": "المهارات",
     "articlesTitle": "مقالاتي",
     "contact": {
         "title": "تواصل معي",
-        "description": "متاح لفرص تطوير الواجهات الأمامية. تواصل معي عبر أي قناة — وسأرد عليك سريعًا.",
-        "resumeLabel": "السيرة الذاتية",
-        "resumeTitle": "تحميل سيرتي الذاتية",
-        "resumeNote": "PDF · محدثة",
-        "footerPrompt": "تفضل محادثة سريعة؟",
-        "footerAction": "أرسل لي بريدًا إلكترونيًا",
+        "description": "تواصل معي لمزيد من التفاصيل وابقَ على اطلاع بأحدث مشاريعي.",
         "successMessage": "شكرًا لك! تم إرسال رسالتك بنجاح. 👌",
         "form": {
             "emailLabel": "البريد الإلكتروني:",
@@ -35,7 +28,7 @@
         "submitButton": "إرسال"
     },
     "projects": {
-        "website-builder-platform": {
+        "1": {
             "categories": "ReactJS",
             "badge": "Graduation",
             "title": "منشئ المواقع",
@@ -63,7 +56,7 @@
                 "AOS"
             ]
         },
-        "product-crud-dashboard": {
+        "2": {
             "categories": "ReactJS",
             "title": "لوحة تحكم إدارة المنتجات",
             "description": "نظام إدارة CRUD للمنتجات مع ميزات التحليل.",
@@ -89,7 +82,7 @@
                 "React Router DOM"
             ]
         },
-        "my-portfolio": {
+        "3": {
             "categories": "ReactJS",
             "title": "محفظتي الشخصية",
             "description": "موقع محفظة شخصية يعرض أعمال ومشاريع عبد الرحمن رجب.",
@@ -112,7 +105,7 @@
                 "React Router DOM"
             ]
         },
-        "quran-app": {
+        "4": {
             "categories": "ReactJS",
             "title": "تطبيق القرآن",
             "description": "تطبيق React لعرض آيات القرآن مع ميزات تشغيل الصوت.",
@@ -131,7 +124,7 @@
                 "Tailwind CSS"
             ]
         },
-        "restaurant-market": {
+        "5": {
             "categories": "ReactJS",
             "title": "سوق المطاعم",
             "description": "موقع تجارة إلكترونية للمطعم والسوق، مع ميزات عرض المنتجات ووظائف السلة.",
@@ -153,7 +146,7 @@
                 "React Router DOM"
             ]
         },
-        "designshub-courses-platform": {
+        "6": {
             "categories": "NextJs",
             "title": "منصة دورات تعليمية في التصميم الجرافيكي",
             "description": "منصة ويب مخصصة باستخدام Next.js وTailwind CSS لدورات تصميم الجرافيك، مع صفحات هبوط استجابة وتجربة مستخدم سلسة.",
@@ -174,7 +167,7 @@
                 "Tailwind CSS"
             ]
         },
-        "game-hub-website": {
+        "7": {
             "categories": "HTML & CSS & JS",
             "title": "موقع مركز الألعاب",
             "description": "منصة ديناميكية تم بناؤها كمركز لاكتشاف واستكشاف مجموعة واسعة من الألعاب.",
@@ -197,7 +190,7 @@
                 "CSS"
             ]
         },
-        "restaurant-landing-page": {
+        "8": {
             "categories": "ReactJS",
             "title": "صفحة هبوط للمطعم",
             "description": "صفحة هبوط للمطعم جذابة بصريًا وعالية الاستجابة.",
@@ -217,7 +210,7 @@
                 "CSS"
             ]
         },
-        "web-developer-showcase": {
+        "9": {
             "categories": "HTML & CSS & JS",
             "title": "معرض مطور الويب",
             "description": "موقع ويب محفظة احترافية تم إنشاؤه لعرض مهارات وتقنيات تطوير الويب.",
@@ -235,7 +228,7 @@
                 "CSS"
             ]
         },
-        "almasry-pharmacy": {
+        "10": {
             "categories": "ReactJS",
             "company": "CROCOIT",
             "title": "صيدلية المصري — متجر إلكتروني PWA",
@@ -318,7 +311,7 @@
                 "GA4 / GTM"
             ]
         },
-        "spc-online-academy": {
+        "11": {
             "categories": "NextJs",
             "company": "CROCOIT",
             "featured": true,
@@ -412,7 +405,7 @@
                 "GTM"
             ]
         },
-        "etlala-fashion-marketplace": {
+        "12": {
             "categories": "Magento 2",
             "company": "CROCOIT",
             "title": "إتلالا — سوق الأزياء",
@@ -489,7 +482,7 @@
                 "projects": [
                     {
                         "name": "SPC Online Academy — منصة LMS الطبية (Next.js)",
-                        "projectId": "spc-online-academy",
+                        "projectId": "11",
                         "link": "https://betaspc.a2za1.com/",
                         "achievements": [
                             "بناء منصة LMS احترافية بـ Next.js (App Router) وReact 19 وZustand عبر بوابات عامة وبوابة الطالب والمدرس",
@@ -502,7 +495,7 @@
                     },
                     {
                         "name": "صيدلية المصري — متجر إلكتروني PWA",
-                        "projectId": "almasry-pharmacy",
+                        "projectId": "10",
                         "link": "https://almasrypharmacy.com/",
                         "achievements": [
                             "بناء أكثر من 100 مكون UI و50 talon على متجر Magento PWA Studio لصيدلية بسوق عربي RTL",
@@ -514,8 +507,8 @@
                     },
                     {
                         "name": "Etlala — سوق الأزياء (Magento 2)",
-                        "projectId": "etlala-fashion-marketplace",
-                        "link": "/project-details/etlala-fashion-marketplace",
+                        "projectId": "12",
+                        "link": "/project-details/12",
                         "achievements": [
                             "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة",
                             "بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة",
@@ -550,11 +543,9 @@
         ]
     },
     "technologiesTitle": "التقنيات المستخدمة",
-    "technologiesCount": "تقنية",
     "copyright": "© 2024.",
     "seeMore": "عرض المزيد",
     "viewDetails": "عرض التفاصيل",
-    "moreProjects": "مشاريع أخرى",
     "i18nStamp": 1774547930652,
     "i18nVersion": "v1.0"
 }

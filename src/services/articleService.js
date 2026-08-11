@@ -6,9 +6,9 @@ export async function fetchAllArticles() {
   return res.json();
 }
 
-export async function fetchArticleBySlug(slug) {
+export async function fetchArticleById(id) {
   const articles = await fetchAllArticles();
-  const meta = articles.find((a) => a.slug === slug);
+  const meta = articles.find((a) => a._id === Number(id));
   if (!meta) return null;
 
   const res = await fetch(`${ARTICLES_REPO_URL}/${meta.slug}.md`);

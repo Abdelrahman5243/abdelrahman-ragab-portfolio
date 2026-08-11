@@ -8,23 +8,16 @@
         "articles": "Articles"
     },
     "hero": {
-        "eyebrow": "Frontend Developer  •  Egypt  •  1.5+ Yrs Experience",
         "title": "Abdelrahman Ragab Abdelbaky",
         "description": "Frontend Developer with 1.5+ years of professional experience building scalable e-commerce, LMS, and marketplace applications using React, Next.js, and Magento 2. Experienced in developing SSR and PWA applications with GraphQL, optimizing Core Web Vitals, improving SEO, integrating GA4/GTM, and building multilingual (AR/EN) applications with RTL/LTR support. Skilled in building reusable UI components, robust frontend architectures, and delivering production-ready user experiences in Agile teams.",
         "downloadCV": "Download CV",
-        "showCV": "Preview CV",
-        "availability": "Available for new opportunities"
+        "showCV": "Preview CV"
     },
     "skillsTitle": "Skills",
     "articlesTitle": "Articles",
     "contact": {
         "title": "Get in Touch",
-        "description": "Open to frontend opportunities. Reach out through any channel — I respond promptly.",
-        "resumeLabel": "Resume",
-        "resumeTitle": "Download my CV",
-        "resumeNote": "PDF · Updated",
-        "footerPrompt": "Prefer a quick chat?",
-        "footerAction": "Send me an email",
+        "description": "Reach out to me for more details and stay updated with my latest projects.",
         "successMessage": "Thank you! Your message has been sent successfully. 👌",
         "form": {
             "emailLabel": "Email Address:",
@@ -35,7 +28,7 @@
         "submitButton": "Send"
     },
     "projects": {
-        "website-builder-platform": {
+        "1": {
             "categories": "ReactJS",
             "badge": "Graduation",
             "title": "Website Builder Platform (Graduation Project)",
@@ -63,7 +56,7 @@
                 "AOS"
             ]
         },
-        "product-crud-dashboard": {
+        "2": {
             "categories": "ReactJS",
             "title": "Product CRUD Dashboard",
             "description": "A CRUD management system for products with analysis features.",
@@ -89,7 +82,7 @@
                 "React Router DOM"
             ]
         },
-        "my-portfolio": {
+        "3": {
             "categories": "ReactJS",
             "title": "My portfolio",
             "description": "A personal portfolio website showcasing Abdelrahman Ragab's work and projects.",
@@ -112,7 +105,7 @@
                 "React Router DOM"
             ]
         },
-        "quran-app": {
+        "4": {
             "categories": "ReactJS",
             "title": "Quran App",
             "description": "A React application to display Quranic verses with audio playback features.",
@@ -131,7 +124,7 @@
                 "Tailwind CSS"
             ]
         },
-        "restaurant-market": {
+        "5": {
             "categories": "ReactJS",
             "title": "Restaurant Market",
             "description": "An e-commerce website for a restaurant and market  featuring product listings and cart functionality.",
@@ -153,7 +146,7 @@
                 "React Router DOM"
             ]
         },
-        "designshub-courses-platform": {
+        "6": {
             "categories": "NextJs",
             "title": "Designshub Courses Platform",
             "description": "A custom web platform using Next.js and Tailwind CSS for graphic design courses, with responsive landing pages and a modern UI for seamless navigation.",
@@ -174,7 +167,7 @@
                 "Tailwind CSS"
             ]
         },
-        "game-hub-website": {
+        "7": {
             "categories": "HTML & CSS & JS",
             "title": "Game Hub Website ",
             "description": "A dynamic platform built as a central hub for discovering and exploring a wide variety of games.",
@@ -197,7 +190,7 @@
                 "CSS"
             ]
         },
-        "restaurant-landing-page": {
+        "8": {
             "categories": "ReactJS",
             "title": "Restaurant Landing Page",
             "description": "A visually appealing and highly responsive restaurant landing page.",
@@ -217,7 +210,7 @@
                 "CSS"
             ]
         },
-        "web-developer-showcase": {
+        "9": {
             "categories": "HTML & CSS & JS",
             "title": "Web Developer Showcase",
             "description": "A professional portfolio website created to showcase web development skills, technologies.",
@@ -235,7 +228,7 @@
                 "CSS"
             ]
         },
-        "almasry-pharmacy": {
+        "10": {
             "categories": "ReactJS",
             "company": "CROCOIT",
             "title": "Almasry Pharmacy — ECommerce PWA",
@@ -318,7 +311,7 @@
                 "GA4 / GTM"
             ]
         },
-        "spc-online-academy": {
+        "11": {
             "categories": "NextJs",
             "company": "CROCOIT",
             "featured": true,
@@ -412,7 +405,7 @@
                 "GTM"
             ]
         },
-        "etlala-fashion-marketplace": {
+        "12": {
             "categories": "Magento 2",
             "company": "CROCOIT",
             "title": "Etlala — Fashion Marketplace",
@@ -489,7 +482,7 @@
                 "projects": [
                     {
                         "name": "SPC Online Academy — Medical LMS (Next.js)",
-                        "projectId": "spc-online-academy",
+                        "projectId": "11",
                         "link": "https://betaspc.a2za1.com/",
                         "achievements": [
                             "Built a medical LMS with Next.js (App Router), React 19, and Zustand, with public, student, and instructor areas",
@@ -501,7 +494,7 @@
                     },
                     {
                         "name": "Almasry Pharmacy — ECommerce PWA",
-                        "projectId": "almasry-pharmacy",
+                        "projectId": "10",
                         "link": "https://almasrypharmacy.com/",
                         "achievements": [
                             "Built 100+ custom UI components and 50+ Peregrine talons on a Magento PWA Studio storefront for an Arabic/RTL pharmacy",
@@ -513,8 +506,8 @@
                     },
                     {
                         "name": "Etlala — Fashion Marketplace (Magento 2)",
-                        "projectId": "etlala-fashion-marketplace",
-                        "link": "/project-details/etlala-fashion-marketplace",
+                        "projectId": "12",
+                        "link": "/project-details/12",
                         "achievements": [
                             "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS for multiple modules",
                             "Built reusable UI components across the platform",
@@ -549,11 +542,9 @@
         ]
     },
     "technologiesTitle": "Technologies Used",
-    "technologiesCount": "technologies",
     "copyright": "© 2024.",
     "seeMore": "Show More",
     "viewDetails": "View details",
-    "moreProjects": "More Projects",
     "i18nStamp": 1774547930790,
     "i18nVersion": "v1.0"
 }
