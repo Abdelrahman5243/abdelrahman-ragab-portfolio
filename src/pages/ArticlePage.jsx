@@ -10,7 +10,7 @@ import NextPrevArticles from "../components/Article/NextPrevArticles";
 import { Menu, X } from "lucide-react";
 import { useActiveHeading } from "../hooks/useActiveHeading";
 import "highlight.js/styles/github-dark.css";
-import { fetchArticleById } from "../services/articleService";
+import { fetchArticleBySlug } from "../services/articleService";
 
 export default function ArticlePage() {
   const [article, setArticle] = useState(null);
@@ -18,7 +18,7 @@ export default function ArticlePage() {
   const [loading, setLoading] = useState(true);
   const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { slug } = useParams();
 
   const { activeId, smoothScrollTo } = useActiveHeading();
 
@@ -26,10 +26,13 @@ export default function ArticlePage() {
     const loadArticle = async () => {
       try {
         setLoading(true);
-        const articleData = await fetchArticleById(id);
+        const articleData = await fetchArticleBySlug(slug);
         if (!articleData) {
           navigate("/", { replace: true });
           return;
+        }
+        if (articleData.slug !== slug) {
+          navigate(`/article/${articleData.slug}`, { replace: true });
         }
         setArticle(articleData);
       } catch (err) {
@@ -39,8 +42,8 @@ export default function ArticlePage() {
         setLoading(false);
       }
     };
-    if (id) loadArticle();
-  }, [id, navigate]);
+    if (slug) loadArticle();
+  }, [slug, navigate]);
 
   useEffect(() => {
     if (!article?.markdown) return;
@@ -95,7 +98,7 @@ export default function ArticlePage() {
           {tags && <TagsList tags={tags} />}
           <div className="divider mt-10" />
           <MarkdownRenderer markdown={markdown} />
-          <NextPrevArticles currentId={id} />
+          <NextPrevArticles currentSlug={slug} />
         </section>
 
       </div>

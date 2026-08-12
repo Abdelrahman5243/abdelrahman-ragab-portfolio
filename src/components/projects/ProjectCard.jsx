@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import SkeletonLoader from "../spinner/SkeletonLoader";
 import { external_link_click } from "../../analytics";
 
-const ProjectCard = ({ project, id }) => {
+const ProjectCard = ({ project, id, slug }) => {
   const { i18n } = useTranslation("main");
   const language = i18n.language;
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -13,7 +13,7 @@ const ProjectCard = ({ project, id }) => {
 
   return (
     <Link
-      to={`/project-details/${id}`}
+      to={`/project-details/${slug || id}`}
       aria-labelledby={`project-${id}-title`}
       aria-describedby={`project-${id}-description`}
       className="
