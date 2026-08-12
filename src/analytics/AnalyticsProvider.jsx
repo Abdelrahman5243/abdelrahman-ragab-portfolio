@@ -27,20 +27,29 @@ import { logDebug } from "./config";
 // eslint-disable-next-line react/prop-types -- internal-only provider, not a public component; `prop-types` isn't a declared dependency of this project.
 const AnalyticsProvider = ({ children, countHashAsPageView = false }) => {
   useEffect(() => {
-    // Idempotent — safe under StrictMode double-mount and Vite HMR.
-    initAnalytics();
+    // Analytics is useful after the page is usable, not during the LCP
+    // window. Idle scheduling keeps Clarity/GTM off the mobile critical path.
+    const start = () => {
+      initAnalytics();
 
-    // Tag the Clarity session with the active language/direction so recordings
-    // of the Arabic (RTL) and English (LTR) layouts can be filtered apart.
-    //
-    // ADD FUTURE SESSION-LEVEL DIMENSIONS HERE (theme, palette, A/B variant…) —
-    // things that describe the whole session rather than one interaction.
-    if (typeof document !== "undefined") {
-      setClarityTag("lang", document.documentElement.lang || "en");
-      setClarityTag("dir", document.documentElement.dir || "ltr");
-    }
+      if (typeof document !== "undefined") {
+        setClarityTag("lang", document.documentElement.lang || "en");
+        setClarityTag("dir", document.documentElement.dir || "ltr");
+      }
 
-    logDebug("AnalyticsProvider mounted");
+      logDebug("AnalyticsProvider mounted");
+    };
+    const idle = window.requestIdleCallback
+      ? window.requestIdleCallback(start, { timeout: 2500 })
+      : window.setTimeout(start, 1500);
+
+    return () => {
+      if (window.cancelIdleCallback && window.requestIdleCallback) {
+        window.cancelIdleCallback(idle);
+      } else {
+        window.clearTimeout(idle);
+      }
+    };
   }, []);
 
   // One page_view per route change — the single source of page_view events.
