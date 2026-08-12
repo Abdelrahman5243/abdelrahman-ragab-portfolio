@@ -41,6 +41,7 @@ const TechMarquee = () => {
 
   return (
     <div
+      dir="ltr"
       className="relative mt-10 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]"
       aria-hidden="true"
     >
