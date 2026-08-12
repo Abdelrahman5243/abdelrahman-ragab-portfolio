@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { HashLink } from "react-router-hash-link";
 import { HERO_CONTENT } from "./heroContent.js";
-import { ExternalLink, ArrowRight, MapPin } from "lucide-react";
+import { ExternalLink, MapPin, ArrowDown } from "lucide-react";
 import { containerVariants, itemVariants } from "../../animations/variants";
 import { external_link_click, button_click } from "../../analytics";
 
@@ -124,7 +124,7 @@ const Hero = () => {
                 }
               >
                 <span>{t("hero.viewProjects")}</span>
-                <ArrowRight size={15} />
+                <ArrowDown size={15} />
               </HashLink>
             </motion.div>
 

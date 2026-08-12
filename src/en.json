@@ -34,7 +34,7 @@
         "1": {
             "categories": "ReactJS",
             "badge": "Graduation",
-            "title": "Website Builder Platform (Graduation Project)",
+            "title": "ZAG Web Builder",
             "description": "A comprehensive website builder showcasing advanced web development techniques.",
             "details": "This project provides a powerful platform for creating and customizing websites. It includes various features for building and managing website sections, templates, and content, demonstrating a deep understanding of web development principles and techniques. The application supports switching between Arabic and English, enhancing accessibility and user experience for a diverse audience. Users can customize styles using a user-friendly interface, preview their changes in real-time, and generate content using AI. Additionally, the application allows users to arrange and choose between various sections, ensuring a flexible and tailored web design experience. This project represents the culmination of skills acquired during studies, incorporating responsive design practices and best coding standards.",
             "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755179854/j1wjkbwncgtzg8hinibu.webp",
@@ -61,7 +61,7 @@
         },
         "2": {
             "categories": "ReactJS",
-            "title": "Product CRUD Dashboard",
+            "title": "Product Analytics Dashboard",
             "description": "A CRUD management system for products with analysis features.",
             "details": "This project enables users to efficiently manage products by providing functionalities for adding, editing, and deleting product information. It includes a detailed analysis page that offers insights and visual representations of key product metrics. Utilizing Redux Toolkit for state management ensures a seamless user experience. SweetAlert enhances interactions with confirmation prompts and notifications, contributing to a polished interface. The application is optimized for performance, ensuring quick response times and an intuitive design that boosts productivity.",
             "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185159/m7o5khkavtxn33jztfwp.webp",
@@ -87,7 +87,7 @@
         },
         "3": {
             "categories": "ReactJS",
-            "title": "My portfolio",
+            "title": "Personal Portfolio",
             "description": "A personal portfolio website showcasing Abdelrahman Ragab's work and projects.",
             "details": "This portfolio website highlights personal projects, skills, and experiences. It includes sections for showcasing projects, a resume, contact information, and more. It is designed to effectively present Abdelrahman Ragab's professional profile.",
             "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180628/rehtgvfkwciytx1djlov.webp",
@@ -110,7 +110,7 @@
         },
         "4": {
             "categories": "ReactJS",
-            "title": "Quran App",
+            "title": "Quran Recitation Player",
             "description": "A React application to display Quranic verses with audio playback features.",
             "details": "This project offers a comprehensive interface for reading and listening to Quranic verses. It includes key features such as verse-by-verse audio playback, navigation between surahs and ayahs, and an auto-play functionality that continues audio playback as the user navigates to the next verse. The app effectively manages state using Redux Toolkit to track the current surah, ayah, and playback progress, ensuring a smooth and responsive user experience. Additionally, the project includes dark mode support for comfortable reading and persistent state, which saves the user's progress across sessions using local storage. Performance optimization is also a priority, managing audio files and verse data efficiently while maintaining quick response times.",
             "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185221/bn20bogxq3nwhjsartav.png",
@@ -129,7 +129,7 @@
         },
         "5": {
             "categories": "ReactJS",
-            "title": "Restaurant Market",
+            "title": "Restaurant & Market Store",
             "description": "An e-commerce website for a restaurant and market  featuring product listings and cart functionality.",
             "details": "This project combines the functionalities of both a restaurant and market into a single e-commerce platform. Users can effortlessly browse products, add items to their cart, and complete orders with ease. The platform features a clean, intuitive design, ensuring an enhanced user experience. It includes key sections such as CTA to encourage user interaction, a dedicated features section highlighting the unique aspects of the platform, and a testimonials section showcasing customer feedback. These elements work together to provide a professional and engaging user experience.",
             "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180511/cgyujxutz9cj4pebe2e2.webp",
@@ -172,7 +172,7 @@
         },
         "7": {
             "categories": "HTML & CSS & JS",
-            "title": "Game Hub Website ",
+            "title": "Game Hub Website",
             "description": "A dynamic platform built as a central hub for discovering and exploring a wide variety of games.",
             "details": "This project is a comprehensive gaming platform designed to help users discover and explore new games. It features an interactive and engaging interface with organized game lists and search functionalities, offering a seamless user experience. The design focuses on creating an intuitive browsing experience with responsive layouts, ensuring compatibility across multiple devices. Built using HTML, CSS, and JavaScript, the platform incorporates interactive elements to enhance the user journey.",
             "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185352/qf1elcznizlo3qp3j2cp.webp",
@@ -234,7 +234,7 @@
         "10": {
             "categories": "ReactJS",
             "company": "CROCOIT",
-            "title": "Almasry Pharmacy — ECommerce PWA",
+            "title": "Almasry Pharmacy - ECommerce PWA",
             "description": "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market, built on Venia with 100+ custom UI components and 50+ Peregrine talons, a checkout supporting 7 payment methods, and an optimized image pipeline.",
             "details": "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market, built on Venia with 100+ custom UI components and 50+ Peregrine hooks (talons). Includes a checkout with 7 payment methods, an RxJS event system feeding GA4, Arabic/English support, an optimized image pipeline with a Workbox service worker, auto-translate for foreign visitors, and SEO/GEO improvements.",
             "detailGroups": [
@@ -318,7 +318,7 @@
             "categories": "NextJs",
             "company": "CROCOIT",
             "featured": true,
-            "title": "SPC Online Academy — Medical LMS",
+            "title": "SPC Online Academy - Medical LMS",
             "description": "A medical learning platform (LMS) built with Next.js (App Router) and React 19, with public, student, and instructor areas. Includes a custom HLS video player, content protection, and a checkout with multiple payment methods.",
             "details": "A medical learning platform (LMS) built with Next.js (App Router) and React 19, with public, student, and instructor areas. Includes a custom HLS video player, video content protection, Arabic/English support with RTL/LTR, JWT auth, a checkout with multiple payment methods, and a 96/100 Lighthouse score.",
             "detailGroups": [
@@ -411,7 +411,7 @@
         "12": {
             "categories": "Magento 2",
             "company": "CROCOIT",
-            "title": "Etlala — Fashion Marketplace",
+            "title": "Etlala - Fashion Marketplace",
             "description": "A Magento 2 fashion marketplace with complex seller workflows, multi-store support, and AR/EN RTL/LTR layouts.",
             "details": "Extended the Magento 2 frontend using Layout XML, PHTML, RequireJS, and GraphQL for multiple modules. Built reusable UI components across the platform and developed complex marketplace workflows including subscriptions, seller states, and plan upgrades. Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination and dynamic loaders.",
             "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
@@ -484,7 +484,7 @@
                 "type": "full-time",
                 "projects": [
                     {
-                        "name": "SPC Online Academy — Medical LMS (Next.js)",
+                        "name": "SPC Online Academy - Medical LMS (Next.js)",
                         "projectId": "11",
                         "link": "https://betaspc.a2za1.com/",
                         "achievements": [
@@ -496,7 +496,7 @@
                         ]
                     },
                     {
-                        "name": "Almasry Pharmacy — ECommerce PWA",
+                        "name": "Almasry Pharmacy - ECommerce PWA",
                         "projectId": "10",
                         "link": "https://almasrypharmacy.com/",
                         "achievements": [
@@ -508,7 +508,7 @@
                         ]
                     },
                     {
-                        "name": "Etlala — Fashion Marketplace (Magento 2)",
+                        "name": "Etlala - Fashion Marketplace (Magento 2)",
                         "projectId": "12",
                         "link": "/project-details/12",
                         "achievements": [

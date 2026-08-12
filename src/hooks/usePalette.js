@@ -7,7 +7,7 @@ export const PALETTES = [
 ];
 
 const STORAGE_KEY = "currentPalette";
-const DEFAULT_PALETTE = "slate";
+const DEFAULT_PALETTE = "carbon";
 const VALID_PALETTES = new Set(PALETTES.map((palette) => palette.id));
 
 export const usePalette = () => {
