@@ -36,27 +36,19 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        // Manual chunk splitting for better caching
-        manualChunks: {
-          // React core
-          'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-router'],
-          // Animation libraries
-          'animation-vendor': ['framer-motion', 'lottie-react'],
-          // i18n
-          'i18n-vendor': ['i18next', 'react-i18next', 'i18next-http-backend'],
-          // UI libraries
-          'ui-vendor': ['swiper', 'lucide-react'],
-          // Markdown and syntax highlighting
-          'markdown-vendor': [
-            'react-markdown',
-            'remark-gfm',
-            'rehype-highlight',
-            'rehype-slug',
-            'rehype-autolink-headings',
-            'highlight.js',
-          ],
-          // Form handling
-          'form-vendor': ['@formspree/react'],
+        // Keep large feature libraries out of the entry route. The JSX
+        // runtime is explicitly grouped with React so it cannot pull a
+        // markdown or animation chunk into the initial mobile request.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          // Rollup can otherwise place React's JSX runtime in the first
+          // package chunk it encounters (previously Framer Motion).
+          if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/react-router')) return 'react-vendor';
+          if (id.includes('/framer-motion/') || id.includes('/lottie-react/')) return 'animation-vendor';
+          if (id.includes('/i18next') || id.includes('/react-i18next') || id.includes('/i18next-http-backend')) return 'i18n-vendor';
+          if (id.includes('/swiper/') || id.includes('/lucide-react/')) return 'ui-vendor';
+          if (id.includes('/react-markdown/') || id.includes('/remark-gfm/') || id.includes('/rehype-') || id.includes('/highlight.js/')) return 'markdown-vendor';
+          if (id.includes('/@formspree/')) return 'form-vendor';
         },
         // Optimize chunk file names
         chunkFileNames: 'assets/js/[name]-[hash].js',

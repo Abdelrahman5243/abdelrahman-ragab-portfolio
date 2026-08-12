@@ -1,42 +1,69 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import Hero from "../components/hero/Hero";
-import Skills from "../components/skills/Skills";
-import Education from "../components/Education";
-import Experience from "../components/Experience";
 
-// Lazy load below-the-fold components
+// Keep below-the-fold code and network requests out of the initial mobile
+// render. The import starts only when a section is close to the viewport.
+const Skills = lazy(() => import("../components/skills/Skills"));
+const Experience = lazy(() => import("../components/Experience"));
+const Education = lazy(() => import("../components/Education"));
 const Projects = lazy(() => import("../components/projects/Projects"));
 const ArticleSection = lazy(() => import("../components/Article/ArticleSection"));
 const Contact = lazy(() => import("../components/contact/Contact"));
 
-const ComponentLoader = () => (
-  <div className="w-full h-32 flex justify-center items-center">
-    <div className="loader"></div>
-  </div>
-);
+const DeferredSection = ({ children, minHeight = "min-h-[12rem]" }) => {
+  const ref = useRef(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current || active) return undefined;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [active]);
+
+  return (
+    <div ref={ref} className={active ? "" : minHeight}>
+      {active ? children : null}
+    </div>
+  );
+};
 
 function MainPage() {
   return (
     <>
       <Hero />
       <div className="divider"></div>
-      <Skills />
+      <DeferredSection>
+        <Suspense fallback={null}><Skills /></Suspense>
+      </DeferredSection>
       <div className="divider"></div>
-      <Experience />
+      <DeferredSection>
+        <Suspense fallback={null}><Experience /></Suspense>
+      </DeferredSection>
       <div className="divider"></div>
-      <Suspense fallback={<ComponentLoader />}>
+      <DeferredSection>
         <Projects />
-      </Suspense>
+      </DeferredSection>
       <div className="divider"></div>
-      <Education />
+      <DeferredSection>
+        <Suspense fallback={null}><Education /></Suspense>
+      </DeferredSection>
       <div className="divider"></div>
-      <Suspense fallback={<ComponentLoader />}>
+      <DeferredSection>
         <ArticleSection showAll={false} />
-      </Suspense>
+      </DeferredSection>
       <div className="divider"></div>
-      <Suspense fallback={<ComponentLoader />}>
+      <DeferredSection>
         <Contact />
-      </Suspense>
+      </DeferredSection>
     </>
   );
 }

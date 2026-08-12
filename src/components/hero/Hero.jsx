@@ -1,34 +1,24 @@
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { HashLink } from "react-router-hash-link";
 import { HERO_CONTENT } from "./heroContent.js";
 import { ExternalLink, MapPin, ArrowDown } from "lucide-react";
-import { containerVariants, itemVariants } from "../../animations/variants";
 import { external_link_click, button_click } from "../../analytics";
 
 const Hero = () => {
   const { t } = useTranslation("main");
 
   return (
-    <motion.section
+    <section
       id="about"
       aria-labelledby="hero-title"
       className="flex flex-col items-center px-4"
-      variants={containerVariants}
-      // Keep above-the-fold content paintable immediately so the heading is
-      // eligible for LCP. Motion remains active for interactions and sections
-      // below the fold.
-      initial={false}
-      animate="visible"
     >
       <div className="flex mt-8 items-center flex-col-reverse md:flex-row py-8">
-        <motion.div
+        <div
           className="left-section w-full text-center relative"
-          variants={itemVariants}
         >
-          <motion.div
+          <div
             className="flex justify-center mb-5"
-            variants={itemVariants}
           >
             <span
               className="
@@ -47,35 +37,32 @@ const Hero = () => {
               </span>
               <span>{t("hero.openToWork", "Open to Work")}</span>
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
+          <h1
             id="hero-title"
             className="
               text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
               font-bold leading-tight
               text-light-title dark:text-dark-title
             "
-            variants={itemVariants}
           >
             {t(HERO_CONTENT.titleKey)}
-          </motion.h1>
+          </h1>
 
-          <motion.h2
+          <h2
             className="
               mt-2
               text-base sm:text-lg md:text-xl lg:text-2xl
               font-medium tracking-wide
               text-light-blue dark:text-dark-blue
             "
-            variants={itemVariants}
           >
             {t("hero.jobTitle", "Front-End Developer")}
-          </motion.h2>
+          </h2>
 
-          <motion.div
+          <div
             className="flex justify-center mt-3"
-            variants={itemVariants}
           >
             <span
               className="
@@ -87,7 +74,7 @@ const Hero = () => {
               <MapPin size={13} className="text-light-blue dark:text-dark-blue" />
               {t("hero.location", "Cairo, Egypt")}
             </span>
-          </motion.div>
+          </div>
 
           <p
             className="
@@ -101,14 +88,10 @@ const Hero = () => {
             {t(HERO_CONTENT.descriptionKey)}
           </p>
 
-          <motion.div
+          <div
             className="flex m-auto gap-4 mb-8 max-w-max mt-6 flex-wrap justify-center"
-            variants={itemVariants}
           >
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
+            <div>
               <HashLink
                 to="/#projects"
                 className="
@@ -129,9 +112,9 @@ const Hero = () => {
                 <span>{t("hero.viewProjects")}</span>
                 <ArrowDown size={15} />
               </HashLink>
-            </motion.div>
+            </div>
 
-            <motion.a
+            <a
               href={HERO_CONTENT.cvUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -147,8 +130,6 @@ const Hero = () => {
                 hover:text-light-blue dark:hover:text-dark-blue
               "
               aria-label="Preview CV"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
               onClick={() =>
                 // Example: external link click tracking.
                 external_link_click({
@@ -160,32 +141,25 @@ const Hero = () => {
             >
               <span>{t(HERO_CONTENT.showCVKey)}</span>
               <ExternalLink size={15} />
-            </motion.a>
-          </motion.div>
-        </motion.div>
+            </a>
+          </div>
+        </div>
       </div>
 
-      <motion.div
+      <div
         className="
           flex gap-6 mb-8
           text-lg sm:text-xl md:text-2xl
           dark:text-dark-subtitle text-light-subtitle
         "
-        variants={containerVariants}
       >
         {HERO_CONTENT.socialLinks.map((link, index) => (
-          <motion.a
+          <a
             key={index}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transform transition-transform duration-200"
-            variants={itemVariants}
-            whileHover={{
-              scale: 1.2,
-              rotate: [0, -10, 10, -10, 0],
-              transition: { duration: 0.5, ease: "easeInOut" },
-            }}
             aria-label={link.ariaLabel}
             onClick={() =>
               // Example: external link click tracking (social profiles).
@@ -197,10 +171,10 @@ const Hero = () => {
             }
           >
             <link.icon size="1em" />
-          </motion.a>
+          </a>
         ))}
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };
 
