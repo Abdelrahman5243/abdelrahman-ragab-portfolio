@@ -10,6 +10,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const ArticlePage = lazy(() => import("./pages/ArticlePage"));
 const ArticleSection = lazy(() => import("./components/Article/ArticleSection"));
+const SectionPage = lazy(() => import("./pages/SectionPage"));
 
 const Loader = () => (
   <div className="w-screen h-screen flex justify-center items-center">
@@ -35,6 +36,9 @@ const App = () => {
       <Routes>
         <Route element={<RootLayout />}>
           <Route index element={<MainPage />} />
+          <Route path="/experience" element={<SectionPage section="experience" />} />
+          <Route path="/projects" element={<SectionPage section="projects" />} />
+          <Route path="/contact" element={<SectionPage section="contact" />} />
           <Route path="/project-details/:slug" element={<ProjectDetails />} />
           <Route path="/article/:slug" element={<ArticlePage />} />
           <Route
