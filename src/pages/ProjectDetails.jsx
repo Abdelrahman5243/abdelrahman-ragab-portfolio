@@ -35,7 +35,7 @@ const ProjectDetails = () => {
 
   return (
     <motion.div
-      key={id}
+      key={projectSlug}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
