@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <section className="flex flex-col items-center pt-20 pb-10 px-4 text-center">
       <motion.h1
-        className="text-6xl sm:text-8xl md:text-9xl font-extrabold text-gray-900 dark:text-gray-100 mb-6"
+        className="text-6xl sm:text-8xl md:text-9xl font-extrabold text-light-title dark:text-dark-title mb-6"
         animate={{ scale: [1, 1.2, 1] }}
         transition={{
           duration: 1.5,

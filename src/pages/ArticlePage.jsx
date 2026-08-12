@@ -1,11 +1,12 @@
 "use client";
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import ArticleHeader from "../components/Article/ArticleHeader";
 import MarkdownRenderer from "../components/Article/MarkdownRenderer";
 import Sidebar from "../components/Article/Sidebar";
 import TagsList from "../components/Article/TagsList";
+import NextPrevArticles from "../components/Article/NextPrevArticles";
 import { Menu, X } from "lucide-react";
 import { useActiveHeading } from "../hooks/useActiveHeading";
 import "highlight.js/styles/github-dark.css";
@@ -16,7 +17,6 @@ export default function ArticlePage() {
   const [headings, setHeadings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showSidebar, setShowSidebar] = useState(false);
-  const progressBarRef = useRef(null);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -25,21 +25,6 @@ export default function ArticlePage() {
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
-
-  useEffect(() => {
-    if (loading) return;
-    const bar = progressBarRef.current;
-    if (!bar) return;
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      bar.style.width = `${pct}%`;
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [loading]);
 
   useEffect(() => {
     const loadArticle = async () => {
@@ -89,15 +74,6 @@ export default function ArticlePage() {
 
   return (
     <>
-      {createPortal(
-        <div
-          ref={progressBarRef}
-          className="fixed top-0 left-0 h-1 z-[9999] w-0"
-          style={{ background: "var(--dark-accent)" }}
-        />,
-        document.body
-      )}
-
       <div className="relative py-10 grid grid-cols-1 lg:grid-cols-[calc(100%-420px)_400px] gap-8 justify-between max-w-full mx-auto transition-all duration-500 ease-in-out">
         <aside className="hidden lg:block sticky lg:top-10 self-start transition-all duration-500 ease-in-out lg:order-3 order-0">
           <div className="overflow-hidden transition-all duration-500">
@@ -123,6 +99,7 @@ export default function ArticlePage() {
           {tags && <TagsList tags={tags} />}
           <div className="divider mt-10" />
           <MarkdownRenderer markdown={markdown} />
+          <NextPrevArticles currentId={id} />
         </section>
 
       </div>

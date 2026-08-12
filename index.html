@@ -13,7 +13,7 @@
 
   <!-- Theme Color for all devices -->
   <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -30,10 +30,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:opsz,wght@14..32,300..800&display=swap"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:opsz,wght@14..32,300..800&display=swap">
   </noscript>
 
   <!-- Open Graph Data -->
@@ -60,9 +60,9 @@
         var mode = localStorage.getItem("currentMode") || "dark";
         document.body.classList.add(mode);
         var palette = localStorage.getItem("currentPalette");
-        var validPalettes = { slate: true, indigo: true, emerald: true };
+        var validPalettes = { slate: true, obsidian: true, carbon: true };
         if (!validPalettes[palette]) palette = "slate";
-        document.body.setAttribute("data-palette", palette);
+        document.documentElement.setAttribute("data-palette", palette);
       } catch (e) {}
     })();
   </script>

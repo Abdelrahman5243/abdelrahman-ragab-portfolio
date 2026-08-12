@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useState, Suspense } from "react";
+import { useRef, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Spinner from "../spinner/Spinner";
-import { Mail } from "lucide-react";
+import { Mail, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
 import {
@@ -11,11 +11,10 @@ import {
   contactFormVariants,
   contactAnimationVariants,
   contactSuccessVariants,
-} from "../../animations/variants"; 
+} from "../../animations/variants";
+import { CONTACT_LINKS } from "./contactLinksData";
 import "./contact.css";
-import { button_click, form_submit } from "../../analytics";
-
-const Lottie = React.lazy(() => import("lottie-react"));
+import { button_click, form_submit, external_link_click } from "../../analytics";
 
 const Contact = () => {
   const { t } = useTranslation("main");
@@ -34,18 +33,8 @@ const Contact = () => {
     wasSubmitting.current = state.submitting;
   }, [state.succeeded, state.submitting]);
 
-  const [animationData, setAnimationData] = useState(null);
-
-  useEffect(() => {
-    if (isInView && !animationData) {
-      import("../../assets/animation/contact.json").then((mod) =>
-        setAnimationData(mod.default || mod)
-      );
-    }
-  }, [isInView, animationData]);
-
   return (
-    <section id="contact" className="my-8" ref={ref}>
+    <section id="contact" className="my-16 w-full" ref={ref}>
       <div className="flex gap-4 items-center mb-4 text-3xl">
         <motion.div
           variants={contactIconVariants}
@@ -55,14 +44,14 @@ const Contact = () => {
           <Mail className="section-title" aria-hidden="true" />
         </motion.div>
 
-        <motion.h1
+        <motion.h2
           variants={contactTitleVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="title mb-0"
         >
           {t("contact.title")}
-        </motion.h1>
+        </motion.h2>
       </div>
 
       <motion.p
@@ -74,10 +63,10 @@ const Contact = () => {
         {t("contact.description")}
       </motion.p>
 
-      <div className="flex my-8 items-center flex-col-reverse md:flex-row">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 my-8 items-start">
         <motion.form
           onSubmit={handleSubmit}
-          className="w-full md:w-1/2 flex flex-col gap-4 mb-6 modal-text"
+          className="flex flex-col gap-4 modal-text"
           aria-labelledby="contact-form"
           variants={contactFormVariants}
           initial="hidden"
@@ -141,21 +130,52 @@ const Contact = () => {
         </motion.form>
 
         <motion.div
-          className="w-full md:w-1/2"
+          className="grid grid-cols-1 gap-3"
           variants={contactAnimationVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
-            {animationData && (
-              <Lottie
-                className="contact-animation h-[355px]"
-                animationData={animationData}
-                aria-label="contact animation"
-                role="img"
-              />
-            )}
-          </Suspense>
+          {CONTACT_LINKS.map((link) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={link.key}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  // Example: external link click tracking (contact channels).
+                  external_link_click({ url: link.href, label: link.label, location: "contact_links" })
+                }
+                className="
+                  group relative flex items-center gap-4 p-4 rounded-2xl
+                  border border-light-border dark:border-dark-border
+                  bg-light-secondary/90 dark:bg-dark-secondary/90
+                  transition-colors duration-300
+                  hover:border-light-blue/60 dark:hover:border-dark-blue/60
+                "
+              >
+                <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-light-blue/10 dark:bg-dark-blue/10 text-light-blue dark:text-dark-blue flex-shrink-0">
+                  <Icon size={19} />
+                </span>
+
+                <div className="flex-1 min-w-0">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-light-subtitle dark:text-dark-subtitle mb-0.5">
+                    {link.label}
+                  </p>
+                  <p className="text-sm sm:text-base font-semibold text-light-title dark:text-dark-title truncate">
+                    {link.value}
+                  </p>
+                </div>
+
+                <p className="hidden sm:block text-xs text-light-subtitle dark:text-dark-subtitle flex-shrink-0">
+                  {link.description}
+                </p>
+
+                <ExternalLink size={15} className="text-light-subtitle dark:text-dark-subtitle opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
+              </a>
+            );
+          })}
         </motion.div>
       </div>
     </section>

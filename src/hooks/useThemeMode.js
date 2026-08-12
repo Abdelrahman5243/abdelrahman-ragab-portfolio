@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const useThemeMode = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("currentMode") ?? "dark"
+    localStorage.getItem("currentMode") ?? "light"
   );
 
   useEffect(() => {

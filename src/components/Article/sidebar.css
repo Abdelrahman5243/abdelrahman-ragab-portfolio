@@ -12,7 +12,7 @@
 }
 
 .sidebar-title {
-  @apply text-xs sm:text-sm font-semibold text-light-title dark:text-dark-title flex items-center gap-2;
+  @apply text-sm sm:text-base font-semibold text-light-title dark:text-dark-title flex items-center gap-2;
 }
 
 .sidebar-icon {
@@ -93,7 +93,7 @@
 }
 
 .level-2-text {
-  @apply text-xs sm:text-sm font-semibold break-words;
+  @apply text-sm sm:text-base font-semibold break-words;
 }
 
 .level-2-icon {
@@ -117,7 +117,7 @@
 }
 
 .level-3-text {
-  @apply text-xs sm:text-sm font-medium break-words;
+  @apply text-sm font-medium break-words;
 }
 
 .level-3-icon {
@@ -141,7 +141,7 @@
 }
 
 .level-4-text {
-  @apply text-xs font-medium;
+  @apply text-sm font-medium;
 }
 
 .level-4-icon {
@@ -165,7 +165,7 @@
 }
 
 .level-5-text {
-  @apply text-xs font-normal;
+  @apply text-sm font-normal;
 }
 
 .level-5-icon {
@@ -189,7 +189,7 @@
 }
 
 .level-6-text {
-  @apply text-xs font-normal;
+  @apply text-sm font-normal;
 }
 
 .level-6-icon {
@@ -209,7 +209,7 @@
 }
 
 .sidebar-item-active {
-  @apply text-light-blue dark:text-dark-blue border-light-blue dark:border-dark-blue shadow-sm;
+  @apply text-light-blue dark:text-dark-blue border-light-blue dark:border-dark-blue;
   background-color: rgb(var(--accent-light-rgb) / 0.08);
 }
 

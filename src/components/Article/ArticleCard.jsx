@@ -22,11 +22,11 @@ const ArticleCard = ({ article }) => {
         </div>
 
         <div className="flex flex-col gap-3 w-full text-left">
-          <h2 className="text-sm sm:text-base md:text-lg font-semibold text-light-title dark:text-dark-title leading-snug">
+          <h2 className="text-base sm:text-lg md:text-xl font-semibold text-light-title dark:text-dark-title leading-snug">
             {article.title}
           </h2>
 
-          <p className="text-xs sm:text-sm md:text-base text-light-subtitle dark:text-dark-subtitle leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-light-subtitle dark:text-dark-subtitle leading-relaxed">
             {article["short-description"]}
           </p>
 
@@ -35,7 +35,7 @@ const ArticleCard = ({ article }) => {
               {article.tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 text-[10px] sm:text-xs font-medium rounded-full border 
+                  className="px-3 py-1 text-xs sm:text-sm font-medium rounded-full border
                              border-light-border dark:border-dark-border 
                              text-light-title dark:text-dark-title 
                              bg-light-secondary/60 dark:bg-dark-secondary/60

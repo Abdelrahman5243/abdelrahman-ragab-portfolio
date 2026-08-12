@@ -1,7 +1,9 @@
-import { useRef } from "react";
+import { useRef, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
 import { mySkills } from "./skillsData.js";
+
+const TechMarquee = lazy(() => import("./TechMarquee"));
 import {
   RocketIcon,
   Code2,
@@ -34,16 +36,16 @@ const groupVariants = {
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.07, duration: 0.4, ease: "easeOut" },
+    transition: { delay: i * 0.06, duration: 0.4, ease: "easeOut" },
   }),
 };
 
-const chipVariants = {
-  hidden: { opacity: 0, scale: 0.88 },
+const itemVariants = {
+  hidden: { opacity: 0, x: -8 },
   visible: (i) => ({
     opacity: 1,
-    scale: 1,
-    transition: { delay: i * 0.03, duration: 0.25, ease: "easeOut" },
+    x: 0,
+    transition: { delay: i * 0.025, duration: 0.25, ease: "easeOut" },
   }),
 };
 
@@ -57,7 +59,7 @@ const Skills = () => {
     <section
       id="skills"
       ref={ref}
-      className="my-12 w-full"
+      className="my-16 w-full"
       aria-labelledby="skills-title"
     >
       <motion.div
@@ -71,12 +73,12 @@ const Skills = () => {
           size={28}
           aria-hidden="true"
         />
-        <h1 id="skills-title" className="title mb-0">
+        <h2 id="skills-title" className="title mb-0">
           {t("skillsTitle")}
-        </h1>
+        </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-5">
         {mySkills.map((group, gi) => {
           const Icon = categoryIcons[group.category] ?? Code2;
           const label = isAr ? group.categoryAr : group.category;
@@ -89,68 +91,64 @@ const Skills = () => {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               className="
-                group relative overflow-hidden rounded-2xl
-                border border-light-border/80 dark:border-dark-border
+                group relative overflow-hidden rounded-2xl h-full
+                border border-light-border dark:border-dark-border
                 bg-light-secondary/80 dark:bg-dark-secondary/80
-                hover:border-light-blue/20 dark:hover:border-dark-blue/20
-                hover:shadow-[0_0_0_1px_rgb(var(--accent-light-rgb)/0.08),0_6px_24px_rgb(var(--accent-light-rgb)/0.06)]
-                dark:hover:shadow-[0_0_0_1px_rgb(var(--accent-dark-rgb)/0.12),0_6px_24px_rgb(var(--accent-dark-rgb)/0.08)]
-                transition-all duration-300 p-5
+                hover:border-light-blue/40 dark:hover:border-dark-blue/40
+                transition-colors duration-300 p-5
               "
             >
-              {/* Accent glow */}
               <div className="
                 absolute inset-0 opacity-0 group-hover:opacity-100
                 transition-opacity duration-300 pointer-events-none
-                bg-[radial-gradient(ellipse_at_top_left,rgb(var(--accent-light-rgb)/0.04),transparent_60%)]
-                dark:bg-[radial-gradient(ellipse_at_top_left,rgb(var(--accent-dark-rgb)/0.05),transparent_60%)]
+                bg-[radial-gradient(ellipse_at_top_left,rgb(var(--accent-light-rgb)/0.05),transparent_60%)]
+                dark:bg-[radial-gradient(ellipse_at_top_left,rgb(var(--accent-dark-rgb)/0.06),transparent_60%)]
               " />
 
               {/* Category header */}
-              <div className="flex items-center gap-2.5 mb-4">
-                <span className="
-                  w-8 h-8 flex items-center justify-center flex-shrink-0
-                  rounded-lg
-                  bg-light-blue/10 dark:bg-dark-blue/10
-                ">
+              <div className="relative flex items-center justify-between gap-2 mb-3">
+                <div className="flex items-center gap-2">
                   <Icon
                     size={15}
-                    className="text-light-blue dark:text-dark-blue"
+                    className="text-light-blue dark:text-dark-blue flex-shrink-0"
                     aria-hidden="true"
                   />
+                  <p className="text-xs font-semibold tracking-wider uppercase text-light-subtitle dark:text-dark-subtitle leading-tight">
+                    {label}
+                  </p>
+                </div>
+                <span className="text-[11px] font-medium text-light-subtitle/70 dark:text-dark-subtitle/70 tabular-nums">
+                  {group.items.length}
                 </span>
-                <p className="text-xs font-semibold tracking-wider uppercase text-light-subtitle dark:text-dark-subtitle leading-tight">
-                  {label}
-                </p>
               </div>
+              <div className="relative h-px w-8 bg-light-blue dark:bg-dark-blue mb-4" />
 
-              {/* Chips */}
-              <div className="flex flex-wrap gap-2">
+              {/* Skill list */}
+              <ul className="relative flex flex-col gap-2">
                 {group.items.map((skill, si) => (
-                  <motion.span
+                  <motion.li
                     key={skill}
                     custom={gi * 6 + si}
-                    variants={chipVariants}
+                    variants={itemVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="
-                      text-xs px-2.5 py-1 rounded-lg
-                      border border-light-border dark:border-dark-border
-                      bg-light-primary/60 dark:bg-dark-primary/60
-                      text-light-subtitle dark:text-dark-subtitle
-                      hover:border-light-blue/50 dark:hover:border-dark-blue/50
-                      hover:text-light-title dark:hover:text-dark-title
-                      transition-all duration-150 cursor-default select-none
-                    "
+                    className="flex items-center gap-2.5 text-sm sm:text-base text-light-title dark:text-dark-title"
                   >
+                    <span className="w-1.5 h-1.5 rounded-full bg-light-blue/60 dark:bg-dark-blue/60 flex-shrink-0" />
                     {skill}
-                  </motion.span>
+                  </motion.li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           );
         })}
       </div>
+
+      {isInView && (
+        <Suspense fallback={<div className="h-[46px] mt-10" />}>
+          <TechMarquee />
+        </Suspense>
+      )}
     </section>
   );
 };

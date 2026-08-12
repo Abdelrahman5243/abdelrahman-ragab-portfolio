@@ -42,9 +42,8 @@ const PalettePicker = () => {
           className="
             absolute end-0 top-12 z-50
             min-w-[240px]
-            rounded-3xl border border-light-border/80 dark:border-dark-border
-            bg-light-secondary/95 dark:bg-dark-secondary/95 backdrop-blur-xl
-            shadow-[0_24px_70px_rgb(15_23_42_/_0.12)]
+            rounded-3xl border border-light-border dark:border-dark-border
+            bg-light-secondary dark:bg-dark-secondary backdrop-blur-xl
             p-2.5
             animate-in fade-in slide-in-from-top-2
           "

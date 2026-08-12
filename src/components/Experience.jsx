@@ -55,7 +55,7 @@ const Experience = () => {
 
       <div className="relative">
         {/* Timeline line */}
-          <div className="absolute start-[11px] top-2 bottom-2 w-0.5 bg-light-border/80 dark:bg-dark-border hidden sm:block" />
+        <div className="absolute start-[11px] top-2 bottom-2 w-0.5 bg-light-border/80 dark:bg-dark-border hidden sm:block" />
 
         <div className="space-y-6">
           {experience.items?.map((item, index) => (
@@ -74,9 +74,8 @@ const Experience = () => {
               <div className="
                 p-5 sm:p-6 rounded-2xl
                 bg-light-secondary/95 dark:bg-dark-secondary/95
-                border border-light-border/80 dark:border-dark-border
-                shadow-[0_18px_50px_rgb(15_23_42_/_0.05)]
-                transition-all duration-300
+                border border-light-border dark:border-dark-border
+                transition-colors duration-300
               ">
                 {/* Header row */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
@@ -149,7 +148,7 @@ const Experience = () => {
                               variants={listItemVariants}
                               className="flex items-start gap-2 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
                             >
-                              <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">▸</span>
+                              <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">-</span>
                               <span>{ach}</span>
                             </motion.li>
                           ))}
@@ -178,9 +177,9 @@ const Experience = () => {
                       <motion.li
                         key={aIdx}
                         variants={listItemVariants}
-                        className="flex items-start gap-2 text-sm text-light-subtitle dark:text-dark-subtitle"
+                        className="flex items-start gap-2 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
                       >
-                        <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">▸</span>
+                        <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">-</span>
                         <span>{ach}</span>
                       </motion.li>
                     ))}
