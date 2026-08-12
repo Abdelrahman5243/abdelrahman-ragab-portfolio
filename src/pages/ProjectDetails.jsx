@@ -19,6 +19,7 @@ const ProjectDetails = () => {
 
   return (
     <motion.div
+      key={id}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -90,7 +91,7 @@ const ProjectDetails = () => {
           )}
         </div>
         {Array.isArray(projectData.detailGroups) &&
-        projectData.detailGroups.length > 0 ? (
+          projectData.detailGroups.length > 0 ? (
           <div className="mx-0 sm:mx-2 grid gap-4 mt-4 sm:grid-cols-2">
             {projectData.detailGroups.map((group, gi) => (
               <motion.div
@@ -223,7 +224,7 @@ const ProjectDetails = () => {
         )}
       </motion.ul>
 
-      <RelatedProjects currentId={id} />
+      {/* <RelatedProjects currentId={id} /> */}
     </motion.div>
   );
 };
