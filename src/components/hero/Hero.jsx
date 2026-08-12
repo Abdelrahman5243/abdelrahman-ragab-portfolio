@@ -15,7 +15,10 @@ const Hero = () => {
       aria-labelledby="hero-title"
       className="flex flex-col items-center px-4"
       variants={containerVariants}
-      initial="hidden"
+      // Keep above-the-fold content paintable immediately so the heading is
+      // eligible for LCP. Motion remains active for interactions and sections
+      // below the fold.
+      initial={false}
       animate="visible"
     >
       <div className="flex mt-8 items-center flex-col-reverse md:flex-row py-8">

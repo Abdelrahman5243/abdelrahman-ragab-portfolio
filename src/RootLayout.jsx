@@ -10,12 +10,21 @@ const RootLayout = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
+    let frame = 0;
     const handleScroll = () => {
-      setShowScrollButton(window.scrollY > 300);
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        setShowScrollButton((visible) => {
+          const next = window.scrollY > 300;
+          return visible === next ? visible : next;
+        });
+      });
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
 

@@ -73,8 +73,10 @@ if (USE_STATIC_DATA) {
       react: {
         useSuspense: true,
       },
-      // Preload both languages for instant switching
-      preload: ['en', 'ar'],
+      // Load only the active language on first paint. The other language is
+      // fetched when the visitor switches language instead of delaying app
+      // initialisation on slower mobile connections.
+      preload: [savedLanguage],
       // Namespace configuration
       ns: ['main'],
       defaultNS: 'main',
