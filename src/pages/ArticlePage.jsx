@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import ArticleHeader from "../components/Article/ArticleHeader";
@@ -21,10 +21,6 @@ export default function ArticlePage() {
   const { id } = useParams();
 
   const { activeId, smoothScrollTo } = useActiveHeading();
-
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
 
   useEffect(() => {
     const loadArticle = async () => {

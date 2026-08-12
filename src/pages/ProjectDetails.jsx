@@ -1,4 +1,3 @@
-import { useLayoutEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ExternalLink, GithubIcon, MoreVertical, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -17,10 +16,6 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const { i18n, t } = useTranslation("main");
   const projectData = t(`projects.${id}`, { returnObjects: true });
-
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
 
   return (
     <motion.div

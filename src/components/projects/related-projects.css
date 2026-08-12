@@ -1,0 +1,21 @@
+.related-projects-swiper .swiper-slide {
+  height: 400px;
+}
+
+@media (min-width: 480px) {
+  .related-projects-swiper .swiper-slide {
+    height: 430px;
+  }
+}
+
+@media (min-width: 768px) {
+  .related-projects-swiper .swiper-slide {
+    height: 460px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .related-projects-swiper .swiper-slide {
+    height: 490px;
+  }
+}
