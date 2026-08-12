@@ -2,6 +2,7 @@ import ProjectCard from "./ProjectCard";
 import "./projects.css";
 import { useTranslation } from "react-i18next";
 import { Workflow } from "lucide-react";
+import { getProjectSlug } from "../../data/projectSlugs";
 
 const Projects = () => {
   const { t } = useTranslation("main");
@@ -40,7 +41,12 @@ const Projects = () => {
         aria-labelledby="projects-title"
       >
         {myProjects.map((project) => (
-          <ProjectCard key={project.id} id={project.id} project={{ ...project }} />
+          <ProjectCard
+            key={project.id}
+            id={project.id}
+            slug={project.slug || getProjectSlug(project.id)}
+            project={{ ...project }}
+          />
         ))}
       </div>
     </section>

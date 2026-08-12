@@ -31,7 +31,7 @@ const Footer = () => {
       </ul>
 
       <p className="text-center text-sm mt-2 md:mt-0 break-words">
-        {t("copyright")}
+        {t("copyright", { year: new Date().getFullYear() })}
       </p>
     </footer>
   );

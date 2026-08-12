@@ -1,11 +1,12 @@
-import { useLayoutEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft, ExternalLink, GithubIcon, MoreVertical, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Slider from "../components/slider/Slider";
 import ThumbnailGallery from "../components/lightbox/ThumbnailGallery";
 import RelatedProjects from "../components/projects/RelatedProjects";
+import { getProjectSlug } from "../data/projectSlugs";
 
 const parseDetails = (text = "") =>
   text
@@ -14,13 +15,23 @@ const parseDetails = (text = "") =>
     .filter((s) => s.length > 10);
 
 const ProjectDetails = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const { i18n, t } = useTranslation("main");
-  const projectData = t(`projects.${id}`, { returnObjects: true });
+  const projectsData = t("projects", { returnObjects: true });
+  const projectEntry = Object.entries(projectsData).find(
+    ([id, project]) => (project.slug || getProjectSlug(id)) === slug || id === slug
+  );
+  const projectData = projectEntry?.[1];
+  const projectSlug = projectEntry?.[1]?.slug || getProjectSlug(projectEntry?.[0]);
 
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
+  useEffect(() => {
+    if (projectData && projectSlug !== slug) {
+      navigate(`/project-details/${projectSlug}`, { replace: true });
+    }
+  }, [navigate, projectData, projectSlug, slug]);
+
+  if (!projectData) return null;
 
   return (
     <motion.div
@@ -59,7 +70,11 @@ const ProjectDetails = () => {
           ease: "easeOut",
         }}
       >
-        <Slider project={projectData} language={i18n.language} />
+        <Slider
+          key={`${projectSlug}-${projectData.screens_url?.join("|") || "no-images"}`}
+          project={projectData}
+          language={i18n.language}
+        />
       </motion.div>
 
       {/* Thumbnail Gallery */}
@@ -229,7 +244,7 @@ const ProjectDetails = () => {
         )}
       </motion.ul>
 
-      {/* <RelatedProjects currentId={id} /> */}
+      <RelatedProjects currentSlug={projectSlug} />
     </motion.div>
   );
 };

@@ -510,7 +510,7 @@
                     {
                         "name": "Etlala - Fashion Marketplace (Magento 2)",
                         "projectId": "12",
-                        "link": "/project-details/12",
+                        "link": "/project-details/etlala-fashion-marketplace",
                         "achievements": [
                             "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS for multiple modules",
                             "Built reusable UI components across the platform",
@@ -549,7 +549,7 @@
     "articleNavigation": "Article navigation",
     "previousArticle": "Previous",
     "nextArticle": "Next",
-    "copyright": "© 2024.",
+    "copyright": "Copyright © {{year}} Abdelrahman Ragab. All rights reserved.",
     "seeMore": "Show More",
     "viewDetails": "View details",
     "i18nStamp": 1774547930790,

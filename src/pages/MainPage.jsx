@@ -1,4 +1,4 @@
-import { useLayoutEffect, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import Hero from "../components/hero/Hero";
 import Skills from "../components/skills/Skills";
 import Education from "../components/Education";
@@ -16,10 +16,6 @@ const ComponentLoader = () => (
 );
 
 function MainPage() {
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, []);
-
   return (
     <>
       <Hero />

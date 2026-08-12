@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { fetchAllArticles } from "../../services/articleService";
 
-const NextPrevArticles = ({ currentId }) => {
+const NextPrevArticles = ({ currentSlug }) => {
   const { t } = useTranslation();
   const [prev, setPrev] = useState(null);
   const [next, setNext] = useState(null);
@@ -14,7 +14,7 @@ const NextPrevArticles = ({ currentId }) => {
     fetchAllArticles()
       .then((articles) => {
         if (!active || !Array.isArray(articles)) return;
-        const index = articles.findIndex((a) => a._id === Number(currentId));
+        const index = articles.findIndex((article) => article.slug === currentSlug);
         if (index === -1) return;
         setPrev(index > 0 ? articles[index - 1] : null);
         setNext(index < articles.length - 1 ? articles[index + 1] : null);
@@ -23,7 +23,7 @@ const NextPrevArticles = ({ currentId }) => {
     return () => {
       active = false;
     };
-  }, [currentId]);
+  }, [currentSlug]);
 
   if (!prev && !next) return null;
 
@@ -34,7 +34,7 @@ const NextPrevArticles = ({ currentId }) => {
     >
       {prev ? (
         <Link
-          to={`/article/${prev._id}`}
+          to={`/article/${prev.slug}`}
           className="group flex flex-col gap-2 p-5 rounded-2xl border border-light-border dark:border-dark-border bg-light-secondary/90 dark:bg-dark-secondary/90 hover:border-light-blue/60 dark:hover:border-dark-blue/60 transition-colors duration-300"
         >
           <span className="flex items-center gap-1.5 text-sm font-medium text-light-subtitle dark:text-dark-subtitle">
@@ -51,7 +51,7 @@ const NextPrevArticles = ({ currentId }) => {
 
       {next && (
         <Link
-          to={`/article/${next._id}`}
+          to={`/article/${next.slug}`}
           className="group flex flex-col gap-2 p-5 rounded-2xl border border-light-border dark:border-dark-border bg-light-secondary/90 dark:bg-dark-secondary/90 hover:border-light-blue/60 dark:hover:border-dark-blue/60 transition-colors duration-300 sm:text-right sm:items-end"
         >
           <span className="flex items-center gap-1.5 text-sm font-medium text-light-subtitle dark:text-dark-subtitle">

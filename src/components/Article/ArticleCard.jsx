@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const ArticleCard = ({ article }) => {
   return (
-    <Link to={`/article/${article._id}`} key={article._id}>
+    <Link to={`/article/${article.slug}`} key={article.slug}>
       <motion.div
         dir="ltr"
         className="relative overflow-hidden flex gap-6 items-start lg:items-center justify-between 
@@ -15,7 +15,7 @@ const ArticleCard = ({ article }) => {
                    shadow-[0_14px_40px_rgb(15_23_42_/_0.04)]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: article._id * 0.1, duration: 0.5 }}
+        transition={{ delay: 0.1, duration: 0.5 }}
       >
         <div className="absolute top-3 right-3 centered header_btn">
           <ArrowUpRight size={16} strokeWidth={2} />

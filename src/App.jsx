@@ -35,8 +35,8 @@ const App = () => {
       <Routes>
         <Route element={<RootLayout />}>
           <Route index element={<MainPage />} />
-          <Route path="/project-details/:id" element={<ProjectDetails />} />
-          <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="/project-details/:slug" element={<ProjectDetails />} />
+          <Route path="/article/:slug" element={<ArticlePage />} />
           <Route
             path="/all-articles"
             element={<ArticleSection showAll={true} />}

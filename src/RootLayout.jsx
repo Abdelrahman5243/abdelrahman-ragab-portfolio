@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ScrollProgressBar from "./components/ScrollProgressBar";
+import ScrollToTop from "./components/ScrollToTop";
 import { ChevronUp } from "lucide-react";
 
 const RootLayout = () => {
@@ -20,6 +21,7 @@ const RootLayout = () => {
 
   return (
     <>
+      <ScrollToTop />
       <ScrollProgressBar />
 
       <div className="header-bleed sticky top-0 z-30 w-full">

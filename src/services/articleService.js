@@ -6,9 +6,11 @@ export async function fetchAllArticles() {
   return res.json();
 }
 
-export async function fetchArticleById(id) {
+export async function fetchArticleBySlug(slug) {
   const articles = await fetchAllArticles();
-  const meta = articles.find((a) => a._id === Number(id));
+  const meta = articles.find(
+    (article) => article.slug === slug || String(article._id) === slug
+  );
   if (!meta) return null;
 
   const res = await fetch(`${ARTICLES_REPO_URL}/${meta.slug}.md`);

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import SkeletonLoader from "../spinner/SkeletonLoader";
 import { external_link_click } from "../../analytics";
 
-const ProjectCard = ({ project, id }) => {
+const ProjectCard = ({ project, id, slug }) => {
   const { i18n } = useTranslation("main");
   const language = i18n.language;
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -13,7 +13,7 @@ const ProjectCard = ({ project, id }) => {
 
   return (
     <Link
-      to={`project-details/${id}`}
+      to={`/project-details/${slug || id}`}
       aria-labelledby={`project-${id}-title`}
       aria-describedby={`project-${id}-description`}
       className="
@@ -80,17 +80,17 @@ const ProjectCard = ({ project, id }) => {
         </p>
 
         {Array.isArray(project.technologies) && project.technologies.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-4">
+          <div className="flex flex-nowrap gap-1.5 mt-4 overflow-hidden">
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 rounded-md text-xs font-medium border border-light-border dark:border-dark-border bg-light-primary/60 dark:bg-dark-primary/60 text-light-subtitle dark:text-dark-subtitle"
+                className="flex-shrink-0 px-2.5 py-1 rounded-md text-xs font-medium border border-light-border dark:border-dark-border bg-light-primary/60 dark:bg-dark-primary/60 text-light-subtitle dark:text-dark-subtitle"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 3 && (
-              <span className="px-2.5 py-1 rounded-md text-xs font-medium text-light-subtitle dark:text-dark-subtitle">
+              <span className="flex-shrink-0 px-2.5 py-1 rounded-md text-xs font-medium text-light-subtitle dark:text-dark-subtitle">
                 +{project.technologies.length - 3}
               </span>
             )}

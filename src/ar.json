@@ -511,7 +511,7 @@
                     {
                         "name": "Etlala - سوق الأزياء (Magento 2)",
                         "projectId": "12",
-                        "link": "/project-details/12",
+                        "link": "/project-details/etlala-fashion-marketplace",
                         "achievements": [
                             "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة",
                             "بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة",
@@ -550,7 +550,7 @@
     "articleNavigation": "التنقل بين المقالات",
     "previousArticle": "السابق",
     "nextArticle": "التالي",
-    "copyright": "© 2024.",
+    "copyright": "حقوق النشر © {{year}} عبد الرحمن رجب. جميع الحقوق محفوظة.",
     "seeMore": "عرض المزيد",
     "viewDetails": "عرض التفاصيل",
     "i18nStamp": 1774547930652,

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination,Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -9,9 +9,14 @@ import SkeletonLoader from "../spinner/SkeletonLoader";
 
 const Slider = ({ project, language }) => {
   const projectImages = project.screens_url || [];
-  const [images, setImages] = useState(projectImages);
+  const imagesKey = projectImages.join("|");
   const [loading, setLoading] = useState(new Array(projectImages.length).fill(true));
   const [error, setError] = useState(new Array(projectImages.length).fill(false));
+
+  useEffect(() => {
+    setLoading(new Array(projectImages.length).fill(true));
+    setError(new Array(projectImages.length).fill(false));
+  }, [imagesKey, projectImages.length]);
 
   const handleImageLoad = (index) => {
     setLoading((prev) => {
@@ -46,8 +51,8 @@ const Slider = ({ project, language }) => {
       pagination={{ clickable: true }}
       className="max-h-[500px] overflow-hidden rounded-lg"
     >
-      {images.map((img, index) => (
-        <SwiperSlide key={index} className="mx-auto w-full">
+      {projectImages.map((img, index) => (
+        <SwiperSlide key={img} className="mx-auto w-full">
           <div className="relative w-full h-full md:min-h-[400px] flex justify-center items-center">
             {(loading[index] || error[index]) && (
               <div className="z-10 flex justify-center items-center bg-gray-100">
