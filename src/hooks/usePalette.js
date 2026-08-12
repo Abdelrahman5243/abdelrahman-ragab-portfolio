@@ -19,7 +19,7 @@ export const usePalette = () => {
   );
 
   useEffect(() => {
-    document.body.setAttribute("data-palette", palette);
+    document.documentElement.setAttribute("data-palette", palette);
   }, [palette]);
 
   const changePalette = (id) => {

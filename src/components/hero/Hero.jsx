@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { HashLink } from "react-router-hash-link";
 import { HERO_CONTENT } from "./heroContent.js";
-import { ExternalLink, Download } from "lucide-react";
-import { containerVariants, itemVariants, downloadVariants } from "../../animations/variants";
-import { file_download, external_link_click } from "../../analytics";
+import { ExternalLink, ArrowRight, MapPin } from "lucide-react";
+import { containerVariants, itemVariants } from "../../animations/variants";
+import { external_link_click, button_click } from "../../analytics";
 
 const Hero = () => {
   const { t } = useTranslation("main");
-
-  const cvUrl = "https://drive.google.com/uc?export=download&id=16zAur4LWn7n6oGUzxqgL4EIFkIL3VXM0";
 
   return (
     <motion.section
@@ -24,11 +23,34 @@ const Hero = () => {
           className="left-section w-full text-center relative"
           variants={itemVariants}
         >
+          <motion.div
+            className="flex justify-center mb-5"
+            variants={itemVariants}
+          >
+            <span
+              className="
+                inline-flex items-center gap-2
+                py-1.5 pl-2.5 pr-3.5
+                rounded-full
+                border border-light-border dark:border-dark-border
+                bg-light-secondary/80 dark:bg-dark-secondary/80
+                text-xs sm:text-sm font-medium
+                text-light-subtitle dark:text-dark-subtitle
+              "
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              <span>{t("hero.openToWork", "Open to Work")}</span>
+            </span>
+          </motion.div>
+
           <motion.h1
             id="hero-title"
             className="
               text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
-              font-bold leading-tight 
+              font-bold leading-tight
               text-light-title dark:text-dark-title
             "
             variants={itemVariants}
@@ -48,6 +70,22 @@ const Hero = () => {
             {t("hero.jobTitle", "Front-End Developer")}
           </motion.h2>
 
+          <motion.div
+            className="flex justify-center mt-3"
+            variants={itemVariants}
+          >
+            <span
+              className="
+                inline-flex items-center gap-1
+                text-xs sm:text-sm font-medium
+                text-light-subtitle dark:text-dark-subtitle
+              "
+            >
+              <MapPin size={13} className="text-light-blue dark:text-dark-blue" />
+              {t("hero.location", "Cairo, Egypt")}
+            </span>
+          </motion.div>
+
           <p
             className="
               mt-4
@@ -64,23 +102,49 @@ const Hero = () => {
             className="flex m-auto gap-4 mb-8 max-w-max mt-6 flex-wrap justify-center"
             variants={itemVariants}
           >
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <HashLink
+                to="/#projects"
+                className="
+                  relative py-3 px-8
+                  bg-light-blue dark:bg-dark-blue
+                  text-sm font-semibold
+                  text-white
+                  rounded-full flex gap-2 items-center justify-center
+                  transition-opacity duration-200
+                  hover:opacity-90
+                "
+                aria-label="View Projects"
+                onClick={() =>
+                  // Example: CTA button click tracking.
+                  button_click({ label: "View Projects", location: "hero", variant: "primary" })
+                }
+              >
+                <span>{t("hero.viewProjects")}</span>
+                <ArrowRight size={15} />
+              </HashLink>
+            </motion.div>
+
             <motion.a
               href={HERO_CONTENT.cvUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="
-                relative py-2.5 px-7
+                relative py-3 px-8
                 border border-light-border dark:border-dark-border
-                bg-transparent
-                text-sm font-medium
-                text-light-subtitle dark:text-dark-subtitle
+                bg-light-secondary/80 dark:bg-dark-secondary/80
+                text-sm font-semibold
+                text-light-title dark:text-dark-title
                 rounded-full flex gap-2 items-center justify-center
                 transition-colors duration-200
                 hover:border-light-blue dark:hover:border-dark-blue
                 hover:text-light-blue dark:hover:text-dark-blue
               "
               aria-label="Preview CV"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() =>
                 // Example: external link click tracking.
@@ -91,39 +155,8 @@ const Hero = () => {
                 })
               }
             >
-              <ExternalLink size={15} />
               <span>{t(HERO_CONTENT.showCVKey)}</span>
-            </motion.a>
-
-            <motion.a
-              href={cvUrl}
-              download
-              className="
-                relative py-2.5 px-7
-                bg-light-blue dark:bg-dark-blue
-                text-sm font-medium
-                text-white
-                rounded-full flex gap-2 items-center justify-center
-                transition-opacity duration-200
-                hover:opacity-90
-              "
-              aria-label="Download CV"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() =>
-                // Example: file download tracking.
-                file_download({
-                  fileName: "Abdelrahman-Ragab-CV.pdf",
-                  url: cvUrl,
-                  label: "Download CV",
-                  location: "hero",
-                })
-              }
-            >
-              <motion.div variants={downloadVariants} animate="animate">
-                <Download size={15} />
-              </motion.div>
-              <span>{t("hero.downloadCV", "Download CV")}</span>
+              <ExternalLink size={15} />
             </motion.a>
           </motion.div>
         </motion.div>

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 
@@ -19,9 +20,9 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
     }
   }, [showModal, closeModal]);
 
-  return (
+  return createPortal(
     <div
-      className={`fixed inset-0 z-40 bg-dark-secondary bg-opacity-70 backdrop-blur items-start justify-center ${
+      className={`fixed inset-0 z-[60] bg-dark-secondary bg-opacity-70 backdrop-blur items-start justify-center ${
         showModal ? "flex" : "hidden"
       }`}
       role="dialog"
@@ -51,7 +52,8 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
           ))}
         </ul>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

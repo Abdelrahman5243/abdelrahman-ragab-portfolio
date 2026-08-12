@@ -42,15 +42,15 @@ const ArticleSection = ({ showAll }) => {
   if (!articles || articles.length === 0) return null;
 
   return (
-    <section id="articles" className="my-12 w-full">
+    <section id="articles" className="my-16 w-full">
       <div className="flex gap-4 items-center mb-8 text-3xl">
         <BookOpenText
           className="text-light-subtitle dark:text-dark-subtitle"
           aria-hidden="true"
         />
-        <h1 id="articles-title" className="title mb-0">
+        <h2 id="articles-title" className="title mb-0">
           {t("articlesTitle")}
-        </h1>
+        </h2>
       </div>
 
       <div className="flex flex-col gap-3">

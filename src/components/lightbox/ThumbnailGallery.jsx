@@ -37,7 +37,7 @@ const ThumbnailGallery = ({ images = [] }) => {
         transition={{ duration: 0.5 }}
         className="mt-8 sm:mt-10"
       >
-        <h3 className="text-sm sm:text-base font-medium text-light-title dark:text-dark-title mb-4 px-2 sm:px-4">
+        <h3 className="text-base sm:text-lg font-medium text-light-title dark:text-dark-title mb-4 px-2 sm:px-4">
           Gallery
         </h3>
         <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-hide px-2 sm:px-4">
@@ -48,6 +48,7 @@ const ThumbnailGallery = ({ images = [] }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex-shrink-0 relative overflow-hidden rounded-lg border-2 border-transparent group/thumb"
+              aria-label={`View image ${index + 1} of ${images.length}`}
             >
               <img
                 src={image}
@@ -79,6 +80,7 @@ const ThumbnailGallery = ({ images = [] }) => {
               <button
                 onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
                 className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label="Close gallery"
               >
                 <X size={20} className="text-white" />
               </button>
@@ -102,6 +104,7 @@ const ThumbnailGallery = ({ images = [] }) => {
                   <button
                     onClick={(e) => { e.stopPropagation(); goToPrev(); }}
                     className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    aria-label="Previous image"
                   >
                     <ChevronLeft size={22} className="text-white" />
                   </button>
@@ -109,6 +112,7 @@ const ThumbnailGallery = ({ images = [] }) => {
                   <button
                     onClick={(e) => { e.stopPropagation(); goToNext(); }}
                     className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    aria-label="Next image"
                   >
                     <ChevronRight size={22} className="text-white" />
                   </button>

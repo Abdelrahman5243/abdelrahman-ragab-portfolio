@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 md:gap-8 my-6 sm:my-8 px-2 sm:px-4 text-light-subtitle dark:text-dark-subtitle text-xs sm:text-sm md:text-base"
+      className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 md:gap-8 my-8 sm:my-10 px-4 sm:px-6 text-light-subtitle dark:text-dark-subtitle text-sm sm:text-base"
     >
       <ul className="flex flex-wrap justify-center gap-3 sm:gap-4">
         {NAV_ITEMS.map((item, index) => (
@@ -30,7 +30,7 @@ const Footer = () => {
         ))}
       </ul>
 
-      <p className="text-center text-[11px] sm:text-xs md:text-sm mt-2 md:mt-0 break-words">
+      <p className="text-center text-sm mt-2 md:mt-0 break-words">
         {t("copyright")}
       </p>
     </footer>

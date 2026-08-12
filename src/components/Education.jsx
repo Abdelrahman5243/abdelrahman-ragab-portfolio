@@ -50,9 +50,8 @@ const Education = () => {
         <div className="
           relative p-6 sm:p-8 rounded-2xl
           bg-light-secondary/95 dark:bg-dark-secondary/95
-          border border-light-border/80 dark:border-dark-border
-          shadow-[0_18px_50px_rgb(15_23_42_/_0.05)]
-          transition-all duration-300
+          border border-light-border dark:border-dark-border
+          transition-colors duration-300
           overflow-hidden
         ">
 
@@ -202,7 +201,7 @@ const Education = () => {
                       transition-colors duration-200
                     "
                   >
-                    <span className="text-light-blue dark:text-dark-blue mt-1">▸</span>
+                    <span className="text-light-blue dark:text-dark-blue mt-1">-</span>
                     <span>{feature}</span>
                   </motion.li>
                 ))}

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Slider from "../components/slider/Slider";
 import ThumbnailGallery from "../components/lightbox/ThumbnailGallery";
+import RelatedProjects from "../components/projects/RelatedProjects";
 
 const parseDetails = (text = "") =>
   text
@@ -113,7 +114,7 @@ const ProjectDetails = () => {
                   {group.items.map((item, ii) => (
                     <li
                       key={ii}
-                      className="flex items-start gap-2.5 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
+                      className="flex items-start gap-2.5 text-base sm:text-lg text-light-subtitle dark:text-dark-subtitle leading-7"
                     >
                       <CheckCircle2
                         size={16}
@@ -141,7 +142,7 @@ const ProjectDetails = () => {
                   size={18}
                   className="mt-0.5 flex-shrink-0 text-light-blue dark:text-dark-blue"
                 />
-                <span className="text-sm sm:text-base text-light-title/90 dark:text-dark-title/90 leading-7">
+                <span className="text-base sm:text-lg text-light-title/90 dark:text-dark-title/90 leading-7">
                   {sentence}
                 </span>
               </motion.li>
@@ -162,9 +163,9 @@ const ProjectDetails = () => {
             className="text-light-subtitle dark:text-dark-subtitle"
             aria-hidden="true"
           />
-          <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl dark:text-dark-title text-light-title">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl dark:text-dark-title text-light-title">
             {t("technologiesTitle")}
-          </h1>
+          </h2>
         </div>
         <ul
           role="list"
@@ -178,7 +179,7 @@ const ProjectDetails = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-2 px-2 py-1 sm:px-3 sm:py-2 rounded-xl border border-light-border dark:border-dark-border list-none text-xs sm:text-sm md:text-base break-words"
+              className="mb-2 px-2 py-1 sm:px-3 sm:py-2 rounded-xl border border-light-border dark:border-dark-border list-none text-sm sm:text-base break-words"
             >
               {technology}
             </motion.li>
@@ -199,7 +200,7 @@ const ProjectDetails = () => {
           <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <a
               href={projectData.live}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
+              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-sm sm:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -215,7 +216,7 @@ const ProjectDetails = () => {
           <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <a
               href={projectData.repo}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-xs sm:text-sm md:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
+              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-sm sm:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -226,6 +227,8 @@ const ProjectDetails = () => {
           </motion.li>
         )}
       </motion.ul>
+
+      <RelatedProjects currentId={id} />
     </motion.div>
   );
 };

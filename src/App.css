@@ -49,6 +49,15 @@ nav{
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: rgb(var(--accent-light-rgb)) !important;
 }

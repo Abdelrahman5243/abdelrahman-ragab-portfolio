@@ -11,7 +11,10 @@
         "title": "Abdelrahman Ragab Abdelbaky",
         "description": "Frontend Developer with 1.5+ years of professional experience building scalable e-commerce, LMS, and marketplace applications using React, Next.js, and Magento 2. Experienced in developing SSR and PWA applications with GraphQL, optimizing Core Web Vitals, improving SEO, integrating GA4/GTM, and building multilingual (AR/EN) applications with RTL/LTR support. Skilled in building reusable UI components, robust frontend architectures, and delivering production-ready user experiences in Agile teams.",
         "downloadCV": "Download CV",
-        "showCV": "Preview CV"
+        "showCV": "Preview CV",
+        "viewProjects": "View Projects",
+        "openToWork": "Open to Work",
+        "location": "Cairo, Egypt"
     },
     "skillsTitle": "Skills",
     "articlesTitle": "Articles",
@@ -542,6 +545,10 @@
         ]
     },
     "technologiesTitle": "Technologies Used",
+    "relatedProjects": "More Projects",
+    "articleNavigation": "Article navigation",
+    "previousArticle": "Previous",
+    "nextArticle": "Next",
     "copyright": "© 2024.",
     "seeMore": "Show More",
     "viewDetails": "View details",
