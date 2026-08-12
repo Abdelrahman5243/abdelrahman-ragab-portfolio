@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Codepen } from "lucide-react";
+import { Mail, Linkedin, MessageCircle, Github, Codepen } from "lucide-react";
 
 export const HERO_CONTENT = {
   titleKey: "hero.title",
@@ -15,6 +15,11 @@ export const HERO_CONTENT = {
       href: "https://linkedin.com/in/abdelrahman-ragab-9443b8264",
       icon: Linkedin,
       ariaLabel: "LinkedIn profile",
+    },
+    {
+      href: "https://wa.me/201021687760",
+      icon: MessageCircle,
+      ariaLabel: "WhatsApp",
     },
     {
       href: "https://github.com/Abdelrahman5243",
