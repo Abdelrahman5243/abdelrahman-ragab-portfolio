@@ -7,7 +7,7 @@ import { useThemeMode } from "../../hooks/useThemeMode";
 import { useTranslationMode } from "../../hooks/useTranslationMode";
 import { useTranslation } from "react-i18next";
 import { HashLink } from "react-router-hash-link";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -30,6 +30,27 @@ const Header = () => {
     setShowModal(false);
   };
 
+  const isNavItemActive = (href) => {
+    const [path, hash] = href.split("#");
+
+    if (hash) return location.pathname === path && location.hash === `#${hash}`;
+    if (href === "/projects") {
+      return location.pathname === "/projects" || location.pathname.startsWith("/project-details/");
+    }
+    if (href === "/all-articles") {
+      return location.pathname === "/all-articles" || location.pathname.startsWith("/article/");
+    }
+    return location.pathname === href;
+  };
+
+  const linkClassName = (href) => `
+    inline-flex items-center rounded-full px-2.5 py-1
+    whitespace-nowrap transition-colors duration-200
+    ${isNavItemActive(href)
+      ? "bg-light-blue/10 dark:bg-dark-blue/10 text-light-blue dark:text-dark-blue"
+      : "text-light-title dark:text-dark-title hover:text-light-blue dark:hover:text-dark-blue"}
+  `;
+
   useEffect(() => {
     if (isArticlePage && currentLang !== "en") {
       i18n.changeLanguage("en");
@@ -42,7 +63,7 @@ const Header = () => {
     <header className="flex justify-between items-center py-4">
       <button
         onClick={() => setShowModal(true)}
-        className="centered header_btn md:hidden"
+        className="centered header_btn lg:hidden"
         aria-label="Open menu"
       >
         <Menu />
@@ -55,18 +76,31 @@ const Header = () => {
         />
       )}
       <nav
-        className="p-2 px-3 sm:p-3 sm:px-5 border border-light-border dark:border-dark-border rounded-full hidden md:flex bg-light-secondary/70 dark:bg-dark-secondary/70 backdrop-blur-xl"
+        className="p-1.5 px-2 sm:p-1.5 sm:px-3 border border-light-border dark:border-dark-border rounded-full hidden lg:flex bg-light-secondary/70 dark:bg-dark-secondary/70 backdrop-blur-xl"
         aria-label="Main navigation"
       >
-        <ul className="flex gap-3 sm:gap-4 md:gap-5 lg:gap-6 text-sm md:text-base font-medium tracking-tight">
+        <ul className="flex gap-1.5 sm:gap-2 md:gap-3 text-sm md:text-base font-medium tracking-tight">
           {NAV_ITEMS.map((item) => (
-            <li
-              key={item.label}
-              className="hover:text-light-blue dark:hover:text-dark-blue whitespace-nowrap"
-            >
-              <HashLink to={item.href} aria-label={item.label}>
-                {item.label}
-              </HashLink>
+            <li key={item.label}>
+              {item.href.includes("#") ? (
+                <HashLink
+                  to={item.href}
+                  aria-label={item.label}
+                  className={linkClassName(item.href)}
+                  aria-current={isNavItemActive(item.href) ? "page" : undefined}
+                >
+                  {item.label}
+                </HashLink>
+              ) : (
+                <NavLink
+                  to={item.href}
+                  aria-label={item.label}
+                  className={linkClassName(item.href)}
+                  aria-current={isNavItemActive(item.href) ? "page" : undefined}
+                >
+                  {item.label}
+                </NavLink>
+              )}
             </li>
           ))}
         </ul>
@@ -77,9 +111,8 @@ const Header = () => {
           <button
             onClick={toggleLanguage}
             className="centered header_btn"
-            aria-label={`Switch to ${
-              currentLang === "en" ? "Arabic" : "English"
-            }`}
+            aria-label={`Switch to ${currentLang === "en" ? "Arabic" : "English"
+              }`}
           >
             <Languages />
           </button>

@@ -2,9 +2,23 @@ import React, { useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
+import { useLocation } from "react-router-dom";
 
 const Modal = ({ ITEMS, closeModal, showModal }) => {
   const modalRef = useRef(null);
+  const location = useLocation();
+
+  const isActive = (href) => {
+    const [path, hash] = href.split("#");
+    if (hash) return location.pathname === path && location.hash === `#${hash}`;
+    if (href === "/projects") {
+      return location.pathname === "/projects" || location.pathname.startsWith("/project-details/");
+    }
+    if (href === "/all-articles") {
+      return location.pathname === "/all-articles" || location.pathname.startsWith("/article/");
+    }
+    return location.pathname === href;
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -22,7 +36,7 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
 
   return createPortal(
     <div
-      className={`fixed inset-0 z-[60] bg-dark-secondary bg-opacity-70 backdrop-blur items-start justify-center ${
+      className={`fixed inset-0 z-[60] bg-dark-secondary bg-opacity-70 backdrop-blur-sm items-start justify-center modal-overlay ${
         showModal ? "flex" : "hidden"
       }`}
       role="dialog"
@@ -31,8 +45,8 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
     >
       <div
         ref={modalRef}
-        className="model max-w-[90%] w-[330px] relative bg-light-secondary dark:bg-dark-bgHeader modal-animation
-         mt-10 rounded-lg p-8 flex flex-col gap-4 text-light-subtitle dark:text-dark-subtitle"
+        className="model w-[min(300px,calc(100vw-2rem))] relative bg-light-secondary dark:bg-dark-bgHeader modal-animation
+         mt-6 rounded-lg p-6 flex flex-col gap-2 text-light-subtitle dark:text-dark-subtitle"
       >
         <button
           className="self-end"
@@ -44,8 +58,17 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
 
         <ul className="divide-y divide-opacity-10 dark:divide-dark-border capitalize">
           {ITEMS.map((item) => (
-            <li key={item.label} className="py-3 hover:text-dark-blue">
-              <HashLink to={item.href} className="text-sm" onClick={closeModal}>
+            <li key={item.label}>
+              <HashLink
+                to={item.href}
+                className={`flex items-center rounded-lg px-3 py-2.5 text-sm transition-colors duration-200 ${
+                  isActive(item.href)
+                    ? "bg-light-blue/10 dark:bg-dark-blue/10 text-light-blue dark:text-dark-blue"
+                    : "hover:bg-light-bgHeader dark:hover:bg-dark-bgHeader hover:text-light-blue dark:hover:text-dark-blue"
+                }`}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                onClick={closeModal}
+              >
                 {item.label}
               </HashLink>
             </li>
