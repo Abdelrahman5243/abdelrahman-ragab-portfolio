@@ -54,8 +54,7 @@ export const shouldLoadClarity = Boolean(CLARITY_PROJECT_ID);
 export const shouldLoadGaDirectly =
   Boolean(GA_MEASUREMENT_ID) && GA_DIRECT_REQUESTED && !GTM_ID;
 
-export const IS_PRODUCTION = env.PROD === true;
-export const IS_DEVELOPMENT = !IS_PRODUCTION;
+export const IS_DEVELOPMENT = !(env.PROD === true);
 
 /**
  * Debug logging: on in development, so you can see every event in the console

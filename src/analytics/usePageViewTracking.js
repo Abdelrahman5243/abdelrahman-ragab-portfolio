@@ -54,5 +54,3 @@ export const usePageViewTracking = ({ countHashAsPageView = false } = {}) => {
     }
   }, [key]);
 };
-
-export default usePageViewTracking;

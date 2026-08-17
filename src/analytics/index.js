@@ -4,7 +4,7 @@
  * discoverable and makes provider swaps a one-file change.
  *
  * Usage:
- *   import { button_click, file_download } from "../../analytics";
+ *   import { button_click, external_link_click } from "../../analytics";
  */
 
 export { default as AnalyticsProvider } from "./AnalyticsProvider";
@@ -13,21 +13,13 @@ export { usePageViewTracking } from "./usePageViewTracking";
 export {
   // generic
   custom_event,
-  trackEvent,
   trackPageView,
   // engagement
   button_click,
   form_submit,
-  search,
   external_link_click,
-  file_download,
-  // ecommerce
-  add_to_cart,
-  begin_checkout,
-  purchase,
   // Clarity-specific
   setClarityTag,
-  upgradeClaritySession,
 } from "./events";
 
 export {
@@ -44,6 +36,5 @@ export {
   GTM_ID,
   GA_MEASUREMENT_ID,
   CLARITY_PROJECT_ID,
-  IS_PRODUCTION,
   IS_DEVELOPMENT,
 } from "./config";
