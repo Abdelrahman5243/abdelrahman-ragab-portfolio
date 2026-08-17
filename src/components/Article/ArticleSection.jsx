@@ -39,18 +39,26 @@ const ArticleSection = ({ showAll }) => {
     loadArticles();
   }, [showAll, navigate]);
 
-  if (loading) return <div className="loader"></div>;
-  if (!articles || articles.length === 0) return null;
+  const seo = showAll && (
+    <SEO
+      title="Articles — Abdelrahman Ragab's Portfolio"
+      description="Technical articles by Abdelrahman Ragab covering React, performance, and frontend architecture."
+      path="/all-articles"
+    />
+  );
+
+  if (loading)
+    return (
+      <>
+        {seo}
+        <div className="loader"></div>
+      </>
+    );
+  if (!articles || articles.length === 0) return seo || null;
 
   return (
     <section id="articles" className="my-16 w-full">
-      {showAll && (
-        <SEO
-          title="Articles — Abdelrahman Ragab's Portfolio"
-          description="Technical articles by Abdelrahman Ragab covering React, performance, and frontend architecture."
-          path="/all-articles"
-        />
-      )}
+      {seo}
       <div className="flex gap-4 items-center mb-8 text-3xl">
         <BookOpenText className="text-light-subtitle dark:text-dark-subtitle" aria-hidden="true" />
         <h2 id="articles-title" className="title mb-0">
