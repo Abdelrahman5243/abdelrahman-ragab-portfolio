@@ -78,7 +78,10 @@ const ThumbnailGallery = ({ images = [] }) => {
             >
               {/* Close */}
               <button
-                onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeLightbox();
+                }}
                 className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label="Close gallery"
               >
@@ -102,7 +105,10 @@ const ThumbnailGallery = ({ images = [] }) => {
               {images.length > 1 && (
                 <>
                   <button
-                    onClick={(e) => { e.stopPropagation(); goToPrev(); }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToPrev();
+                    }}
                     className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                     aria-label="Previous image"
                   >
@@ -110,7 +116,10 @@ const ThumbnailGallery = ({ images = [] }) => {
                   </button>
 
                   <button
-                    onClick={(e) => { e.stopPropagation(); goToNext(); }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToNext();
+                    }}
                     className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                     aria-label="Next image"
                   >

@@ -29,8 +29,7 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
 
     if (showModal) {
       document.addEventListener("mousedown", handleClickOutside);
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [showModal, closeModal]);
 
@@ -48,11 +47,7 @@ const Modal = ({ ITEMS, closeModal, showModal }) => {
         className="model w-[min(300px,calc(100vw-2rem))] relative bg-light-secondary dark:bg-dark-bgHeader modal-animation
          mt-6 rounded-lg p-6 flex flex-col gap-2 text-light-subtitle dark:text-dark-subtitle"
       >
-        <button
-          className="self-end"
-          onClick={closeModal}
-          aria-label="Close modal"
-        >
+        <button className="self-end" onClick={closeModal} aria-label="Close modal">
           <X />
         </button>
 

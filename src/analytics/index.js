@@ -32,9 +32,4 @@ export {
   isBrowser,
 } from "./gtm";
 
-export {
-  GTM_ID,
-  GA_MEASUREMENT_ID,
-  CLARITY_PROJECT_ID,
-  IS_DEVELOPMENT,
-} from "./config";
+export { GTM_ID, GA_MEASUREMENT_ID, CLARITY_PROJECT_ID, IS_DEVELOPMENT } from "./config";

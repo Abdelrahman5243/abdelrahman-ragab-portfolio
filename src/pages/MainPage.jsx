@@ -42,11 +42,15 @@ function MainPage() {
       <Hero />
       <div className="divider"></div>
       <DeferredSection>
-        <Suspense fallback={null}><Skills /></Suspense>
+        <Suspense fallback={null}>
+          <Skills />
+        </Suspense>
       </DeferredSection>
       <div className="divider"></div>
       <DeferredSection>
-        <Suspense fallback={null}><Experience /></Suspense>
+        <Suspense fallback={null}>
+          <Experience />
+        </Suspense>
       </DeferredSection>
       <div className="divider"></div>
       <Suspense fallback={null}>
@@ -54,7 +58,9 @@ function MainPage() {
       </Suspense>
       <div className="divider"></div>
       <DeferredSection>
-        <Suspense fallback={null}><Education /></Suspense>
+        <Suspense fallback={null}>
+          <Education />
+        </Suspense>
       </DeferredSection>
       <div className="divider"></div>
       <DeferredSection>

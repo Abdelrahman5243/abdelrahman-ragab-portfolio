@@ -56,7 +56,10 @@ const RootLayout = () => {
       <a
         className={`rounded-full w-10 h-10 flex justify-center items-center
           fixed bottom-10 right-10 z-50 transition-all duration-300 border border-light-border dark:border-dark-border backdrop-blur-xl
-          bg-light-secondary/90 dark:bg-dark-secondary/90 text-light-title dark:text-dark-title hover:scale-105 hover:border-light-blue/60 dark:hover:border-dark-blue/60 ${showScrollButton ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
+          bg-light-secondary/90 dark:bg-dark-secondary/90 text-light-title dark:text-dark-title hover:scale-105 hover:border-light-blue/60 dark:hover:border-dark-blue/60 ${
+            showScrollButton
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-2 pointer-events-none"
           }`}
         href="#top"
         aria-label="Scroll to top"

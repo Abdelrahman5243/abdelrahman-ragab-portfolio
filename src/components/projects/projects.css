@@ -1,13 +1,13 @@
 .filter-btn {
-    min-width: 141px;
+  min-width: 141px;
 }
 
 .card {
-    width: 330px;
-    border-radius: 10px;
-    overflow: hidden;
+  width: 330px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card img {
-    width: 100%;
+  width: 100%;
 }

@@ -26,8 +26,7 @@ import {
 } from "./config";
 
 /** True only in a real browser. Guards every DOM/window touch for SSR safety. */
-export const isBrowser =
-  typeof window !== "undefined" && typeof document !== "undefined";
+export const isBrowser = typeof window !== "undefined" && typeof document !== "undefined";
 
 /** Cross-module-instance load flags (HMR-safe). */
 const flags = () => {
@@ -94,8 +93,7 @@ export const initGtm = () => {
   const script = document.createElement("script");
   script.id = "gtm-script";
   script.async = true;
-  const dl =
-    DATA_LAYER_NAME !== "dataLayer" ? `&l=${encodeURIComponent(DATA_LAYER_NAME)}` : "";
+  const dl = DATA_LAYER_NAME !== "dataLayer" ? `&l=${encodeURIComponent(DATA_LAYER_NAME)}` : "";
   script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(GTM_ID)}${dl}`;
   document.head.appendChild(script);
 
@@ -196,8 +194,7 @@ export const initAnalytics = () => {
 export const getAnalyticsStatus = () => {
   if (!isBrowser) return { ssr: true };
 
-  const count = (src) =>
-    document.querySelectorAll(`script[src*="${src}"]`).length;
+  const count = (src) => document.querySelectorAll(`script[src*="${src}"]`).length;
 
   return {
     gtm: {
@@ -217,8 +214,6 @@ export const getAnalyticsStatus = () => {
       scriptCount: count("clarity.ms/tag"),
       ready: Boolean(window.clarity),
     },
-    dataLayerLength: Array.isArray(window[DATA_LAYER_NAME])
-      ? window[DATA_LAYER_NAME].length
-      : 0,
+    dataLayerLength: Array.isArray(window[DATA_LAYER_NAME]) ? window[DATA_LAYER_NAME].length : 0,
   };
 };

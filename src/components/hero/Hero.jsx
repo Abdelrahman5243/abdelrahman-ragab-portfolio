@@ -8,18 +8,10 @@ const Hero = () => {
   const { t } = useTranslation("main");
 
   return (
-    <section
-      id="about"
-      aria-labelledby="hero-title"
-      className="flex flex-col items-center px-4"
-    >
+    <section id="about" aria-labelledby="hero-title" className="flex flex-col items-center px-4">
       <div className="flex mt-8 items-center flex-col-reverse md:flex-row py-8">
-        <div
-          className="left-section w-full text-center relative"
-        >
-          <div
-            className="flex justify-center mb-5"
-          >
+        <div className="left-section w-full text-center relative">
+          <div className="flex justify-center mb-5">
             <span
               className="
                 inline-flex items-center gap-2
@@ -61,9 +53,7 @@ const Hero = () => {
             {t("hero.jobTitle", "Front-End Developer")}
           </h2>
 
-          <div
-            className="flex justify-center mt-3"
-          >
+          <div className="flex justify-center mt-3">
             <span
               className="
                 inline-flex items-center gap-1
@@ -88,9 +78,7 @@ const Hero = () => {
             {t(HERO_CONTENT.descriptionKey)}
           </p>
 
-          <div
-            className="flex m-auto gap-4 mb-8 max-w-max mt-6 flex-wrap justify-center"
-          >
+          <div className="flex m-auto gap-4 mb-8 max-w-max mt-6 flex-wrap justify-center">
             <div>
               <HashLink
                 to="/#projects"

@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
-import { disableTransitionsMomentarily } from '../utils/disableTransitionsMomentarily';
+import { useState, useEffect } from "react";
+import { disableTransitionsMomentarily } from "../utils/disableTransitionsMomentarily";
 
 export const useThemeMode = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("currentMode") ?? "light"
-  );
+  const [theme, setTheme] = useState(localStorage.getItem("currentMode") ?? "light");
 
   useEffect(() => {
     document.body.classList.toggle("light", theme === "light");
@@ -19,4 +17,4 @@ export const useThemeMode = () => {
   };
 
   return { theme, toggleTheme };
-}; 
+};

@@ -56,10 +56,7 @@ const Projects = () => {
         className="flex items-center gap-4 mb-14 text-2xl sm:text-3xl md:text-4xl"
         variants={shouldReduceMotion ? undefined : sectionVariants}
       >
-        <Workflow
-          className="text-light-subtitle dark:text-dark-subtitle"
-          aria-hidden="true"
-        />
+        <Workflow className="text-light-subtitle dark:text-dark-subtitle" aria-hidden="true" />
         <h2 id="projects-title" className="title mb-0 leading-tight">
           {t("navigation.projects")}
         </h2>

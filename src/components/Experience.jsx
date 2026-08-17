@@ -71,12 +71,14 @@ const Experience = () => {
               {/* Timeline dot */}
               <div className="absolute start-0 top-6 w-[23px] h-[23px] rounded-full bg-light-blue dark:bg-dark-blue border-4 border-light-primary dark:border-dark-primary hidden sm:block shadow-[0_0_0_6px_rgb(var(--accent-light-rgb)_/_0.08)] dark:shadow-[0_0_0_6px_rgb(var(--accent-dark-rgb)_/_0.08)]" />
 
-              <div className="
+              <div
+                className="
                 p-5 sm:p-6 rounded-2xl
                 bg-light-secondary/95 dark:bg-dark-secondary/95
                 border border-light-border dark:border-dark-border
                 transition-colors duration-300
-              ">
+              "
+              >
                 {/* Header row */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                   <div>
@@ -87,7 +89,9 @@ const Experience = () => {
                       {item.company}
                     </p>
                   </div>
-                  <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${typeColors[item.type] ?? typeColors["training"]}`}>
+                  <span
+                    className={`text-xs font-semibold px-2.5 py-1 rounded-full ${typeColors[item.type] ?? typeColors["training"]}`}
+                  >
                     {typeLabels[item.type] ?? item.type}
                   </span>
                 </div>
@@ -95,12 +99,18 @@ const Experience = () => {
                 {/* Meta row */}
                 <div className="flex flex-wrap gap-4 mb-5">
                   <div className="flex items-center gap-1.5 text-sm text-light-subtitle dark:text-dark-subtitle">
-                    <Calendar size={14} className="text-light-blue dark:text-dark-blue flex-shrink-0" />
+                    <Calendar
+                      size={14}
+                      className="text-light-blue dark:text-dark-blue flex-shrink-0"
+                    />
                     <span>{item.period}</span>
                   </div>
                   {item.location && (
                     <div className="flex items-center gap-1.5 text-sm text-light-subtitle dark:text-dark-subtitle">
-                      <MapPin size={14} className="text-light-blue dark:text-dark-blue flex-shrink-0" />
+                      <MapPin
+                        size={14}
+                        className="text-light-blue dark:text-dark-blue flex-shrink-0"
+                      />
                       <span>{item.location}</span>
                     </div>
                   )}
@@ -148,7 +158,9 @@ const Experience = () => {
                               variants={listItemVariants}
                               className="flex items-start gap-2 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
                             >
-                              <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">-</span>
+                              <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">
+                                -
+                              </span>
                               <span>{ach}</span>
                             </motion.li>
                           ))}
@@ -179,7 +191,9 @@ const Experience = () => {
                         variants={listItemVariants}
                         className="flex items-start gap-2 text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-7"
                       >
-                        <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">-</span>
+                        <span className="text-light-blue dark:text-dark-blue mt-1 flex-shrink-0">
+                          -
+                        </span>
                         <span>{ach}</span>
                       </motion.li>
                     ))}

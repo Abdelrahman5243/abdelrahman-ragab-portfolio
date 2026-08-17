@@ -25,14 +25,8 @@ const read = (viteKey, nextKey) => {
 };
 
 export const GTM_ID = read("VITE_GTM_ID", "NEXT_PUBLIC_GTM_ID");
-export const GA_MEASUREMENT_ID = read(
-  "VITE_GA_MEASUREMENT_ID",
-  "NEXT_PUBLIC_GA_MEASUREMENT_ID"
-);
-export const CLARITY_PROJECT_ID = read(
-  "VITE_CLARITY_PROJECT_ID",
-  "NEXT_PUBLIC_CLARITY_PROJECT_ID"
-);
+export const GA_MEASUREMENT_ID = read("VITE_GA_MEASUREMENT_ID", "NEXT_PUBLIC_GA_MEASUREMENT_ID");
+export const CLARITY_PROJECT_ID = read("VITE_CLARITY_PROJECT_ID", "NEXT_PUBLIC_CLARITY_PROJECT_ID");
 
 /** GTM's dataLayer variable name. Keep in sync with your GTM container config. */
 export const DATA_LAYER_NAME = "dataLayer";
@@ -51,8 +45,7 @@ const GA_DIRECT_REQUESTED = read("VITE_GA_DIRECT", "NEXT_PUBLIC_GA_DIRECT") === 
 
 export const shouldLoadGtm = Boolean(GTM_ID);
 export const shouldLoadClarity = Boolean(CLARITY_PROJECT_ID);
-export const shouldLoadGaDirectly =
-  Boolean(GA_MEASUREMENT_ID) && GA_DIRECT_REQUESTED && !GTM_ID;
+export const shouldLoadGaDirectly = Boolean(GA_MEASUREMENT_ID) && GA_DIRECT_REQUESTED && !GTM_ID;
 
 export const IS_DEVELOPMENT = !(env.PROD === true);
 

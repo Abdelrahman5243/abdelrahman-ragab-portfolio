@@ -41,10 +41,7 @@ const App = () => {
           <Route path="/contact" element={<SectionPage section="contact" />} />
           <Route path="/project-details/:slug" element={<ProjectDetails />} />
           <Route path="/article/:slug" element={<ArticlePage />} />
-          <Route
-            path="/all-articles"
-            element={<ArticleSection showAll={true} />}
-          />
+          <Route path="/all-articles" element={<ArticleSection showAll={true} />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

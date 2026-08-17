@@ -1,558 +1,530 @@
 {
-    "navigation": {
-        "about": "من أنا",
-        "skills": "المهارات",
-        "experience": "الخبرات",
-        "projects": "المشروعات",
-        "contact": "اتصل بي",
-        "articles": "مقالاتي"
+  "navigation": {
+    "about": "من أنا",
+    "skills": "المهارات",
+    "experience": "الخبرات",
+    "projects": "المشروعات",
+    "contact": "اتصل بي",
+    "articles": "مقالاتي"
+  },
+  "hero": {
+    "title": "عبدالرحمن رجب عبدالباقي",
+    "description": "مطور واجهات أمامية، أمتلك أكثر من سنة ونصف من الخبرة الاحترافية في بناء تطبيقات تجارة إلكترونية وتعليم إلكتروني وأسواق قابلة للتوسع باستخدام React وNext.js وMagento 2. لديّ خبرة في تطوير تطبيقات SSR وPWA باستخدام GraphQL، وتحسين Core Web Vitals، وتحسين SEO، ودمج GA4/GTM، وبناء تطبيقات متعددة اللغات (AR/EN) مع دعم RTL/LTR. ماهر في بناء مكونات واجهة قابلة لإعادة الاستخدام، ومعماريات واجهات أمامية متينة، وتقديم تجارب مستخدم جاهزة للإنتاج ضمن فرق Agile.",
+    "downloadCV": "تحميل السيرة الذاتية",
+    "showCV": "عرض السيرة الذاتية",
+    "viewProjects": "المشاريع",
+    "openToWork": "متاح للعمل",
+    "location": "القاهرة، مصر"
+  },
+  "skillsTitle": "المهارات",
+  "articlesTitle": "مقالاتي",
+  "contact": {
+    "title": "تواصل معي",
+    "description": "تواصل معي لمزيد من التفاصيل وابقَ على اطلاع بأحدث مشاريعي.",
+    "successMessage": "شكرًا لك! تم إرسال رسالتك بنجاح. 👌",
+    "form": {
+      "emailLabel": "البريد الإلكتروني:",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "messageLabel": "الرسالة:",
+      "messagePlaceholder": "اكتب رسالتك هنا"
     },
-    "hero": {
-        "title": "عبدالرحمن رجب عبدالباقي",
-        "description": "مطور واجهات أمامية، أمتلك أكثر من سنة ونصف من الخبرة الاحترافية في بناء تطبيقات تجارة إلكترونية وتعليم إلكتروني وأسواق قابلة للتوسع باستخدام React وNext.js وMagento 2. لديّ خبرة في تطوير تطبيقات SSR وPWA باستخدام GraphQL، وتحسين Core Web Vitals، وتحسين SEO، ودمج GA4/GTM، وبناء تطبيقات متعددة اللغات (AR/EN) مع دعم RTL/LTR. ماهر في بناء مكونات واجهة قابلة لإعادة الاستخدام، ومعماريات واجهات أمامية متينة، وتقديم تجارب مستخدم جاهزة للإنتاج ضمن فرق Agile.",
-        "downloadCV": "تحميل السيرة الذاتية",
-        "showCV": "عرض السيرة الذاتية",
-        "viewProjects": "المشاريع",
-        "openToWork": "متاح للعمل",
-        "location": "القاهرة، مصر"
+    "submitButton": "إرسال"
+  },
+  "projects": {
+    "1": {
+      "categories": "ReactJS",
+      "badge": "Graduation",
+      "title": "منشئ المواقع",
+      "description": "منشئ مواقع شامل يظهر تقنيات تطوير الويب المتقدمة.",
+      "details": "يوفر هذا المشروع منصة قوية لإنشاء وتخصيص المواقع الإلكترونية. يتضمن ميزات متعددة لبناء وإدارة أقسام المواقع، والقوالب، والمحتوى، مما يظهر الفهم العميق لمبادئ وتقنيات تطوير الويب. يدعم التطبيق التبديل بين اللغتين العربية والإنجليزية، مما يعزز سهولة الوصول وتجربة المستخدم لجمهور متنوع. يمكن للمستخدمين تخصيص الأنماط باستخدام واجهة سهلة الاستخدام، ومعاينة التغييرات في الوقت الفعلي، وإنشاء المحتوى باستخدام الذكاء الاصطناعي. بالإضافة إلى ذلك، يسمح التطبيق للمستخدمين بترتيب واختيار بين أقسام متعددة، مما يضمن تجربة تصميم ويب مرنة ومخصصة. يمثل هذا المشروع ثمرة المهارات المكتسبة خلال الدراسة، ويشمل ممارسات التصميم المتجاوب وأفضل معايير البرمجة.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755179854/j1wjkbwncgtzg8hinibu.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1757778550/f0nuu3xcnfmfxjrnrysk.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180061/asyw4jiwcy0m2lzr2qmd.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1757778583/e5yz4mo0thhn9xwebx98.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755179857/xovmkprgoqqu9rs3e5nw.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/graduation-project",
+      "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Redux Persist",
+        "Axios",
+        "i18next",
+        "React Router",
+        "Swiper",
+        "AOS"
+      ]
     },
-    "skillsTitle": "المهارات",
-    "articlesTitle": "مقالاتي",
-    "contact": {
-        "title": "تواصل معي",
-        "description": "تواصل معي لمزيد من التفاصيل وابقَ على اطلاع بأحدث مشاريعي.",
-        "successMessage": "شكرًا لك! تم إرسال رسالتك بنجاح. 👌",
-        "form": {
-            "emailLabel": "البريد الإلكتروني:",
-            "emailPlaceholder": "أدخل بريدك الإلكتروني",
-            "messageLabel": "الرسالة:",
-            "messagePlaceholder": "اكتب رسالتك هنا"
-        },
-        "submitButton": "إرسال"
+    "2": {
+      "categories": "ReactJS",
+      "title": "لوحة تحليلات المنتجات",
+      "description": "نظام إدارة CRUD للمنتجات مع ميزات التحليل.",
+      "details": "يتيح هذا المشروع للمستخدمين إدارة المنتجات بفعالية من خلال تقديم وظائف لإضافة وتعديل وحذف معلومات المنتجات. يتضمن صفحة تحليل مفصلة تقدم رؤى وتمثيلات مرئية لمؤشرات الأداء الرئيسية للمنتجات. يضمن استخدام Redux Toolkit لإدارة الحالة تجربة مستخدم سلسة. يعزز SweetAlert التفاعل مع مطالبات التأكيد والإشعارات، مما يساهم في واجهة أنيقة. تم تحسين التطبيق للأداء، مما يضمن استجابة سريعة وتصميم بديهي يعزز الإنتاجية.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185159/m7o5khkavtxn33jztfwp.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185169/fjyssjlgso6dqz8lvlmo.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185178/c73ltttd0ipprplo4i9o.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185190/c8dtqenfhjiqxsqz1fxd.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185198/e685sptgxmsdpfdayksv.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/Product-CRUD-Dashboard",
+      "live": "https://product-crud-dashboard.vercel.app/",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "CSS",
+        "Recharts",
+        "Axios",
+        "SweetAlert",
+        "React Router DOM"
+      ]
     },
-    "projects": {
-        "1": {
-            "categories": "ReactJS",
-            "badge": "Graduation",
-            "title": "منشئ المواقع",
-            "description": "منشئ مواقع شامل يظهر تقنيات تطوير الويب المتقدمة.",
-            "details": "يوفر هذا المشروع منصة قوية لإنشاء وتخصيص المواقع الإلكترونية. يتضمن ميزات متعددة لبناء وإدارة أقسام المواقع، والقوالب، والمحتوى، مما يظهر الفهم العميق لمبادئ وتقنيات تطوير الويب. يدعم التطبيق التبديل بين اللغتين العربية والإنجليزية، مما يعزز سهولة الوصول وتجربة المستخدم لجمهور متنوع. يمكن للمستخدمين تخصيص الأنماط باستخدام واجهة سهلة الاستخدام، ومعاينة التغييرات في الوقت الفعلي، وإنشاء المحتوى باستخدام الذكاء الاصطناعي. بالإضافة إلى ذلك، يسمح التطبيق للمستخدمين بترتيب واختيار بين أقسام متعددة، مما يضمن تجربة تصميم ويب مرنة ومخصصة. يمثل هذا المشروع ثمرة المهارات المكتسبة خلال الدراسة، ويشمل ممارسات التصميم المتجاوب وأفضل معايير البرمجة.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755179854/j1wjkbwncgtzg8hinibu.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1757778550/f0nuu3xcnfmfxjrnrysk.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180061/asyw4jiwcy0m2lzr2qmd.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1757778583/e5yz4mo0thhn9xwebx98.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755179857/xovmkprgoqqu9rs3e5nw.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/graduation-project",
-            "live": "https://zagwebbuilder-git-main-m2001saids-projects.vercel.app/en",
-            "technologies": [
-                "JavaScript",
-                "React",
-                "Tailwind CSS",
-                "Redux Toolkit",
-                "Redux Persist",
-                "Axios",
-                "i18next",
-                "React Router",
-                "Swiper",
-                "AOS"
-            ]
+    "3": {
+      "categories": "ReactJS",
+      "title": "المحفظة الشخصية",
+      "description": "موقع محفظة شخصية يعرض أعمال ومشاريع عبد الرحمن رجب.",
+      "details": "يعرض هذا الموقع المحفظة الشخصية المشاريع والمهارات والخبرات. يتضمن أقسامًا لعرض المشاريع، السيرة الذاتية، معلومات الاتصال، والمزيد. تم تصميمه بشكل فعال لتقديم الملف المهني لعبد الرحمن رجب.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180628/rehtgvfkwciytx1djlov.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180644/mxkm0dt2moq7rmwlljr5.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180654/adqmxor5rc7jpxwacxyu.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180665/kquyweptn0bapx8yvrol.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/abdelrahman-ragab-portfolio",
+      "live": "https://abdelrahman-ragab-portfolio-ten.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Formspree",
+        "Framer Motion",
+        "i18next",
+        "Lottie",
+        "React Router DOM"
+      ]
+    },
+    "4": {
+      "categories": "ReactJS",
+      "title": "مشغل تلاوة القرآن",
+      "description": "تطبيق React لعرض آيات القرآن مع ميزات تشغيل الصوت.",
+      "details": "يقدم هذا المشروع واجهة شاملة لقراءة واستماع آيات القرآن. يتضمن ميزات رئيسية مثل تشغيل الصوت لكل آية، التنقل بين السور والآيات، ووظيفة التشغيل التلقائي التي تواصل تشغيل الصوت أثناء تنقل المستخدم إلى الآية التالية. يدير التطبيق الحالة باستخدام Redux Toolkit لتتبع السورة الحالية، الآية، وتقدم التشغيل الصوتي، مما يضمن تجربة مستخدم سلسة واستجابة سريعة. بالإضافة إلى ذلك، يتضمن المشروع دعم الوضع الداكن لقراءة مريحة وحفظ الحالة التي تحفظ تقدم المستخدم عبر الجلسات باستخدام التخزين المحلي. كما تم إعطاء الأولوية لتحسين الأداء من خلال إدارة ملفات الصوت وبيانات الآيات بشكل فعال مع الحفاظ على أوقات استجابة سريعة.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185221/bn20bogxq3nwhjsartav.png",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185263/h07leayntpdmisvthoj4.jpg",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185270/wdsduvn9qak1ucfshklp.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/quran-app",
+      "live": "https://quran-app-one-tau.vercel.app",
+      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
+    },
+    "5": {
+      "categories": "ReactJS",
+      "title": "متجر المطاعم والسوق",
+      "description": "موقع تجارة إلكترونية للمطعم والسوق، مع ميزات عرض المنتجات ووظائف السلة.",
+      "details": "يجمع هذا المشروع بين وظائف كل من المطعم والسوق في منصة تجارة إلكترونية واحدة. يمكن للمستخدمين تصفح المنتجات بسهولة، وإضافة العناصر إلى سلتهم، وإكمال الطلبات بكل سهولة. يتميز النظام بتصميم نظيف وسهل الاستخدام، مما يضمن تجربة مستخدم محسنة. يتضمن أقسامًا رئيسية مثل نداءات للعمل لتشجيع تفاعل المستخدم، وقسم ميزات مخصص يبرز الجوانب الفريدة للمنصة، وقسم الشهادات الذي يعرض تعليقات العملاء. تعمل هذه العناصر معًا لتوفير تجربة مستخدم احترافية وجذابة.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180511/cgyujxutz9cj4pebe2e2.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180550/gp6fmwvoxgj3x3t9xacj.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180565/aogjr0lzkndadl22wd1d.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180581/wf0ov2zau6zbdqwhe62y.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/restaurant-e-commerce",
+      "live": "https://restaurant-e-commerce.vercel.app/",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "React Slick",
+        "useContext",
+        "React Router DOM"
+      ]
+    },
+    "6": {
+      "categories": "NextJs",
+      "title": "منصة دورات تعليمية في التصميم الجرافيكي",
+      "description": "منصة ويب مخصصة باستخدام Next.js وTailwind CSS لدورات تصميم الجرافيك، مع صفحات هبوط استجابة وتجربة مستخدم سلسة.",
+      "details": "تم تحسين المنصة لزيادة تفاعل المستخدمين، مع تصميم حديث ومتجاوب يناسب جميع أحجام الشاشات. تعرض صفحة الهبوط المزايا والخصائص الأساسية للدورات، وتم تصميمها باستخدام Tailwind CSS للحصول على تصميم سريع ومتوافق مع الأجهزة المحمولة وحركات سلسة. يُظهر هذا المشروع الخبرة في إنشاء صفحات هبوط تفاعلية للغاية تجذب انتباه المستخدم وتروج للتسجيل في الدورات بسهولة.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185488/mkfd0sbrv0vldkblpowa.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185495/njov6hytwznmq6ibdnfl.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185502/xmsonkdwe3wcrsaieepy.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185510/px9igbnrc21iecear38j.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185518/recw8y5swawhtrusk2lm.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185526/q7odrhxvhwhhfrnagrnh.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185534/jq6b2io1k4calcgaaqcq.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/designshub-courses-platform",
+      "live": "https://designshub-courses-platform.vercel.app",
+      "technologies": ["Next.js", "Tailwind CSS"]
+    },
+    "7": {
+      "categories": "HTML & CSS & JS",
+      "title": "موقع مركز الألعاب",
+      "description": "منصة ديناميكية تم بناؤها كمركز لاكتشاف واستكشاف مجموعة واسعة من الألعاب.",
+      "details": "هذا المشروع هو منصة شاملة للألعاب مصممة لمساعدة المستخدمين على اكتشاف واستكشاف ألعاب جديدة. يتضمن واجهة تفاعلية وجذابة مع قوائم ألعاب منظمة ووظائف بحث، مما يوفر تجربة مستخدم سلسة. يركز التصميم على إنشاء تجربة تصفح بديهية مع تخطيطات متجاوبة، مما يضمن التوافق عبر أجهزة متعددة. تم بناؤه باستخدام HTML وCSS وJavaScript، ويحتوي على عناصر تفاعلية لتعزيز رحلة المستخدم.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185352/qf1elcznizlo3qp3j2cp.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185359/rwt3wlaay0cxwtxt4oci.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185367/gvpdwp4qtto0gogswd76.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185374/zeizjfwyfoetukrzrajf.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185384/qeiiwe6odsvsvscox7bd.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185391/dv0udy6xd5ncdudzwelx.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185401/gmxxcky2ppqwcru9xve5.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185410/b5mqeodutjkk0g5rtlei.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/game-hub-website",
+      "live": "https://abdelrahman5243.github.io/game-hub-website",
+      "technologies": ["HTML", "JavaScript", "CSS"]
+    },
+    "8": {
+      "categories": "ReactJS",
+      "title": "صفحة هبوط للمطعم",
+      "description": "صفحة هبوط للمطعم جذابة بصريًا وعالية الاستجابة.",
+      "details": "يسلط هذا المشروع الضوء على صفحة هبوط أنيقة ومحترفة لمطعم، تم بناؤها مع التركيز على التصميم المتجاوب وتجربة مستخدم سلسة عبر جميع الأجهزة. تشمل الميزات الرئيسية أقسامًا بارزة للنداءات للعمل، وصور عالية الجودة، وتنقل سلس. تم تصميم الصفحة لجذب اهتمام الزوار وزيادة التحويلات من خلال رسائل واضحة وتصاميم جذابة. تم تطويرها باستخدام React لتحديث المحتوى الديناميكي، مما يضمن القابلية للتوسع وتحسين الأداء.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185290/avjntrf5a76p5lzkm4df.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185300/hqif6dzopnxyxgbnz42r.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185309/gkj6y5fnn7ejdf7tbuob.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185322/sqdca9ffp0zrjttllv8y.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185334/naz1bxvvyzk9c0jb6vdu.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/Restaurant-Landing-Page",
+      "live": "https://myapp2-kappa.vercel.app/",
+      "technologies": ["JavaScript", "React", "CSS"]
+    },
+    "9": {
+      "categories": "HTML & CSS & JS",
+      "title": "معرض مطور الويب",
+      "description": "موقع ويب محفظة احترافية تم إنشاؤه لعرض مهارات وتقنيات تطوير الويب.",
+      "details": "يعد هذا الموقع محفظة احترافية لعرض مشاريع تطوير الويب المختلفة، والمهارات، والخبرات. يقدم عرضًا شاملًا لكفاءة تطوير الويب من خلال تصميم منظم جيدًا وأقسام تفاعلية. يركز المشروع على التصميم النظيف والميزات المتجاوبة لجذب الزوار أثناء عرض المشاريع بتنسيق بصري جذاب.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185439/chyh1o01chkkibmiscdj.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185446/evpyaeokfdgn3xxojrba.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185453/a0xgwe5lurlqewcndfec.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185460/mdocz4xxss1il6vf9r2p.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/Web-Developer-Showcase",
+      "live": "https://abdelrahman5243.github.io/Web-Developer-Showcase",
+      "technologies": ["HTML", "CSS"]
+    },
+    "10": {
+      "categories": "ReactJS",
+      "company": "CROCOIT",
+      "title": "صيدلية المصري - متجر إلكتروني PWA",
+      "description": "متجر Magento PWA Studio في بيئة الإنتاج لصيدلية إلكترونية بسوق عربي RTL، مبني على Venia بأكثر من 100 مكون UI و50 talon، مع checkout يدعم 7 طرق دفع وخط أنابيب صور محسّن.",
+      "details": "متجر Magento PWA Studio في بيئة الإنتاج لصيدلية إلكترونية بسوق عربي RTL، مبني على Venia بأكثر من 100 مكون UI و50 hook (talons). يتضمن checkout بـ 7 طرق دفع، نظام أحداث بـ RxJS يغذّي GA4، دعم عربي/إنجليزي، خط أنابيب صور محسّن مع Workbox service worker، ترجمة تلقائية للزوار الأجانب، وتحسينات SEO/GEO.",
+      "detailGroups": [
+        {
+          "title": "نظرة عامة",
+          "items": [
+            "متجر Magento PWA Studio في بيئة الإنتاج لصيدلية إلكترونية بسوق عربي RTL.",
+            "مبني على Venia بأكثر من 100 مكون UI و50 hook (talons)."
+          ]
         },
-        "2": {
-            "categories": "ReactJS",
-            "title": "لوحة تحليلات المنتجات",
-            "description": "نظام إدارة CRUD للمنتجات مع ميزات التحليل.",
-            "details": "يتيح هذا المشروع للمستخدمين إدارة المنتجات بفعالية من خلال تقديم وظائف لإضافة وتعديل وحذف معلومات المنتجات. يتضمن صفحة تحليل مفصلة تقدم رؤى وتمثيلات مرئية لمؤشرات الأداء الرئيسية للمنتجات. يضمن استخدام Redux Toolkit لإدارة الحالة تجربة مستخدم سلسة. يعزز SweetAlert التفاعل مع مطالبات التأكيد والإشعارات، مما يساهم في واجهة أنيقة. تم تحسين التطبيق للأداء، مما يضمن استجابة سريعة وتصميم بديهي يعزز الإنتاجية.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185159/m7o5khkavtxn33jztfwp.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185169/fjyssjlgso6dqz8lvlmo.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185178/c73ltttd0ipprplo4i9o.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185190/c8dtqenfhjiqxsqz1fxd.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185198/e685sptgxmsdpfdayksv.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/Product-CRUD-Dashboard",
-            "live": "https://product-crud-dashboard.vercel.app/",
-            "technologies": [
-                "JavaScript",
-                "React",
-                "Redux Toolkit",
-                "Tailwind CSS",
-                "CSS",
-                "Recharts",
-                "Axios",
-                "SweetAlert",
-                "React Router DOM"
-            ]
+        {
+          "title": "الدفع والـ Checkout",
+          "items": [
+            "بناء checkout يدعم 7 طرق دفع: Braintree وApple Pay وCheckout.com وTamara وTabby وvalU والدفع عند الاستلام.",
+            "التعامل مع السلة اللي تنقسم لأكثر من طلب، واستعادة السلة لما الدفع يفشل في النص عشان المستخدم يقدر يعيد المحاولة."
+          ]
         },
-        "3": {
-            "categories": "ReactJS",
-            "title": "المحفظة الشخصية",
-            "description": "موقع محفظة شخصية يعرض أعمال ومشاريع عبد الرحمن رجب.",
-            "details": "يعرض هذا الموقع المحفظة الشخصية المشاريع والمهارات والخبرات. يتضمن أقسامًا لعرض المشاريع، السيرة الذاتية، معلومات الاتصال، والمزيد. تم تصميمه بشكل فعال لتقديم الملف المهني لعبد الرحمن رجب.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180628/rehtgvfkwciytx1djlov.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180644/mxkm0dt2moq7rmwlljr5.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180654/adqmxor5rc7jpxwacxyu.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180665/kquyweptn0bapx8yvrol.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/abdelrahman-ragab-portfolio",
-            "live": "https://abdelrahman-ragab-portfolio-ten.vercel.app/",
-            "technologies": [
-                "React",
-                "Tailwind CSS",
-                "Formspree",
-                "Framer Motion",
-                "i18next",
-                "Lottie",
-                "React Router DOM"
-            ]
+        {
+          "title": "الأحداث والتحليلات",
+          "items": [
+            "إضافة نظام أحداث فوق RxJS بحيث إن أجزاء التحليلات والواجهة اللي بتتحمّل متأخر تستقبل الأحداث اللي حصلت قبلها.",
+            "ربطه بـ GA4 dataLayer للسلة والـ checkout وتتبع التحويلات."
+          ]
         },
-        "4": {
-            "categories": "ReactJS",
-            "title": "مشغل تلاوة القرآن",
-            "description": "تطبيق React لعرض آيات القرآن مع ميزات تشغيل الصوت.",
-            "details": "يقدم هذا المشروع واجهة شاملة لقراءة واستماع آيات القرآن. يتضمن ميزات رئيسية مثل تشغيل الصوت لكل آية، التنقل بين السور والآيات، ووظيفة التشغيل التلقائي التي تواصل تشغيل الصوت أثناء تنقل المستخدم إلى الآية التالية. يدير التطبيق الحالة باستخدام Redux Toolkit لتتبع السورة الحالية، الآية، وتقدم التشغيل الصوتي، مما يضمن تجربة مستخدم سلسة واستجابة سريعة. بالإضافة إلى ذلك، يتضمن المشروع دعم الوضع الداكن لقراءة مريحة وحفظ الحالة التي تحفظ تقدم المستخدم عبر الجلسات باستخدام التخزين المحلي. كما تم إعطاء الأولوية لتحسين الأداء من خلال إدارة ملفات الصوت وبيانات الآيات بشكل فعال مع الحفاظ على أوقات استجابة سريعة.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185221/bn20bogxq3nwhjsartav.png",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185263/h07leayntpdmisvthoj4.jpg",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185270/wdsduvn9qak1ucfshklp.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/quran-app",
-            "live": "https://quran-app-one-tau.vercel.app",
-            "technologies": [
-                "JavaScript",
-                "React",
-                "Redux Toolkit",
-                "Tailwind CSS"
-            ]
+        {
+          "title": "الدعم العربي / الإنجليزي",
+          "items": [
+            "إضافة معالجة RTL/LTR بـ PostCSS-RTL وReact-Intl، مع تبديل store view يكتشف الإدخال العربي ويبدّل store view في Magento وقت التشغيل.",
+            "بناء حقل هاتف دول باستخدام Intl.DisplayNames بأسماء دول مترجمة وتحقق لكل دولة."
+          ]
         },
-        "5": {
-            "categories": "ReactJS",
-            "title": "متجر المطاعم والسوق",
-            "description": "موقع تجارة إلكترونية للمطعم والسوق، مع ميزات عرض المنتجات ووظائف السلة.",
-            "details": "يجمع هذا المشروع بين وظائف كل من المطعم والسوق في منصة تجارة إلكترونية واحدة. يمكن للمستخدمين تصفح المنتجات بسهولة، وإضافة العناصر إلى سلتهم، وإكمال الطلبات بكل سهولة. يتميز النظام بتصميم نظيف وسهل الاستخدام، مما يضمن تجربة مستخدم محسنة. يتضمن أقسامًا رئيسية مثل نداءات للعمل لتشجيع تفاعل المستخدم، وقسم ميزات مخصص يبرز الجوانب الفريدة للمنصة، وقسم الشهادات الذي يعرض تعليقات العملاء. تعمل هذه العناصر معًا لتوفير تجربة مستخدم احترافية وجذابة.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180511/cgyujxutz9cj4pebe2e2.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180550/gp6fmwvoxgj3x3t9xacj.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180565/aogjr0lzkndadl22wd1d.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180581/wf0ov2zau6zbdqwhe62y.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/restaurant-e-commerce",
-            "live": "https://restaurant-e-commerce.vercel.app/",
-            "technologies": [
-                "JavaScript",
-                "React",
-                "Tailwind CSS",
-                "React Slick",
-                "useContext",
-                "React Router DOM"
-            ]
+        {
+          "title": "الصور والتخزين",
+          "items": [
+            "تحسين تحميل الصور بخط أنابيب يبدّل بين تحويلات صور Cloudflare وخدمة خلفية حسب المصدر، ويقدّم WebP/JPG/PNG.",
+            "إعداد Workbox service worker باستراتيجيات تخزين مختلفة للصور والـ JS والـ HTML لتحميل أسرع ودعم العمل بدون إنترنت."
+          ]
         },
-        "6": {
-            "categories": "NextJs",
-            "title": "منصة دورات تعليمية في التصميم الجرافيكي",
-            "description": "منصة ويب مخصصة باستخدام Next.js وTailwind CSS لدورات تصميم الجرافيك، مع صفحات هبوط استجابة وتجربة مستخدم سلسة.",
-            "details": "تم تحسين المنصة لزيادة تفاعل المستخدمين، مع تصميم حديث ومتجاوب يناسب جميع أحجام الشاشات. تعرض صفحة الهبوط المزايا والخصائص الأساسية للدورات، وتم تصميمها باستخدام Tailwind CSS للحصول على تصميم سريع ومتوافق مع الأجهزة المحمولة وحركات سلسة. يُظهر هذا المشروع الخبرة في إنشاء صفحات هبوط تفاعلية للغاية تجذب انتباه المستخدم وتروج للتسجيل في الدورات بسهولة.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185488/mkfd0sbrv0vldkblpowa.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185495/njov6hytwznmq6ibdnfl.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185502/xmsonkdwe3wcrsaieepy.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185510/px9igbnrc21iecear38j.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185518/recw8y5swawhtrusk2lm.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185526/q7odrhxvhwhhfrnagrnh.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185534/jq6b2io1k4calcgaaqcq.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/designshub-courses-platform",
-            "live": "https://designshub-courses-platform.vercel.app",
-            "technologies": [
-                "Next.js",
-                "Tailwind CSS"
-            ]
+        {
+          "title": "ترجمة تلقائية للزوار الأجانب",
+          "items": [
+            "اكتشاف لغة متصفح الزائر: زوار العربية/الإنجليزية مش بيشوفوا أي تغيير، وباقي اللغات المتجر بيترجم تلقائياً عبر Google Translate مع شريط صغير للتبديل أو الرجوع للأصل."
+          ]
         },
-        "7": {
-            "categories": "HTML & CSS & JS",
-            "title": "موقع مركز الألعاب",
-            "description": "منصة ديناميكية تم بناؤها كمركز لاكتشاف واستكشاف مجموعة واسعة من الألعاب.",
-            "details": "هذا المشروع هو منصة شاملة للألعاب مصممة لمساعدة المستخدمين على اكتشاف واستكشاف ألعاب جديدة. يتضمن واجهة تفاعلية وجذابة مع قوائم ألعاب منظمة ووظائف بحث، مما يوفر تجربة مستخدم سلسة. يركز التصميم على إنشاء تجربة تصفح بديهية مع تخطيطات متجاوبة، مما يضمن التوافق عبر أجهزة متعددة. تم بناؤه باستخدام HTML وCSS وJavaScript، ويحتوي على عناصر تفاعلية لتعزيز رحلة المستخدم.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185352/qf1elcznizlo3qp3j2cp.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185359/rwt3wlaay0cxwtxt4oci.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185367/gvpdwp4qtto0gogswd76.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185374/zeizjfwyfoetukrzrajf.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185384/qeiiwe6odsvsvscox7bd.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185391/dv0udy6xd5ncdudzwelx.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185401/gmxxcky2ppqwcru9xve5.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185410/b5mqeodutjkk0g5rtlei.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/game-hub-website",
-            "live": "https://abdelrahman5243.github.io/game-hub-website",
-            "technologies": [
-                "HTML",
-                "JavaScript",
-                "CSS"
-            ]
-        },
-        "8": {
-            "categories": "ReactJS",
-            "title": "صفحة هبوط للمطعم",
-            "description": "صفحة هبوط للمطعم جذابة بصريًا وعالية الاستجابة.",
-            "details": "يسلط هذا المشروع الضوء على صفحة هبوط أنيقة ومحترفة لمطعم، تم بناؤها مع التركيز على التصميم المتجاوب وتجربة مستخدم سلسة عبر جميع الأجهزة. تشمل الميزات الرئيسية أقسامًا بارزة للنداءات للعمل، وصور عالية الجودة، وتنقل سلس. تم تصميم الصفحة لجذب اهتمام الزوار وزيادة التحويلات من خلال رسائل واضحة وتصاميم جذابة. تم تطويرها باستخدام React لتحديث المحتوى الديناميكي، مما يضمن القابلية للتوسع وتحسين الأداء.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185290/avjntrf5a76p5lzkm4df.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185300/hqif6dzopnxyxgbnz42r.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185309/gkj6y5fnn7ejdf7tbuob.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185322/sqdca9ffp0zrjttllv8y.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185334/naz1bxvvyzk9c0jb6vdu.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/Restaurant-Landing-Page",
-            "live": "https://myapp2-kappa.vercel.app/",
-            "technologies": [
-                "JavaScript",
-                "React",
-                "CSS"
-            ]
-        },
-        "9": {
-            "categories": "HTML & CSS & JS",
-            "title": "معرض مطور الويب",
-            "description": "موقع ويب محفظة احترافية تم إنشاؤه لعرض مهارات وتقنيات تطوير الويب.",
-            "details": "يعد هذا الموقع محفظة احترافية لعرض مشاريع تطوير الويب المختلفة، والمهارات، والخبرات. يقدم عرضًا شاملًا لكفاءة تطوير الويب من خلال تصميم منظم جيدًا وأقسام تفاعلية. يركز المشروع على التصميم النظيف والميزات المتجاوبة لجذب الزوار أثناء عرض المشاريع بتنسيق بصري جذاب.",
-            "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185439/chyh1o01chkkibmiscdj.webp",
-            "screens_url": [
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185446/evpyaeokfdgn3xxojrba.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185453/a0xgwe5lurlqewcndfec.webp",
-                "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185460/mdocz4xxss1il6vf9r2p.webp"
-            ],
-            "repo": "https://github.com/Abdelrahman5243/Web-Developer-Showcase",
-            "live": "https://abdelrahman5243.github.io/Web-Developer-Showcase",
-            "technologies": [
-                "HTML",
-                "CSS"
-            ]
-        },
-        "10": {
-            "categories": "ReactJS",
-            "company": "CROCOIT",
-            "title": "صيدلية المصري - متجر إلكتروني PWA",
-            "description": "متجر Magento PWA Studio في بيئة الإنتاج لصيدلية إلكترونية بسوق عربي RTL، مبني على Venia بأكثر من 100 مكون UI و50 talon، مع checkout يدعم 7 طرق دفع وخط أنابيب صور محسّن.",
-            "details": "متجر Magento PWA Studio في بيئة الإنتاج لصيدلية إلكترونية بسوق عربي RTL، مبني على Venia بأكثر من 100 مكون UI و50 hook (talons). يتضمن checkout بـ 7 طرق دفع، نظام أحداث بـ RxJS يغذّي GA4، دعم عربي/إنجليزي، خط أنابيب صور محسّن مع Workbox service worker، ترجمة تلقائية للزوار الأجانب، وتحسينات SEO/GEO.",
-            "detailGroups": [
-                {
-                    "title": "نظرة عامة",
-                    "items": [
-                        "متجر Magento PWA Studio في بيئة الإنتاج لصيدلية إلكترونية بسوق عربي RTL.",
-                        "مبني على Venia بأكثر من 100 مكون UI و50 hook (talons)."
-                    ]
-                },
-                {
-                    "title": "الدفع والـ Checkout",
-                    "items": [
-                        "بناء checkout يدعم 7 طرق دفع: Braintree وApple Pay وCheckout.com وTamara وTabby وvalU والدفع عند الاستلام.",
-                        "التعامل مع السلة اللي تنقسم لأكثر من طلب، واستعادة السلة لما الدفع يفشل في النص عشان المستخدم يقدر يعيد المحاولة."
-                    ]
-                },
-                {
-                    "title": "الأحداث والتحليلات",
-                    "items": [
-                        "إضافة نظام أحداث فوق RxJS بحيث إن أجزاء التحليلات والواجهة اللي بتتحمّل متأخر تستقبل الأحداث اللي حصلت قبلها.",
-                        "ربطه بـ GA4 dataLayer للسلة والـ checkout وتتبع التحويلات."
-                    ]
-                },
-                {
-                    "title": "الدعم العربي / الإنجليزي",
-                    "items": [
-                        "إضافة معالجة RTL/LTR بـ PostCSS-RTL وReact-Intl، مع تبديل store view يكتشف الإدخال العربي ويبدّل store view في Magento وقت التشغيل.",
-                        "بناء حقل هاتف دول باستخدام Intl.DisplayNames بأسماء دول مترجمة وتحقق لكل دولة."
-                    ]
-                },
-                {
-                    "title": "الصور والتخزين",
-                    "items": [
-                        "تحسين تحميل الصور بخط أنابيب يبدّل بين تحويلات صور Cloudflare وخدمة خلفية حسب المصدر، ويقدّم WebP/JPG/PNG.",
-                        "إعداد Workbox service worker باستراتيجيات تخزين مختلفة للصور والـ JS والـ HTML لتحميل أسرع ودعم العمل بدون إنترنت."
-                    ]
-                },
-                {
-                    "title": "ترجمة تلقائية للزوار الأجانب",
-                    "items": [
-                        "اكتشاف لغة متصفح الزائر: زوار العربية/الإنجليزية مش بيشوفوا أي تغيير، وباقي اللغات المتجر بيترجم تلقائياً عبر Google Translate مع شريط صغير للتبديل أو الرجوع للأصل."
-                    ]
-                },
-                {
-                    "title": "SEO و GEO",
-                    "items": [
-                        "تحسين SEO/GEO (تحسين لمحركات الذكاء التوليدي) عبر المتجر: إضافة canonical URLs، وhreflang للصفحات ثنائية اللغة، ووسوم Open Graph / Twitter Card.",
-                        "إضافة وإصلاح البيانات المنظمة (JSON-LD): Product وOrganization وAggregateRating وBreadcrumbList وschema للمؤسِّس (Person) وFAQPage - وتنظيف أوصاف الميتا وروابط الصور المكسورة."
-                    ]
-                }
-            ],
-            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
-            "screens_url": [
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925037/Screenshot_from_2026-06-08_16-20-10_c7nvka.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925036/Screenshot_from_2026-06-08_16-20-42_v7vs1e.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925035/Screenshot_from_2026-06-08_16-21-07_rvdphw.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925033/Screenshot_from_2026-06-08_16-21-50_arwxtb.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925031/Screenshot_from_2026-06-08_16-20-50_rxxhbs.png"
-            ],
-            "repo": "#",
-            "live": "https://almasrypharmacy.com/",
-            "technologies": [
-                "React",
-                "Magento PWA Studio 14.3.1",
-                "Apollo Client",
-                "GraphQL",
-                "Redux",
-                "RxJS",
-                "Workbox",
-                "Tailwind CSS",
-                "PostCSS RTL",
-                "React-Intl",
-                "Cloudflare",
-                "Webpack",
-                "GA4 / GTM"
-            ]
-        },
-        "11": {
-            "categories": "NextJs",
-            "company": "CROCOIT",
-            "featured": true,
-            "title": "SPC Online Academy - منصة LMS الطبية",
-            "description": "منصة تعليم طبية (LMS) مبنية بـ Next.js (App Router) وReact 19، فيها أقسام عامة وللطالب وللمدرس. تتضمن مشغل فيديو HLS مخصص، حماية للمحتوى، وcheckout بطرق دفع متعددة.",
-            "details": "منصة تعليم طبية (LMS) مبنية بـ Next.js (App Router) وReact 19، فيها أقسام عامة وللطالب وللمدرس. تتضمن مشغل فيديو HLS مخصص، حماية لمحتوى الفيديو، دعم عربي/إنجليزي مع RTL/LTR، مصادقة JWT، وcheckout بطرق دفع متعددة، ودرجة Lighthouse 96/100.",
-            "detailGroups": [
-                {
-                    "title": "نظرة عامة",
-                    "items": [
-                        "منصة تعليم طبية (LMS) مبنية بـ Next.js (App Router) وReact 19، فيها أقسام عامة وللطالب وللمدرس.",
-                        "إعداد طبقة خدمة نظيفة بـ Axios، وتنسيق ألوان من الخادم لتجنّب وميض اللون عند التحميل، ونشر مع تراجع سريع."
-                    ]
-                },
-                {
-                    "title": "مشغل الفيديو",
-                    "items": [
-                        "بناء مشغل فيديو HLS مخصص بخيارات جودة (Auto/480p/720p/1080p)، استئناف التشغيل، وترجمات بلغتين (SRT/VTT)."
-                    ]
-                },
-                {
-                    "title": "حماية المحتوى",
-                    "items": [
-                        "إضافة حماية لفيديوهات الدورات، تشمل علامة مائية وإجراءات للحدّ من النسخ غير المصرّح به."
-                    ]
-                },
-                {
-                    "title": "الحالة والمنطق المشترك",
-                    "items": [
-                        "إدارة حالة التطبيق بـ Zustand (مصادقة، سلة، تسجيل، اشتراك) مع تحديثات فورية للواجهة تتراجع عند الخطأ، والحفاظ على نفس الحالة متزامنة بين الصفحات.",
-                        "نقل منطق الوصول المشترك لـ hooks قابلة لإعادة الاستخدام بحيث تتصرف أزرار الوصول للدورة والـ checkout بنفس الشكل في كل مكان."
-                    ]
-                },
-                {
-                    "title": "اللغات والمصادقة",
-                    "items": [
-                        "إضافة دعم عربي/إنجليزي مع تبديل RTL/LTR، تبديل الخطوط (Cairo/Inter)، وبدون قفزة في التخطيط عند تغيير اللغة.",
-                        "بناء مصادقة JWT مع تجديد صامت للتوكن، إعادة توجيه حسب الدور، وحرّاس مسارات، والتعامل مع الفرق بين تسجيل الخروج اليدوي وانتهاء الجلسة."
-                    ]
-                },
-                {
-                    "title": "الدفع والـ Checkout",
-                    "items": [
-                        "بناء checkout ببطاقة ومحفظة ونقاط بيع وأقساط بنكية، مع إعادة محاولة الطلب ومعالجة موثوقة لكود الخصم."
-                    ]
-                },
-                {
-                    "title": "الأداء والـ SEO والتحليلات",
-                    "items": [
-                        "تحسين الأداء لدرجة Lighthouse 96/100 (سطح المكتب) - LCP 0.9s وCLS 0.028 وFCP 0.4s - باستخدام التحميل الكسول والاستيراد الديناميكي وتصغير الحزم.",
-                        "إضافة SEO بـ JSON-LD وصور Open Graph ديناميكية وخريطة موقع وبيانات وصفية من الخادم بلغتين.",
-                        "إعداد تتبع GTM/GA4 لخطوات التجارة الإلكترونية الأساسية وإصلاح مشاكل التتبع الشائعة زي الأحداث المكررة والمتكررة."
-                    ]
-                },
-                {
-                    "title": "قسم الطالب والمحاضر",
-                    "items": [
-                        "لوحة تحكم، تسجيل في الدورات، شهادات، اختبارات، وفواتير."
-                    ]
-                }
-            ],
-            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
-            "screens_url": [
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017309/Screenshot_from_2026-06-09_18-01-41_np1hb0.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017374/Screenshot_from_2026-06-09_18-02-45_d2fhd8.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017400/Screenshot_from_2026-06-09_18-03-14_r4ktjp.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017443/Screenshot_from_2026-06-09_18-03-56_f5c8si.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017490/Screenshot_from_2026-06-09_18-04-44_rvngca.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017529/Screenshot_from_2026-06-09_18-05-23_bidyvb.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017576/Screenshot_from_2026-06-09_18-05-35_naey9w.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017580/Screenshot_from_2026-06-09_18-06-14_vicxey.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017661/Screenshot_from_2026-06-09_18-07-35_mprrdf.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017712/Screenshot_from_2026-06-09_18-08-25_fzla8m.png"
-            ],
-            "repo": "#",
-            "live": "https://betaspc.a2za1.com/",
-            "technologies": [
-                "Next.js 16",
-                "React 19",
-                "Tailwind CSS 4",
-                "Zustand",
-                "Axios",
-                "HLS.js",
-                "Plyr",
-                "Framer Motion",
-                "Recharts",
-                "Swiper",
-                "DOMPurify",
-                "REST API",
-                "GTM"
-            ]
-        },
-        "12": {
-            "categories": "Magento 2",
-            "company": "CROCOIT",
-            "title": "إتلالا - سوق الأزياء",
-            "description": "سوق أزياء على Magento 2 مع سير عمل بائعين معقدة ودعم متعدد المتاجر بـ AR/EN.",
-            "details": "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة. بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة وتطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط. دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية.",
-            "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
-            "screens_url": [
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
-                "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
-            ],
-            "repo": "#",
-            "live": "#",
-            "technologies": [
-                "Magento 2",
-                "Layout XML",
-                "PHTML",
-                "RequireJS",
-                "GraphQL",
-                "JavaScript"
-            ]
+        {
+          "title": "SEO و GEO",
+          "items": [
+            "تحسين SEO/GEO (تحسين لمحركات الذكاء التوليدي) عبر المتجر: إضافة canonical URLs، وhreflang للصفحات ثنائية اللغة، ووسوم Open Graph / Twitter Card.",
+            "إضافة وإصلاح البيانات المنظمة (JSON-LD): Product وOrganization وAggregateRating وBreadcrumbList وschema للمؤسِّس (Person) وFAQPage - وتنظيف أوصاف الميتا وروابط الصور المكسورة."
+          ]
         }
+      ],
+      "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
+      "screens_url": [
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925070/Screenshot_from_2026-06-08_16-19-46_bteuy3.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925037/Screenshot_from_2026-06-08_16-20-10_c7nvka.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925036/Screenshot_from_2026-06-08_16-20-42_v7vs1e.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925035/Screenshot_from_2026-06-08_16-21-07_rvdphw.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925033/Screenshot_from_2026-06-08_16-21-50_arwxtb.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1780925031/Screenshot_from_2026-06-08_16-20-50_rxxhbs.png"
+      ],
+      "repo": "#",
+      "live": "https://almasrypharmacy.com/",
+      "technologies": [
+        "React",
+        "Magento PWA Studio 14.3.1",
+        "Apollo Client",
+        "GraphQL",
+        "Redux",
+        "RxJS",
+        "Workbox",
+        "Tailwind CSS",
+        "PostCSS RTL",
+        "React-Intl",
+        "Cloudflare",
+        "Webpack",
+        "GA4 / GTM"
+      ]
     },
-    "education": {
-        "title": "التعليم",
-        "grade": "التقدير",
-        "relevantCoursework": "المقررات التي تم دراستها",
-        "graduationProject": "مشروع التخرج",
-        "items": [
-            {
-                "university": "كلية الهندسة، جامعة الزقازيق",
-                "degree": "بكالوريوس في علوم الكمبيوتر",
-                "grade": "جيد جدًا",
-                "duration": "2019 - 2024",
-                "relevantCoursework": [
-                    "هياكل البيانات والخوارزميات",
-                    "برمجة الكائنات",
-                    "أنظمة إدارة قواعد البيانات",
-                    "تطوير الويب",
-                    "هندسة البرمجيات",
-                    "شبكات الكمبيوتر"
-                ],
-                "projectTitle": "منصة إنشاء المواقع",
-                "projectGrade": "ممتاز",
-                "projectDescription": "تم تطوير منصة شاملة لإنشاء المواقع تمكّن المستخدمين من إنشاء وتخصيص المواقع بسهولة.",
-                "projectFeatures": [
-                    "تخصيص الموقع ومعاينته في الوقت الفعلي",
-                    "إمكانات توليد المحتوى المدعوم بالذكاء الاصطناعي",
-                    "إدارة الأقسام والترتيب بشكل مرن",
-                    "خيارات متعددة للقوالب وتخصيص الأسلوب",
-                    "تنفيذ تصميم متجاوب",
-                    "واجهة سهلة الاستخدام لإدارة المحتوى"
-                ],
-                "projectNote": "أظهر هذا المشروع الكفاءة في ممارسات تطوير الويب الحديثة، والدعم متعدد اللغات، ومبادئ تصميم واجهات المستخدم المتقدمة."
-            }
+    "11": {
+      "categories": "NextJs",
+      "company": "CROCOIT",
+      "featured": true,
+      "title": "SPC Online Academy - منصة LMS الطبية",
+      "description": "منصة تعليم طبية (LMS) مبنية بـ Next.js (App Router) وReact 19، فيها أقسام عامة وللطالب وللمدرس. تتضمن مشغل فيديو HLS مخصص، حماية للمحتوى، وcheckout بطرق دفع متعددة.",
+      "details": "منصة تعليم طبية (LMS) مبنية بـ Next.js (App Router) وReact 19، فيها أقسام عامة وللطالب وللمدرس. تتضمن مشغل فيديو HLS مخصص، حماية لمحتوى الفيديو، دعم عربي/إنجليزي مع RTL/LTR، مصادقة JWT، وcheckout بطرق دفع متعددة، ودرجة Lighthouse 96/100.",
+      "detailGroups": [
+        {
+          "title": "نظرة عامة",
+          "items": [
+            "منصة تعليم طبية (LMS) مبنية بـ Next.js (App Router) وReact 19، فيها أقسام عامة وللطالب وللمدرس.",
+            "إعداد طبقة خدمة نظيفة بـ Axios، وتنسيق ألوان من الخادم لتجنّب وميض اللون عند التحميل، ونشر مع تراجع سريع."
+          ]
+        },
+        {
+          "title": "مشغل الفيديو",
+          "items": [
+            "بناء مشغل فيديو HLS مخصص بخيارات جودة (Auto/480p/720p/1080p)، استئناف التشغيل، وترجمات بلغتين (SRT/VTT)."
+          ]
+        },
+        {
+          "title": "حماية المحتوى",
+          "items": [
+            "إضافة حماية لفيديوهات الدورات، تشمل علامة مائية وإجراءات للحدّ من النسخ غير المصرّح به."
+          ]
+        },
+        {
+          "title": "الحالة والمنطق المشترك",
+          "items": [
+            "إدارة حالة التطبيق بـ Zustand (مصادقة، سلة، تسجيل، اشتراك) مع تحديثات فورية للواجهة تتراجع عند الخطأ، والحفاظ على نفس الحالة متزامنة بين الصفحات.",
+            "نقل منطق الوصول المشترك لـ hooks قابلة لإعادة الاستخدام بحيث تتصرف أزرار الوصول للدورة والـ checkout بنفس الشكل في كل مكان."
+          ]
+        },
+        {
+          "title": "اللغات والمصادقة",
+          "items": [
+            "إضافة دعم عربي/إنجليزي مع تبديل RTL/LTR، تبديل الخطوط (Cairo/Inter)، وبدون قفزة في التخطيط عند تغيير اللغة.",
+            "بناء مصادقة JWT مع تجديد صامت للتوكن، إعادة توجيه حسب الدور، وحرّاس مسارات، والتعامل مع الفرق بين تسجيل الخروج اليدوي وانتهاء الجلسة."
+          ]
+        },
+        {
+          "title": "الدفع والـ Checkout",
+          "items": [
+            "بناء checkout ببطاقة ومحفظة ونقاط بيع وأقساط بنكية، مع إعادة محاولة الطلب ومعالجة موثوقة لكود الخصم."
+          ]
+        },
+        {
+          "title": "الأداء والـ SEO والتحليلات",
+          "items": [
+            "تحسين الأداء لدرجة Lighthouse 96/100 (سطح المكتب) - LCP 0.9s وCLS 0.028 وFCP 0.4s - باستخدام التحميل الكسول والاستيراد الديناميكي وتصغير الحزم.",
+            "إضافة SEO بـ JSON-LD وصور Open Graph ديناميكية وخريطة موقع وبيانات وصفية من الخادم بلغتين.",
+            "إعداد تتبع GTM/GA4 لخطوات التجارة الإلكترونية الأساسية وإصلاح مشاكل التتبع الشائعة زي الأحداث المكررة والمتكررة."
+          ]
+        },
+        {
+          "title": "قسم الطالب والمحاضر",
+          "items": ["لوحة تحكم، تسجيل في الدورات، شهادات، اختبارات، وفواتير."]
+        }
+      ],
+      "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
+      "screens_url": [
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017309/Screenshot_from_2026-06-09_18-01-41_np1hb0.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017374/Screenshot_from_2026-06-09_18-02-45_d2fhd8.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017400/Screenshot_from_2026-06-09_18-03-14_r4ktjp.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017443/Screenshot_from_2026-06-09_18-03-56_f5c8si.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017490/Screenshot_from_2026-06-09_18-04-44_rvngca.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017529/Screenshot_from_2026-06-09_18-05-23_bidyvb.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017576/Screenshot_from_2026-06-09_18-05-35_naey9w.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017580/Screenshot_from_2026-06-09_18-06-14_vicxey.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017661/Screenshot_from_2026-06-09_18-07-35_mprrdf.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017712/Screenshot_from_2026-06-09_18-08-25_fzla8m.png"
+      ],
+      "repo": "#",
+      "live": "https://betaspc.a2za1.com/",
+      "technologies": [
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS 4",
+        "Zustand",
+        "Axios",
+        "HLS.js",
+        "Plyr",
+        "Framer Motion",
+        "Recharts",
+        "Swiper",
+        "DOMPurify",
+        "REST API",
+        "GTM"
+      ]
+    },
+    "12": {
+      "categories": "Magento 2",
+      "company": "CROCOIT",
+      "title": "إتلالا - سوق الأزياء",
+      "description": "سوق أزياء على Magento 2 مع سير عمل بائعين معقدة ودعم متعدد المتاجر بـ AR/EN.",
+      "details": "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة. بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة وتطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط. دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية.",
+      "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+      "screens_url": [
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-17_ttdhri.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-32-09_rfew3d.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Pasted_image_20251110170144_pcbt4z.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019569/Screenshot_from_2026-06-09_18-31-45_eayieb.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Pasted_image_20251109175835_tyjmad.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-04_t9b50m.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-59_ro0s3e.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-33-16_rnkgcs.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781019570/Screenshot_from_2026-06-09_18-32-43_xpxl63.png"
+      ],
+      "repo": "#",
+      "live": "#",
+      "technologies": ["Magento 2", "Layout XML", "PHTML", "RequireJS", "GraphQL", "JavaScript"]
+    }
+  },
+  "education": {
+    "title": "التعليم",
+    "grade": "التقدير",
+    "relevantCoursework": "المقررات التي تم دراستها",
+    "graduationProject": "مشروع التخرج",
+    "items": [
+      {
+        "university": "كلية الهندسة، جامعة الزقازيق",
+        "degree": "بكالوريوس في علوم الكمبيوتر",
+        "grade": "جيد جدًا",
+        "duration": "2019 - 2024",
+        "relevantCoursework": [
+          "هياكل البيانات والخوارزميات",
+          "برمجة الكائنات",
+          "أنظمة إدارة قواعد البيانات",
+          "تطوير الويب",
+          "هندسة البرمجيات",
+          "شبكات الكمبيوتر"
+        ],
+        "projectTitle": "منصة إنشاء المواقع",
+        "projectGrade": "ممتاز",
+        "projectDescription": "تم تطوير منصة شاملة لإنشاء المواقع تمكّن المستخدمين من إنشاء وتخصيص المواقع بسهولة.",
+        "projectFeatures": [
+          "تخصيص الموقع ومعاينته في الوقت الفعلي",
+          "إمكانات توليد المحتوى المدعوم بالذكاء الاصطناعي",
+          "إدارة الأقسام والترتيب بشكل مرن",
+          "خيارات متعددة للقوالب وتخصيص الأسلوب",
+          "تنفيذ تصميم متجاوب",
+          "واجهة سهلة الاستخدام لإدارة المحتوى"
+        ],
+        "projectNote": "أظهر هذا المشروع الكفاءة في ممارسات تطوير الويب الحديثة، والدعم متعدد اللغات، ومبادئ تصميم واجهات المستخدم المتقدمة."
+      }
+    ]
+  },
+  "experience": {
+    "title": "الخبرات",
+    "present": "الآن",
+    "items": [
+      {
+        "role": "مطور واجهات أمامية",
+        "company": "CROCOIT",
+        "period": "أبريل 2025 – الآن",
+        "location": "القاهرة",
+        "type": "full-time",
+        "projects": [
+          {
+            "name": "SPC Online Academy - منصة LMS الطبية (Next.js)",
+            "projectId": "11",
+            "link": "https://betaspc.a2za1.com/",
+            "achievements": [
+              "بناء منصة LMS احترافية بـ Next.js (App Router) وReact 19 وZustand عبر بوابات عامة وبوابة الطالب والمدرس",
+              "تطوير مشغل فيديو HLS مخصص مع بث تكيفي، استئناف التشغيل، وترجمات متعددة اللغات (SRT/VTT)",
+              "تطبيق حماية محتوى متعددة الطبقات: علامة مائية ديناميكية، تتبع مستخدم عبر إخفاء البيانات (steganography)، وحماية ضد التلاعب عبر MutationObserver",
+              "بناء حالة Zustand قابلة للتوسع مع تحديثات تفاؤلية وتراجع وحرّاس طلبات أحادية، إضافةً إلى نظام i18n كامل (AR/EN) بدعم RTL/LTR",
+              "تطبيق مصادقة JWT (تجديد صامت، RBAC، مسارات محمية) ودفع متعدد الطرق مع أكواد الخصم ومنطق إعادة المحاولة",
+              "تحسين الأداء إلى Lighthouse 96 على سطح المكتب (LCP 0.9s وFCP 0.4s وCLS 0.028) مع SSR والتحميل الكسول وSEO متقدم (JSON-LD وOG وخرائط ISR) + GTM/GA4"
+            ]
+          },
+          {
+            "name": "صيدلية المصري - متجر إلكتروني PWA",
+            "projectId": "10",
+            "link": "https://almasrypharmacy.com/",
+            "achievements": [
+              "بناء أكثر من 100 مكون UI و50 talon على متجر Magento PWA Studio لصيدلية بسوق عربي RTL",
+              "بناء checkout بـ 7 طرق دفع (Braintree وApple Pay وCheckout.com وTamara وTabby وvalU والدفع عند الاستلام)، مع دعم انقسام الطلب واستعادة السلة عند فشل الدفع",
+              "إضافة نظام أحداث بـ RxJS بحيث التحليلات والواجهة اللي بتتحمّل متأخر تستقبل الأحداث السابقة، ويغذّي GA4 dataLayer",
+              "إضافة دعم عربي/إنجليزي مع معالجة RTL/LTR وتبديل store view يكتشف الإدخال العربي وقت التشغيل",
+              "تحسين تحميل الصور بخط أنابيب Cloudflare/خلفية (WebP/JPG/PNG) وإعداد Workbox service worker لتحميل أسرع ودعم بدون إنترنت"
+            ]
+          },
+          {
+            "name": "Etlala - سوق الأزياء (Magento 2)",
+            "projectId": "12",
+            "link": "/project-details/etlala-fashion-marketplace",
+            "achievements": [
+              "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة",
+              "بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة",
+              "تطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط",
+              "دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية"
+            ]
+          }
         ]
-    },
-    "experience": {
-        "title": "الخبرات",
-        "present": "الآن",
-        "items": [
-            {
-                "role": "مطور واجهات أمامية",
-                "company": "CROCOIT",
-                "period": "أبريل 2025 – الآن",
-                "location": "القاهرة",
-                "type": "full-time",
-                "projects": [
-                    {
-                        "name": "SPC Online Academy - منصة LMS الطبية (Next.js)",
-                        "projectId": "11",
-                        "link": "https://betaspc.a2za1.com/",
-                        "achievements": [
-                            "بناء منصة LMS احترافية بـ Next.js (App Router) وReact 19 وZustand عبر بوابات عامة وبوابة الطالب والمدرس",
-                            "تطوير مشغل فيديو HLS مخصص مع بث تكيفي، استئناف التشغيل، وترجمات متعددة اللغات (SRT/VTT)",
-                            "تطبيق حماية محتوى متعددة الطبقات: علامة مائية ديناميكية، تتبع مستخدم عبر إخفاء البيانات (steganography)، وحماية ضد التلاعب عبر MutationObserver",
-                            "بناء حالة Zustand قابلة للتوسع مع تحديثات تفاؤلية وتراجع وحرّاس طلبات أحادية، إضافةً إلى نظام i18n كامل (AR/EN) بدعم RTL/LTR",
-                            "تطبيق مصادقة JWT (تجديد صامت، RBAC، مسارات محمية) ودفع متعدد الطرق مع أكواد الخصم ومنطق إعادة المحاولة",
-                            "تحسين الأداء إلى Lighthouse 96 على سطح المكتب (LCP 0.9s وFCP 0.4s وCLS 0.028) مع SSR والتحميل الكسول وSEO متقدم (JSON-LD وOG وخرائط ISR) + GTM/GA4"
-                        ]
-                    },
-                    {
-                        "name": "صيدلية المصري - متجر إلكتروني PWA",
-                        "projectId": "10",
-                        "link": "https://almasrypharmacy.com/",
-                        "achievements": [
-                            "بناء أكثر من 100 مكون UI و50 talon على متجر Magento PWA Studio لصيدلية بسوق عربي RTL",
-                            "بناء checkout بـ 7 طرق دفع (Braintree وApple Pay وCheckout.com وTamara وTabby وvalU والدفع عند الاستلام)، مع دعم انقسام الطلب واستعادة السلة عند فشل الدفع",
-                            "إضافة نظام أحداث بـ RxJS بحيث التحليلات والواجهة اللي بتتحمّل متأخر تستقبل الأحداث السابقة، ويغذّي GA4 dataLayer",
-                            "إضافة دعم عربي/إنجليزي مع معالجة RTL/LTR وتبديل store view يكتشف الإدخال العربي وقت التشغيل",
-                            "تحسين تحميل الصور بخط أنابيب Cloudflare/خلفية (WebP/JPG/PNG) وإعداد Workbox service worker لتحميل أسرع ودعم بدون إنترنت"
-                        ]
-                    },
-                    {
-                        "name": "Etlala - سوق الأزياء (Magento 2)",
-                        "projectId": "12",
-                        "link": "/project-details/etlala-fashion-marketplace",
-                        "achievements": [
-                            "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة",
-                            "بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة",
-                            "تطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط",
-                            "دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية"
-                        ]
-                    }
-                ]
-            },
-            {
-                "role": "متدرب تطوير واجهات أمامية",
-                "company": "CROCOIT",
-                "period": "نوفمبر 2024 – مارس 2025",
-                "location": "القاهرة",
-                "type": "trainee",
-                "achievements": [
-                    "إتمام برنامج تدريبي عملي متخصص في تطوير واجهة Magento 2 الحديثة",
-                    "العمل مع Page Builder والويدجتس وLayout XML وقوالب PHTML والأصول الثابتة",
-                    "اكتساب خبرة في RequireJS وسير عمل Git وتحويل تصميمات Figma إلى مكونات UI"
-                ]
-            },
-            {
-                "role": "تدريب صيفي على React.js",
-                "company": "ITI",
-                "period": "سبتمبر 2023",
-                "location": "",
-                "type": "training",
-                "achievements": [
-                    "بناء تطبيقات ويب متجاوبة باستخدام React.js وBootstrap وES6 JavaScript مع التركيز على كود نظيف وموحد"
-                ]
-            }
+      },
+      {
+        "role": "متدرب تطوير واجهات أمامية",
+        "company": "CROCOIT",
+        "period": "نوفمبر 2024 – مارس 2025",
+        "location": "القاهرة",
+        "type": "trainee",
+        "achievements": [
+          "إتمام برنامج تدريبي عملي متخصص في تطوير واجهة Magento 2 الحديثة",
+          "العمل مع Page Builder والويدجتس وLayout XML وقوالب PHTML والأصول الثابتة",
+          "اكتساب خبرة في RequireJS وسير عمل Git وتحويل تصميمات Figma إلى مكونات UI"
         ]
-    },
-    "technologiesTitle": "التقنيات المستخدمة",
-    "relatedProjects": "مشاريع أخرى",
-    "articleNavigation": "التنقل بين المقالات",
-    "previousArticle": "السابق",
-    "nextArticle": "التالي",
-    "copyright": "حقوق النشر © {{year}} عبد الرحمن رجب. جميع الحقوق محفوظة.",
-    "seeMore": "عرض المزيد",
-    "viewDetails": "عرض التفاصيل",
-    "i18nStamp": 1774547930652,
-    "i18nVersion": "v1.0"
+      },
+      {
+        "role": "تدريب صيفي على React.js",
+        "company": "ITI",
+        "period": "سبتمبر 2023",
+        "location": "",
+        "type": "training",
+        "achievements": [
+          "بناء تطبيقات ويب متجاوبة باستخدام React.js وBootstrap وES6 JavaScript مع التركيز على كود نظيف وموحد"
+        ]
+      }
+    ]
+  },
+  "technologiesTitle": "التقنيات المستخدمة",
+  "relatedProjects": "مشاريع أخرى",
+  "articleNavigation": "التنقل بين المقالات",
+  "previousArticle": "السابق",
+  "nextArticle": "التالي",
+  "copyright": "حقوق النشر © {{year}} عبد الرحمن رجب. جميع الحقوق محفوظة.",
+  "seeMore": "عرض المزيد",
+  "viewDetails": "عرض التفاصيل",
+  "i18nStamp": 1774547930652,
+  "i18nVersion": "v1.0"
 }

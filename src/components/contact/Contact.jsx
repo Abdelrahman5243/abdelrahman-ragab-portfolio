@@ -95,11 +95,7 @@ const Contact = () => {
             className="form-input resize-none"
             aria-required="true"
           ></textarea>
-          <ValidationError
-            prefix="Message"
-            field="message"
-            errors={state.errors}
-          />
+          <ValidationError prefix="Message" field="message" errors={state.errors} />
 
           <button
             type="submit"
@@ -145,7 +141,11 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 onClick={() =>
                   // Example: external link click tracking (contact channels).
-                  external_link_click({ url: link.href, label: link.label, location: "contact_links" })
+                  external_link_click({
+                    url: link.href,
+                    label: link.label,
+                    location: "contact_links",
+                  })
                 }
                 className="
                   group relative flex items-center gap-4 p-4 rounded-2xl
@@ -172,7 +172,10 @@ const Contact = () => {
                   {link.description}
                 </p>
 
-                <ExternalLink size={15} className="text-light-subtitle dark:text-dark-subtitle opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
+                <ExternalLink
+                  size={15}
+                  className="text-light-subtitle dark:text-dark-subtitle opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0"
+                />
               </a>
             );
           })}

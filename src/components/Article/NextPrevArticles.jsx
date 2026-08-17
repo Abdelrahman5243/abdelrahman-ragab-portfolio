@@ -38,7 +38,10 @@ const NextPrevArticles = ({ currentSlug }) => {
           className="group flex flex-col gap-2 p-5 rounded-2xl border border-light-border dark:border-dark-border bg-light-secondary/90 dark:bg-dark-secondary/90 hover:border-light-blue/60 dark:hover:border-dark-blue/60 transition-colors duration-300"
         >
           <span className="flex items-center gap-1.5 text-sm font-medium text-light-subtitle dark:text-dark-subtitle">
-            <ArrowRight size={15} className="rotate-180 transition-transform duration-300 group-hover:-translate-x-1" />
+            <ArrowRight
+              size={15}
+              className="rotate-180 transition-transform duration-300 group-hover:-translate-x-1"
+            />
             {t("previousArticle", "Previous")}
           </span>
           <span className="text-base sm:text-lg font-semibold text-light-title dark:text-dark-title line-clamp-2 group-hover:text-light-blue dark:group-hover:text-dark-blue transition-colors">
@@ -56,7 +59,10 @@ const NextPrevArticles = ({ currentSlug }) => {
         >
           <span className="flex items-center gap-1.5 text-sm font-medium text-light-subtitle dark:text-dark-subtitle">
             {t("nextArticle", "Next")}
-            <ArrowLeft size={15} className="rotate-180 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowLeft
+              size={15}
+              className="rotate-180 transition-transform duration-300 group-hover:translate-x-1"
+            />
           </span>
           <span className="text-base sm:text-lg font-semibold text-light-title dark:text-dark-title line-clamp-2 group-hover:text-light-blue dark:group-hover:text-dark-blue transition-colors">
             {next.title}

@@ -8,9 +8,7 @@ export async function fetchAllArticles() {
 
 export async function fetchArticleBySlug(slug) {
   const articles = await fetchAllArticles();
-  const meta = articles.find(
-    (article) => article.slug === slug || String(article._id) === slug
-  );
+  const meta = articles.find((article) => article.slug === slug || String(article._id) === slug);
   if (!meta) return null;
 
   const res = await fetch(`${ARTICLES_REPO_URL}/${meta.slug}.md`);

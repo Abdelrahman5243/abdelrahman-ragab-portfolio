@@ -7,14 +7,7 @@ export const mySkills = [
   {
     category: "Frameworks & Libraries",
     categoryAr: "الأطر والمكتبات",
-    items: [
-      "React",
-      "Next.js",
-      "Redux Toolkit",
-      "Redux Persist",
-      "Zustand",
-      "Context API",
-    ],
+    items: ["React", "Next.js", "Redux Toolkit", "Redux Persist", "Zustand", "Context API"],
   },
   {
     category: "Styling",

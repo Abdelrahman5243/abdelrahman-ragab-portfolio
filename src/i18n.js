@@ -14,21 +14,19 @@ const savedLanguage = localStorage.getItem("language") || "en";
 const instance = i18n.createInstance();
 
 if (USE_STATIC_DATA) {
-  instance
-    .use(initReactI18next)
-    .init({
-      resources: {
-        en: { main: enStatic },
-        ar: { main: arStatic },
-      },
-      lng: savedLanguage,
-      fallbackLng: "en",
-      interpolation: { escapeValue: false },
-      load: "languageOnly",
-      react: { useSuspense: true },
-      ns: ['main'],
-      defaultNS: 'main',
-    });
+  instance.use(initReactI18next).init({
+    resources: {
+      en: { main: enStatic },
+      ar: { main: arStatic },
+    },
+    lng: savedLanguage,
+    fallbackLng: "en",
+    interpolation: { escapeValue: false },
+    load: "languageOnly",
+    react: { useSuspense: true },
+    ns: ["main"],
+    defaultNS: "main",
+  });
 } else {
   instance
     // Use chained backend: localStorage cache -> HTTP fallback
@@ -38,31 +36,31 @@ if (USE_STATIC_DATA) {
       // Backend configuration with caching
       backend: {
         backends: [
-          LocalStorageBackend,  // Primary: check localStorage first
-          HttpApi               // Fallback: fetch from API if not in cache
+          LocalStorageBackend, // Primary: check localStorage first
+          HttpApi, // Fallback: fetch from API if not in cache
         ],
         backendOptions: [
           {
             // LocalStorageBackend options
-            prefix: 'i18next_res_',
+            prefix: "i18next_res_",
             expirationTime: 7 * 24 * 60 * 60 * 1000, // 7 days
-            defaultVersion: 'v1.0',
+            defaultVersion: "v1.0",
             versions: {
-              en: 'v1.0',
-              ar: 'v1.0',
+              en: "v1.0",
+              ar: "v1.0",
             },
-            store: typeof window !== 'undefined' ? window.localStorage : null,
+            store: typeof window !== "undefined" ? window.localStorage : null,
           },
           {
             // HttpApi options
             loadPath: `${API_BASE_URL}/{{lng}}`,
             requestOptions: {
-              cache: 'default', // Use browser's HTTP cache
+              cache: "default", // Use browser's HTTP cache
             },
             allowMultiLoading: false,
             crossDomain: false,
-          }
-        ]
+          },
+        ],
       },
       lng: savedLanguage,
       fallbackLng: "en",
@@ -78,8 +76,8 @@ if (USE_STATIC_DATA) {
       // initialisation on slower mobile connections.
       preload: [savedLanguage],
       // Namespace configuration
-      ns: ['main'],
-      defaultNS: 'main',
+      ns: ["main"],
+      defaultNS: "main",
     });
 }
 

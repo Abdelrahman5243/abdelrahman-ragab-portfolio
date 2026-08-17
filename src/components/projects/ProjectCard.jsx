@@ -49,8 +49,7 @@ const ProjectCard = ({ project, id, slug }) => {
           <div className="absolute top-3 left-3 z-20 flex flex-col items-start gap-1.5">
             {project.company && (
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border border-white/15 text-white text-xs font-medium">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                @ {project.company}
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />@ {project.company}
               </div>
             )}
 
@@ -109,7 +108,11 @@ const ProjectCard = ({ project, id, slug }) => {
                 onClick={(e) => {
                   e.stopPropagation();
                   // Example: external link click tracking (project live demo).
-                  external_link_click({ url: project.live, label: `${project.title} live demo`, location: "project_card" });
+                  external_link_click({
+                    url: project.live,
+                    label: `${project.title} live demo`,
+                    location: "project_card",
+                  });
                 }}
                 className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border/80 dark:border-dark-border bg-light-primary/60 dark:bg-dark-primary/60 hover:border-light-blue/50 dark:hover:border-dark-blue/50 hover:text-light-blue dark:hover:text-dark-blue transition-all duration-200"
                 aria-label={`View the project at ${project.title}`}
@@ -126,7 +129,11 @@ const ProjectCard = ({ project, id, slug }) => {
                 onClick={(e) => {
                   e.stopPropagation();
                   // Example: external link click tracking (project repo).
-                  external_link_click({ url: project.repo, label: `${project.title} repo`, location: "project_card" });
+                  external_link_click({
+                    url: project.repo,
+                    label: `${project.title} repo`,
+                    location: "project_card",
+                  });
                 }}
                 className="flex items-center justify-center w-9 h-9 rounded-full border border-light-border/80 dark:border-dark-border bg-light-primary/60 dark:bg-dark-primary/60 hover:border-light-blue/50 dark:hover:border-dark-blue/50 hover:text-light-blue dark:hover:text-dark-blue transition-all duration-200"
                 aria-label={`View the project ${project.title} code on GitHub`}
@@ -140,8 +147,11 @@ const ProjectCard = ({ project, id, slug }) => {
             <span>View details</span>
             <ArrowLeft
               size={15}
-              className={`transition-transform duration-300 ${language === "ar" ? "group-hover:-translate-x-1" : "rotate-180 group-hover:translate-x-1"
-                }`}
+              className={`transition-transform duration-300 ${
+                language === "ar"
+                  ? "group-hover:-translate-x-1"
+                  : "rotate-180 group-hover:translate-x-1"
+              }`}
             />
           </span>
         </div>

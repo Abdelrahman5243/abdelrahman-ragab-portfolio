@@ -1,5 +1,5 @@
 const SkeletonLoader = () => {
-  const uniqueId = Math.random().toString(36).substr(2, 9); 
+  const uniqueId = Math.random().toString(36).substr(2, 9);
 
   return (
     <svg
@@ -20,14 +20,7 @@ const SkeletonLoader = () => {
       />
       <defs>
         <clipPath id={`clip-path-${uniqueId}`}>
-          <rect
-            x="0"
-            y="0"
-            rx="6"
-            ry="6"
-            width="100%"
-            height="100%"
-          />
+          <rect x="0" y="0" rx="6" ry="6" width="100%" height="100%" />
         </clipPath>
         <linearGradient id={`fill-${uniqueId}`}>
           <stop offset="0.599964" stopColor="#f3f3f3" stopOpacity="1">

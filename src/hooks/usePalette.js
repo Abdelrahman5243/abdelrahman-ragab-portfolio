@@ -12,12 +12,10 @@ const DEFAULT_PALETTE = "carbon";
 const VALID_PALETTES = new Set(PALETTES.map((palette) => palette.id));
 
 export const usePalette = () => {
-  const [palette, setPalette] = useState(
-    () => {
-      const storedPalette = localStorage.getItem(STORAGE_KEY);
-      return VALID_PALETTES.has(storedPalette) ? storedPalette : DEFAULT_PALETTE;
-    }
-  );
+  const [palette, setPalette] = useState(() => {
+    const storedPalette = localStorage.getItem(STORAGE_KEY);
+    return VALID_PALETTES.has(storedPalette) ? storedPalette : DEFAULT_PALETTE;
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-palette", palette);

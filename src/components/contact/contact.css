@@ -1,24 +1,24 @@
 .form-input {
-    @apply border border-light-border dark:border-dark-border p-3 text-base bg-light-bgHeader dark:bg-dark-bgHeader text-light-title dark:text-dark-title rounded-md transition-colors duration-300 focus:border-light-blue dark:focus:border-dark-blue hover:border-light-blue dark:hover:border-dark-blue;
+  @apply border border-light-border dark:border-dark-border p-3 text-base bg-light-bgHeader dark:bg-dark-bgHeader text-light-title dark:text-dark-title rounded-md transition-colors duration-300 focus:border-light-blue dark:focus:border-dark-blue hover:border-light-blue dark:hover:border-dark-blue;
 }
 
 .form-input:focus-visible {
-    outline: 2px solid rgb(var(--accent-light-rgb));
-    outline-offset: 1px;
+  outline: 2px solid rgb(var(--accent-light-rgb));
+  outline-offset: 1px;
 }
 
 .dark .form-input:focus-visible {
-    outline-color: rgb(var(--accent-dark-rgb));
+  outline-color: rgb(var(--accent-dark-rgb));
 }
 
 .form-button {
-    @apply relative max-w-max bg-light-blue dark:bg-dark-blue border-none py-2.5 px-8 my-4 text-base font-medium rounded-md flex items-center gap-4 transition-transform duration-300 hover:scale-95 text-white;
+  @apply relative max-w-max bg-light-blue dark:bg-dark-blue border-none py-2.5 px-8 my-4 text-base font-medium rounded-md flex items-center gap-4 transition-transform duration-300 hover:scale-95 text-white;
 }
 
 .modal-text {
-    @apply text-light-subtitle dark:text-dark-subtitle;
+  @apply text-light-subtitle dark:text-dark-subtitle;
 }
 
 .section-title {
-    @apply text-light-title dark:text-dark-subtitle text-3xl;
+  @apply text-light-title dark:text-dark-subtitle text-3xl;
 }

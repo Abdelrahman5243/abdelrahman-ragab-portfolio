@@ -10,12 +10,20 @@ html {
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px rgb(15 23 42 / 0.85);
-  background: conic-gradient(from -135deg at 100% 50%, rgb(var(--accent-light-rgb)) 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, rgb(var(--accent-light-rgb)) 0) text no-repeat;
+  background:
+    conic-gradient(from -135deg at 100% 50%, rgb(var(--accent-light-rgb)) 90deg, transparent 0) text
+      no-repeat,
+    conic-gradient(from -135deg at 1lh 50%, transparent 90deg, rgb(var(--accent-light-rgb)) 0) text
+      no-repeat;
   animation: l6 2s linear infinite;
 }
-.dark .loader{
+.dark .loader {
   -webkit-text-stroke: 1px rgb(248 250 252 / 0.9);
-  background: conic-gradient(from -135deg at 100% 50%, rgb(var(--accent-dark-rgb)) 90deg, transparent 0) text no-repeat, conic-gradient(from -135deg at 1lh 50%, transparent 90deg, rgb(var(--accent-dark-rgb)) 0) text no-repeat;
+  background:
+    conic-gradient(from -135deg at 100% 50%, rgb(var(--accent-dark-rgb)) 90deg, transparent 0) text
+      no-repeat,
+    conic-gradient(from -135deg at 1lh 50%, transparent 90deg, rgb(var(--accent-dark-rgb)) 0) text
+      no-repeat;
 }
 
 .loader:before {
@@ -25,22 +33,30 @@ html {
 @keyframes l6 {
   0% {
     background-size: 0 200%;
-    background-position: 0 0, 100% 0
+    background-position:
+      0 0,
+      100% 0;
   }
 
   50% {
-    background-size: calc(60% + .5lh) 200%;
-    background-position: 0 0, 100% 0
+    background-size: calc(60% + 0.5lh) 200%;
+    background-position:
+      0 0,
+      100% 0;
   }
 
   50.01% {
-    background-size: calc(60% + .5lh) 200%;
-    background-position: 0 100%, 100% 100%
+    background-size: calc(60% + 0.5lh) 200%;
+    background-position:
+      0 100%,
+      100% 100%;
   }
 
   100% {
     background-size: 0 200%;
-    background-position: 0 100%, 100% 100%
+    background-position:
+      0 100%,
+      100% 100%;
   }
 }
 
@@ -57,10 +73,11 @@ html {
   background: rgb(var(--accent-light-rgb)) !important;
 }
 
-.swiper-button-prev, .swiper-button-next{
-  color: rgb(var(--accent-light-rgb)) !important; 
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(var(--accent-light-rgb)) !important;
 }
 
-.swiper-slide.swiper-slide-active.mx-auto.w-full{
+.swiper-slide.swiper-slide-active.mx-auto.w-full {
   margin-left: 0 !important;
 }

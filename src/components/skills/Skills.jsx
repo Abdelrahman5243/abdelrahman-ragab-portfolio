@@ -19,16 +19,16 @@ import {
 } from "lucide-react";
 
 const categoryIcons = {
-  "Core Languages":         Code2,
+  "Core Languages": Code2,
   "Frameworks & Libraries": Layers,
-  "Styling":                Palette,
-  "GraphQL & API":          Zap,
-  "Routing & i18n":         Globe,
-  "E-Commerce & CMS":       ShoppingCart,
-  "Animation & UI":         Sparkles,
-  "Data & Charts":          BarChart2,
-  "Tooling":                Wrench,
-  "Soft Skills":            Heart,
+  Styling: Palette,
+  "GraphQL & API": Zap,
+  "Routing & i18n": Globe,
+  "E-Commerce & CMS": ShoppingCart,
+  "Animation & UI": Sparkles,
+  "Data & Charts": BarChart2,
+  Tooling: Wrench,
+  "Soft Skills": Heart,
 };
 
 const groupVariants = {
@@ -56,23 +56,14 @@ const Skills = () => {
   const isAr = i18n.language === "ar";
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="my-16 w-full"
-      aria-labelledby="skills-title"
-    >
+    <section id="skills" ref={ref} className="my-16 w-full" aria-labelledby="skills-title">
       <motion.div
         className="flex gap-4 items-center mb-10"
         initial={{ opacity: 0, y: -20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.4 }}
       >
-        <RocketIcon
-          className="text-light-blue dark:text-dark-blue"
-          size={28}
-          aria-hidden="true"
-        />
+        <RocketIcon className="text-light-blue dark:text-dark-blue" size={28} aria-hidden="true" />
         <h2 id="skills-title" className="title mb-0">
           {t("skillsTitle")}
         </h2>
@@ -98,12 +89,14 @@ const Skills = () => {
                 transition-colors duration-300 p-5
               "
             >
-              <div className="
+              <div
+                className="
                 absolute inset-0 opacity-0 group-hover:opacity-100
                 transition-opacity duration-300 pointer-events-none
                 bg-[radial-gradient(ellipse_at_top_left,rgb(var(--accent-light-rgb)/0.05),transparent_60%)]
                 dark:bg-[radial-gradient(ellipse_at_top_left,rgb(var(--accent-dark-rgb)/0.06),transparent_60%)]
-              " />
+              "
+              />
 
               {/* Category header */}
               <div className="relative flex items-center justify-between gap-2 mb-3">

@@ -9,77 +9,86 @@
 
 :root,
 html[data-palette="slate"] {
-  --light-primary: #FAFAFA;
-  --light-secondary: #FFFFFF;
+  --light-primary: #fafafa;
+  --light-secondary: #ffffff;
   --light-border: rgba(228, 228, 231, 0.7);
-  --light-title: #09090B;
-  --light-subtitle: #5F5F68;
-  --light-bgHeader: #F8F8F8;
-  --light-iconHover: #27272A;
+  --light-title: #09090b;
+  --light-subtitle: #5f5f68;
+  --light-bgHeader: #f8f8f8;
+  --light-iconHover: #27272a;
   --dark-primary: #121214;
-  --dark-secondary: #1E1E22;
+  --dark-secondary: #1e1e22;
   --dark-border: rgba(82, 82, 91, 0.5);
-  --dark-title: #FAFAFA;
-  --dark-subtitle: #B4B4BE;
-  --dark-bgHeader: #1A1A1E;
-  --dark-iconHover: #E2E2E2;
-  --light-accent: #2563EB;
-  --dark-accent: #3B82F6;
+  --dark-title: #fafafa;
+  --dark-subtitle: #b4b4be;
+  --dark-bgHeader: #1a1a1e;
+  --dark-iconHover: #e2e2e2;
+  --light-accent: #2563eb;
+  --dark-accent: #3b82f6;
   --accent-light-rgb: 37 99 235;
   --accent-dark-rgb: 59 130 246;
   --page-bg: linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
-  --page-glow:
-    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.025), transparent 28%);
+  --page-glow: radial-gradient(
+    circle at 20% 20%,
+    rgb(var(--accent-light-rgb) / 0.025),
+    transparent 28%
+  );
 }
 
 /* Rose Gold — near-black + muted rose */
 html[data-palette="obsidian"] {
-  --light-primary: #FAFAFA;
-  --light-secondary: #FFFFFF;
+  --light-primary: #fafafa;
+  --light-secondary: #ffffff;
   --light-border: rgba(228, 228, 231, 0.7);
-  --light-title: #09090B;
-  --light-subtitle: #5F5F68;
-  --light-bgHeader: #F8F8F8;
-  --light-iconHover: #27272A;
+  --light-title: #09090b;
+  --light-subtitle: #5f5f68;
+  --light-bgHeader: #f8f8f8;
+  --light-iconHover: #27272a;
   --dark-primary: #121214;
-  --dark-secondary: #1E1E22;
+  --dark-secondary: #1e1e22;
   --dark-border: rgba(82, 82, 91, 0.5);
-  --dark-title: #FAFAFA;
-  --dark-subtitle: #B4B4BE;
-  --dark-bgHeader: #1A1A1E;
-  --dark-iconHover: #E2E2E2;
-  --light-accent: #BE185D;
-  --dark-accent: #F472B6;
+  --dark-title: #fafafa;
+  --dark-subtitle: #b4b4be;
+  --dark-bgHeader: #1a1a1e;
+  --dark-iconHover: #e2e2e2;
+  --light-accent: #be185d;
+  --dark-accent: #f472b6;
   --accent-light-rgb: 190 24 93;
   --accent-dark-rgb: 244 114 182;
   --page-bg: linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
-  --page-glow:
-    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.02), transparent 28%);
+  --page-glow: radial-gradient(
+    circle at 20% 20%,
+    rgb(var(--accent-light-rgb) / 0.02),
+    transparent 28%
+  );
 }
 
 /* Warm Amber — near-black + warm amber */
 html[data-palette="carbon"] {
-  --light-primary: #FAFAFA;
-  --light-secondary: #FFFFFF;
+  --light-primary: #fafafa;
+  --light-secondary: #ffffff;
   --light-border: rgba(228, 228, 231, 0.7);
-  --light-title: #09090B;
-  --light-subtitle: #5F5F68;
-  --light-bgHeader: #F8F8F8;
-  --light-iconHover: #27272A;
+  --light-title: #09090b;
+  --light-subtitle: #5f5f68;
+  --light-bgHeader: #f8f8f8;
+  --light-iconHover: #27272a;
   --dark-primary: #121214;
-  --dark-secondary: #1E1E22;
+  --dark-secondary: #1e1e22;
   --dark-border: rgba(82, 82, 91, 0.5);
-  --dark-title: #FAFAFA;
-  --dark-subtitle: #B4B4BE;
-  --dark-bgHeader: #1A1A1E;
-  --dark-iconHover: #E2E2E2;
-  --light-accent: #B45309;
-  --dark-accent: #FBBF24;
+  --dark-title: #fafafa;
+  --dark-subtitle: #b4b4be;
+  --dark-bgHeader: #1a1a1e;
+  --dark-iconHover: #e2e2e2;
+  --light-accent: #b45309;
+  --dark-accent: #fbbf24;
   --accent-light-rgb: 180 83 9;
   --accent-dark-rgb: 251 191 36;
   --page-bg: linear-gradient(180deg, #fafafa 0%, #f8f8f8 45%, #f4f4f5 100%);
-  --page-glow:
-    radial-gradient(circle at 20% 20%, rgb(var(--accent-light-rgb) / 0.02), transparent 28%);
+  --page-glow: radial-gradient(
+    circle at 20% 20%,
+    rgb(var(--accent-light-rgb) / 0.02),
+    transparent 28%
+  );
 }
 
 html {
@@ -96,9 +105,16 @@ body {
   position: relative;
   isolation: isolate;
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   background: var(--page-bg);
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

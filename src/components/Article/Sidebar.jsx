@@ -83,8 +83,7 @@ export default function Sidebar({ headings = [], activeId, smoothScrollTo }) {
                 const elementHeight = elementRect.height;
                 const navHeight = navRect.height;
 
-                const targetScrollTop =
-                  elementTop - navHeight / 2 + elementHeight / 2;
+                const targetScrollTop = elementTop - navHeight / 2 + elementHeight / 2;
 
                 nav.scrollTo({
                   top: targetScrollTop,
@@ -106,33 +105,25 @@ export default function Sidebar({ headings = [], activeId, smoothScrollTo }) {
                     onClick={(e) => {
                       e.preventDefault();
                       smoothScrollTo(heading.id);
-                        if (typeof window !== "undefined") {
-                          const closeBtn = document.querySelector(".sidebar-close-btn");
-                          if (closeBtn) closeBtn.click();
-                        }
+                      if (typeof window !== "undefined") {
+                        const closeBtn = document.querySelector(".sidebar-close-btn");
+                        if (closeBtn) closeBtn.click();
+                      }
                     }}
                     className={`
                       sidebar-item group
                       ${levelClasses.container}
                       ${levelClasses.border}
                       ${levelClasses.bg}
-                      ${
-                        isActive
-                          ? "sidebar-item-active"
-                          : "sidebar-item-inactive"
-                      }
+                      ${isActive ? "sidebar-item-active" : "sidebar-item-inactive"}
                     `}
                     aria-current={isActive ? "location" : undefined}
                   >
                     <div className="sidebar-link">
-                      <span className={`${levelClasses.text} sidebar-text`}>
-                        {heading.text}
-                      </span>
+                      <span className={`${levelClasses.text} sidebar-text`}>{heading.text}</span>
 
                       {isActive && (
-                        <Circle
-                          className={`${levelClasses.indicator} sidebar-indicator`}
-                        />
+                        <Circle className={`${levelClasses.indicator} sidebar-indicator`} />
                       )}
                     </div>
                   </a>
@@ -144,9 +135,7 @@ export default function Sidebar({ headings = [], activeId, smoothScrollTo }) {
 
         <div className="sidebar-footer">
           <div className="sidebar-footer-content">
-            <span className="sidebar-footer-text">
-              {headings.length} sections
-            </span>
+            <span className="sidebar-footer-text">{headings.length} sections</span>
             <div className="sidebar-footer-indicator">
               <div className="sidebar-footer-dot" />
               <span>Reading</span>

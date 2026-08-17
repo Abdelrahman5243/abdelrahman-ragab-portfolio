@@ -47,14 +47,15 @@ const Education = () => {
         variants={sectionCardVariants}
         className="group"
       >
-        <div className="
+        <div
+          className="
           relative p-6 sm:p-8 rounded-2xl
           bg-light-secondary/95 dark:bg-dark-secondary/95
           border border-light-border dark:border-dark-border
           transition-colors duration-300
           overflow-hidden
-        ">
-
+        "
+        >
           <motion.h2
             className="
               text-lg sm:text-xl md:text-2xl
@@ -81,11 +82,13 @@ const Education = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
             variants={listItemVariants}
           >
-            <div className="
+            <div
+              className="
               flex items-center gap-3 p-3 rounded-lg
               bg-light-bgHeader/85 dark:bg-dark-bgHeader/85
               border border-light-border/80 dark:border-dark-border
-            ">
+            "
+            >
               <Award className="text-green-600 dark:text-green-400 flex-shrink-0" size={20} />
               <div>
                 <p className="text-xs text-light-subtitle dark:text-dark-subtitle">
@@ -97,11 +100,13 @@ const Education = () => {
               </div>
             </div>
 
-            <div className="
+            <div
+              className="
               flex items-center gap-3 p-3 rounded-lg
               bg-light-bgHeader/85 dark:bg-dark-bgHeader/85
               border border-light-border/80 dark:border-dark-border
-            ">
+            "
+            >
               <Calendar className="text-light-blue dark:text-dark-blue flex-shrink-0" size={20} />
               <div>
                 <p className="text-xs text-light-subtitle dark:text-dark-subtitle">Duration</p>
@@ -112,10 +117,7 @@ const Education = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            className="mb-6"
-            variants={listItemVariants}
-          >
+          <motion.div className="mb-6" variants={listItemVariants}>
             <div className="flex items-center gap-2 mb-3">
               <BookOpen className="text-light-blue dark:text-dark-blue" size={20} />
               <h3 className="font-semibold text-base sm:text-lg text-light-title dark:text-dark-title">
@@ -147,25 +149,31 @@ const Education = () => {
           <div className="h-px bg-light-border dark:bg-dark-border my-6" />
 
           <motion.div variants={listItemVariants}>
-            <div className="
+            <div
+              className="
               p-5 rounded-xl
               bg-gradient-to-br from-light-bgHeader to-light-primary
               dark:from-dark-bgHeader dark:to-dark-primary
               border border-light-border dark:border-dark-border
-            ">
-              <h4 className="
+            "
+            >
+              <h4
+                className="
                 font-semibold text-base sm:text-lg md:text-xl 
                 text-light-title dark:text-dark-title 
                 mb-3
-              ">
+              "
+              >
                 {education.graduationProject}
               </h4>
 
-              <p className="
+              <p
+                className="
                 text-base sm:text-lg font-semibold 
                 text-light-blue dark:text-dark-blue 
                 mb-3
-              ">
+              "
+              >
                 {education.items[0]?.projectTitle}
               </p>
 
@@ -179,11 +187,13 @@ const Education = () => {
                 </span>
               </div>
 
-              <p className="
+              <p
+                className="
                 text-sm sm:text-base 
                 text-light-subtitle dark:text-dark-subtitle 
                 leading-relaxed mb-4
-              ">
+              "
+              >
                 {education.items[0]?.projectDescription}
               </p>
 
@@ -208,13 +218,15 @@ const Education = () => {
               </motion.ul>
 
               {education.items[0]?.projectNote && (
-                <p className="
+                <p
+                  className="
                   text-sm sm:text-base 
                   italic font-medium
                   text-light-blue/80 dark:text-dark-blue/80
                   border-l-2 border-light-blue dark:border-dark-blue
                   pl-4 py-2
-                ">
+                "
+                >
                   {education.items[0]?.projectNote}
                 </p>
               )}

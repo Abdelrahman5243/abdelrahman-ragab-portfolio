@@ -44,10 +44,7 @@ const ArticleSection = ({ showAll }) => {
   return (
     <section id="articles" className="my-16 w-full">
       <div className="flex gap-4 items-center mb-8 text-3xl">
-        <BookOpenText
-          className="text-light-subtitle dark:text-dark-subtitle"
-          aria-hidden="true"
-        />
+        <BookOpenText className="text-light-subtitle dark:text-dark-subtitle" aria-hidden="true" />
         <h2 id="articles-title" className="title mb-0">
           {t("articlesTitle")}
         </h2>
@@ -61,13 +58,13 @@ const ArticleSection = ({ showAll }) => {
 
       {!showAll && (
         <div className="mt-8 text-center mx-auto max-w-48">
-        <Link
-          to="/all-articles"
-          className="relative py-2 px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border 
+          <Link
+            to="/all-articles"
+            className="relative py-2 px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border 
             bg-light-secondary/85 dark:bg-dark-secondary/85 text-sm sm:text-base md:text-lg 
             text-light-title dark:text-dark-title rounded-full shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
-          aria-label="Show More Articles"
-        >
+            aria-label="Show More Articles"
+          >
             <span>{t("seeMore")}</span>
           </Link>
         </div>

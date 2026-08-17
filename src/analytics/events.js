@@ -31,9 +31,7 @@ import { GA_MEASUREMENT_ID, logDebug } from "./config";
 /** Strip undefined/null/"" so GTM variables don't resolve to empty strings. */
 const clean = (params = {}) =>
   Object.fromEntries(
-    Object.entries(params).filter(
-      ([, v]) => v !== undefined && v !== null && v !== ""
-    )
+    Object.entries(params).filter(([, v]) => v !== undefined && v !== null && v !== "")
   );
 
 /**
