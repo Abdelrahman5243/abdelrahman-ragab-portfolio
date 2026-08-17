@@ -167,7 +167,7 @@ const Experience = () => {
                         </ul>
                         {project.projectId && (
                           <Link
-                            to={`project-details/${project.projectId}`}
+                            to={`/project-details/${project.projectId}`}
                             className="group/btn mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-light-blue dark:text-dark-blue hover:gap-2.5 transition-all"
                           >
                             <span>{t("viewDetails")}</span>
