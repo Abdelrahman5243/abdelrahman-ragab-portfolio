@@ -24,7 +24,6 @@ import { usePageViewTracking } from "./usePageViewTracking";
 import { setClarityTag } from "./events";
 import { logDebug } from "./config";
 
-// eslint-disable-next-line react/prop-types -- internal-only provider, not a public component; `prop-types` isn't a declared dependency of this project.
 const AnalyticsProvider = ({ children, countHashAsPageView = false }) => {
   useEffect(() => {
     // Analytics is useful after the page is usable, not during the LCP

@@ -111,7 +111,7 @@ export default function ArticlePage() {
               onClick={() => setShowSidebar(false)}
               onKeyDown={(e) => e.key === "Escape" && setShowSidebar(false)}
             >
-              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions -- only swallows clicks so the backdrop above doesn't close the modal; not a real interactive control */}
+              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events -- only swallows clicks so the backdrop above doesn't close the modal; not a real interactive control */}
               <div className="relative max-w-[95%]" onClick={(e) => e.stopPropagation()}>
                 <Sidebar headings={headings} activeId={activeId} smoothScrollTo={smoothScrollTo} />
                 <button
