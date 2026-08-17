@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import Hero from "../components/hero/Hero";
+import SEO from "../components/SEO";
 
 // Keep below-the-fold code and network requests out of the initial mobile
 // render. The import starts only when a section is close to the viewport.
@@ -39,6 +40,11 @@ const DeferredSection = ({ children, minHeight = "min-h-[12rem]" }) => {
 function MainPage() {
   return (
     <>
+      <SEO
+        title="Abdelrahman Ragab's Portfolio"
+        description="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab."
+        path="/"
+      />
       <Hero />
       <div className="divider"></div>
       <DeferredSection>

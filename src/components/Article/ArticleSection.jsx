@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BookOpenText } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
+import SEO from "../SEO";
 import { useTranslationMode } from "../../hooks/useTranslationMode";
 import { fetchAllArticles } from "../../services/articleService";
 
@@ -43,6 +44,13 @@ const ArticleSection = ({ showAll }) => {
 
   return (
     <section id="articles" className="my-16 w-full">
+      {showAll && (
+        <SEO
+          title="Articles — Abdelrahman Ragab's Portfolio"
+          description="Technical articles by Abdelrahman Ragab covering React, performance, and frontend architecture."
+          path="/all-articles"
+        />
+      )}
       <div className="flex gap-4 items-center mb-8 text-3xl">
         <BookOpenText className="text-light-subtitle dark:text-dark-subtitle" aria-hidden="true" />
         <h2 id="articles-title" className="title mb-0">
