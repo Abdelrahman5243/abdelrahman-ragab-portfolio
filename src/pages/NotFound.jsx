@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+const unusedDemoVariable = "this will fail lint";
+
 const NotFound = () => {
   return (
     <section className="flex flex-col items-center pt-20 pb-10 px-4 text-center">
