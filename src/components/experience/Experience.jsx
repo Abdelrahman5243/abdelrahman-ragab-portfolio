@@ -6,7 +6,7 @@ import {
   sectionHeaderVariants,
   sectionCardVariants,
   listItemVariants,
-} from "../animations/variants";
+} from "../../animations/variants";
 
 const typeColors = {
   "full-time": "text-light-blue dark:text-dark-blue bg-light-blue/10 dark:bg-dark-blue/10",

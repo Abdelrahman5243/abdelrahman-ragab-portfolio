@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
-import ArticleHeader from "../components/Article/ArticleHeader";
-import MarkdownRenderer from "../components/Article/MarkdownRenderer";
-import Sidebar from "../components/Article/Sidebar";
-import TagsList from "../components/Article/TagsList";
-import NextPrevArticles from "../components/Article/NextPrevArticles";
+import ArticleHeader from "../components/article/ArticleHeader";
+import MarkdownRenderer from "../components/article/MarkdownRenderer";
+import Sidebar from "../components/article/Sidebar";
+import TagsList from "../components/article/TagsList";
+import NextPrevArticles from "../components/article/NextPrevArticles";
 import { Menu, X } from "lucide-react";
 import { useActiveHeading } from "../hooks/useActiveHeading";
 import SEO from "../components/SEO";

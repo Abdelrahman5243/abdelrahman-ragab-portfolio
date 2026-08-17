@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import { Suspense, useState, useEffect, lazy } from "react";
-import "./App.css";
+import "./app.css";
 import RootLayout from "./RootLayout";
 import i18n from "./i18n";
 
@@ -9,7 +9,7 @@ const MainPage = lazy(() => import("./pages/MainPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const ArticlePage = lazy(() => import("./pages/ArticlePage"));
-const ArticleSection = lazy(() => import("./components/Article/ArticleSection"));
+const ArticleSection = lazy(() => import("./components/article/ArticleSection"));
 const SectionPage = lazy(() => import("./pages/SectionPage"));
 
 const Loader = () => (

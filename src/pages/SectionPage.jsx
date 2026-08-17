@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import SEO from "../components/SEO";
 
-const Experience = lazy(() => import("../components/Experience"));
+const Experience = lazy(() => import("../components/experience/Experience"));
 const Projects = lazy(() => import("../components/projects/Projects"));
 const Contact = lazy(() => import("../components/contact/Contact"));
 

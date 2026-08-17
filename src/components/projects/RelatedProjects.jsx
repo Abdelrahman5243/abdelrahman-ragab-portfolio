@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./related-projects.css";
+import "./relatedprojects.css";
 import { ChevronLeft, ChevronRight, Layers } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 import { getProjectSlug } from "../../data/projectSlugs";
