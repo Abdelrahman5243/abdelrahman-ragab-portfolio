@@ -10,13 +10,19 @@ const sections = {
   contact: Contact,
 };
 
+const SectionLoader = () => (
+  <div className="w-full min-h-[60vh] flex justify-center items-center">
+    <div className="loader"></div>
+  </div>
+);
+
 const SectionPage = ({ section }) => {
   const Section = sections[section];
 
   if (!Section) return null;
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<SectionLoader />}>
       <Section />
     </Suspense>
   );

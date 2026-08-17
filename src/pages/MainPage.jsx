@@ -49,9 +49,9 @@ function MainPage() {
         <Suspense fallback={null}><Experience /></Suspense>
       </DeferredSection>
       <div className="divider"></div>
-      <DeferredSection>
+      <Suspense fallback={null}>
         <Projects />
-      </DeferredSection>
+      </Suspense>
       <div className="divider"></div>
       <DeferredSection>
         <Suspense fallback={null}><Education /></Suspense>
