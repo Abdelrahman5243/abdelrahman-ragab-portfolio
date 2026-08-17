@@ -9,6 +9,7 @@ import TagsList from "../components/Article/TagsList";
 import NextPrevArticles from "../components/Article/NextPrevArticles";
 import { Menu, X } from "lucide-react";
 import { useActiveHeading } from "../hooks/useActiveHeading";
+import SEO from "../components/SEO";
 import "highlight.js/styles/github-dark.css";
 import { fetchArticleBySlug } from "../services/articleService";
 
@@ -69,29 +70,28 @@ export default function ArticlePage() {
 
   if (loading) return <div className="loader"></div>;
 
-  const { title, markdown, tags, cover } = article || {};
+  const { title, markdown, tags, cover, "short-description": shortDescription } = article || {};
 
   return (
     <>
+      <SEO
+        title={`${title} — Abdelrahman Ragab's Portfolio`}
+        description={shortDescription}
+        path={`/article/${slug}`}
+        image={cover || undefined}
+      />
+
       <div className="relative py-10 grid grid-cols-1 lg:grid-cols-[calc(100%-420px)_400px] gap-8 justify-between max-w-full mx-auto transition-all duration-500 ease-in-out">
         <aside className="hidden lg:block sticky top-24 self-start transition-all duration-500 ease-in-out lg:order-3 order-0">
           <div className="overflow-hidden transition-all duration-500">
-            <Sidebar
-              headings={headings}
-              activeId={activeId}
-              smoothScrollTo={smoothScrollTo}
-            />
+            <Sidebar headings={headings} activeId={activeId} smoothScrollTo={smoothScrollTo} />
           </div>
         </aside>
 
         <section className="prose break-words dark:prose-invert">
           {cover && (
             <div className="w-full overflow-hidden rounded-md mb-8">
-              <img
-                src={cover}
-                alt={title}
-                className="w-full max-h-60 object-cover rounded-lg"
-              />
+              <img src={cover} alt={title} className="w-full max-h-60 object-cover rounded-lg" />
             </div>
           )}
           <ArticleHeader title={title} />
@@ -100,22 +100,20 @@ export default function ArticlePage() {
           <MarkdownRenderer markdown={markdown} />
           <NextPrevArticles currentSlug={slug} />
         </section>
-
       </div>
 
       {createPortal(
         <>
           {showSidebar && (
             <div
+              role="presentation"
               className="lg:hidden fixed inset-0 z-[9998] flex items-center justify-center bg-black/50"
               onClick={() => setShowSidebar(false)}
+              onKeyDown={(e) => e.key === "Escape" && setShowSidebar(false)}
             >
+              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions -- only swallows clicks so the backdrop above doesn't close the modal; not a real interactive control */}
               <div className="relative max-w-[95%]" onClick={(e) => e.stopPropagation()}>
-                <Sidebar
-                  headings={headings}
-                  activeId={activeId}
-                  smoothScrollTo={smoothScrollTo}
-                />
+                <Sidebar headings={headings} activeId={activeId} smoothScrollTo={smoothScrollTo} />
                 <button
                   onClick={() => setShowSidebar(false)}
                   className="sidebar-close-btn absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"

@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export const useTranslationMode = () => {
   const { i18n, t } = useTranslation();
   const [currentLang, setCurrentLang] = useState(localStorage.getItem("language") || "en");
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
     i18n.changeLanguage(currentLang).then(() => {
       document.body.classList.toggle("arabic", currentLang === "ar");
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
       setIsLoading(false);
     });
   }, [currentLang, i18n]);
@@ -18,7 +20,7 @@ export const useTranslationMode = () => {
     const newLang = currentLang === "en" ? "ar" : "en";
     localStorage.setItem("language", newLang);
     setCurrentLang(newLang);
-    setIsLoading(true); 
+    setIsLoading(true);
   };
 
   return { currentLang, toggleLanguage, t, isLoading };

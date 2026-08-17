@@ -1,28 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab."
+    />
+    <meta
+      name="keywords"
+      content="Abdelrahman Ragab, React, Next.js, Magento 2, Portfolio, Web Development, Front-End Developer, Projects"
+    />
+    <meta name="author" content="Abdelrahman Ragab" />
+    <link rel="canonical" href="https://abdelrahman-ragab-portfolio-ten.vercel.app/" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab." />
-  <meta name="keywords" content="Abdelrahman Ragab, React, Next.js, Magento 2, Portfolio, Web Development, Front-End Developer, Projects" />
-  <meta name="author" content="Abdelrahman Ragab" />
-  <link rel="canonical" href="https://abdelrahman-ragab-portfolio-ten.vercel.app/" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Abdelrahman Ragab's Portfolio</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <title>Abdelrahman Ragab's Portfolio</title>
+    <!-- Theme Color for all devices — a distinctive charcoal/cream pair, kept neutral across the 3 accent palettes -->
+    <meta name="theme-color" content="#EDEAE3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17161B" media="(prefers-color-scheme: dark)" />
 
-  <!-- Theme Color for all devices — a distinctive charcoal/cream pair, kept neutral across the 3 accent palettes -->
-  <meta name="theme-color" content="#EDEAE3" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#17161B" media="(prefers-color-scheme: dark)" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
@@ -40,57 +44,81 @@
       }
     </script>
 
-  <!-- Optimized Font Loading -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:opsz,wght@14..32,300..800&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:opsz,wght@14..32,300..800&display=swap">
-  </noscript>
+    <!-- Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:opsz,wght@14..32,300..800&display=swap"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:opsz,wght@14..32,300..800&display=swap"
+      />
+    </noscript>
 
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="Abdelrahman Ragab's Portfolio" />
-  <meta property="og:description"
-    content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab." />
-  <meta property="og:url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Abdelrahman Ragab's Portfolio" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="ar_EG" />
+    <!-- Open Graph Data -->
+    <meta property="og:title" content="Abdelrahman Ragab's Portfolio" />
+    <meta
+      property="og:description"
+      content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab."
+    />
+    <meta property="og:url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Abdelrahman Ragab's Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_EG" />
 
-  <!-- Open Graph Image for social media sharing -->
-  <meta property="og:image" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg" />
-  <meta property="og:image:secure_url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Abdelrahman Ragab's Portfolio" />
+    <!-- Open Graph Image for social media sharing -->
+    <meta
+      property="og:image"
+      content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Abdelrahman Ragab's Portfolio" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Abdelrahman Ragab's Portfolio" />
-  <meta name="twitter:description"
-    content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab." />
-  <meta name="twitter:image" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg" />
-</head>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abdelrahman Ragab's Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab."
+    />
+    <meta
+      name="twitter:image"
+      content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg"
+    />
+  </head>
 
-<body>
-  <script>
-    (function () {
-      try {
-        var mode = localStorage.getItem("currentMode") || "dark";
-        document.body.classList.add(mode);
-        var palette = localStorage.getItem("currentPalette");
-        var validPalettes = { slate: true, obsidian: true, carbon: true };
-        if (!validPalettes[palette]) palette = "slate";
-        document.documentElement.setAttribute("data-palette", palette);
-      } catch (e) {}
-    })();
-  </script>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
+  <body>
+    <script>
+      (function () {
+        try {
+          var mode = localStorage.getItem("currentMode") || "dark";
+          document.body.classList.add(mode);
+          var palette = localStorage.getItem("currentPalette");
+          var validPalettes = { slate: true, obsidian: true, carbon: true };
+          if (!validPalettes[palette]) palette = "slate";
+          document.documentElement.setAttribute("data-palette", palette);
+          var lang = localStorage.getItem("language") === "ar" ? "ar" : "en";
+          document.documentElement.lang = lang;
+          document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        } catch (e) {}
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

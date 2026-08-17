@@ -4,7 +4,31 @@
     <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/</loc>
   </url>
   <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/experience</loc>
+  </url>
+  <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/projects</loc>
+  </url>
+  <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/contact</loc>
+  </url>
+  <url>
     <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/all-articles</loc>
+  </url>
+  <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/article/rtl-ltr-react</loc>
+  </url>
+  <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/article/core-web-vitals-optimization</loc>
+  </url>
+  <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/article/react-performance-patterns</loc>
+  </url>
+  <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/article/html-to-pixels-and-virtual-dom</loc>
+  </url>
+  <url>
+    <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/article/react-rendering-ssr-hydration</loc>
   </url>
   <url>
     <loc>https://abdelrahman-ragab-portfolio-ten.vercel.app/project-details/zag-web-builder</loc>

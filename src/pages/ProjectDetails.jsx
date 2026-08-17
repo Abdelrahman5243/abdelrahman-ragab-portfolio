@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Slider from "../components/slider/Slider";
 import ThumbnailGallery from "../components/lightbox/ThumbnailGallery";
 import RelatedProjects from "../components/projects/RelatedProjects";
+import SEO from "../components/SEO";
 import { getProjectSlug } from "../data/projectSlugs";
 
 const parseDetails = (text = "") =>
@@ -41,6 +42,12 @@ const ProjectDetails = () => {
       transition={{ duration: 0.5 }}
       className="my-6 sm:my-8"
     >
+      <SEO
+        title={`${projectData.title} — Abdelrahman Ragab's Portfolio`}
+        description={projectData.description}
+        path={`/project-details/${projectSlug}`}
+      />
+
       {/* Back button */}
       <motion.div
         initial={{ x: -50, opacity: 0 }}
@@ -51,10 +58,7 @@ const ProjectDetails = () => {
           to="/"
           className="header_btn centered mb-8 w-28 px-3 py-2 sm:px-4 sm:py-3 gap-2 sm:gap-4 text-sm sm:text-base md:text-lg"
         >
-          <ArrowLeft
-            size={18}
-            className={`${i18n.language === "ar" ? "rotate-180" : ""}`}
-          />
+          <ArrowLeft size={18} className={`${i18n.language === "ar" ? "rotate-180" : ""}`} />
           Home
         </Link>
       </motion.div>
@@ -99,8 +103,7 @@ const ProjectDetails = () => {
           </h1>
           {projectData.company && (
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-light-secondary/80 dark:bg-dark-secondary/80 border border-light-border/80 dark:border-dark-border text-xs font-medium text-light-subtitle dark:text-dark-subtitle backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              @ {projectData.company}
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />@ {projectData.company}
             </div>
           )}
           {projectData.badge && (
@@ -110,8 +113,7 @@ const ProjectDetails = () => {
             </div>
           )}
         </div>
-        {Array.isArray(projectData.detailGroups) &&
-          projectData.detailGroups.length > 0 ? (
+        {Array.isArray(projectData.detailGroups) && projectData.detailGroups.length > 0 ? (
           <div className="mx-0 sm:mx-2 grid gap-4 mt-4 sm:grid-cols-2">
             {projectData.detailGroups.map((group, gi) => (
               <motion.div
@@ -183,6 +185,7 @@ const ProjectDetails = () => {
             {t("technologiesTitle")}
           </h2>
         </div>
+        {/* eslint-disable-next-line jsx-a11y/no-redundant-roles -- list-none on the <li>s below strips implicit list semantics in Safari/VoiceOver */}
         <ul
           role="list"
           className="flex flex-wrap gap-2 sm:gap-4 px-2 sm:px-4 mb-8 dark:text-dark-subtitle text-light-subtitle"

@@ -46,9 +46,11 @@ const Header = () => {
   const linkClassName = (href) => `
     inline-flex items-center rounded-full px-2.5 py-1
     whitespace-nowrap transition-colors duration-200
-    ${isNavItemActive(href)
-      ? "bg-light-blue/10 dark:bg-dark-blue/10 text-light-blue dark:text-dark-blue"
-      : "text-light-title dark:text-dark-title hover:text-light-blue dark:hover:text-dark-blue"}
+    ${
+      isNavItemActive(href)
+        ? "bg-light-blue/10 dark:bg-dark-blue/10 text-light-blue dark:text-dark-blue"
+        : "text-light-title dark:text-dark-title hover:text-light-blue dark:hover:text-dark-blue"
+    }
   `;
 
   useEffect(() => {
@@ -56,6 +58,8 @@ const Header = () => {
       i18n.changeLanguage("en");
       localStorage.setItem("language", "en");
       document.body.classList.remove("arabic");
+      document.documentElement.lang = "en";
+      document.documentElement.dir = "ltr";
     }
   }, [isArticlePage, currentLang, i18n]);
 
@@ -68,13 +72,7 @@ const Header = () => {
       >
         <Menu />
       </button>
-      {showModal && (
-        <Modal
-          ITEMS={NAV_ITEMS}
-          closeModal={closeModal}
-          showModal={showModal}
-        />
-      )}
+      {showModal && <Modal ITEMS={NAV_ITEMS} closeModal={closeModal} showModal={showModal} />}
       <nav
         className="p-1.5 px-2 sm:p-1.5 sm:px-3 border border-light-border dark:border-dark-border rounded-full hidden lg:flex bg-light-secondary/70 dark:bg-dark-secondary/70 backdrop-blur-xl"
         aria-label="Main navigation"
@@ -111,8 +109,7 @@ const Header = () => {
           <button
             onClick={toggleLanguage}
             className="centered header_btn"
-            aria-label={`Switch to ${currentLang === "en" ? "Arabic" : "English"
-              }`}
+            aria-label={`Switch to ${currentLang === "en" ? "Arabic" : "English"}`}
           >
             <Languages />
           </button>
