@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { disableTransitionsMomentarily } from "../utils/disableTransitionsMomentarily";
 
 export const PALETTES = [
   { id: "slate", name: "Classic Blue", light: "#2563EB", dark: "#3B82F6" },
@@ -24,6 +25,7 @@ export const usePalette = () => {
 
   const changePalette = (id) => {
     if (!VALID_PALETTES.has(id)) return;
+    disableTransitionsMomentarily();
     localStorage.setItem(STORAGE_KEY, id);
     setPalette(id);
   };

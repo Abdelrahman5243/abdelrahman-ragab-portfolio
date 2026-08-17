@@ -65,7 +65,6 @@ const PalettePicker = () => {
                     className={`
                       w-full flex items-center gap-3 px-3 py-2.5 rounded-2xl
                       text-sm font-medium
-                      transition-colors duration-150
                       ${isActive
                         ? "bg-light-bgHeader/80 dark:bg-dark-bgHeader text-light-title dark:text-dark-title ring-1 ring-inset ring-black/5 dark:ring-white/5"
                         : "text-light-subtitle dark:text-dark-subtitle hover:bg-light-bgHeader/70 dark:hover:bg-dark-bgHeader hover:text-light-title dark:hover:text-dark-title"

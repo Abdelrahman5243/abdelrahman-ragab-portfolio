@@ -1,5 +1,5 @@
 .sidebar-container {
-  @apply sticky top-6;
+  @apply block;
 }
 
 .sidebar-content {

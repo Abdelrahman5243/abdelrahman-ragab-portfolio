@@ -53,7 +53,7 @@ const ArticleSection = ({ showAll }) => {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         {articles.map((article) => (
           <ArticleCard article={article} key={article._id} />
         ))}

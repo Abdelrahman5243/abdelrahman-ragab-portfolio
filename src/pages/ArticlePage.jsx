@@ -74,7 +74,7 @@ export default function ArticlePage() {
   return (
     <>
       <div className="relative py-10 grid grid-cols-1 lg:grid-cols-[calc(100%-420px)_400px] gap-8 justify-between max-w-full mx-auto transition-all duration-500 ease-in-out">
-        <aside className="hidden lg:block sticky lg:top-10 self-start transition-all duration-500 ease-in-out lg:order-3 order-0">
+        <aside className="hidden lg:block sticky top-24 self-start transition-all duration-500 ease-in-out lg:order-3 order-0">
           <div className="overflow-hidden transition-all duration-500">
             <Sidebar
               headings={headings}

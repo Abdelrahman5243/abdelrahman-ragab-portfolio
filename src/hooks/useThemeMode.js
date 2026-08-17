@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { disableTransitionsMomentarily } from '../utils/disableTransitionsMomentarily';
 
 export const useThemeMode = () => {
   const [theme, setTheme] = useState(
@@ -11,6 +12,7 @@ export const useThemeMode = () => {
   }, [theme]);
 
   const toggleTheme = () => {
+    disableTransitionsMomentarily();
     const newTheme = theme === "dark" ? "light" : "dark";
     localStorage.setItem("currentMode", newTheme);
     setTheme(newTheme);
