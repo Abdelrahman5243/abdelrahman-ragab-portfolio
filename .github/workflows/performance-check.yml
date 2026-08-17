@@ -1,0 +1,25 @@
+name: Performance Check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for deployment
+        run: sleep 60
+
+      - name: Run Lighthouse check
+        run: |
+          curl -sf "https://wandering-grass-c536.abdelrahman-ragab-abdelbaky.workers.dev/check" -o result.json
+          cat result.json
+
+      - name: Summarize results
+        run: |
+          echo "## Lighthouse Report" >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          cat result.json >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
