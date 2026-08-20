@@ -1,13 +1,11 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ExternalLink, GithubIcon, MoreVertical, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Slider from "../components/slider/Slider";
 import ThumbnailGallery from "../components/lightbox/ThumbnailGallery";
 import RelatedProjects from "../components/projects/RelatedProjects";
 import SEO from "../components/SEO";
-import { getProjectSlug } from "../data/projectSlugs";
 
 const parseDetails = (text = "") =>
   text
@@ -17,26 +15,15 @@ const parseDetails = (text = "") =>
 
 const ProjectDetails = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const { i18n, t } = useTranslation("main");
   const projectsData = t("projects", { returnObjects: true });
-  const projectEntry = Object.entries(projectsData).find(
-    ([id, project]) => (project.slug || getProjectSlug(id)) === slug || id === slug
-  );
-  const projectData = projectEntry?.[1];
-  const projectSlug = projectEntry?.[1]?.slug || getProjectSlug(projectEntry?.[0]);
-
-  useEffect(() => {
-    if (projectData && projectSlug !== slug) {
-      navigate(`/project-details/${projectSlug}`, { replace: true });
-    }
-  }, [navigate, projectData, projectSlug, slug]);
+  const projectData = projectsData.find((project) => project.slug === slug);
 
   if (!projectData) return null;
 
   return (
     <motion.div
-      key={projectSlug}
+      key={slug}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -45,7 +32,7 @@ const ProjectDetails = () => {
       <SEO
         title={`${projectData.title} — Abdelrahman Ragab's Portfolio`}
         description={projectData.description}
-        path={`/project-details/${projectSlug}`}
+        path={`/project-details/${slug}`}
       />
 
       {/* Back button */}
@@ -75,7 +62,7 @@ const ProjectDetails = () => {
         }}
       >
         <Slider
-          key={`${projectSlug}-${projectData.screens_url?.join("|") || "no-images"}`}
+          key={`${slug}-${projectData.screens_url?.join("|") || "no-images"}`}
           project={projectData}
           language={i18n.language}
         />
@@ -247,7 +234,7 @@ const ProjectDetails = () => {
         )}
       </motion.ul>
 
-      <RelatedProjects currentSlug={projectSlug} />
+      <RelatedProjects currentSlug={slug} />
     </motion.div>
   );
 };

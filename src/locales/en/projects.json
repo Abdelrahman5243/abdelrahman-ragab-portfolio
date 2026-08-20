@@ -1,37 +1,7 @@
 {
-  "navigation": {
-    "about": "About",
-    "skills": "Skills",
-    "experience": "Experience",
-    "projects": "Projects",
-    "contact": "Contact",
-    "articles": "Articles"
-  },
-  "hero": {
-    "title": "Abdelrahman Ragab Abdelbaky",
-    "description": "Frontend Developer with 1.5+ years of professional experience building scalable e-commerce, LMS, and marketplace applications using React, Next.js, and Magento 2. Experienced in developing SSR and PWA applications with GraphQL, optimizing Core Web Vitals, improving SEO, integrating GA4/GTM, and building multilingual (AR/EN) applications with RTL/LTR support. Skilled in building reusable UI components, robust frontend architectures, and delivering production-ready user experiences in Agile teams.",
-    "downloadCV": "Download CV",
-    "showCV": "Preview CV",
-    "viewProjects": "View Projects",
-    "openToWork": "Open to Work",
-    "location": "Cairo, Egypt"
-  },
-  "skillsTitle": "Skills",
-  "articlesTitle": "Articles",
-  "contact": {
-    "title": "Get in Touch",
-    "description": "Reach out to me for more details and stay updated with my latest projects.",
-    "successMessage": "Thank you! Your message has been sent successfully. 👌",
-    "form": {
-      "emailLabel": "Email Address:",
-      "emailPlaceholder": "Enter your email",
-      "messageLabel": "Message:",
-      "messagePlaceholder": "Type your message here"
-    },
-    "submitButton": "Send"
-  },
-  "projects": {
-    "1": {
+  "projects": [
+    {
+      "slug": "zag-web-builder",
       "categories": "ReactJS",
       "badge": "Graduation",
       "title": "ZAG Web Builder",
@@ -59,7 +29,74 @@
         "AOS"
       ]
     },
-    "2": {
+    {
+      "slug": "quran-recitation-player",
+      "categories": "ReactJS",
+      "title": "Quran Recitation Player",
+      "description": "A React application to display Quranic verses with audio playback features.",
+      "details": "This project offers a comprehensive interface for reading and listening to Quranic verses. It includes key features such as verse-by-verse audio playback, navigation between surahs and ayahs, and an auto-play functionality that continues audio playback as the user navigates to the next verse. The app effectively manages state using Redux Toolkit to track the current surah, ayah, and playback progress, ensuring a smooth and responsive user experience. Additionally, the project includes dark mode support for comfortable reading and persistent state, which saves the user's progress across sessions using local storage. Performance optimization is also a priority, managing audio files and verse data efficiently while maintaining quick response times.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185221/bn20bogxq3nwhjsartav.png",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185263/h07leayntpdmisvthoj4.jpg",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185270/wdsduvn9qak1ucfshklp.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/quran-app",
+      "live": "https://quran-app-one-tau.vercel.app",
+      "technologies": [
+        "JavaScript",
+        "React",
+        "Redux Toolkit",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "slug": "personal-portfolio",
+      "categories": "ReactJS",
+      "title": "Personal Portfolio",
+      "description": "A personal portfolio website showcasing Abdelrahman Ragab's work and projects.",
+      "details": "This portfolio website highlights personal projects, skills, and experiences. It includes sections for showcasing projects, a resume, contact information, and more. It is designed to effectively present Abdelrahman Ragab's professional profile.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180628/rehtgvfkwciytx1djlov.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180644/mxkm0dt2moq7rmwlljr5.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180654/adqmxor5rc7jpxwacxyu.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180665/kquyweptn0bapx8yvrol.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/abdelrahman-ragab-portfolio",
+      "live": "https://abdelrahman-ragab-portfolio-ten.vercel.app/",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Formspree",
+        "Framer Motion",
+        "i18next",
+        "Lottie",
+        "React Router DOM"
+      ]
+    },
+    {
+      "slug": "designshub-courses-platform",
+      "categories": "NextJs",
+      "title": "Designshub Courses Platform",
+      "description": "A custom web platform using Next.js and Tailwind CSS for graphic design courses, with responsive landing pages and a modern UI for seamless navigation.",
+      "details": "The platform is optimized for user engagement, featuring a modern and responsive design for all screen sizes. The landing page showcases essential features and benefits of the courses, designed with Tailwind CSS for fast, mobile-first design and smooth animations. This project demonstrates expertise in building highly interactive landing pages that capture user attention and promote seamless course enrollment.",
+      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185488/mkfd0sbrv0vldkblpowa.webp",
+      "screens_url": [
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185495/njov6hytwznmq6ibdnfl.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185502/xmsonkdwe3wcrsaieepy.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185510/px9igbnrc21iecear38j.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185518/recw8y5swawhtrusk2lm.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185526/q7odrhxvhwhhfrnagrnh.webp",
+        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185534/jq6b2io1k4calcgaaqcq.webp"
+      ],
+      "repo": "https://github.com/Abdelrahman5243/designshub-courses-platform",
+      "live": "https://designshub-courses-platform.vercel.app",
+      "technologies": [
+        "Next.js",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "slug": "product-analytics-dashboard",
       "categories": "ReactJS",
       "title": "Product Analytics Dashboard",
       "description": "A CRUD management system for products with analysis features.",
@@ -85,44 +122,8 @@
         "React Router DOM"
       ]
     },
-    "3": {
-      "categories": "ReactJS",
-      "title": "Personal Portfolio",
-      "description": "A personal portfolio website showcasing Abdelrahman Ragab's work and projects.",
-      "details": "This portfolio website highlights personal projects, skills, and experiences. It includes sections for showcasing projects, a resume, contact information, and more. It is designed to effectively present Abdelrahman Ragab's professional profile.",
-      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180628/rehtgvfkwciytx1djlov.webp",
-      "screens_url": [
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180644/mxkm0dt2moq7rmwlljr5.webp",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180654/adqmxor5rc7jpxwacxyu.webp",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755180665/kquyweptn0bapx8yvrol.webp"
-      ],
-      "repo": "https://github.com/Abdelrahman5243/abdelrahman-ragab-portfolio",
-      "live": "https://abdelrahman-ragab-portfolio-ten.vercel.app/",
-      "technologies": [
-        "React",
-        "Tailwind CSS",
-        "Formspree",
-        "Framer Motion",
-        "i18next",
-        "Lottie",
-        "React Router DOM"
-      ]
-    },
-    "4": {
-      "categories": "ReactJS",
-      "title": "Quran Recitation Player",
-      "description": "A React application to display Quranic verses with audio playback features.",
-      "details": "This project offers a comprehensive interface for reading and listening to Quranic verses. It includes key features such as verse-by-verse audio playback, navigation between surahs and ayahs, and an auto-play functionality that continues audio playback as the user navigates to the next verse. The app effectively manages state using Redux Toolkit to track the current surah, ayah, and playback progress, ensuring a smooth and responsive user experience. Additionally, the project includes dark mode support for comfortable reading and persistent state, which saves the user's progress across sessions using local storage. Performance optimization is also a priority, managing audio files and verse data efficiently while maintaining quick response times.",
-      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185221/bn20bogxq3nwhjsartav.png",
-      "screens_url": [
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185263/h07leayntpdmisvthoj4.jpg",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185270/wdsduvn9qak1ucfshklp.webp"
-      ],
-      "repo": "https://github.com/Abdelrahman5243/quran-app",
-      "live": "https://quran-app-one-tau.vercel.app",
-      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
-    },
-    "5": {
+    {
+      "slug": "restaurant-market-store",
       "categories": "ReactJS",
       "title": "Restaurant & Market Store",
       "description": "An e-commerce website for a restaurant and market  featuring product listings and cart functionality.",
@@ -144,25 +145,8 @@
         "React Router DOM"
       ]
     },
-    "6": {
-      "categories": "NextJs",
-      "title": "Designshub Courses Platform",
-      "description": "A custom web platform using Next.js and Tailwind CSS for graphic design courses, with responsive landing pages and a modern UI for seamless navigation.",
-      "details": "The platform is optimized for user engagement, featuring a modern and responsive design for all screen sizes. The landing page showcases essential features and benefits of the courses, designed with Tailwind CSS for fast, mobile-first design and smooth animations. This project demonstrates expertise in building highly interactive landing pages that capture user attention and promote seamless course enrollment.",
-      "image_url": "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185488/mkfd0sbrv0vldkblpowa.webp",
-      "screens_url": [
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185495/njov6hytwznmq6ibdnfl.webp",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185502/xmsonkdwe3wcrsaieepy.webp",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185510/px9igbnrc21iecear38j.webp",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185518/recw8y5swawhtrusk2lm.webp",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185526/q7odrhxvhwhhfrnagrnh.webp",
-        "https://res.cloudinary.com/diwzeyy3v/image/upload/v1755185534/jq6b2io1k4calcgaaqcq.webp"
-      ],
-      "repo": "https://github.com/Abdelrahman5243/designshub-courses-platform",
-      "live": "https://designshub-courses-platform.vercel.app",
-      "technologies": ["Next.js", "Tailwind CSS"]
-    },
-    "7": {
+    {
+      "slug": "game-hub-website",
       "categories": "HTML & CSS & JS",
       "title": "Game Hub Website",
       "description": "A dynamic platform built as a central hub for discovering and exploring a wide variety of games.",
@@ -179,9 +163,14 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/game-hub-website",
       "live": "https://abdelrahman5243.github.io/game-hub-website",
-      "technologies": ["HTML", "JavaScript", "CSS"]
+      "technologies": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ]
     },
-    "8": {
+    {
+      "slug": "restaurant-landing-page",
       "categories": "ReactJS",
       "title": "Restaurant Landing Page",
       "description": "A visually appealing and highly responsive restaurant landing page.",
@@ -195,9 +184,14 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/Restaurant-Landing-Page",
       "live": "https://myapp2-kappa.vercel.app/",
-      "technologies": ["JavaScript", "React", "CSS"]
+      "technologies": [
+        "JavaScript",
+        "React",
+        "CSS"
+      ]
     },
-    "9": {
+    {
+      "slug": "web-developer-showcase",
       "categories": "HTML & CSS & JS",
       "title": "Web Developer Showcase",
       "description": "A professional portfolio website created to showcase web development skills, technologies.",
@@ -210,9 +204,13 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/Web-Developer-Showcase",
       "live": "https://abdelrahman5243.github.io/Web-Developer-Showcase",
-      "technologies": ["HTML", "CSS"]
+      "technologies": [
+        "HTML",
+        "CSS"
+      ]
     },
-    "10": {
+    {
+      "slug": "almasry-pharmacy",
       "categories": "ReactJS",
       "company": "CROCOIT",
       "title": "Almasry Pharmacy - ECommerce PWA",
@@ -295,7 +293,8 @@
         "GA4 / GTM"
       ]
     },
-    "11": {
+    {
+      "slug": "spc-online-academy",
       "categories": "NextJs",
       "company": "CROCOIT",
       "featured": true,
@@ -352,7 +351,9 @@
         },
         {
           "title": "Student & Instructor Area",
-          "items": ["Dashboard, course enrollment, certificates, quizzes, and invoices."]
+          "items": [
+            "Dashboard, course enrollment, certificates, quizzes, and invoices."
+          ]
         }
       ],
       "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
@@ -387,7 +388,8 @@
         "GTM"
       ]
     },
-    "12": {
+    {
+      "slug": "etlala-fashion-marketplace",
       "categories": "Magento 2",
       "company": "CROCOIT",
       "title": "Etlala - Fashion Marketplace",
@@ -407,123 +409,17 @@
       ],
       "repo": "#",
       "live": "#",
-      "technologies": ["Magento 2", "Layout XML", "PHTML", "RequireJS", "GraphQL", "JavaScript"]
+      "technologies": [
+        "Magento 2",
+        "Layout XML",
+        "PHTML",
+        "RequireJS",
+        "GraphQL",
+        "JavaScript"
+      ]
     }
-  },
-  "education": {
-    "title": "Education",
-    "grade": "Grade",
-    "relevantCoursework": "Relevant Coursework",
-    "graduationProject": "Graduation Project",
-    "items": [
-      {
-        "university": "Faculty of Engineering, Zagazig University",
-        "degree": "Bachelor of Science in Computer Science",
-        "grade": "Very Good",
-        "duration": "2019 - 2024",
-        "relevantCoursework": [
-          "Data Structures and Algorithms",
-          "Object-Oriented Programming",
-          "Database Management Systems",
-          "Web Development",
-          "Software Engineering",
-          "Computer Networks"
-        ],
-        "projectTitle": "Website Builder Platform",
-        "projectGrade": "Excellent",
-        "projectDescription": "Developed a comprehensive website builder platform that enables users to create and customize websites with ease.",
-        "projectFeatures": [
-          "Real-time website customization and preview",
-          "AI-powered content generation capabilities",
-          "Flexible section management and arrangement",
-          "Multiple template options and style customization",
-          "Responsive design implementation",
-          "User-friendly interface for content management"
-        ],
-        "projectNote": "This project demonstrated proficiency in modern web development practices, multilingual support, and advanced user interface design principles."
-      }
-    ]
-  },
-  "experience": {
-    "title": "Experience",
-    "present": "Present",
-    "items": [
-      {
-        "role": "Frontend Developer",
-        "company": "CROCOIT",
-        "period": "Apr 2025 – Present",
-        "location": "Cairo",
-        "type": "full-time",
-        "projects": [
-          {
-            "name": "SPC Online Academy - Medical LMS (Next.js)",
-            "projectId": "11",
-            "link": "https://betaspc.a2za1.com/",
-            "achievements": [
-              "Built a medical LMS with Next.js (App Router), React 19, and Zustand, with public, student, and instructor areas",
-              "Built a custom HLS video player with quality options, resume playback, and subtitles, plus video content protection (watermark and leak tracing)",
-              "Managed app state with Zustand (instant updates with rollback) and added Arabic/English support with RTL/LTR switching",
-              "Built JWT auth (silent refresh, roles, route guards) and a checkout with card, wallet, cash outlet, and bank installments",
-              "Improved performance to a 96/100 Lighthouse score (LCP 0.9s, FCP 0.4s, CLS 0.028), and set up SEO and GTM/GA4 tracking"
-            ]
-          },
-          {
-            "name": "Almasry Pharmacy - ECommerce PWA",
-            "projectId": "10",
-            "link": "https://almasrypharmacy.com/",
-            "achievements": [
-              "Built 100+ custom UI components and 50+ Peregrine talons on a Magento PWA Studio storefront for an Arabic/RTL pharmacy",
-              "Built a checkout with 7 payment methods (Braintree, Apple Pay, Checkout.com, Tamara, Tabby, valU, COD), split-order support, and cart recovery on failed payments",
-              "Added an RxJS event system so late-loading analytics and UI still receive earlier events, feeding the GA4 dataLayer",
-              "Added Arabic/English support with RTL/LTR handling and store-view switching that detects Arabic input at runtime",
-              "Improved image loading with a Cloudflare/backend pipeline (WebP/JPG/PNG) and set up a Workbox service worker for faster loads and offline support"
-            ]
-          },
-          {
-            "name": "Etlala - Fashion Marketplace (Magento 2)",
-            "projectId": "12",
-            "link": "/project-details/etlala-fashion-marketplace",
-            "achievements": [
-              "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS for multiple modules",
-              "Built reusable UI components across the platform",
-              "Developed complex marketplace workflows: subscriptions, seller states, plan upgrades",
-              "Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination & dynamic loaders"
-            ]
-          }
-        ]
-      },
-      {
-        "role": "Frontend Developer Trainee",
-        "company": "CROCOIT",
-        "period": "Nov 2024 – Mar 2025",
-        "location": "Cairo",
-        "type": "trainee",
-        "achievements": [
-          "Completed a practical training program focused on modern Magento 2 frontend development",
-          "Worked with Page Builder, widgets, layout XML, PHTML templates, and static assets",
-          "Gained experience with RequireJS, Git workflows, and converting Figma designs into UI components"
-        ]
-      },
-      {
-        "role": "React.js Summer Training",
-        "company": "ITI",
-        "period": "Sep 2023",
-        "location": "",
-        "type": "training",
-        "achievements": [
-          "Built responsive web applications using React.js, Bootstrap, and ES6 JavaScript, focusing on clean, modular code"
-        ]
-      }
-    ]
-  },
-  "technologiesTitle": "Technologies Used",
+  ],
   "relatedProjects": "More Projects",
-  "articleNavigation": "Article navigation",
-  "previousArticle": "Previous",
-  "nextArticle": "Next",
-  "copyright": "Copyright © {{year}} Abdelrahman Ragab. All rights reserved.",
-  "seeMore": "Show More",
-  "viewDetails": "View details",
-  "i18nStamp": 1774547930790,
-  "i18nVersion": "v1.0"
+  "technologiesTitle": "Technologies Used",
+  "viewDetails": "View details"
 }

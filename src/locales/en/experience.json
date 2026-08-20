@@ -1,0 +1,74 @@
+{
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "items": [
+      {
+        "role": "Frontend Developer",
+        "company": "CROCOIT",
+        "period": "Apr 2025 – Present",
+        "location": "Cairo",
+        "type": "full-time",
+        "projects": [
+          {
+            "name": "SPC Online Academy - Medical LMS (Next.js)",
+            "projectId": "spc-online-academy",
+            "link": "https://betaspc.a2za1.com/",
+            "achievements": [
+              "Built a medical LMS with Next.js (App Router), React 19, and Zustand, with public, student, and instructor areas",
+              "Built a custom HLS video player with quality options, resume playback, and subtitles, plus video content protection (watermark and leak tracing)",
+              "Managed app state with Zustand (instant updates with rollback) and added Arabic/English support with RTL/LTR switching",
+              "Built JWT auth (silent refresh, roles, route guards) and a checkout with card, wallet, cash outlet, and bank installments",
+              "Improved performance to a 96/100 Lighthouse score (LCP 0.9s, FCP 0.4s, CLS 0.028), and set up SEO and GTM/GA4 tracking"
+            ]
+          },
+          {
+            "name": "Almasry Pharmacy - ECommerce PWA",
+            "projectId": "almasry-pharmacy",
+            "link": "https://almasrypharmacy.com/",
+            "achievements": [
+              "Built 100+ custom UI components and 50+ Peregrine talons on a Magento PWA Studio storefront for an Arabic/RTL pharmacy",
+              "Built a checkout with 7 payment methods (Braintree, Apple Pay, Checkout.com, Tamara, Tabby, valU, COD), split-order support, and cart recovery on failed payments",
+              "Added an RxJS event system so late-loading analytics and UI still receive earlier events, feeding the GA4 dataLayer",
+              "Added Arabic/English support with RTL/LTR handling and store-view switching that detects Arabic input at runtime",
+              "Improved image loading with a Cloudflare/backend pipeline (WebP/JPG/PNG) and set up a Workbox service worker for faster loads and offline support"
+            ]
+          },
+          {
+            "name": "Etlala - Fashion Marketplace (Magento 2)",
+            "projectId": "etlala-fashion-marketplace",
+            "link": "/project-details/etlala-fashion-marketplace",
+            "achievements": [
+              "Extended Magento 2 frontend using Layout XML, PHTML, RequireJS for multiple modules",
+              "Built reusable UI components across the platform",
+              "Developed complex marketplace workflows: subscriptions, seller states, plan upgrades",
+              "Supported multi-store AR/EN with RTL/LTR layouts and improved UX with AJAX pagination & dynamic loaders"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "Frontend Developer Trainee",
+        "company": "CROCOIT",
+        "period": "Nov 2024 – Mar 2025",
+        "location": "Cairo",
+        "type": "trainee",
+        "achievements": [
+          "Completed a practical training program focused on modern Magento 2 frontend development",
+          "Worked with Page Builder, widgets, layout XML, PHTML templates, and static assets",
+          "Gained experience with RequireJS, Git workflows, and converting Figma designs into UI components"
+        ]
+      },
+      {
+        "role": "React.js Summer Training",
+        "company": "ITI",
+        "period": "Sep 2023",
+        "location": "",
+        "type": "training",
+        "achievements": [
+          "Built responsive web applications using React.js, Bootstrap, and ES6 JavaScript, focusing on clean, modular code"
+        ]
+      }
+    ]
+  }
+}

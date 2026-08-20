@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import SkeletonLoader from "../spinner/SkeletonLoader";
 import { external_link_click } from "../../analytics";
 
-const ProjectCard = ({ project, id, slug }) => {
+const ProjectCard = ({ project, slug }) => {
   const { i18n } = useTranslation("main");
   const language = i18n.language;
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -13,9 +13,9 @@ const ProjectCard = ({ project, id, slug }) => {
 
   return (
     <Link
-      to={`/project-details/${slug || id}`}
-      aria-labelledby={`project-${id}-title`}
-      aria-describedby={`project-${id}-description`}
+      to={`/project-details/${slug}`}
+      aria-labelledby={`project-${slug}-title`}
+      aria-describedby={`project-${slug}-description`}
       className="
         group flex flex-col h-full w-full overflow-hidden rounded-2xl
         border border-light-border dark:border-dark-border
@@ -65,14 +65,14 @@ const ProjectCard = ({ project, id, slug }) => {
 
       <div className="flex flex-col flex-1 p-5">
         <h3
-          id={`project-${id}-title`}
+          id={`project-${slug}-title`}
           className="text-lg sm:text-xl md:text-2xl font-semibold capitalize text-light-title dark:text-dark-title transition-colors group-hover:text-light-blue dark:group-hover:text-dark-blue"
         >
           {project.title}
         </h3>
 
         <p
-          id={`project-${id}-description`}
+          id={`project-${slug}-description`}
           className="mt-2 text-sm sm:text-base leading-relaxed text-light-subtitle dark:text-dark-subtitle line-clamp-2"
         >
           {project.description}

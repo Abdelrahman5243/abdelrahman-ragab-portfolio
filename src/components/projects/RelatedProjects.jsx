@@ -6,19 +6,13 @@ import "swiper/css/navigation";
 import "./relatedprojects.css";
 import { ChevronLeft, ChevronRight, Layers } from "lucide-react";
 import ProjectCard from "./ProjectCard";
-import { getProjectSlug } from "../../data/projectSlugs";
 
 const RelatedProjects = ({ currentSlug }) => {
   const { t, i18n } = useTranslation("main");
   const projectsData = t("projects", { returnObjects: true });
 
-  const all = Object.keys(projectsData).map((id) => ({
-    id,
-    slug: projectsData[id].slug || getProjectSlug(id),
-    ...projectsData[id],
-  }));
-  const current = all.find((p) => p.slug === currentSlug);
-  const others = all.filter((p) => p.slug !== currentSlug);
+  const current = projectsData.find((p) => p.slug === currentSlug);
+  const others = projectsData.filter((p) => p.slug !== currentSlug);
 
   const sameCategory = others.filter((p) => p.categories === current?.categories);
   const rest = others.filter((p) => p.categories !== current?.categories);
@@ -71,7 +65,7 @@ const RelatedProjects = ({ currentSlug }) => {
       >
         {related.map((project) => (
           <SwiperSlide key={project.slug} className="!flex">
-            <ProjectCard id={project.id} slug={project.slug} project={project} />
+            <ProjectCard slug={project.slug} project={project} />
           </SwiperSlide>
         ))}
       </Swiper>

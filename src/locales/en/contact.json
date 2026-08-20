@@ -1,0 +1,14 @@
+{
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Reach out to me for more details and stay updated with my latest projects.",
+    "successMessage": "Thank you! Your message has been sent successfully. 👌",
+    "form": {
+      "emailLabel": "Email Address:",
+      "emailPlaceholder": "Enter your email",
+      "messageLabel": "Message:",
+      "messagePlaceholder": "Type your message here"
+    },
+    "submitButton": "Send"
+  }
+}

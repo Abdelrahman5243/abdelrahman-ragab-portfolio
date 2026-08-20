@@ -1,0 +1,36 @@
+{
+  "education": {
+    "title": "Education",
+    "grade": "Grade",
+    "relevantCoursework": "Relevant Coursework",
+    "graduationProject": "Graduation Project",
+    "items": [
+      {
+        "university": "Faculty of Engineering, Zagazig University",
+        "degree": "Bachelor of Science in Computer Science",
+        "grade": "Very Good",
+        "duration": "2019 - 2024",
+        "relevantCoursework": [
+          "Data Structures and Algorithms",
+          "Object-Oriented Programming",
+          "Database Management Systems",
+          "Web Development",
+          "Software Engineering",
+          "Computer Networks"
+        ],
+        "projectTitle": "Website Builder Platform",
+        "projectGrade": "Excellent",
+        "projectDescription": "Developed a comprehensive website builder platform that enables users to create and customize websites with ease.",
+        "projectFeatures": [
+          "Real-time website customization and preview",
+          "AI-powered content generation capabilities",
+          "Flexible section management and arrangement",
+          "Multiple template options and style customization",
+          "Responsive design implementation",
+          "User-friendly interface for content management"
+        ],
+        "projectNote": "This project demonstrated proficiency in modern web development practices, multilingual support, and advanced user interface design principles."
+      }
+    ]
+  }
+}

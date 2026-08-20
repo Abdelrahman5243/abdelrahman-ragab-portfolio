@@ -1,0 +1,75 @@
+{
+  "experience": {
+    "title": "الخبرات",
+    "present": "الآن",
+    "items": [
+      {
+        "role": "مطور واجهات أمامية",
+        "company": "CROCOIT",
+        "period": "أبريل 2025 – الآن",
+        "location": "القاهرة",
+        "type": "full-time",
+        "projects": [
+          {
+            "name": "SPC Online Academy - منصة LMS الطبية (Next.js)",
+            "projectId": "spc-online-academy",
+            "link": "https://betaspc.a2za1.com/",
+            "achievements": [
+              "بناء منصة LMS احترافية بـ Next.js (App Router) وReact 19 وZustand عبر بوابات عامة وبوابة الطالب والمدرس",
+              "تطوير مشغل فيديو HLS مخصص مع بث تكيفي، استئناف التشغيل، وترجمات متعددة اللغات (SRT/VTT)",
+              "تطبيق حماية محتوى متعددة الطبقات: علامة مائية ديناميكية، تتبع مستخدم عبر إخفاء البيانات (steganography)، وحماية ضد التلاعب عبر MutationObserver",
+              "بناء حالة Zustand قابلة للتوسع مع تحديثات تفاؤلية وتراجع وحرّاس طلبات أحادية، إضافةً إلى نظام i18n كامل (AR/EN) بدعم RTL/LTR",
+              "تطبيق مصادقة JWT (تجديد صامت، RBAC، مسارات محمية) ودفع متعدد الطرق مع أكواد الخصم ومنطق إعادة المحاولة",
+              "تحسين الأداء إلى Lighthouse 96 على سطح المكتب (LCP 0.9s وFCP 0.4s وCLS 0.028) مع SSR والتحميل الكسول وSEO متقدم (JSON-LD وOG وخرائط ISR) + GTM/GA4"
+            ]
+          },
+          {
+            "name": "صيدلية المصري - متجر إلكتروني PWA",
+            "projectId": "almasry-pharmacy",
+            "link": "https://almasrypharmacy.com/",
+            "achievements": [
+              "بناء أكثر من 100 مكون UI و50 talon على متجر Magento PWA Studio لصيدلية بسوق عربي RTL",
+              "بناء checkout بـ 7 طرق دفع (Braintree وApple Pay وCheckout.com وTamara وTabby وvalU والدفع عند الاستلام)، مع دعم انقسام الطلب واستعادة السلة عند فشل الدفع",
+              "إضافة نظام أحداث بـ RxJS بحيث التحليلات والواجهة اللي بتتحمّل متأخر تستقبل الأحداث السابقة، ويغذّي GA4 dataLayer",
+              "إضافة دعم عربي/إنجليزي مع معالجة RTL/LTR وتبديل store view يكتشف الإدخال العربي وقت التشغيل",
+              "تحسين تحميل الصور بخط أنابيب Cloudflare/خلفية (WebP/JPG/PNG) وإعداد Workbox service worker لتحميل أسرع ودعم بدون إنترنت"
+            ]
+          },
+          {
+            "name": "Etlala - سوق الأزياء (Magento 2)",
+            "projectId": "etlala-fashion-marketplace",
+            "link": "/project-details/etlala-fashion-marketplace",
+            "achievements": [
+              "توسيع واجهة Magento 2 باستخدام Layout XML وPHTML وRequireJS وGraphQL لوحدات متعددة",
+              "بناء مكونات UI قابلة لإعادة الاستخدام عبر المنصة",
+              "تطوير سير عمل السوق المعقد: الاشتراكات وحالات البائعين وترقية الخطط",
+              "دعم المتاجر المتعددة بـ AR/EN مع تخطيطات RTL/LTR وتحسين UX مع AJAX pagination والمحملات الديناميكية"
+            ]
+          }
+        ]
+      },
+      {
+        "role": "متدرب تطوير واجهات أمامية",
+        "company": "CROCOIT",
+        "period": "نوفمبر 2024 – مارس 2025",
+        "location": "القاهرة",
+        "type": "trainee",
+        "achievements": [
+          "إتمام برنامج تدريبي عملي متخصص في تطوير واجهة Magento 2 الحديثة",
+          "العمل مع Page Builder والويدجتس وLayout XML وقوالب PHTML والأصول الثابتة",
+          "اكتساب خبرة في RequireJS وسير عمل Git وتحويل تصميمات Figma إلى مكونات UI"
+        ]
+      },
+      {
+        "role": "تدريب صيفي على React.js",
+        "company": "ITI",
+        "period": "سبتمبر 2023",
+        "location": "",
+        "type": "training",
+        "achievements": [
+          "بناء تطبيقات ويب متجاوبة باستخدام React.js وBootstrap وES6 JavaScript مع التركيز على كود نظيف وموحد"
+        ]
+      }
+    ]
+  }
+}

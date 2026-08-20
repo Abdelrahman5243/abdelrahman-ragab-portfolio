@@ -3,8 +3,16 @@ import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend";
 import ChainedBackend from "i18next-chained-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
-import arStatic from "./data/ar.json";
-import enStatic from "./data/en.json";
+
+const localeModules = import.meta.glob("./locales/*/*.json", { eager: true });
+
+const mergeLocale = (lang) =>
+  Object.entries(localeModules)
+    .filter(([path]) => path.startsWith(`./locales/${lang}/`))
+    .reduce((acc, [, mod]) => ({ ...acc, ...mod.default }), {});
+
+const enStatic = mergeLocale("en");
+const arStatic = mergeLocale("ar");
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const USE_STATIC_DATA = import.meta.env.VITE_USE_STATIC_DATA === "true";

@@ -3,7 +3,6 @@ import "./projects.css";
 import { useTranslation } from "react-i18next";
 import { motion, useReducedMotion } from "framer-motion";
 import { Workflow } from "lucide-react";
-import { getProjectSlug } from "../../data/projectSlugs";
 
 const sectionVariants = {
   hidden: { opacity: 0 },
@@ -38,9 +37,7 @@ const Projects = () => {
     return 0;
   };
 
-  const myProjects = Object.keys(projectsData)
-    .map((id) => ({ id, ...projectsData[id] }))
-    .sort((a, b) => rank(b) - rank(a));
+  const myProjects = [...projectsData].sort((a, b) => rank(b) - rank(a));
 
   return (
     <motion.section
@@ -69,7 +66,7 @@ const Projects = () => {
       >
         {myProjects.map((project, index) => (
           <motion.div
-            key={project.id}
+            key={project.slug}
             custom={index}
             variants={shouldReduceMotion ? undefined : cardVariants}
             initial={shouldReduceMotion ? false : "hidden"}
@@ -78,11 +75,7 @@ const Projects = () => {
             whileHover={shouldReduceMotion ? undefined : { y: -5 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
           >
-            <ProjectCard
-              id={project.id}
-              slug={project.slug || getProjectSlug(project.id)}
-              project={{ ...project }}
-            />
+            <ProjectCard slug={project.slug} project={project} />
           </motion.div>
         ))}
       </div>
