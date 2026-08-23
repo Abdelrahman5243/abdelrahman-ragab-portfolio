@@ -13,7 +13,7 @@
           {
             "name": "SPC Online Academy - Medical LMS (Next.js)",
             "projectId": "spc-online-academy",
-            "link": "https://betaspc.a2za1.com/",
+            "link": "https://online.spc-eg.com/",
             "achievements": [
               "Built a medical LMS with Next.js (App Router), React 19, and Zustand, with public, student, and instructor areas",
               "Built a custom HLS video player with quality options, resume playback, and subtitles, plus video content protection (watermark and leak tracing)",
