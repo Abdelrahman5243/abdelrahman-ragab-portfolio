@@ -42,12 +42,7 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/quran-app",
       "live": "https://quran-app-one-tau.vercel.app",
-      "technologies": [
-        "JavaScript",
-        "React",
-        "Redux Toolkit",
-        "Tailwind CSS"
-      ]
+      "technologies": ["JavaScript", "React", "Redux Toolkit", "Tailwind CSS"]
     },
     {
       "slug": "personal-portfolio",
@@ -90,10 +85,7 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/designshub-courses-platform",
       "live": "https://designshub-courses-platform.vercel.app",
-      "technologies": [
-        "Next.js",
-        "Tailwind CSS"
-      ]
+      "technologies": ["Next.js", "Tailwind CSS"]
     },
     {
       "slug": "product-analytics-dashboard",
@@ -163,11 +155,7 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/game-hub-website",
       "live": "https://abdelrahman5243.github.io/game-hub-website",
-      "technologies": [
-        "HTML",
-        "JavaScript",
-        "CSS"
-      ]
+      "technologies": ["HTML", "JavaScript", "CSS"]
     },
     {
       "slug": "restaurant-landing-page",
@@ -184,11 +172,7 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/Restaurant-Landing-Page",
       "live": "https://myapp2-kappa.vercel.app/",
-      "technologies": [
-        "JavaScript",
-        "React",
-        "CSS"
-      ]
+      "technologies": ["JavaScript", "React", "CSS"]
     },
     {
       "slug": "web-developer-showcase",
@@ -204,10 +188,7 @@
       ],
       "repo": "https://github.com/Abdelrahman5243/Web-Developer-Showcase",
       "live": "https://abdelrahman5243.github.io/Web-Developer-Showcase",
-      "technologies": [
-        "HTML",
-        "CSS"
-      ]
+      "technologies": ["HTML", "CSS"]
     },
     {
       "slug": "almasry-pharmacy",
@@ -351,9 +332,7 @@
         },
         {
           "title": "قسم الطالب والمحاضر",
-          "items": [
-            "لوحة تحكم، تسجيل في الدورات، شهادات، اختبارات، وفواتير."
-          ]
+          "items": ["لوحة تحكم، تسجيل في الدورات، شهادات، اختبارات، وفواتير."]
         }
       ],
       "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1781017192/Screenshot_from_2026-06-09_17-59-39_kknoeu.png",
@@ -409,14 +388,7 @@
       ],
       "repo": "#",
       "live": "#",
-      "technologies": [
-        "Magento 2",
-        "Layout XML",
-        "PHTML",
-        "RequireJS",
-        "GraphQL",
-        "JavaScript"
-      ]
+      "technologies": ["Magento 2", "Layout XML", "PHTML", "RequireJS", "GraphQL", "JavaScript"]
     }
   ],
   "relatedProjects": "مشاريع أخرى",
