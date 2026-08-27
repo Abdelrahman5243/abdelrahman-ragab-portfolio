@@ -1,0 +1,14 @@
+{
+  "contact": {
+    "title": "تواصل معي",
+    "description": "تواصل معي لمزيد من التفاصيل وابقَ على اطلاع بأحدث مشاريعي.",
+    "successMessage": "شكرًا لك! تم إرسال رسالتك بنجاح. 👌",
+    "form": {
+      "emailLabel": "البريد الإلكتروني:",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "messageLabel": "الرسالة:",
+      "messagePlaceholder": "اكتب رسالتك هنا"
+    },
+    "submitButton": "إرسال"
+  }
+}

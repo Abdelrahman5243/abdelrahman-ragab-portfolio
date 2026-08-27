@@ -1,7 +1,7 @@
 /**
- * Public analytics API — always import from "@/analytics" (i.e. this file),
- * never from the individual modules. One entry point keeps event names
- * discoverable and makes provider swaps a one-file change.
+ * Public analytics API — always import from this file, never from the
+ * individual modules. One entry point keeps event names discoverable and
+ * makes provider swaps a one-file change.
  *
  * Usage:
  *   import { button_click, external_link_click } from "../../analytics";

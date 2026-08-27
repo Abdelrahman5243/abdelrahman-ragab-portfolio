@@ -1,13 +1,14 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import Hero from "../components/hero/Hero";
+import SEO from "../components/SEO";
 
 // Keep below-the-fold code and network requests out of the initial mobile
 // render. The import starts only when a section is close to the viewport.
 const Skills = lazy(() => import("../components/skills/Skills"));
-const Experience = lazy(() => import("../components/Experience"));
-const Education = lazy(() => import("../components/Education"));
+const Experience = lazy(() => import("../components/experience/Experience"));
+const Education = lazy(() => import("../components/education/Education"));
 const Projects = lazy(() => import("../components/projects/Projects"));
-const ArticleSection = lazy(() => import("../components/Article/ArticleSection"));
+const ArticleSection = lazy(() => import("../components/article/ArticleSection"));
 const Contact = lazy(() => import("../components/contact/Contact"));
 
 const DeferredSection = ({ children, minHeight = "min-h-[12rem]" }) => {
@@ -39,6 +40,11 @@ const DeferredSection = ({ children, minHeight = "min-h-[12rem]" }) => {
 function MainPage() {
   return (
     <>
+      <SEO
+        title="Abdelrahman Ragab's Portfolio"
+        description="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab."
+        path="/"
+      />
       <Hero />
       <div className="divider"></div>
       <DeferredSection>

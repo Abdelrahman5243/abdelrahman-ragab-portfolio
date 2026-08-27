@@ -5,7 +5,7 @@ import {
   sectionHeaderVariants,
   sectionCardVariants,
   listItemVariants,
-} from "../animations/variants";
+} from "../../animations/variants";
 
 const Education = () => {
   const { t } = useTranslation("main");
