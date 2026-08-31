@@ -67,7 +67,10 @@ const ArticleSection = ({ showAll }) => {
       {seo}
       <div className="flex gap-4 items-center justify-between mb-8">
         <div className="flex gap-4 items-center text-3xl">
-          <BookOpenText className="text-light-subtitle dark:text-dark-subtitle" aria-hidden="true" />
+          <BookOpenText
+            className="text-light-subtitle dark:text-dark-subtitle"
+            aria-hidden="true"
+          />
           <h2 id="articles-title" className="title mb-0">
             {t("articlesTitle")}
           </h2>
