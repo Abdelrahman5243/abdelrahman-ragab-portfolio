@@ -12,6 +12,18 @@ import { useActiveHeading } from "../hooks/useActiveHeading";
 import SEO from "../components/SEO";
 import "highlight.js/styles/github-dark.css";
 import { fetchArticleBySlug } from "../services/articleService";
+import { cardAt, cardSrcSet, isCard, ogCard } from "../utils/cardImage";
+
+/**
+ * Banner shapes per breakpoint. The page banner is shorter than the 1200x630
+ * og:image — a scraper wants the tall card, a reader wants the article to start
+ * near the top — so it is rendered rather than cropped.
+ */
+const BANNER = {
+  mobile: { ratio: 3 / 2, widths: [420, 640, 900, 1200], media: "(max-width: 639px)" },
+  tablet: { ratio: 16 / 7, widths: [768, 1024, 1536, 2048], media: "(max-width: 1023px)" },
+  desktop: { ratio: 1200 / 500, widths: [900, 1200, 1800, 2400], media: null },
+};
 
 export default function ArticlePage() {
   const [article, setArticle] = useState(null);
@@ -78,7 +90,9 @@ export default function ArticlePage() {
         title={`${title} — Abdelrahman Ragab's Portfolio`}
         description={shortDescription}
         path={`/article/${slug}`}
-        image={cover || undefined}
+        image={cover ? ogCard(cover) : undefined}
+        type="article"
+        imageAlt={title}
       />
 
       <div className="relative py-10 grid grid-cols-1 lg:grid-cols-[calc(100%-420px)_400px] gap-8 justify-between max-w-full mx-auto transition-all duration-500 ease-in-out">
@@ -90,8 +104,36 @@ export default function ArticlePage() {
 
         <section className="prose break-words dark:prose-invert">
           {cover && (
-            <div className="w-full overflow-hidden rounded-md mb-8">
-              <img src={cover} alt={title} className="w-full max-h-60 object-cover rounded-lg" />
+            <div
+              className="w-full overflow-hidden rounded-xl mb-8 not-prose
+                         aspect-[3/2] sm:aspect-[16/7] lg:aspect-[1200/500]"
+            >
+              {/* The banner is asked for at the shape it will occupy, so the
+                  headline the Worker sets inside it is never cropped away. */}
+              <picture>
+                <source
+                  media={BANNER.mobile.media}
+                  srcSet={cardSrcSet(cover, BANNER.mobile.widths, BANNER.mobile.ratio)}
+                  sizes="100vw"
+                />
+                <source
+                  media={BANNER.tablet.media}
+                  srcSet={cardSrcSet(cover, BANNER.tablet.widths, BANNER.tablet.ratio)}
+                  sizes="100vw"
+                />
+                <img
+                  src={cardAt(cover, { w: 1200, h: 1200 / BANNER.desktop.ratio })}
+                  srcSet={cardSrcSet(cover, BANNER.desktop.widths, BANNER.desktop.ratio)}
+                  sizes="(min-width: 1024px) 900px, 100vw"
+                  alt={isCard(cover) ? "" : title}
+                  aria-hidden={isCard(cover) ? "true" : undefined}
+                  width={1200}
+                  height={500}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </picture>
             </div>
           )}
           <ArticleHeader title={title} />
