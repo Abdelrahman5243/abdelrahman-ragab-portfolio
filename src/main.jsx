@@ -5,7 +5,10 @@ import { I18nextProvider } from "react-i18next";
 import { HelmetProvider } from "react-helmet-async";
 import i18n from "./i18n";
 import { AnalyticsProvider } from "./analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 import "./index.css";
+
+injectSpeedInsights();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
