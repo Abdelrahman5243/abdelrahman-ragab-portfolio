@@ -1,6 +1,66 @@
 {
   "projects": [
     {
+      "slug": "next-generation-elevators",
+      "categories": "NextJs",
+      "badge": "Freelance",
+      "title": "مصاعد الجيل القادم - موقع الشركة",
+      "description": "موقع ثنائي اللغة لشركة مصاعد سعودية، مبني بـ Next.js وSanity CMS، ويدعم العربي والإنجليزي مع RTL وLTR. العميل يقدر يدير محتوى الموقع بالكامل من الـ CMS.",
+      "details": "مشروع مستقل لتطوير موقع شركة مصاعد سعودية بالكامل باستخدام Next.js App Router وReact وTypeScript وTailwind CSS. الموقع عربي بشكل أساسي مع نسخة إنجليزية كاملة، والمحتوى بيتدار من خلال Sanity CMS مع المعاينة المباشرة والتعديل من نفس صفحات الموقع.",
+      "detailGroups": [
+        {
+          "title": "نظرة عامة",
+          "items": [
+            "تطوير الموقع بالكامل كمشروع مستقل لشركة مصاعد سعودية.",
+            "الموقع عربي بشكل أساسي مع نسخة إنجليزية كاملة ودعم RTL وLTR.",
+            "صفحات الخدمات والمشاريع بتتولد بشكل ديناميكي من المحتوى الموجود في الـ CMS."
+          ]
+        },
+        {
+          "title": "الصفحات",
+          "items": [
+            "الرئيسية، من نحن، الخدمات، المشاريع، التواصل، وتصميمات الكبائن.",
+            "صفحة تفاصيل لكل خدمة ومشروع، والعميل يقدر يضيف ويعدل المحتوى من الـ CMS."
+          ]
+        },
+        {
+          "title": "Sanity CMS",
+          "items": [
+            "إعداد Sanity CMS ونماذج المحتوى وواجهة Studio مدمجة داخل الموقع.",
+            "إضافة Live Preview مع إمكانية تعديل المحتوى مباشرة من صفحات الموقع.",
+            "تنظيم الـ Studio بشكل واضح، واستخدام مستندات منفردة لإعدادات الموقع لمنع إنشاء نسخ مكررة.",
+            "لو الترجمة الإنجليزية مش موجودة، الموقع بيستخدم المحتوى العربي بدل ما تظهر الصفحة بمحتوى ناقص.",
+            "تسليم الموقع والـ CMS للعميل، والعميل يقدر يدير ويحدث المحتوى بنفسه."
+          ]
+        },
+        {
+          "title": "SEO",
+          "items": [
+            "إعداد Metadata وCanonical وHreflang للنسختين العربية والإنجليزية.",
+            "إضافة JSON-LD وSitemap وOpen Graph images.",
+            "تسجيل الموقع في Google Search Console وإضافة Google Tag Manager."
+          ]
+        },
+        {
+          "title": "التواصل",
+          "items": ["نموذج التواصل بيفتح محادثة واتساب برسالة جاهزة فيها بيانات الزائر."]
+        }
+      ],
+      "image_url": "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228575/Screenshot_from_2026-10-05_22-22-05.png",
+      "screens_url": [
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228575/Screenshot_from_2026-10-05_22-22-05.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-24-25.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-22-28.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-22-17.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-25-35.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-23-37.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228573/Screenshot_from_2026-10-05_22-25-17.png"
+      ],
+      "repo": "#",
+      "live": "https://next-generation-elevators.vercel.app/",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Sanity CMS", "Vercel"]
+    },
+    {
       "slug": "zag-web-builder",
       "categories": "ReactJS",
       "badge": "Graduation",
@@ -393,5 +453,34 @@
   ],
   "relatedProjects": "مشاريع أخرى",
   "technologiesTitle": "التقنيات المستخدمة",
-  "viewDetails": "عرض التفاصيل"
+  "viewDetails": "عرض التفاصيل",
+  "tools": {
+    "title": "أدوات من تطويري",
+    "copy": "نسخ الأمر",
+    "copied": "تم النسخ",
+    "items": [
+      {
+        "slug": "sitebot-cli",
+        "name": "sitebot-cli",
+        "meta": "الإصدار v1.3.3 على npm",
+        "description": "أداة لفحص المواقع من سطر الأوامر: تحسين محركات البحث (SEO)، وإتاحة الموقع لزواحف الذكاء الاصطناعي، وبيانات JSON-LD، والروابط المعطّلة، ومؤشرات Core Web Vitals على الجوال وسطح المكتب. وتعمل أيضًا كـ GitHub Action.",
+        "command": "npx sitebot-cli yoursite.com",
+        "technologies": ["TypeScript", "Playwright", "GitHub Actions"],
+        "repo": "https://github.com/Abdelrahman5243/sitebot-cli",
+        "live": "https://abdelrahman5243.github.io/sitebot-cli/",
+        "liveLabel": "التوثيق"
+      },
+      {
+        "slug": "seeded-cards",
+        "name": "Seeded Cards",
+        "meta": "متاحة الآن",
+        "description": "خدمة تحوّل الرابط إلى صورة Open Graph. يُحدَّد التصميم بناءً على العنوان، فيحصل كل منشور على بطاقة مميزة، ويُعيد الرابط نفسه الصورة نفسها في كل مرة.",
+        "cardTitle": "Same title, new look",
+        "technologies": ["Cloudflare Workers", "Satori", "TypeScript"],
+        "repo": "https://github.com/Abdelrahman5243/seeded-cards",
+        "live": "https://seeded-cards.abdelrahman-ragab-abdelbaky.workers.dev/",
+        "liveLabel": "جرّبها"
+      }
+    ]
+  }
 }

@@ -3,26 +3,11 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { cardAt, cardSrcSet, isCard } from "../../utils/cardImage";
 
-/**
- * The seeded card already carries the title, the byline and the kicker, set in
- * type by the Worker. So the card *is* the tile: no thumbnail beside a
- * duplicate headline, and nothing rendered small enough to be unreadable.
- *
- * The Worker is asked for a square, matching the square frame below — it lays
- * the headline out for whatever frame it is given, so requesting the right
- * shape is what keeps the type whole. Cropping a wide card into a square would
- * cut the headline off instead.
- *
- * The widths cover the tile at 1x and 2x: this is type, not a photo, so any
- * upscaling immediately shows as soft, pixelated text.
- */
 const CARD_WIDTHS = [360, 520, 720, 1040];
 
 const ArticleCard = ({ article }) => {
   const shouldReduceMotion = useReducedMotion();
   const cover = article.cover;
-  // A cover that is not a seeded card carries no text, so that tile keeps the
-  // written title and description instead.
   const cardIsTheTile = isCard(cover);
 
   return (
@@ -42,8 +27,6 @@ const ArticleCard = ({ article }) => {
       >
         {cardIsTheTile ? (
           <>
-            {/* Square frame, square card — the two must agree, or object-cover
-                would crop the headline the Worker set inside it. */}
             <div className="relative overflow-hidden rounded-2xl aspect-square">
               <img
                 src={cardAt(cover, { w: 520, h: 520 })}
@@ -60,12 +43,6 @@ const ArticleCard = ({ article }) => {
               />
             </div>
 
-            {/* The card states the title, so this strip carries only what it
-                cannot: the topics, and a visible affordance that the row is a
-                link. Both stay on screen rather than waiting for a hover, which
-                a touch device never sends. It sits below the image rather than
-                over it, because the Worker already uses that bottom band for
-                the byline and the corner stamp. */}
             <div className="flex items-center justify-between gap-4 pt-3.5">
               {article.tags?.length > 0 && (
                 <p

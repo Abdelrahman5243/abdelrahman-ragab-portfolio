@@ -31,8 +31,6 @@ const ArticleSection = ({ showAll }) => {
           return;
         }
 
-        // The home page shows a slider, so it needs more than a couple of
-        // slides to be worth sliding.
         setArticles(showAll ? articlesData : articlesData.slice(0, 6));
       } catch (error) {
         console.error("Error fetching articles:", error);

@@ -14,11 +14,6 @@ import "highlight.js/styles/github-dark.css";
 import { fetchArticleBySlug } from "../services/articleService";
 import { cardAt, cardSrcSet, isCard, ogCard } from "../utils/cardImage";
 
-/**
- * Banner shapes per breakpoint. The page banner is shorter than the 1200x630
- * og:image — a scraper wants the tall card, a reader wants the article to start
- * near the top — so it is rendered rather than cropped.
- */
 const BANNER = {
   mobile: { ratio: 3 / 2, widths: [420, 640, 900, 1200], media: "(max-width: 639px)" },
   tablet: { ratio: 16 / 7, widths: [768, 1024, 1536, 2048], media: "(max-width: 1023px)" },
@@ -108,8 +103,6 @@ export default function ArticlePage() {
               className="w-full overflow-hidden rounded-xl mb-8 not-prose
                          aspect-[3/2] sm:aspect-[16/7] lg:aspect-[1200/500]"
             >
-              {/* The banner is asked for at the shape it will occupy, so the
-                  headline the Worker sets inside it is never cropped away. */}
               <picture>
                 <source
                   media={BANNER.mobile.media}

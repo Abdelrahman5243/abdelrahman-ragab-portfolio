@@ -8,10 +8,11 @@ const Skills = lazy(() => import("../components/skills/Skills"));
 const Experience = lazy(() => import("../components/experience/Experience"));
 const Education = lazy(() => import("../components/education/Education"));
 const Projects = lazy(() => import("../components/projects/Projects"));
+const ToolsStrip = lazy(() => import("../components/tools/ToolsStrip"));
 const ArticleSection = lazy(() => import("../components/article/ArticleSection"));
 const Contact = lazy(() => import("../components/contact/Contact"));
 
-const DeferredSection = ({ children, minHeight = "min-h-[12rem]" }) => {
+const DeferredSection = ({ children, minHeight }) => {
   const ref = useRef(null);
   const [active, setActive] = useState(false);
 
@@ -47,33 +48,39 @@ function MainPage() {
       />
       <Hero />
       <div className="divider"></div>
-      <DeferredSection>
+      <DeferredSection minHeight="min-h-[1230px]">
         <Suspense fallback={null}>
           <Skills />
         </Suspense>
       </DeferredSection>
       <div className="divider"></div>
-      <DeferredSection>
+      <DeferredSection minHeight="min-h-[1650px]">
         <Suspense fallback={null}>
           <Experience />
         </Suspense>
       </DeferredSection>
       <div className="divider"></div>
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="min-h-[2900px]" />}>
         <Projects />
       </Suspense>
       <div className="divider"></div>
-      <DeferredSection>
+      <DeferredSection minHeight="min-h-[390px]">
+        <Suspense fallback={null}>
+          <ToolsStrip />
+        </Suspense>
+      </DeferredSection>
+      <div className="divider"></div>
+      <DeferredSection minHeight="min-h-[1030px]">
         <Suspense fallback={null}>
           <Education />
         </Suspense>
       </DeferredSection>
       <div className="divider"></div>
-      <DeferredSection>
+      <DeferredSection minHeight="min-h-[560px]">
         <ArticleSection showAll={false} />
       </DeferredSection>
       <div className="divider"></div>
-      <DeferredSection>
+      <DeferredSection minHeight="min-h-[560px]">
         <Contact />
       </DeferredSection>
     </>

@@ -106,7 +106,9 @@ const ProjectCard = ({ project, slug }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {
+                  e.preventDefault();
                   e.stopPropagation();
+                  window.open(e.currentTarget.href, "_blank", "noopener,noreferrer");
                   // Example: external link click tracking (project live demo).
                   external_link_click({
                     url: project.live,
@@ -127,7 +129,9 @@ const ProjectCard = ({ project, slug }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {
+                  e.preventDefault();
                   e.stopPropagation();
+                  window.open(e.currentTarget.href, "_blank", "noopener,noreferrer");
                   // Example: external link click tracking (project repo).
                   external_link_click({
                     url: project.repo,

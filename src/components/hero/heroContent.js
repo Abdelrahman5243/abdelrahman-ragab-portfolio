@@ -4,7 +4,7 @@ export const HERO_CONTENT = {
   titleKey: "hero.title",
   descriptionKey: "hero.description",
   showCVKey: "hero.showCV",
-  cvUrl: "https://drive.google.com/file/d/16zAur4LWn7n6oGUzxqgL4EIFkIL3VXM0/view",
+  cvUrl: "https://drive.google.com/file/d/1BRF9Q8cnHP5lJ86PbUodL65i1j2CR5rB/view",
   socialLinks: [
     {
       href: "mailto:abdelrahman.ragab.abdelbaky@gmail.com",

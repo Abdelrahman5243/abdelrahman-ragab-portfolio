@@ -1,6 +1,66 @@
 {
   "projects": [
     {
+      "slug": "next-generation-elevators",
+      "categories": "NextJs",
+      "badge": "Freelance",
+      "title": "Next Generation Elevators - Corporate Website",
+      "description": "An Arabic-first bilingual website for a Saudi elevator company, built with Next.js and Sanity CMS. The client can manage the website content directly through the CMS with live preview.",
+      "details": "A freelance project for a Saudi elevator company. I built the Arabic-first AR/EN website with Next.js App Router, React, TypeScript, and Tailwind CSS. The content is managed through Sanity CMS, with Live Preview and click-to-edit so the client can update the website without developer help for day-to-day content changes.",
+      "detailGroups": [
+        {
+          "title": "Overview",
+          "items": [
+            "Built the website from start to finish as a freelance project for a Saudi elevator company.",
+            "Arabic is the default language, with a full English version and support for both RTL and LTR."
+          ]
+        },
+        {
+          "title": "Pages",
+          "items": [
+            "Home, About, Services, Projects, Contact, and Cabin Designs.",
+            "Dynamic detail pages for services and projects, managed directly from the CMS."
+          ]
+        },
+        {
+          "title": "Sanity CMS & Live Preview",
+          "items": [
+            "Set up Sanity CMS with custom content models and an embedded Studio inside the website.",
+            "Added Live Preview with click-to-edit, so the client can edit content directly from the page they are viewing.",
+            "Organized the Studio into clear sections and used single-instance documents for site settings to avoid duplicate entries.",
+            "Added Arabic fallback for missing English content, so pages do not appear with empty sections when a translation is missing.",
+            "Handed over the website and CMS to the client, who now manages the content independently."
+          ]
+        },
+        {
+          "title": "Technical SEO",
+          "items": [
+            "Set up metadata, canonical and hreflang tags for both languages, JSON-LD, sitemap, and Open Graph images.",
+            "Verified the website in Google Search Console and added Google Tag Manager."
+          ]
+        },
+        {
+          "title": "Contact",
+          "items": [
+            "The contact form opens WhatsApp with a pre-filled message containing the visitor's details."
+          ]
+        }
+      ],
+      "image_url": "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228575/Screenshot_from_2026-10-05_22-22-05.png",
+      "screens_url": [
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228575/Screenshot_from_2026-10-05_22-22-05.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-24-25.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-22-28.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-22-17.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-25-35.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228574/Screenshot_from_2026-10-05_22-23-37.png",
+        "https://res.cloudinary.com/dlqyrbku/image/upload/f_webp,q_90,w_auto,h_900,c_scale/v1791228573/Screenshot_from_2026-10-05_22-25-17.png"
+      ],
+      "repo": "#",
+      "live": "https://next-generation-elevators.vercel.app/",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Sanity CMS", "Vercel"]
+    },
+    {
       "slug": "zag-web-builder",
       "categories": "ReactJS",
       "badge": "Graduation",
@@ -393,5 +453,34 @@
   ],
   "relatedProjects": "More Projects",
   "technologiesTitle": "Technologies Used",
-  "viewDetails": "View details"
+  "viewDetails": "View details",
+  "tools": {
+    "title": "Tools I've built",
+    "copy": "Copy command",
+    "copied": "Copied",
+    "items": [
+      {
+        "slug": "sitebot-cli",
+        "name": "sitebot-cli",
+        "meta": "v1.3.3 on npm",
+        "description": "Audits a site from the terminal: SEO, AI crawler access, JSON-LD, broken links, and Core Web Vitals on mobile and desktop. Also runs as a GitHub Action.",
+        "command": "npx sitebot-cli yoursite.com",
+        "technologies": ["TypeScript", "Playwright", "GitHub Actions"],
+        "repo": "https://github.com/Abdelrahman5243/sitebot-cli",
+        "live": "https://abdelrahman5243.github.io/sitebot-cli/",
+        "liveLabel": "Docs"
+      },
+      {
+        "slug": "seeded-cards",
+        "name": "Seeded Cards",
+        "meta": "Live",
+        "description": "Turns a URL into an Open Graph image. The look comes from the title, so every post gets its own card and the same URL always returns the same image.",
+        "cardTitle": "Same title, new look",
+        "technologies": ["Cloudflare Workers", "Satori", "TypeScript"],
+        "repo": "https://github.com/Abdelrahman5243/seeded-cards",
+        "live": "https://seeded-cards.abdelrahman-ragab-abdelbaky.workers.dev/",
+        "liveLabel": "Try it"
+      }
+    ]
+  }
 }
