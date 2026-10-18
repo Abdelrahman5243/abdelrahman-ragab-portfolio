@@ -13,11 +13,11 @@ const ArticleCard = ({ article }) => {
   return (
     <Link
       to={`/article/${article.slug}`}
-      className="group block focus-visible:outline-none"
+      className="group block h-full focus-visible:outline-none"
       aria-label={`${article.title} — ${article["short-description"] ?? ""}`}
     >
       <motion.article
-        className="relative rounded-2xl
+        className="relative h-full rounded-2xl
                    group-focus-visible:ring-2 group-focus-visible:ring-light-blue/50 dark:group-focus-visible:ring-dark-blue/50
                    group-focus-visible:ring-offset-2 ring-offset-light-primary dark:ring-offset-dark-primary"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}

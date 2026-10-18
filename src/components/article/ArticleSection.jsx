@@ -113,7 +113,7 @@ const ArticleSection = ({ showAll }) => {
             640: { slidesPerView: 2.2, spaceBetween: 20 },
             1024: { slidesPerView: 3.2, spaceBetween: 24 },
           }}
-          className="!px-2 sm:!px-4 !pb-2"
+          className="articles-swiper !px-2 sm:!px-4 !pb-2"
         >
           {articles.map((article) => (
             <SwiperSlide key={article._id} className="!h-auto">

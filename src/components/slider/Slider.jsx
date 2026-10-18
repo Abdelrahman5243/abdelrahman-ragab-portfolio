@@ -49,7 +49,7 @@ const Slider = ({ project, language }) => {
       autoplay={{ delay: 3000 }}
       navigation
       pagination={{ clickable: true }}
-      className="max-h-[500px] overflow-hidden rounded-lg"
+      className="project-image-slider max-h-[500px] overflow-hidden rounded-lg"
     >
       {projectImages.map((img, index) => (
         <SwiperSlide key={img} className="mx-auto w-full">
