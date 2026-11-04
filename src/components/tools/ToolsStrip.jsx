@@ -42,9 +42,9 @@ const ToolsStrip = () => {
         </h2>
       </motion.div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {tools.items.map((tool) => (
-          <ToolCard key={tool.slug} tool={tool} labels={tools} />
+      <div className="overflow-hidden rounded-2xl border border-light-border dark:border-dark-border bg-light-secondary dark:bg-dark-secondary divide-y divide-light-border dark:divide-dark-border">
+        {tools.items.map((tool, index) => (
+          <ToolCard key={tool.slug} tool={tool} labels={tools} index={index} />
         ))}
       </div>
     </section>

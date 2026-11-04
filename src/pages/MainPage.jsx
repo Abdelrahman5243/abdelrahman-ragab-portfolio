@@ -31,9 +31,13 @@ const DeferredSection = ({ children, minHeight }) => {
     return () => observer.disconnect();
   }, [active]);
 
+  // The Suspense boundary lives here so every deferred section has one. Without
+  // it a lazy section suspends up to the app-level boundary, which replaces the
+  // whole page with the loader and throws the visitor back to the top.
+  // The fallback keeps the reserved height so nothing shifts while code loads.
   return (
     <div ref={ref} className={active ? "" : minHeight}>
-      {active ? children : null}
+      {active ? <Suspense fallback={<div className={minHeight} />}>{children}</Suspense> : null}
     </div>
   );
 };
@@ -49,15 +53,11 @@ function MainPage() {
       <Hero />
       <div className="divider"></div>
       <DeferredSection minHeight="min-h-[1230px]">
-        <Suspense fallback={null}>
-          <Skills />
-        </Suspense>
+        <Skills />
       </DeferredSection>
       <div className="divider"></div>
       <DeferredSection minHeight="min-h-[1650px]">
-        <Suspense fallback={null}>
-          <Experience />
-        </Suspense>
+        <Experience />
       </DeferredSection>
       <div className="divider"></div>
       <Suspense fallback={<div className="min-h-[2900px]" />}>
@@ -65,15 +65,11 @@ function MainPage() {
       </Suspense>
       <div className="divider"></div>
       <DeferredSection minHeight="min-h-[390px]">
-        <Suspense fallback={null}>
-          <ToolsStrip />
-        </Suspense>
+        <ToolsStrip />
       </DeferredSection>
       <div className="divider"></div>
       <DeferredSection minHeight="min-h-[1030px]">
-        <Suspense fallback={null}>
-          <Education />
-        </Suspense>
+        <Education />
       </DeferredSection>
       <div className="divider"></div>
       <DeferredSection minHeight="min-h-[560px]">

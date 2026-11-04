@@ -1,104 +1,80 @@
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { cardAt, cardSrcSet, isCard } from "../../utils/cardImage";
 
-const CARD_WIDTHS = [360, 520, 720, 1040];
+// Covers are Open Graph cards (1200×630), so thumbnails keep that ratio.
+const RATIO = 1200 / 630;
+const THUMB = { w: 480, h: 252 };
+const THUMB_WIDTHS = [480, 720, 960];
 
-const ArticleCard = ({ article }) => {
-  const shouldReduceMotion = useReducedMotion();
+// One full-width row, styled to match the Tools rows.
+const ArticleCard = ({ article, index, readLabel }) => {
   const cover = article.cover;
-  const cardIsTheTile = isCard(cover);
+  const number = String(index + 1).padStart(2, "0");
 
   return (
     <Link
       to={`/article/${article.slug}`}
-      className="group block h-full focus-visible:outline-none"
-      aria-label={`${article.title} — ${article["short-description"] ?? ""}`}
+      className="group relative grid grid-cols-[auto_minmax(0,1fr)] sm:grid-cols-[auto_minmax(0,1fr)_auto] gap-x-4 sm:gap-x-6 gap-y-4 items-center p-5 sm:p-6
+                 transition-colors duration-300 hover:bg-light-primary dark:hover:bg-dark-primary
+                 focus-visible:outline-none focus-visible:bg-light-primary dark:focus-visible:bg-dark-primary"
     >
-      <motion.article
-        className="relative h-full rounded-2xl
-                   group-focus-visible:ring-2 group-focus-visible:ring-light-blue/50 dark:group-focus-visible:ring-dark-blue/50
-                   group-focus-visible:ring-offset-2 ring-offset-light-primary dark:ring-offset-dark-primary"
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {cardIsTheTile ? (
-          <>
-            <div className="relative overflow-hidden rounded-2xl aspect-square">
-              <img
-                src={cardAt(cover, { w: 520, h: 520 })}
-                srcSet={cardSrcSet(cover, CARD_WIDTHS, 1)}
-                sizes="(min-width: 1024px) 420px, (min-width: 640px) 340px, 88vw"
-                alt={article.title}
-                loading="lazy"
-                decoding="async"
-                width={520}
-                height={520}
-                className="absolute inset-0 h-full w-full object-cover
-                           transition-transform duration-700 ease-out
-                           group-hover:scale-[1.02]"
-              />
-            </div>
+      <span
+        className="absolute inset-y-0 start-0 w-0.5 scale-y-0 bg-light-blue dark:bg-dark-blue transition-transform duration-300 group-hover:scale-y-100 group-focus-visible:scale-y-100"
+        aria-hidden="true"
+      />
 
-            <div className="flex items-center justify-between gap-4 pt-3.5">
-              {article.tags?.length > 0 && (
-                <p
-                  className="min-w-0 truncate text-xs sm:text-[0.8rem] font-medium uppercase tracking-wide
-                             text-light-subtitle/80 dark:text-dark-subtitle/80"
-                >
-                  {article.tags.slice(0, 2).join("  /  ")}
-                </p>
-              )}
-              <span
-                className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold
-                           text-light-title dark:text-dark-title
-                           group-hover:text-light-blue dark:group-hover:text-dark-blue"
-              >
-                Read article
-                <ArrowUpRight
-                  size={16}
-                  strokeWidth={2.5}
-                  className="rtl:-scale-x-100 transition-transform duration-300 ease-out
-                             group-hover:translate-x-1 rtl:group-hover:-translate-x-1 group-hover:-translate-y-0.5"
-                />
-              </span>
-            </div>
-          </>
-        ) : (
-          <div className="flex flex-col gap-3 p-5 sm:p-7">
-            {article.tags?.length > 0 && (
-              <p className="text-xs sm:text-[0.8rem] font-medium uppercase tracking-wide text-light-subtitle/80 dark:text-dark-subtitle/80">
-                {article.tags.join("  /  ")}
-              </p>
-            )}
-            <h2
-              className="text-xl sm:text-2xl md:text-[1.75rem] font-bold leading-[1.15] tracking-tight text-balance
-                         text-light-title dark:text-dark-title
-                         group-hover:text-light-blue dark:group-hover:text-dark-blue"
-            >
-              {article.title}
-            </h2>
-            <p className="max-w-[65ch] text-sm sm:text-base text-light-subtitle dark:text-dark-subtitle leading-relaxed line-clamp-2">
-              {article["short-description"]}
-            </p>
-            <span
-              className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold
-                         text-light-title dark:text-dark-title"
-            >
-              Read article
-              <ArrowUpRight
-                size={16}
-                strokeWidth={2.5}
-                className="rtl:-scale-x-100 transition-transform duration-300 ease-out
-                           group-hover:translate-x-1 rtl:group-hover:-translate-x-1 group-hover:-translate-y-0.5"
-              />
-            </span>
-          </div>
+      {cover && (
+        <div className="relative overflow-hidden rounded-lg w-24 sm:w-40 md:w-52 aspect-[40/21] border border-light-border dark:border-dark-border bg-light-primary dark:bg-dark-primary">
+          <img
+            src={cardAt(cover, THUMB)}
+            srcSet={isCard(cover) ? cardSrcSet(cover, THUMB_WIDTHS, RATIO) : undefined}
+            sizes="(min-width: 768px) 208px, (min-width: 640px) 160px, 96px"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            width={THUMB.w}
+            height={THUMB.h}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          />
+        </div>
+      )}
+
+      <div className={`flex flex-col gap-1.5 min-w-0 ${cover ? "" : "col-span-2"}`}>
+        <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-light-subtitle dark:text-dark-subtitle">
+          <span
+            dir="ltr"
+            className="font-mono group-hover:text-light-blue dark:group-hover:text-dark-blue transition-colors duration-300"
+          >
+            {number}
+          </span>
+          {article.tags?.length > 0 && (
+            <span className="truncate">{article.tags.slice(0, 3).join(" · ")}</span>
+          )}
+        </div>
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold leading-snug text-balance text-light-title dark:text-dark-title group-hover:text-light-blue dark:group-hover:text-dark-blue transition-colors duration-300">
+          <bdi>{article.title}</bdi>
+        </h3>
+        {article["short-description"] && (
+          <p className="hidden sm:block text-sm leading-relaxed text-light-subtitle dark:text-dark-subtitle line-clamp-2 max-w-[70ch]">
+            <bdi>{article["short-description"]}</bdi>
+          </p>
         )}
-      </motion.article>
+      </div>
+
+      <span
+        className="hidden sm:inline-flex items-center gap-1.5 shrink-0 px-3 py-1.5 rounded-full text-xs font-medium
+                   border border-light-border dark:border-dark-border text-light-subtitle dark:text-dark-subtitle
+                   group-hover:border-light-blue dark:group-hover:border-dark-blue group-hover:text-light-blue dark:group-hover:text-dark-blue
+                   transition-colors duration-200"
+        aria-hidden="true"
+      >
+        {readLabel}
+        <ArrowUpRight
+          size={14}
+          className="rtl:-scale-x-100 transition-transform duration-300 ease-out group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"
+        />
+      </span>
     </Link>
   );
 };

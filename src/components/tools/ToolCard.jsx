@@ -2,59 +2,102 @@ import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import CommandLine from "./CommandLine";
 import CardPreview from "./CardPreview";
+import LoaderPreview from "./LoaderPreview";
 import ToolLink from "./ToolLink";
 
-const ToolCard = ({ tool, labels }) => {
+// One full-width row: text on one side, a live demo of the tool on the other.
+const ToolCard = ({ tool, labels, index }) => {
   const [previewSet, setPreviewSet] = useState(0);
-  const hasPreview = Boolean(tool.cardTitle);
+  const hasCardPreview = Boolean(tool.cardTitle);
+  const number = String(index + 1).padStart(2, "0");
+
+  let demo = null;
+  if (tool.command) {
+    demo = (
+      <div className="w-full">
+        <CommandLine command={tool.command} copyLabel={labels.copy} copiedLabel={labels.copied} />
+      </div>
+    );
+  } else if (hasCardPreview) {
+    demo = (
+      <div className="w-full">
+        <CardPreview title={tool.cardTitle} set={previewSet} />
+      </div>
+    );
+  } else if (tool.preview === "loaders") {
+    demo = <LoaderPreview />;
+  }
 
   return (
     <article
-      className="flex flex-col gap-3 h-full p-4 sm:p-5 rounded-2xl border border-light-border dark:border-dark-border bg-light-secondary/90 dark:bg-dark-secondary/90 transition-colors duration-300 hover:border-light-blue/60 dark:hover:border-dark-blue/60"
-      onPointerEnter={hasPreview ? () => setPreviewSet(1) : undefined}
-      onPointerLeave={hasPreview ? () => setPreviewSet(0) : undefined}
+      className="group relative grid gap-5 p-5 sm:p-6 md:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] md:gap-8 md:items-center transition-colors duration-300 hover:bg-light-primary dark:hover:bg-dark-primary"
+      onPointerEnter={hasCardPreview ? () => setPreviewSet(1) : undefined}
+      onPointerLeave={hasCardPreview ? () => setPreviewSet(0) : undefined}
     >
-      <header className="flex items-baseline justify-between gap-3">
-        <h4 className="text-base sm:text-lg font-semibold text-light-title dark:text-dark-title">
-          {tool.name}
-        </h4>
-        {tool.meta && (
-          <span className="flex items-center gap-1.5 text-xs font-medium text-light-subtitle dark:text-dark-subtitle">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
-            {tool.meta}
-          </span>
-        )}
-      </header>
+      <span
+        className="absolute inset-y-0 start-0 w-0.5 scale-y-0 bg-light-blue dark:bg-dark-blue transition-transform duration-300 group-hover:scale-y-100"
+        aria-hidden="true"
+      />
 
-      <p className="text-sm leading-relaxed text-light-subtitle dark:text-dark-subtitle">
-        {tool.description}
-      </p>
+      <div className="flex gap-4 sm:gap-5 min-w-0">
+        <span
+          dir="ltr"
+          className="font-mono text-sm pt-1 text-light-subtitle dark:text-dark-subtitle transition-colors duration-300 group-hover:text-light-blue dark:group-hover:text-dark-blue"
+          aria-hidden="true"
+        >
+          {number}
+        </span>
 
-      {tool.command && (
-        <CommandLine command={tool.command} copyLabel={labels.copy} copiedLabel={labels.copied} />
-      )}
-      {hasPreview && <CardPreview title={tool.cardTitle} set={previewSet} />}
+        <div className="flex flex-col gap-3 min-w-0">
+          <header className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <h3 className="text-lg sm:text-xl font-semibold text-light-title dark:text-dark-title">
+              {tool.name}
+            </h3>
+            {tool.meta && (
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                {tool.meta}
+              </span>
+            )}
+          </header>
 
-      <div className="flex-1" />
+          <p className="text-sm leading-relaxed text-light-subtitle dark:text-dark-subtitle">
+            {tool.description}
+          </p>
 
-      <footer className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-xs text-light-subtitle dark:text-dark-subtitle">
-          {tool.technologies.join(" · ")}
-        </p>
-        <div className="flex gap-2">
-          {tool.repo && (
-            <ToolLink href={tool.repo} label="GitHub" icon={Github} toolName={tool.name} />
-          )}
-          {tool.live && (
-            <ToolLink
-              href={tool.live}
-              label={tool.liveLabel}
-              icon={ExternalLink}
-              toolName={tool.name}
-            />
-          )}
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+            <ul className="flex flex-wrap gap-1.5">
+              {tool.technologies.map((tech) => (
+                <li
+                  key={tech}
+                  className="px-2 py-0.5 rounded-md text-xs border border-light-border dark:border-dark-border text-light-subtitle dark:text-dark-subtitle"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+            <div className="flex gap-2">
+              {tool.repo && (
+                <ToolLink href={tool.repo} label="GitHub" icon={Github} toolName={tool.name} />
+              )}
+              {tool.live && (
+                <ToolLink
+                  href={tool.live}
+                  label={tool.liveLabel}
+                  icon={ExternalLink}
+                  toolName={tool.name}
+                />
+              )}
+            </div>
+          </div>
         </div>
-      </footer>
+      </div>
+
+      {demo && (
+        <div className="flex items-center justify-center min-h-[6rem] md:min-h-[8.5rem] p-4 rounded-xl border border-light-border dark:border-dark-border bg-light-primary dark:bg-dark-primary bg-[radial-gradient(circle,rgb(127_127_127/0.14)_1px,transparent_1px)] [background-size:14px_14px]">
+          {demo}
+        </div>
+      )}
     </article>
   );
 };
