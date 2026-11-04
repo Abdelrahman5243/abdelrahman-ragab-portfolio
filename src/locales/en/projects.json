@@ -193,12 +193,14 @@
           ]
         }
       ],
-      "image_url": "https://seeded-cards.abdelrahman-ragab-abdelbaky.workers.dev/og?title=Qalam%3A+One+Definition%2C+a+Bilingual+CMS&brand=Abdelrahman+Ragab&site=Frontend+Developer&author=Abdelrahman+Ragab&kicker=Next.js+%C2%B7+Sanity&palette=midnight&pattern=hairlines&field=corner&face=sans&mark=diamond&w=1100&h=800",
+      "image_url": "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,h_900,c_scale/v1793802957/Screenshot_from_2026-11-04_16-27-31_a9mqxb.png",
       "screens_url": [
-        "https://seeded-cards.abdelrahman-ragab-abdelbaky.workers.dev/og?title=Qalam%3A+One+Definition%2C+a+Bilingual+CMS&brand=Abdelrahman+Ragab&site=Frontend+Developer&author=Abdelrahman+Ragab&kicker=Next.js+%C2%B7+Sanity&palette=midnight&pattern=hairlines&field=corner&face=sans&mark=diamond"
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,h_900,c_scale/v1793802957/Screenshot_from_2026-11-04_16-27-31_a9mqxb.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,h_900,c_scale/v1793802957/Screenshot_from_2026-11-04_16-27-17_haarne.png",
+        "https://res.cloudinary.com/davmi4pnk/image/upload/f_webp,q_90,h_900,c_scale/v1793802957/Screenshot_from_2026-11-04_16-26-47_boebwc.png"
       ],
       "repo": "https://github.com/Abdelrahman5243/Qalam",
-      "live": "#",
+      "live": "https://qalam-cms.vercel.app/en",
       "technologies": [
         "Next.js 16",
         "React 19",
