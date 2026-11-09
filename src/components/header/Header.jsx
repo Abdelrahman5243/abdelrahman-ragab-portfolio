@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { SunDim, CloudMoon, Languages, Menu } from "lucide-react";
 import MobileNav from "./MobileNav";
+import { useSheet } from "../../hooks/useSheet";
 import PalettePicker from "./PalettePicker";
 import "./header.css";
 import { useThemeMode } from "../../hooks/useThemeMode";
@@ -10,7 +11,7 @@ import { HashLink } from "react-router-hash-link";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useSheet("nav");
   const { theme, toggleTheme } = useThemeMode();
   const { currentLang, toggleLanguage, t } = useTranslationMode();
   const { i18n } = useTranslation();
