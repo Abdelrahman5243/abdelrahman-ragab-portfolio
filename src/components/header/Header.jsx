@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { SunDim, CloudMoon, Languages, Menu } from "lucide-react";
-import Modal from "./Modal";
+import MobileNav from "./MobileNav";
 import PalettePicker from "./PalettePicker";
 import "./header.css";
 import { useThemeMode } from "../../hooks/useThemeMode";
@@ -25,10 +25,6 @@ const Header = () => {
     { label: t("navigation.contact"), href: "/contact" },
     { label: t("navigation.articles"), href: "/all-articles" },
   ];
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   const isNavItemActive = (href) => {
     const [path, hash] = href.split("#");
@@ -72,7 +68,13 @@ const Header = () => {
       >
         <Menu />
       </button>
-      {showModal && <Modal ITEMS={NAV_ITEMS} closeModal={closeModal} showModal={showModal} />}
+      <MobileNav
+        open={showModal}
+        onOpenChange={setShowModal}
+        items={NAV_ITEMS}
+        isActive={isNavItemActive}
+        title={t("navigation.menu", currentLang === "ar" ? "القائمة" : "Menu")}
+      />
       <nav
         className="p-1.5 px-2 sm:p-1.5 sm:px-3 border border-light-border dark:border-dark-border rounded-full hidden lg:flex bg-light-secondary/70 dark:bg-dark-secondary/70 backdrop-blur-xl"
         aria-label="Main navigation"

@@ -152,6 +152,46 @@ const ProjectDetails = () => {
             </div>
           )}
         </div>
+        {/* Stack and links: the two facts people look for first */}
+        <div className="mx-0 sm:mx-2 mb-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+          <ul
+            aria-label={t("technologiesTitle")}
+            className="flex flex-wrap gap-2 text-light-subtitle dark:text-dark-subtitle"
+          >
+            {projectData.technologies.map((technology) => (
+              <li
+                key={technology}
+                className="px-2.5 py-1 rounded-lg border border-light-border dark:border-dark-border text-sm"
+              >
+                {technology}
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-2">
+            {projectData.live && projectData.live !== "#" && (
+              <a
+                href={projectData.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-light-blue dark:bg-dark-blue text-white dark:text-dark-primary hover:opacity-90 transition-opacity"
+              >
+                <ExternalLink size={16} aria-hidden="true" />
+                Live demo
+              </a>
+            )}
+            {projectData.repo && projectData.repo !== "#" && (
+              <a
+                href={projectData.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-light-border dark:border-dark-border text-light-title dark:text-dark-title hover:border-light-blue dark:hover:border-dark-blue transition-colors"
+              >
+                <GithubIcon size={16} aria-hidden="true" />
+                Code
+              </a>
+            )}
+          </div>
+        </div>
         {projectData.role && (
           <div className="mx-0 sm:mx-2 mb-6 flex items-start gap-4 rounded-2xl p-5 sm:p-6 border border-light-border dark:border-dark-border bg-light-secondary dark:bg-dark-secondary">
             <span
@@ -228,84 +268,6 @@ const ProjectDetails = () => {
           </ul>
         )}
       </motion.div>
-
-      {/* Technologies */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="flex gap-3 sm:gap-4 items-center my-6 sm:my-8">
-          <MoreVertical
-            className="text-light-subtitle dark:text-dark-subtitle"
-            aria-hidden="true"
-          />
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl dark:text-dark-title text-light-title">
-            {t("technologiesTitle")}
-          </h2>
-        </div>
-        {/* eslint-disable-next-line jsx-a11y/no-redundant-roles -- list-none on the <li>s below strips implicit list semantics in Safari/VoiceOver */}
-        <ul
-          role="list"
-          className="flex flex-wrap gap-2 sm:gap-4 px-2 sm:px-4 mb-8 dark:text-dark-subtitle text-light-subtitle"
-        >
-          {projectData.technologies.map((technology, index) => (
-            <motion.li
-              key={technology}
-              role="listitem"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-2 px-2 py-1 sm:px-3 sm:py-2 rounded-xl border border-light-border dark:border-dark-border list-none text-sm sm:text-base break-words"
-            >
-              {technology}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
-
-      {/* Links (Live Demo & Code) */}
-      <motion.ul
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-wrap gap-3 sm:gap-4 px-2 sm:px-4"
-      >
-        {/* Live Demo */}
-        {projectData.live && projectData.live !== "#" && (
-          <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <a
-              href={projectData.live}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-sm sm:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Go to live demo</span>
-              <ExternalLink size={16} className="sm:w-5 sm:h-5" />
-              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-orange-300 to-transparent" />
-            </a>
-          </motion.li>
-        )}
-
-        {/* Code Repo */}
-        {projectData.repo && projectData.repo !== "#" && (
-          <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <a
-              href={projectData.repo}
-              className="relative py-1.5 px-3 sm:py-2 sm:px-6 backdrop-blur-sm border border-light-border/80 dark:border-dark-border bg-light-secondary/85 dark:bg-dark-secondary/85 text-light-title dark:text-dark-title rounded-full flex gap-2 sm:gap-4 items-center justify-between text-sm sm:text-base shadow-[0_12px_32px_rgb(15_23_42_/_0.05)] hover:border-light-blue/40 dark:hover:border-dark-blue/40"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Go to Code</span>
-              <GithubIcon size={16} className="sm:w-5 sm:h-5" />
-              <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-2/3 sm:w-3/4 mx-auto from-transparent via-red-300 to-transparent" />
-            </a>
-          </motion.li>
-        )}
-      </motion.ul>
 
       <RelatedProjects currentSlug={slug} />
     </motion.div>
