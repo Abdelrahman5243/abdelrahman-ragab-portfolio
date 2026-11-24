@@ -58,12 +58,30 @@
       />
     </noscript>
 
-    <!-- Open Graph constants. Per-route og/twitter tags (title, description,
-         url, type, image) are rendered by src/components/SEO.jsx; defining them
-         here too would leave duplicates that Helmet cannot replace. -->
+    <!-- Open Graph constants -->
     <meta property="og:site_name" content="Abdelrahman Ragab's Portfolio" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_EG" />
+
+    <!-- Static share defaults for crawlers that don't run JS (Facebook,
+         LinkedIn, WhatsApp, X). data-rh="true" marks them as Helmet-managed,
+         so src/components/SEO.jsx replaces them per route instead of
+         duplicating them. -->
+    <meta data-rh="true" name="description" content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab." />
+    <meta data-rh="true" property="og:title" content="Abdelrahman Ragab's Portfolio" />
+    <meta data-rh="true" property="og:description" content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab." />
+    <meta data-rh="true" property="og:url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:image" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg" />
+    <meta data-rh="true" property="og:image:secure_url" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg" />
+    <meta data-rh="true" property="og:image:width" content="1200" />
+    <meta data-rh="true" property="og:image:height" content="630" />
+    <meta data-rh="true" property="og:image:type" content="image/jpeg" />
+    <meta data-rh="true" property="og:image:alt" content="Abdelrahman Ragab — Front-End Developer" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:title" content="Abdelrahman Ragab's Portfolio" />
+    <meta data-rh="true" name="twitter:description" content="Front-End Developer portfolio — React, Next.js and Magento 2 projects, professional experience and technical articles by Abdelrahman Ragab." />
+    <meta data-rh="true" name="twitter:image" content="https://abdelrahman-ragab-portfolio-ten.vercel.app/og_image.jpg" />
   </head>
 
   <body>

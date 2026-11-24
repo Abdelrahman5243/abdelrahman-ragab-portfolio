@@ -130,13 +130,36 @@ body {
   outline-color: rgb(var(--accent-dark-rgb));
 }
 
-body::before {
+/* Background pattern: large square grid, faded toward the bottom */
+body {
+  --pattern-line: rgb(9 9 11 / 0.035);
+}
+
+body.dark {
+  --pattern-line: rgb(255 255 255 / 0.035);
+}
+
+body::before,
+body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: -1;
+}
+
+body::before {
   background: var(--page-glow);
+}
+
+body::after {
+  background-image:
+    linear-gradient(to right, var(--pattern-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--pattern-line) 1px, transparent 1px);
+  background-size: 96px 96px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 40%, transparent 100%);
 }
 
 body.dark {
