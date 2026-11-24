@@ -407,53 +407,80 @@
       "title": "Almasry Pharmacy - ECommerce PWA",
       "description": "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market, built on Venia with 100+ custom UI components and 50+ Peregrine talons, a checkout supporting 7 payment methods, and an optimized image pipeline.",
       "details": "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market, built on Venia with 100+ custom UI components and 50+ Peregrine hooks (talons). Includes a checkout with 7 payment methods, an RxJS event system feeding GA4, Arabic/English support, an optimized image pipeline with a Workbox service worker, auto-translate for foreign visitors, and SEO/GEO improvements.",
+      "role": "Frontend developer at CROCOIT, working on the Almasry Pharmacy team. I handled most of the performance and SEO work and built features end to end, from the GraphQL queries to the UI.",
       "detailGroups": [
         {
           "title": "Overview",
           "items": [
-            "A production Magento PWA Studio storefront for an online pharmacy in an Arabic/RTL market.",
-            "Built on Venia with 100+ custom UI components and 50+ Peregrine hooks (talons)."
+            "**A production Magento PWA Studio storefront** for an online pharmacy in an Arabic/RTL market.",
+            "**Built on Venia** with 100+ custom UI components and 50+ Peregrine hooks (talons)."
+          ]
+        },
+        {
+          "title": "E-commerce Features",
+          "items": [
+            "**The store covers the full shopping journey**: category and search pages with filters and sorting, product pages with an image gallery, quick view, a sticky add-to-cart bar, product labels and stock status, wishlist, product compare, and reviews and ratings.",
+            "**Pharmacy-specific features**: a symptom checker that guides customers to the right products, AI-powered search, product bundles, and \"notify me\" alerts when an out-of-stock product is back.",
+            "**Cart and account features**: a free-shipping progress bar, minimum order validation, saved addresses with a live map location picker, saved payment cards, order history with reorder, ERP invoices, and OTP account activation.",
+            "**Built and improved key shopping features myself**: a price filter that stays applied after reload and when other filters change, live mobile filters without an apply button, the \"In Stock\" filter on by default, a unified search bar, the header banner slider, minimum order validation at checkout, and the order success page for split orders."
+          ]
+        },
+        {
+          "title": "Performance",
+          "items": [
+            "**Stopped the page from jumping while it loads**: fixed layout shift (CLS) on desktop and mobile, and gave product images a fixed width and height.",
+            "**Made the main content appear sooner**: replaced the GIF loader with an inline SVG so it no longer counted as the LCP element, preloaded the hero slide, and preloaded only the main font weight.",
+            "**Cut the work on first load**: homepage carousels load only when scrolled near and fetch only the fields a card needs, guests skip customer-only queries, the Facebook Pixel loads later, and store settings load from cache and refresh once per visit."
           ]
         },
         {
           "title": "Checkout & Payments",
           "items": [
-            "Built a checkout that supports 7 payment methods: Braintree, Apple Pay, Checkout.com, Tamara, Tabby, valU, and Cash on Delivery.",
-            "Handled carts that split into more than one order, and restored the cart when a payment fails partway so the user can try again."
+            "**Built a checkout that supports 7 payment methods**: Braintree, Apple Pay, Checkout.com, Tamara, Tabby, valU, and Cash on Delivery.",
+            "**Handled carts that split into more than one order**, and restored the cart when a payment fails partway so the user can try again.",
+            "**Stopped orders failing to sync with the ERP** by restricting customer names to letters and spaces."
           ]
         },
         {
           "title": "Events & Analytics",
           "items": [
-            "Added an event system on top of RxJS so analytics and UI parts that load late still receive events that fired earlier.",
-            "Connected it to the GA4 dataLayer for cart, checkout, and conversion tracking."
+            "**Added an event system on top of RxJS** so analytics and UI parts that load late still receive events that fired earlier.",
+            "**Connected it to the GA4 dataLayer** for cart, checkout, and conversion tracking."
           ]
         },
         {
           "title": "Arabic / English Support",
           "items": [
-            "Added RTL/LTR handling with PostCSS-RTL and React-Intl, plus store-view switching that detects Arabic input and swaps the Magento store view at runtime.",
-            "Built a country phone input using the native Intl.DisplayNames API with localized country names and per-country validation."
+            "**Added RTL/LTR handling** with PostCSS-RTL and React-Intl, plus store-view switching that detects Arabic input and swaps the Magento store view at runtime.",
+            "**Built a country phone input** using the native Intl.DisplayNames API, with localized country names and per-country validation."
           ]
         },
         {
           "title": "Images & Caching",
           "items": [
-            "Improved image loading with a pipeline that switches between Cloudflare image transforms and a backend service depending on the source, serving WebP/JPG/PNG.",
-            "Set up a Workbox service worker with different caching strategies for images, JS, and HTML for faster loads and offline support."
+            "**Improved image loading** with a pipeline that switches between Cloudflare image transforms and a backend service depending on the source, serving WebP/JPG/PNG.",
+            "**Set up a Workbox service worker** with different caching strategies for images, JS, and HTML, for faster loads and offline support."
           ]
         },
         {
           "title": "Auto-Translate for Foreign Visitors",
           "items": [
-            "Detects the visitor's browser language: Arabic/English visitors see no change, while other languages get the store auto-translated via Google Translate with a small bar to switch or reset."
+            "**Detects the visitor's browser language**: Arabic/English visitors see no change, while other languages get the store auto-translated via Google Translate, with a small bar to switch or reset."
           ]
         },
         {
           "title": "SEO & GEO",
           "items": [
-            "Improved SEO/GEO (Generative Engine Optimization) across the storefront: added canonical URLs, hreflang tags for the bilingual pages, and Open Graph / Twitter Card tags.",
-            "Added and fixed structured data (JSON-LD): Product, Organization, AggregateRating, BreadcrumbList, a Person schema for the founder, and FAQPage — and cleaned up meta descriptions and broken image URLs."
+            "**Improved SEO/GEO (Generative Engine Optimization)** across the storefront: canonical URLs, hreflang tags for the bilingual pages, and Open Graph / Twitter Card tags.",
+            "**Added and fixed structured data (JSON-LD)**: Product, Organization, AggregateRating, BreadcrumbList, a Person schema for the founder, and FAQPage, and cleaned up meta descriptions and broken image URLs.",
+            "**Fixed a full site-audit report item by item**: canonical and hreflang fixes (including a tag React Helmet was silently dropping), structured data for categories, the pharmacy and the About page, accessible names for icon-only buttons, and a dynamic llms.txt for AI search engines."
+          ]
+        },
+        {
+          "title": "Blog",
+          "items": [
+            "**Built the full blog module from the GraphQL queries up**: blog home, article, category, tag, search, archive and author pages, plus a latest-posts section on the homepage.",
+            "**Made articles easy to read**: a table of contents that follows the section being read, a summary box, reading time, a read-progress bar, an \"ask a pharmacist\" card, and related, most-read and latest posts as sliders."
           ]
         }
       ],
@@ -492,7 +519,7 @@
       "title": "SPC Online Academy - Medical LMS",
       "description": "A medical learning platform (LMS) built with Next.js (App Router) and React 19, with public, student, and instructor areas. Includes a custom HLS video player, content protection, and a checkout with multiple payment methods.",
       "details": "A medical learning platform (LMS) built with Next.js (App Router) and React 19, with public, student, and instructor areas. Includes a custom HLS video player, video content protection, Arabic/English support with RTL/LTR, JWT auth, a checkout with multiple payment methods, and a 96/100 Lighthouse score.",
-      "role": "Main frontend developer. I built most of the frontend: the project setup, the video player, auth, checkout, and the performance and SEO work.",
+      "role": "Main frontend developer at CROCOIT on this project. I built most of the frontend: the project setup, the video player, auth, checkout, and the performance and SEO work.",
       "detailGroups": [
         {
           "title": "Video Player & Content Protection",
@@ -506,7 +533,8 @@
           "items": [
             "**Reached 96/100 on Lighthouse** (desktop) by lazy-loading heavy parts, using dynamic imports, and trimming the bundles.",
             "**Added bilingual SEO**: server-rendered metadata, JSON-LD, dynamic Open Graph images, and a sitemap.",
-            "**Fixed the analytics**: set up GTM/GA4 for the purchase steps and removed duplicate events, so the numbers can be trusted."
+            "**Fixed the analytics**: set up GTM/GA4 for the purchase steps and removed duplicate events, so the numbers can be trusted.",
+            "**Moved the site to language-prefixed URLs**: old links redirect to the default language, and canonical links, hreflang and structured data point to the right language."
           ]
         },
         {
@@ -521,13 +549,21 @@
           "title": "Architecture & Bilingual UI",
           "items": [
             "**Set up the project structure**: an Axios service layer, shared hooks so access and checkout buttons behave the same everywhere, and deployments with quick rollback.",
-            "**Built the Arabic/English UI** with RTL/LTR and font switching without layout jumps, and server-side theming so colours don't flash on load."
+            "**Built the Arabic/English UI** with RTL/LTR and font switching without layout jumps, and server-side theming so colours don't flash on load.",
+            "**Added a CI pipeline** that runs ESLint and a build on every merge request, and wrote the team's developer guides for the API, auth, theming and video integration."
+          ]
+        },
+        {
+          "title": "Marketing & Tracking",
+          "items": [
+            "**Built campaign landing pages managed from the CMS**, each with a lead form that sends the lead to GTM with the visitor's answers and the URL tracking parameters.",
+            "**Added offline conversion tracking** through the lead form and WhatsApp, so ad campaigns can be measured beyond the website."
           ]
         },
         {
           "title": "Also Built",
           "items": [
-            "Student and instructor dashboards, course enrollment, quizzes, certificates, and invoices."
+            "Student and instructor dashboards, course enrollment, quizzes, certificates, invoices, device management, and account deactivation."
           ]
         }
       ],
